@@ -1,13 +1,10 @@
-# HOL-1: 
 # Exercise 1: Getting Started with Azure Arc
+### Estimated Duration: 60 Minutes
+## Overview
 
-#### Secure and govern across environments 
+In this exercise, you will learn how to onboard and manage on-premises resources and Kubernetes clusters using Azure Arc. The lab demonstrates how Azure Arc can help Contoso organize servers and Kubernetes clusters, govern them through Azure Policy, and monitor them centrally via Azure Monitor.
 
-As noted before, Contoso has Windows, Linux, SQL Servers, and Kubernetes clusters across multiple locations, including on-premises data centres, distribution centres and multiple public clouds. Imagine you are a member of Contoso’s Central IT team. You want to be able to have central visibility of all these resources and manage them in a consistent manner, so your business operations run smoothly.
-
-In this exercise, you will learn how Arc can help Contoso onboard and organize servers and Kubernetes clusters in the Azure Portal, govern them using Azure Policy and enable central monitoring by integrating with Azure Monitor.
-
-## Lab Objectives
+## Objectives
 
 In this exercise, you will be performing the following tasks:
 
@@ -53,8 +50,10 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      * **ubuntu-k8s** - ```192.168.0.8```
      
      * **sqlvm** - ```192.168.0.4```
+  
      
         ![](.././media/guestvms1.png "Guest VMs")
+       
     
         > **Note**: If you see VMs are in the stopped state, and when you click on the Start button, if VMs are not getting started or if it is throwing any error. Then, right-click on Virtual Machine in stopped state and then click on **Delete saved state..**. After that, you can start the VMs and proceed to the next task.
 
@@ -426,3 +425,5 @@ In this task, let's configure and collect data from your Linux machine by enabli
 ## Summary 
 
 In this exercise, you explored the fundamentals of setting up Hyper-V infrastructure, onboarded a Linux machine to Azure Arc, and integrated a Kubernetes cluster into Azure Arc while verifying the setup. Additionally, you created a policy assignment to identify compliant and non-compliant resources across your environment. Finally, you enabled monitoring for Arc-enabled machines using Azure Monitor to ensure real-time tracking and performance insights, streamlining management and governance across hybrid and multi-cloud environments.
+
+### You have successfully completed the Exercise.
