@@ -1,7 +1,5 @@
 # Exercise 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud
 ### Estimated Duration: 30 Minutes
-## Overview
-
 This exercise focuses on integrating Azure Arc-enabled servers with Microsoft Sentinel and Microsoft Defender for Cloud to enhance security monitoring and threat detection across hybrid environments. Participants will enable Microsoft Defender for Cloud to monitor non-Azure servers and onboard them to Microsoft Sentinel for security event collection.
 
 ## Objectives
@@ -152,5 +150,5 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
-### You have successfully completed the Exercise.
+### You have successfully completed the lab.
 
