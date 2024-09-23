@@ -20,7 +20,7 @@ Azure Arc is a solution that extends Azure's capabilities to manage and run appl
 
 ## Prerequisites
 
-Participants should have: Basic knowledge and understanding of the following
+Participants should have basic knowledge and understanding of the following:
 
 - Basic understanding of Azure Kubernetes Service and managing workloads within them.
 - Experience with Azure cloud services, including how to navigate the Azure portal.
@@ -32,7 +32,7 @@ Participants should have: Basic knowledge and understanding of the following
 
 In the Azure Arc architecture, **Azure Arc** enables unified management for Contoso's on-premises **Windows** and **Linux VMs** and **Kubernetes clusters**. **Azure Policy** ensures governance and compliance, while **Microsoft Defender for Cloud** provides comprehensive security. **Azure Monitor** tracks performance and metrics, with **Azure Monitor for Containers** offering observability for Kubernetes clusters. **Azure Arc-enabled SQL Managed Instance** and **Azure Arc-enabled PostgreSQL Hyperscale** deliver scalable, cloud-native data management. **GitOps** manages Kubernetes configurations, and **Azure Data Controller** facilitates the deployment and management of data services. This setup simplifies operations and extends Azure’s capabilities across Contoso's diverse IT environments.
 
-![Architecture](.././media/architecture.JPG)
+![Architecture](.././media/architecture12.JPG)
 
 ## Explanation of Components
 
@@ -116,7 +116,7 @@ The CloudLabs support team is available 24/7, 365 days a year, via email and liv
 
 Learner Support Contacts:
 
-   - Email Support: labs-support@spektrasystems.com.
+   - Email Support: cloudlabs-support@spektrasystems.com
    - Live Chat Support: https://cloudlabs.ai/labs-support
    
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
