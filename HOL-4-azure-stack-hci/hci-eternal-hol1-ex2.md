@@ -86,6 +86,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-
+In this exercise, you assigned Azure Arc permission to the Azure Stack HCI resource provider, created and reviewed the generated ARM template and validated and deployed the Azure Stack HCI cluster using the Azure portal.
 
 ### You have successfully completed the lab
