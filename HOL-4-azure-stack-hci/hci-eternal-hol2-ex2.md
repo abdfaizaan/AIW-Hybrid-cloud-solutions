@@ -202,6 +202,6 @@ In the previous task, you select **Finish** to exit the extraction phase, and st
 
 ## Summary
 
-
+In this exercise, you created a Recovery Service Vault, connected to the On-Premises Hyper-V Virtual Machine, downloaded and installed Azure Backup Server and install the software package.
 
 ### You have successfully completed the lab
