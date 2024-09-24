@@ -139,6 +139,6 @@ To understand the health and operational states of storage pools, virtual disks,
 
 ## Summary
 
-
+In this exercise, you assigned the Windows Admin Center Administrator Login role to User, configured Windows Admin Center for Azure Stack HCI using Azure Portal, monitored using the Windows Admin Center dashboard the virtual machines, servers and volumes.
 
 ### You have successfully completed the lab
