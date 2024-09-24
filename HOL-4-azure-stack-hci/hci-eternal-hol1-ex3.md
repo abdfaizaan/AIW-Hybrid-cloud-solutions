@@ -1,5 +1,7 @@
 # Exercise 3: Verify the JumpStart HCI Box deployment
 
+### Estimated Duration: 30 minutes
+
 In this exercise, you'll be verifying and confirming the successful deployment and configuration of Azure Stack HCI in the Azure Portal.
 
 ## Task 1: Verify the Azure Stack HCI deployment in Azure and its configuration 
