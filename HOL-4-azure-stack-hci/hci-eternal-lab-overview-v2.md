@@ -83,7 +83,7 @@ Welcome to your Hybrid Cloud Solution - Azure Stack HCI Workshop! We've prepared
 
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-  ![](../media/labguide.png)
+![](media/hci-env1.png "Lab Environment")
 
 ### Virtual Machine & Lab Guide
  
@@ -93,7 +93,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-  ![](../media/env01.png)
+![](media/hci-env2.png "Lab Environment")
  
 ## Utilizing the Split Window Feature
  
