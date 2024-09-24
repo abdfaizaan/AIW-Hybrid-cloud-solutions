@@ -4,6 +4,13 @@
 
 In this exercise, you'll be preparing the environment for deploying Azure Stack HCI, which involves installing and configuring the necessary operating system (e.g., Windows Server), along with any required drivers and software. Additionally, configuring networking components such as switches and routers to meet Azure Stack HCI's networking requirements is essential for successful deployment.
 
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Review the configured virtualized Azure Stack VMs
+- Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Stack HCI
+
 ## Task 1: Review the configured virtualized Azure Stack VMs 
 
 1. In the LabVM, search for Hyper-V Manager in the search box. Select **Hyper-V Manager**.
@@ -164,4 +171,8 @@ Set-HCIDeployPrereqs -HCIBoxConfig $HCIBoxConfig -localCred $localCred -domainCr
 
    ![](./media/hci24-4.png)
 
+## Summary
 
+
+
+### You have successfully completed the lab
