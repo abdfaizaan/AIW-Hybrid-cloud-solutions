@@ -1,10 +1,8 @@
-# Azure Stack HCI Hands-on Lab: 2
-
-## Exercise 1: Configure and monitor cluster performance from the Windows Admin Center dashboard
+# Exercise 4: Configure and monitor cluster performance from the Windows Admin Center dashboard
 
 In this exercise, you will learn how to configure and monitor cluster performance using the Windows Admin Center dashboard. This involves setting up and managing cluster resources, optimizing performance settings, and utilizing real-time monitoring tools within the dashboard to track cluster health and performance metrics. This exercise aims to provide practical experience in effectively managing cluster environments using Windows Admin Center.
 
-### Task 1: Assign the Windows Admin Center Administrator Login role to User 
+## Task 1: Assign the Windows Admin Center Administrator Login role to User 
 
 1. Navigate to your **Azure Stack HCI resource group** and click on **Access Control**.
 
@@ -23,7 +21,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
    ![](./media/roletotheuser1.png)
 
 
-### Task 2: Configure Windows Admin Center for Azure Stack HCI using Azure Portal.
+## Task 2: Configure Windows Admin Center for Azure Stack HCI using Azure Portal.
 
 1. Once the deployment is successful, navigate back to **hciboxcluster** Azure Stack HCI. From the left menu, select **Windows Admin Center (preview)** **(1)** under **settings** and click on **SetUp** **(2)**.
 
@@ -36,7 +34,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
     >**Note**: This may take 5 minutes to get ready! Please wait.
 
 
-### Task 3: Monitor using the Windows Admin Center dashboard
+## Task 3: Monitor using the Windows Admin Center dashboard
 
 
 1. From the left-side menu, click on **Window Admin Center (Preview)** and click on the **Connect** button to connect to **WAC**.
@@ -49,7 +47,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
 
     ![](media/dashboard2.png)
 
-### Task 3: Monitor virtual machines
+## Task 4: Monitor virtual machines
 
 1. Within the WAC window, select **Virtual Machines** from the left side.
 
@@ -72,7 +70,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
    
     ![](media/VMmonitor2.png)
 
-### Task 4: Monitor servers
+## Task 5: Monitor servers
 
  You can monitor the host servers that comprise an Azure Stack HCI cluster directly from the Windows Admin Center. If host servers are not configured with sufficient CPU or memory to provide the resources VMs require, they can be a performance bottleneck.
 
@@ -93,7 +91,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
   
       ![](media/servermonitor2.png)
 
-### Task 5: Monitor volumes
+## Task 6: Monitor volumes
 
 Storage volumes can fill up quickly, making it important to monitor them on a regular basis to avoid any application impact. 
 
