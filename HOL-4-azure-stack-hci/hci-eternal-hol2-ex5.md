@@ -44,6 +44,6 @@ You will be able to complete the following task:
 
 ## Summary
 
-
+In this exercise, you updated the **hciboxcluster** Azure Stack HCI resource.
 
 ### You have successfully completed the lab
