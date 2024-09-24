@@ -56,7 +56,7 @@ Participants should have:
 
 ## Architechture
 
-
+The architecture of a Hybrid Cloud Solution using Azure Stack HCI integrates on-premises infrastructure with Azure services, creating a cohesive and flexible environment. At the core, Azure Stack HCI utilizes a hyper-converged infrastructure powered by Windows Server and Hyper-V, enabling efficient virtualization and storage management through Storage Spaces Direct. This on-premises setup connects seamlessly to Azure services via the Azure Portal, allowing organizations to leverage cloud capabilities such as Azure Backup, Azure Kubernetes Service (AKS), and Azure Site Recovery. Management and monitoring are facilitated through Windows Admin Center, providing a unified interface for performance tracking and configuration. The architecture supports a hybrid model that ensures data locality, optimized workload placement, and enhanced disaster recovery, empowering businesses to scale their operations while maintaining control over their data and resources.
 
 ## Architechture Diagram
 
@@ -66,7 +66,14 @@ Participants should have:
 
 The architecture for this lab involves the following key components:
 
-
+- **Azure Stack HCI:** The primary infrastructure service providing a hyper-converged environment that integrates with Azure.
+- **Azure Backup:** A service that provides backup and disaster recovery capabilities for on-premises and cloud-based resources.
+- **Azure Kubernetes Service (AKS):** A managed container orchestration service that can run on Azure Stack HCI for deploying and managing containerized applications.
+- **Azure Monitor:** A service for monitoring application performance and infrastructure health, offering insights into the operation of Azure Stack HCI environments.
+- **Azure Site Recovery:** A disaster recovery service that can be used to replicate on-premises workloads to Azure for business continuity.
+- **Windows Server:** The underlying operating system that runs Azure Stack HCI, providing the necessary virtualization capabilities.
+- **Hyper-V:** The virtualization technology used in Azure Stack HCI to host virtual machines.
+- **Windows Admin Center:** A management tool for configuring and monitoring the Azure Stack HCI cluster and its resources.
 
 ## Getting Started with the Lab
  
