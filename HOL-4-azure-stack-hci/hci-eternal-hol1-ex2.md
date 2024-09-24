@@ -4,6 +4,14 @@
 
 In this exercise, you will be deploying an Azure Stack HCI solution using a generated ARM template. You can deploy it either through the Azure portal by uploading the template and specifying deployment parameters or using PowerShell for automated deployment, offering flexibility and control over the deployment process. Here, you will be deploying Azure Stack HCI using a custom template in the Azure portal.
 
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Assign Azure Arc permission to the Azure Stack HCI resource provider
+- Task 2: Create and review the generated ARM template
+- Task 3: Validate and deploy the Azure Stack HCI cluster using the Azure portal
+
 ## Task 1: Assign Azure Arc permission to the Azure Stack HCI resource provider 
 
 1. Navigate to your Azure Stack HCI Resource group and click on **Access Control**.
@@ -75,3 +83,9 @@ In this exercise, you will be deploying an Azure Stack HCI solution using a gene
 12. The cluster may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh** to get the latest status on deployment.
 
      ![](./media/deplomentstatehci.png)
+
+## Summary
+
+
+
+### You have successfully completed the lab
