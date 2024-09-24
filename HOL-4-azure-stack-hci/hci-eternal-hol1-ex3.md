@@ -28,6 +28,6 @@ You will be able to complete the following task:
 
 ## Summary
 
-
+In this exercise, you verified the Azure Stack HCI deployment in Azure and its configuration.
 
 ### You have successfully completed the lab
