@@ -142,6 +142,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-
+In this exercise, you created a Logical Network for Azure Stack HCI VM, downloaded and added the VM image to Azure Stack HCI Storage and created a Virtual Machine on Azure Stack HCI.
 
 ### You have successfully completed the lab
