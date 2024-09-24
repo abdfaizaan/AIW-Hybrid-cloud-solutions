@@ -1,8 +1,8 @@
-# Exercise 3: Managing AKS on Azure Stack HCI 
+# Exercise 6: Managing AKS on Azure Stack HCI 
 
 In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Stack HCI, which involves creating a logical network specifically tailored for AKS on Azure Stack HCI. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Stack HCI via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Stack HCI environment.
 
-### Task 1: Create a Logical Network for Azure Stack HCI for AKS
+## Task 1: Create a Logical Network for Azure Stack HCI for AKS
 
 1. Navigate to the Resource Group in the Azure portal navigation section.
 
@@ -48,7 +48,7 @@ In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) 
 
    ![](media/logic-1network-create.png)
 
-### Task 2: Create an Entra Group for authentication of AKS
+## Task 2: Create an Entra Group for authentication of AKS
 
 1. In the Azure portal, click on the search blade at the top and search for **Microsoft Entra id** and select **Microsoft Entra id**.
 
@@ -72,7 +72,7 @@ In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) 
 
 
 
-# Task 3: Create AKS on Azure Stack HCI using Azure Portal
+## Task 3: Create AKS on Azure Stack HCI using Azure Portal
 
 1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services** and select **Kubernetes services**.
 
@@ -82,44 +82,44 @@ In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) 
 
     ![](media/select-kubernetes-add.png)
 
-16. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill the fallowing deatils in the Basic and click on **Next: Node Pool** **(7)**.
+1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill the fallowing deatils in the Basic and click on **Next: Node Pool** **(7)**.
 
-     | **Variables**                | **Values**                                                    |
-     | ---------------------------- |---------------------------------------------------------------|
-     | Subscription | Default subscription **(1)** |
-     | Resource group | From the drop-down Select **AzureStackHCI** **(2)**  |
-     | Kubernetes cluster name | Enter the cluster name as **hciaks** **(3)** |
-     | Custom location | From the drop-down Select **jumpstart(EastUS)** **(4)** |
-     | Node size | From the drop down select **Standard_A2_v2** **(5)** |
-     | Key pair name | Enter the Key pair name as **hciaks** **(6)** |
+   | **Variables**                | **Values**                                                    |
+   | ---------------------------- |---------------------------------------------------------------|
+   | Subscription | Default subscription **(1)** |
+   | Resource group | From the drop-down Select **AzureStackHCI** **(2)**  |
+   | Kubernetes cluster name | Enter the cluster name as **hciaks** **(3)** |
+   | Custom location | From the drop-down Select **jumpstart(EastUS)** **(4)** |
+   | Node size | From the drop down select **Standard_A2_v2** **(5)** |
+   | Key pair name | Enter the Key pair name as **hciaks** **(6)** |
 
-    ![](media/creat-aks-basic.png)
+   ![](media/creat-aks-basic.png)
 
-17. In the **Node Pool** tab, leave it default and click in **Next: Access**.
+1. In the **Node Pool** tab, leave it default and click in **Next: Access**.
 
-18. In the **Access** tab, select **Authentication and Authorization** method as **Microsoft Entra authentication with Kubernetes RBAC** **(1)**, and Click on **Choose Microsoft Entra group** **(2)**. 
+1. In the **Access** tab, select **Authentication and Authorization** method as **Microsoft Entra authentication with Kubernetes RBAC** **(1)**, and Click on **Choose Microsoft Entra group** **(2)**. 
 
-    ![](media/aksauth.png)
+   ![](media/aksauth.png)
 
-19. In the **Choose Microsoft Entra group for cluster-admin ClusterRoleBinding** pop-up select **aks-auth** group and click on **Select**.
+1. In the **Choose Microsoft Entra group for cluster-admin ClusterRoleBinding** pop-up select **aks-auth** group and click on **Select**.
 
-    ![](media/select-group.png)
+   ![](media/select-group.png)
 
-20. In the **Access** tab, click on **Next: Networking**.
+2. In the **Access** tab, click on **Next: Networking**.
 
-21. In the **Networking** tab, select **Local network** as **hcibox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + Create** **(3)** .
+2. In the **Networking** tab, select **Local network** as **hcibox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + Create** **(3)** .
 
-    ![](media/aksnetwork.png)
+   ![](media/aksnetwork.png)
 
-22. In the **Review + Create** tab, click on **Review**.
+2. In the **Review + Create** tab, click on **Review**.
 
-    ![](media/akscreate.png)
+   ![](media/akscreate.png)
 
-23. Click on the AKS cluster to view details such as Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
+2. Click on the AKS cluster to view details such as Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
      ![](media/aksoverview.png)
     
-### Task 4: Connecting to the Azure Stack HCI AKS
+## Task 4: Connecting to the Azure Stack HCI AKS
 
 1. From your jumpVM, open Powershel and run the following command, using the name of your HCIBox resource group.
 
