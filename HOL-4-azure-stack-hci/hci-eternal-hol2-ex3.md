@@ -4,6 +4,15 @@
 
 In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Stack HCI, which involves creating a logical network specifically tailored for AKS on Azure Stack HCI. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Stack HCI via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Stack HCI environment.
 
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Create a Logical Network for Azure Stack HCI for AKS
+- Task 2: Create an Entra Group for authentication of AKS
+- Task 3: Create AKS on Azure Stack HCI using Azure Portal
+- Task 4: Connecting to the Azure Stack HCI AKS
+
 ## Task 1: Create a Logical Network for Azure Stack HCI for AKS
 
 1. Navigate to the Resource Group in the Azure portal navigation section.
@@ -137,3 +146,9 @@ In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) 
 3. From JumpVM,Open a new powershell session and then in the new shell you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
 
     ![](media/kubconnected.png)
+
+## Summary
+
+
+
+### You have successfully completed the lab
