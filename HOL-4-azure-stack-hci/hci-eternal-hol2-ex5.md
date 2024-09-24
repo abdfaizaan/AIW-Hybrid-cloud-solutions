@@ -4,6 +4,12 @@
 
 In this exercise, you'll be checking for updates in Azure Stack HCI via the Azure Portal involves leveraging Azure Arc for centralized management and update assessment. Administrators can deploy updates seamlessly across clusters, scheduling and monitoring the process for minimal disruption and optimal infrastructure performance. This integration streamlines hybrid cloud operations, enhancing agility and security across on-premises and Azure environments.
 
+## Lab Objectives
+
+You will be able to complete the following task:
+
+- Task 1: Update Azure Stack HCI
+
 ## Task 1: Update Azure Stack HCI  
 
 1. Navigate to Azure Stack HCI resource named **hciboxcluster** from AzureStackHCI resource group.
@@ -36,3 +42,8 @@ In this exercise, you'll be checking for updates in Azure Stack HCI via the Azur
 
    ![](media/hci24-17.png)
 
+## Summary
+
+
+
+### You have successfully completed the lab
