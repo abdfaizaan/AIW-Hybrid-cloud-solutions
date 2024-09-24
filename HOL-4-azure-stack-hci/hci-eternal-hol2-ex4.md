@@ -1,5 +1,7 @@
 # Exercise 7: Azure Stack HCI VM Provisioning
 
+### Estimated Duration: 90 minutes
+
 In this exercise, you will learn how to provision virtual machines (VMs) on Azure Stack HCI. The process involves setting up a logical network, uploading a VM image to Azure Stack HCI storage, and then creating a new virtual machine using this image within the Azure Stack HCI environment. This practical exercise provides a step-by-step walkthrough of deploying VMs on Azure Stack HCI infrastructure.
 
 ## Task 1: Create a Logical Network for Azure Stack HCI VM
