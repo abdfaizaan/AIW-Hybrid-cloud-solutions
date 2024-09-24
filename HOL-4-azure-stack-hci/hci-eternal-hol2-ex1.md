@@ -4,6 +4,17 @@
 
 In this exercise, you will learn how to configure and monitor cluster performance using the Windows Admin Center dashboard. This involves setting up and managing cluster resources, optimizing performance settings, and utilizing real-time monitoring tools within the dashboard to track cluster health and performance metrics. This exercise aims to provide practical experience in effectively managing cluster environments using Windows Admin Center.
 
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Assign the Windows Admin Center Administrator Login role to User
+- Task 2: Configure Windows Admin Center for Azure Stack HCI using Azure Portal
+- Task 3: Monitor using the Windows Admin Center dashboard
+- Task 4: Monitor virtual machines
+- Task 5: Monitor servers
+- Task 6: Monitor volumes
+
 ## Task 1: Assign the Windows Admin Center Administrator Login role to User 
 
 1. Navigate to your **Azure Stack HCI resource group** and click on **Access Control**.
@@ -114,14 +125,20 @@ Storage volumes can fill up quickly, making it important to monitor them on a re
   
    ![](media/volumes2.png)
 
-## Query and process performance history with PowerShell
+### Query and process performance history with PowerShell
 
 You can also monitor Azure Stack HCI clusters using PowerShell cmdlets that return information about the cluster and its components. See the [Performance history for Storage Spaces Direct](/windows-server/storage/storage-spaces/performance-history).
 
-## Use the Health Service feature
+### Use the Health Service feature
 
 Any health service fault on the cluster should be investigated. See [Health Service in Windows Server](/windows-server/failover-clustering/health-service-overview) to learn how to run reports and identify faults.
 
-## Troubleshoot health and operational states
+### Troubleshoot health and operational states
 
 To understand the health and operational states of storage pools, virtual disks, and drives, see [Troubleshoot Storage Spaces and Storage Spaces Direct health and operational states](/windows-server/storage/storage-spaces/storage-spaces-states).
+
+## Summary
+
+
+
+### You have successfully completed the lab
