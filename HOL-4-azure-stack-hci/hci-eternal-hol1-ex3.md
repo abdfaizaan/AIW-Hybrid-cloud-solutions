@@ -4,6 +4,12 @@
 
 In this exercise, you'll be verifying and confirming the successful deployment and configuration of Azure Stack HCI in the Azure Portal.
 
+## Lab Objectives
+
+You will be able to complete the following task:
+
+- Task 1: Verify the Azure Stack HCI deployment in Azure and its configuration
+
 ## Task 1: Verify the Azure Stack HCI deployment in Azure and its configuration 
 
 1. From the Azure portal, open a resource group named **AzureStackHCI**.
@@ -20,4 +26,8 @@ In this exercise, you'll be verifying and confirming the successful deployment a
 
    ![](./media/hci24-10.png)
 
+## Summary
 
+
+
+### You have successfully completed the lab
