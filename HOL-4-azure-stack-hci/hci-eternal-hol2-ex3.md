@@ -149,6 +149,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-
+In this exercise, you created a Logical Network for Azure Stack HCI for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Stack HCI using Azure Portal and connected to the Azure Stack HCI AKS.
 
 ### You have successfully completed the lab
