@@ -44,7 +44,15 @@ To create a flexible and cost-effective hybrid cloud environment that seamlessly
 
 Participants should have:
 
-
+- **Basic Cloud Knowledge:** Understanding of cloud computing concepts, including IaaS, PaaS, and SaaS.
+- **Familiarity with Azure Services:** Basic knowledge of Azure services and the Azure Portal interface.
+- **Networking Fundamentals:** Understanding of networking concepts, such as IP addressing, subnets, and routing, which are crucial for configuring hybrid environments.
+- **Windows Server Knowledge:** Proficiency with Windows Server, including installation, configuration, and management, as Azure Stack HCI runs on Windows Server technology.
+- **Virtualization Concepts:** Familiarity with virtualization technologies, including Hyper-V, as Azure Stack HCI utilizes Hyper-Converged Infrastructure.
+- **PowerShell Basics:** Basic knowledge of PowerShell for scripting and automation tasks in Azure and Azure Stack environments.
+- **Storage Fundamentals:** Understanding of storage technologies and concepts, including SAN, NAS, and local storage, which are relevant to HCI setups.
+- **Backup and Disaster Recovery Concepts:** Awareness of backup strategies and disaster recovery planning to effectively implement Azure Backup Server.
+- **Kubernetes Basics:** Familiarity with containerization and Kubernetes concepts, especially for managing AKS on Azure Stack HCI.
 
 ## Architechture
 
