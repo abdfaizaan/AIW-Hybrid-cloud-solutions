@@ -14,7 +14,7 @@ Azure Stack HCI 23H2 is now generally available. 23H2 simplifies the configurati
 
 HCIBox automatically creates and configures a two-node Azure Stack HCI cluster using nested virtualization with Hyper-V running on an Azure Virtual Machine. This Hyper-V host creates three guest virtual machines: two Azure Stack HCI nodes (AzSHost1, AzSHost2), and one nested Hyper-V host (AzSMGMT). AzSMGMT itself hosts two guest VMs: an Active Directory domain controller and a Routing and Remote Access Server acting as a virtual router.
 
-  ![](./media/hci24-overview-3.png)
+![](./media/hci24-overview-3.png)
 
 **Virtual machine management**: HCIBox comes with guest VM management in the Azure portal. The HCIBox documentation will walk you through how to use this feature, including configuring VM images from Azure Marketplace and creating VMs on your cluster.
 
@@ -99,13 +99,13 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-  ![](../media/split01.png)
+![](../media/split01.png)
  
 ## Managing Your Virtual Machine
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-  ![](../media/resourses.png)
+![](../media/resourses.png)
 
 ## Login to the Azure portal
 
@@ -116,12 +116,20 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
       
    * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+  
+     ![](../media/user-email.png "Enter Email")
    
 1. Now, enter the **password** that you have already received for the above account.
       
    * Password: **<inject key="AzureAdUserPassword"></inject>**
+  
+     ![](../media/user-pass.png "Enter Password")
 
-1. On the **Action Required** pop-up click on **Ask later**.     
+1. On the **Action Required** pop-up click on **Ask later**.
+
+   ![](../media/asklater.png)
+
+   >**NOTE:** Do not enable MFA, select **Ask Later**.     
 
 1. If you see the pop-up **Stay signed in?** Click **No**.
 
