@@ -173,6 +173,6 @@ Set-HCIDeployPrereqs -HCIBoxConfig $HCIBoxConfig -localCred $localCred -domainCr
 
 ## Summary
 
-
+In this exercise, reviewed the configured virtualized Azure Stack VMs and onboard Azure Arc Machine to Azure and prepare to deploy Azure Stack HCI.
 
 ### You have successfully completed the lab
