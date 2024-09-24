@@ -1,8 +1,8 @@
-# Exercise 2: Azure Backup Server on Azure Stack
+# Exercise 5: Azure Backup Server on Azure Stack
 
 In this exercise, you will learn how to install Azure Backup Server on Azure Stack, which enables backup and recovery capabilities for files and applications within the Azure environment. This exercise focuses on deploying and configuring Azure Backup Server to safeguard critical data and applications hosted on Azure Stack, ensuring robust protection and restore capabilities in the cloud environment.
 
-### Task 1: Create a Recovery Service Vault
+## Task 1: Create a Recovery Service Vault
 
 A Recovery Services vault is a management entity that stores recovery points that are created over time, and it provides an interface to perform backup-related operations. These operations include taking on-demand backups, performing restores, and creating backup policies.
 
@@ -37,7 +37,7 @@ A Recovery Services vault is a management entity that stores recovery points tha
 
    It can take a while to create the Recovery Services vault. Monitor the status notifications in the Notifications area at the upper right. After the vault is created, it appears in the list of Recovery Services vaults. If the vault doesn't appear, select Refresh.
 
-### Task 2: Connect to On-Premises Hyper-V Virtual Machine
+## Task 2: Connect to On-Premises Hyper-V Virtual Machine
 
 1. On the **HCIBox-Client** virtual machine, click on search button search for **Hyper-V** and select **Hyper-V Manager**.
 
@@ -55,7 +55,7 @@ A Recovery Services vault is a management entity that stores recovery points tha
 
    ![](media/hci24-31.png)
 
-### Task 3: Download and Install Azure Backup Server
+## Task 3: Download and Install Azure Backup Server
 
 1. Open **Microsoft Edge** from **AzSMGMT** node, and navigate to the download page of the Azure Backup Server installer from the Microsoft Download Center.
 
@@ -95,7 +95,7 @@ A Recovery Services vault is a management entity that stores recovery points tha
 
     ![](media/hci24-39.png)
 
-### Task 4: Install the software package
+## Task 4: Install the software package
 
 In the previous task, you select **Finish** to exit the extraction phase, and start the Azure Backup Server setup wizard.
 
