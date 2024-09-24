@@ -1,53 +1,10 @@
-# Azure Stack HCI Hands-on Lab: 1
+# Exercise 1: Preparing env with the prerequisites to deploy Azure Stack HCI 
 
-Getting Started with Azure Stack HCI in Azure
--------------------------
-       
-# Getting started with lab
-
-1. Once the environment is provisioned, a virtual machine, i.e., **HCIBox-Client**, and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
-
-   ![](media/hci-env1.png "Lab Environment")
-
-1. To get the lab environment details, select the **Environment Details** tab. The credentials will also be emailed to your registered email address. You can open the lab guide in a separate and full window by selecting **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Virtual Machines** tab.
-
-   ![](media/hci-env2.png "Lab Environment")
- 
-## Login to the Azure portal
-
-1. In the **HCIBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
-  
-    ![](media/hci-env2.png "Select Azure Portal")
-    
-1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
-      
-      * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
-   
-1. Now, enter the **password** that you have already received for the above account.
-      
-      * Password: **<inject key="AzureAdUserPassword"></inject>**
-
-1. On the **Action Required** pop-up click on **Ask later**.     
-
-1. If you see the pop-up **Stay signed in?** Click **No**.
-
-1. If you see the pop-up, **You have free Azure Advisor recommendations!** close the window to continue the lab.
-
-1. If the **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
-
-1. Navigate to the Resource Group in the Azure portal navigation section.
-
-   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
-
-1. From the **Resource** groups pane, click on the **AzureStakHCI** resource group and verify the resources present in it.
-
-   ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
-
-## Exercise 1: Preparing env with the prerequisites to deploy Azure Stack HCI 
+### Overall Estimated Duration: 60 minutes
 
 In this exercise, you'll be preparing the environment for deploying Azure Stack HCI, which involves installing and configuring the necessary operating system (e.g., Windows Server), along with any required drivers and software. Additionally, configuring networking components such as switches and routers to meet Azure Stack HCI's networking requirements is essential for successful deployment.
 
-### Task 1: Review the configured virtualized Azure Stack VMs 
+## Task 1: Review the configured virtualized Azure Stack VMs 
 
 1. In the LabVM, search for Hyper-V Manager in the search box. Select **Hyper-V Manager**.
 
@@ -58,7 +15,7 @@ In this exercise, you'll be preparing the environment for deploying Azure Stack 
 
    ![](./media/hci24-2.png)
 
-### Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Stack HCI 
+## Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Stack HCI 
 
 1. Open **Windows PowerShell ISE** from LabVM by searching **PowerShell**.
 
