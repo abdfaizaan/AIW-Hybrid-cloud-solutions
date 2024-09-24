@@ -22,7 +22,16 @@ HCIBox automatically creates and configures a two-node Azure Stack HCI cluster u
 
 ## Objective
 
+To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
+- Preparing env with the prerequisites to deploy Azure Stack HCI
+- Deploying JumpStart-HCIBox in Azure Portal
+- Verify the JumpStart HCI Box deployment
+- Configure and monitor cluster performance from the Windows Admin Center dashboard
+- Azure Backup Server on Azure Stack
+- Managing AKS on Azure Stack HCI
+- Azure Stack HCI VM Provisioning
+- Azure Stack HCI Update management using Azure Portal
 
 ## Prerequisites
 
