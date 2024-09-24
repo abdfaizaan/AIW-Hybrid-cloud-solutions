@@ -1,5 +1,7 @@
 # Exercise 4: Configure and monitor cluster performance from the Windows Admin Center dashboard
 
+### Estimated Duration: 60 minutes
+
 In this exercise, you will learn how to configure and monitor cluster performance using the Windows Admin Center dashboard. This involves setting up and managing cluster resources, optimizing performance settings, and utilizing real-time monitoring tools within the dashboard to track cluster health and performance metrics. This exercise aims to provide practical experience in effectively managing cluster environments using Windows Admin Center.
 
 ## Task 1: Assign the Windows Admin Center Administrator Login role to User 
