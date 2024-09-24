@@ -1,5 +1,7 @@
 # Exercise 8: Azure Stack HCI Update management using Azure Portal  
 
+### Estimated Duration: 30 minutes
+
 In this exercise, you'll be checking for updates in Azure Stack HCI via the Azure Portal involves leveraging Azure Arc for centralized management and update assessment. Administrators can deploy updates seamlessly across clusters, scheduling and monitoring the process for minimal disruption and optimal infrastructure performance. This integration streamlines hybrid cloud operations, enhancing agility and security across on-premises and Azure environments.
 
 ## Task 1: Update Azure Stack HCI  
