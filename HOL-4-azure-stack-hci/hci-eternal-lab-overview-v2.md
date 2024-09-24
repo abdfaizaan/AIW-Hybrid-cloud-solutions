@@ -99,35 +99,35 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![](../media/split01.png)
+![](./media/split-01.png)
  
 ## Managing Your Virtual Machine
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-![](../media/resourses.png)
+![](./media/resourses.png)
 
 ## Login to the Azure portal
 
 1. In the **HCIBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
   
-   ![](media/hci-env2.png "Select Azure Portal")
+   ![](./media/azure-portal-edge.png)
     
 1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
       
    * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
   
-     ![](../media/user-email.png "Enter Email")
+     ![](./media/user-email.png "Enter Email")
    
 1. Now, enter the **password** that you have already received for the above account.
       
    * Password: **<inject key="AzureAdUserPassword"></inject>**
   
-     ![](../media/user-pass.png "Enter Password")
+     ![](./media/user-pass.png "Enter Password")
 
 1. On the **Action Required** pop-up click on **Ask later**.
 
-   ![](../media/asklater.png)
+   ![](./media/asklater.png)
 
    >**NOTE:** Do not enable MFA, select **Ask Later**.     
 
