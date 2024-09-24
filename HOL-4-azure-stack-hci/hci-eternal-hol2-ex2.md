@@ -4,6 +4,15 @@
 
 In this exercise, you will learn how to install Azure Backup Server on Azure Stack, which enables backup and recovery capabilities for files and applications within the Azure environment. This exercise focuses on deploying and configuring Azure Backup Server to safeguard critical data and applications hosted on Azure Stack, ensuring robust protection and restore capabilities in the cloud environment.
 
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Create a Recovery Service Vault
+- Task 2: Connect to On-Premises Hyper-V Virtual Machine
+- Task 3: Download and Install Azure Backup Server
+- Task 4: Install the software package
+
 ## Task 1: Create a Recovery Service Vault
 
 A Recovery Services vault is a management entity that stores recovery points that are created over time, and it provides an interface to perform backup-related operations. These operations include taking on-demand backups, performing restores, and creating backup policies.
@@ -190,3 +199,9 @@ In the previous task, you select **Finish** to exit the extraction phase, and st
 15. When the installer completes, the **Status** shows that all software has been successfully installed.
 
     When installation completes, the Azure Backup Server console and the Azure Backup Server PowerShell icons are created on the server desktop.
+
+## Summary
+
+
+
+### You have successfully completed the lab
