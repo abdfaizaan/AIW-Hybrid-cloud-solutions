@@ -24,14 +24,21 @@ HCIBox automatically creates and configures a two-node Azure Stack HCI cluster u
 
 To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
-- Preparing env with the prerequisites to deploy Azure Stack HCI
-- Deploying JumpStart-HCIBox in Azure Portal
-- Verify the JumpStart HCI Box deployment
-- Configure and monitor cluster performance from the Windows Admin Center dashboard
-- Azure Backup Server on Azure Stack
-- Managing AKS on Azure Stack HCI
-- Azure Stack HCI VM Provisioning
-- Azure Stack HCI Update management using Azure Portal
+- **Preparing env with the prerequisites to deploy Azure Stack HCI:** Ensure the infrastructure meets all necessary requirements for a successful Azure Stack HCI deployment, enabling efficient resource utilization and performance.
+  
+- **Deploying JumpStart-HCIBox in Azure Portal:** Quickly provision a ready-to-use Azure Stack HCI environment using JumpStart-HCIBox for streamlined setup, accelerating time to value for cloud initiatives.
+
+- **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart HCI Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
+  
+- **Configure and monitor cluster performance from the Windows Admin Center dashboard:** Set up and track cluster performance metrics through the Windows Admin Center for effective resource management, allowing proactive identification of performance bottlenecks.
+  
+- **Azure Backup Server on Azure Stack:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Stack HCI, ensuring business continuity and compliance with data retention policies.
+  
+- **Managing AKS on Azure Stack HCI:** Oversee and optimize Azure Kubernetes Service (AKS) deployments on Azure Stack HCI for efficient container orchestration, facilitating rapid application development and deployment.
+  
+- **Azure Stack HCI VM Provisioning:** Facilitate the rapid creation and deployment of virtual machines within the Azure Stack HCI environment, enhancing operational efficiency and resource allocation.
+  
+- **Azure Stack HCI Update management using Azure Portal:** Streamline the update management process for Azure Stack HCI through the Azure Portal for improved system reliability and security, ensuring the infrastructure is always up-to-date with the latest features and patches.
 
 ## Prerequisites
 
