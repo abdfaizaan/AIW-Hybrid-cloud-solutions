@@ -111,6 +111,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y** 
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
      ```
@@ -120,6 +121,8 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 1. Open a new Putty session, re-perform the steps from step 2 to step 4 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
+   
+   > **Note**: If you see any pop-up like **An update package is available, do you want to download it?** click **no**
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
 
@@ -159,7 +162,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
    > Remember, we are using variables declared earlier in step 8. If you have connected with a new putty session, you may have to run steps 4 to 9 again.
      
-   ![](.././media/connected-azure-arc.png "Connected to Arc")
+   ![](.././media/hybrid1.png "Connected to Arc")
 
 1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse TO **azure-arc** resource group
 
@@ -167,7 +170,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Then search and verify if **ubuntu-k8s** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
 
-   ![](.././media/hybd5.png "ubuntu k8s onboarded")
+   ![](.././media/hybrid8.png "ubuntu k8s onboarded")
 
 1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the Status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
    
@@ -299,9 +302,9 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v3.png)
     
-1. Select **Machines** from the options on the left side under **Infrastructure** of the Azure Arc blade.
+1. Select **Machines** from the options on the left side under **Azure Ar resources** of the Azure Arc blade.
 
-    ![](.././media/hyd1.png)
+    ![](.././media/hybrid2.png)
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
@@ -329,8 +332,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/HOL1-Ex1-T5-S8.png)
 
-   > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
-
+    > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
 1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />** from the available list and then click on **Next**.
 
@@ -372,11 +374,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the Create new rule Enter the following details:
 
-    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false" /> (1)**
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (3)**
     
     - Click on **Create (4)**
 
