@@ -73,46 +73,46 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
 1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
 
-   ![](.././media/ss1.png)
+    ![](.././media/ss1.png)
     
-2. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
+1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
 
-   > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
+    > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
 
-   ![](.././media/microsoft-sentinel-create.png)
+    ![](.././media/microsoft-sentinel-create.png)
     
-3. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>
+1. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>
   and then click on the **Add** button.
 
-   ![](.././media/microsoft-sentinel-add.png)
+    ![](.././media/microsoft-sentinel-add.png)
     
-4. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
+1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
-5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
+1. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-   ![](.././media/microsen-success.png)
+    ![](.././media/microsen-success.png)
  
-6. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
+1. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
-   ![](.././media/microsoft-sentinel-overview.png)
+    ![](.././media/microsoft-sentinel-overview.png)
 
-7. Click on the **Content Hub** on the Microsoft Sentinel page, Search and select **Syslog** from the second page of the solution. Click on **Install**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content Hub** on the Microsoft Sentinel page, Search and select **Syslog** from the second page of the solution. Click on **Install**. Wait until it's installed before proceeding to the next step.
 
-   ![](.././media/hybridcloud-ex2-t2-1.png)
+    ![](.././media/hybridcloud-ex2-t2-1.png)
     
-7. Now, click on the **Workbooks** from the left pane under the **Threat Management** section and search for ```Linux machines``` and select **Linux machines** from the search result.
+1. Now, click on the **Workbooks** from the left pane under the **Threat Management** section and search for ```Linux machines``` and select **Linux machines** from the search result.
     
-   ![](.././media/microsoft-sentinel-workbook.png)
+    ![](.././media/microsoft-sentinel-workbook.png)
     
-8. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
+1. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
  
-   ![](.././media/as-08.png)
+    ![](.././media/as-08.png)
     
-9. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
+1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-   ![](.././media/H1E2T2S9.png)
+    ![](.././media/H1E2T2S9.png)
     
-10. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
     ![](.././media/as-10.png)
     
@@ -138,11 +138,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
     ![](.././media/as-121-v2.png) 
 
-1. You can see and run the saved **queries** by browsing to **Queries**
+1. You can see and run the saved **queries** by browsing to **Queries hub**
    
     ![](.././media/as-13-v2.png) 
    
-1. Then, you will find the `VMProcess` query under **Queries**, click on **Run** to run the query.
+1. Then, you will find the `VMProcess` query under **Queries hub**, click on **Run** to run the query.
    
     ![](.././media/as-131-v2.png) 
 
