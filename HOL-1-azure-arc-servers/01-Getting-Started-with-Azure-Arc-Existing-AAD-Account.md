@@ -332,7 +332,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
    > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
 
-1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>** from the available list and then click on **Next**.
+1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />** from the available list and then click on **Next**.
 
     ![](.././media/HOL1-Ex1-T5-S9.png)
 
