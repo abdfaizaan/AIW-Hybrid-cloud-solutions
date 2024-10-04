@@ -176,7 +176,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
    
    > **Note**: The operating system and Agent version that you see may not match with the provided screenshot if there were any updates to the Agent/ OS Version.
 
-   ![](.././media/hyd5.png "ubuntu k8s onboard status check")
+   ![](.././media/hybrid29.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
@@ -283,7 +283,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 
 1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
-   ![](.././media/hol1ss3.png "Varify in Azure")
+   ![](.././media/hybrid30.png "Varify in Azure")
 
 1. Azure Arc enabled Kubernetes to deploy a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubuntu-k8s VM:
 
@@ -318,9 +318,9 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hyd7.png)
     
-1. In **Assign policy** window, under **Basics** section, select **ellipse(...)**  from **Policy Definitions**.
+1. In **Assign policy** window, under **Basics** section, select **ellipse(...) (1)**  from **Policy Definitions**.
 
-    ![](.././media/HOL1-Ex1-T5-S6.png)
+    ![](.././media/hybrid31.png)
     
 1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux virtual machine sacle sets** and then click on **Add** button at the bottom.
 
@@ -328,7 +328,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
     >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, update the Assignment name to **eploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
+1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
 
     ![](.././media/hybrid10.png)
 
@@ -370,7 +370,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the **Monitoring configuration** page, click on **Create New** button.
 
-    ![](.././media/hyd10.png)
+    ![](.././media/hybrid32.png)
 
 1. On the Create new rule Enter the following details:
 
@@ -382,11 +382,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
     
     - Click on **Create (4)**
 
-        ![](.././media/hyd13.png)
+        ![](.././media/hybrid33.png)
 
 1. Review the configuration, and click on **Configure** button.
 
-    ![](.././media/hyd14.png)
+    ![](.././media/hybrid34.png)
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. The deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
