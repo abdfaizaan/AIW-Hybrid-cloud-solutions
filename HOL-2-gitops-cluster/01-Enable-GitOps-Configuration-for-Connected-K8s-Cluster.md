@@ -184,7 +184,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
    ![](.././media/pods2.png)   
 
-4. Change the CPU request to **120** in line 32 and then scroll down to the bottom and click on **Commit changes** to confirm the changes to the CPU request.
+4. Change the CPU request to **120** in line 32 and click on **Commit changes** to confirm the changes to the CPU request.
 
    ![](.././media/pods3.png)
    
