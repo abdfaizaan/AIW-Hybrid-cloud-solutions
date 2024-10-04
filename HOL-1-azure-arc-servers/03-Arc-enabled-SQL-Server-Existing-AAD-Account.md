@@ -110,7 +110,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 3: Run on-demand SQL Assessment.
 
-1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>**.
+1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**.
 
 1. Then select **Agents** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a Notepad or Notepad++ for later use.
  
@@ -124,7 +124,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu and click on the **+ Add** button to add a new extension.
+1. Click on the **Extension** button from the left side menu.
  
    ![](.././media/hyd22.png "sqlsearch")
     
@@ -132,13 +132,13 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd23.png "sqlsearch")
 
-1. Search and select the **Log Analytics Agent - Azure Arc** extension and click on the **Next** button to continue.
+1. Search and select the **Log Analytics Agent - Azure Arc (1)(2)** extension and click on the **Next ()** button to continue.
  
    ![](.././media/hyd24.png "sqlsearch")    
    
 1. At this step, you must enter the Log Analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
-1. Now, enter the Workspace ID and Key that you copied from the previous step, click on **Review + Create** button.
+1. Now, enter the **Workspace ID (1)** and **Key (2)** that you copied from the previous step, click on **Review + Create (3)** button.
  
    ![](.././media/hyd25.png "sqlsearch")
 
@@ -152,7 +152,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
-1. On Connect to sqlvm box, scroll the bar towards Small to open the VM in the smallest window and then click on the **Connect** button.
+1. On Connect to sqlvm box, scroll the bar towards **Small** to open the VM in the smallest window and then click on the **Connect** button.
 
    ![](.././media/scalsqlvm.png "scalsqlvm")
 
@@ -176,17 +176,17 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/H1E3T3S16.png "H1E3T3S16")
  
-1. Then, Go to **sqlvm** SQL Server - Azure Arc resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
+1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
    
    > **Note**: Skip and continue from **Step 20** if **change license type** option is not available.
    
    ![](.././media/H1E3T3S17.png "H1E3T3S17")
 
-1. Under **SQL Server management details**, select license type as **Paid** and click on **Save**.
+1. Under **SQL Server Configuration**, scroll down and select license type as **License with Software Assurance** and click on **Save**.
 
    ![](.././media/H1E3T3S18.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hyd28.png "H1E3T3S19")
    
