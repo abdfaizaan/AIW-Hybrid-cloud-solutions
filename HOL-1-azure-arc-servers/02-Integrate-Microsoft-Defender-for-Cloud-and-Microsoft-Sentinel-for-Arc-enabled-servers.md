@@ -25,6 +25,10 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/H1-Ex2-task2-02.png)
    
+1. On the **Overview** page, select **Azure subscription.**
+   
+   ![](.././media/hybrid15.png)
+   
 1. Now, select the subscription listed and click on **Install agents**.
    
    > **Note**: If you see that the Install Agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
@@ -41,7 +45,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
 
-   ![](.././media/H1-Ex2-task2-07.png)
+   ![](.././media/hybrid16.png)
 
    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -96,17 +100,15 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
     ![](.././media/microsoft-sentinel-overview.png)
 
-1. Click on the **Content Hub** on the Microsoft Sentinel page, Search and select **Syslog** from the second page of the solution. Click on **Install**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search and select **Syslog (2)(3)** from the second page **(4)** of the solution. Click on **Install (5)**. Wait until it's installed before proceeding to the next step.
 
     ![](.././media/hybridcloud-ex2-t2-1.png)
     
-1. Now, click on the **Workbooks** from the left pane under the **Threat Management** section and search for ```Linux machines``` and select **Linux machines** from the search result.
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save.**
     
     ![](.././media/microsoft-sentinel-workbook.png)
     
-1. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
- 
-    ![](.././media/as-08.png)
+1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
@@ -140,11 +142,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. You can see and run the saved **queries** by browsing to **Queries hub**
    
-    ![](.././media/as-13-v2.png) 
+    ![](.././media/hybrid13.png) 
    
 1. Then, you will find the `VMProcess` query under **Queries hub**, click on **Run** to run the query.
    
-    ![](.././media/as-131-v2.png) 
+    ![](.././media/hybrid14.png) 
 
 ## Summary
  
