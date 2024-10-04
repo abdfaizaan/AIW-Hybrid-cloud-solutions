@@ -85,10 +85,10 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
     ![](.././media/microsoft-sentinel-create.png)
     
-1. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>
-  and then click on the **Add** button.
+1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
+  and then click on the **Add (2)** button.
 
-    ![](.././media/microsoft-sentinel-add.png)
+    ![](.././media/hybrid19.png)
     
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
@@ -98,13 +98,13 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
 1. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
-    ![](.././media/microsoft-sentinel-overview.png)
+    ![](.././media/hybrid20.png)
 
 1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search and select **Syslog (2)(3)** from the second page **(4)** of the solution. Click on **Install (5)**. Wait until it's installed before proceeding to the next step.
 
-    ![](.././media/hybridcloud-ex2-t2-1.png)
+    ![](.././media/hybrid21.png)
     
-1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save.**
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
     ![](.././media/microsoft-sentinel-workbook.png)
     
@@ -112,7 +112,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-    ![](.././media/H1E2T2S9.png)
+    ![](.././media/hybrid25.png)
     
 1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
@@ -130,15 +130,15 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    > **Note**: In the above query, against TimeGenerated,  ago(24h) means "24 hours ago" so this query only returns records from the last 24 hours.
 
-   ![](.././media/as-11.png)   
+   ![](.././media/hybrid24.png)   
     
 1. You can save the query for later use by clicking on the **Save (1)** and then **Save as query (2)** button.
 
-    ![](.././media/hol1ex2stp12.png) 
+    ![](.././media/hybrid22.png) 
    
 1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
-    ![](.././media/as-121-v2.png) 
+    ![](.././media/hybrid23.png) 
 
 1. You can see and run the saved **queries** by browsing to **Queries hub**
    
