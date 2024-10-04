@@ -106,7 +106,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
-    ![](.././media/microsoft-sentinel-workbook.png)
+    ![](.././media/hybrid27.png)
     
 1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
@@ -116,7 +116,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
-    ![](.././media/as-10.png)
+    ![](.././media/hybrid26.png)
     
 1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
@@ -144,9 +144,9 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    
     ![](.././media/hybrid13.png) 
    
-1. Then, you will find the `VMProcess` query under **Queries hub**, click on **Run** to run the query.
+1. Then, you will find the `VMProcess` **(1)** query under **Queries hub**, click on **Run (2)** to run the query.
    
-    ![](.././media/hybrid14.png) 
+    ![](.././media/hybrid28.png) 
 
 ## Summary
  
