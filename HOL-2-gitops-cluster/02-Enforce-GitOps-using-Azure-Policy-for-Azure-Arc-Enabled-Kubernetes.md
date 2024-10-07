@@ -16,11 +16,11 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. From the Azure Portal ```https://portal.azure.com```, navigate to the resource group ```azure-arc``` and click on **microk8s-cluster** resource. 
 
-    ![](.././media/0151.png)
+    ![](.././media/hybrid49.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **Capabilities**, click on **Azure Policy**.
+1. From the **Kuberenetes Azure Arc** blade, click on **Capabilities (1)**, click on **Azure Policy (2)**.
 
-    ![](.././media/HOL2-EX2-T1-P2.png)
+    ![](.././media/hybrid50.png)
     
 1. On the **Policies** blade, click on **Enable extension** to onboard to Azure Policy for Azure Arc-enabled Kubernetes clusters.
 
@@ -34,9 +34,9 @@ In this task, you will select an existing policy definition and create a policy 
 
     ![](.././media/policy-4.png)
 
-1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
+1. On the Basics section, click on the ellipses (…) to the right of **Policy definition (1)**.
 
-    ![](.././media/HOL2-Ex2-T1-S6.png)
+    ![](.././media/hybrid51.png)
 
 1. In the **Search (1)** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
@@ -84,9 +84,9 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. Then, Click on **Next** from the bottom of the page.
    
-1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
+1. Select the **Create a remediation task (1)** check box and then click **Review+create (2)**, skip the Non-compliance messages.
 
-    ![](.././media/hol2ss1.png)
+    ![](.././media/hybrid52.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
