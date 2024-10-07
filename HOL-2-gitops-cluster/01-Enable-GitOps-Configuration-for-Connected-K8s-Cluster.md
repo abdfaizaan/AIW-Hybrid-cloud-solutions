@@ -143,7 +143,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/05.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
+2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/hyd27.png) 
   
