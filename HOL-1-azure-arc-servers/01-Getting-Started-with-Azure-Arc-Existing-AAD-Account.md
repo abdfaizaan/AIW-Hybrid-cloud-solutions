@@ -338,9 +338,9 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hybrid6.png)
 
-1. On the **Remediation** blade, enable the checkbox for **Create Managed identity** and then click on the **Next** button.
+1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/hybrid11.png)
+    ![](.././media/hybrid54.png)
     
 1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed``` **(1)**. This message will be displayed when the Linux machine will be non-compliant. Now, click on the **Review + create (2)**.
 
