@@ -82,23 +82,13 @@ In this exercise, you will be performing the following tasks:
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
-1. You will be asked to authenticate the PowerShell. Open the browser and paste the URL **`https://microsoft.com/devicelogin`(1)**, paste the **code(2)** and then provide credentials as below.
+1. After running the command, you will see that the script started running.
 
-      * Email/Username: <inject key="AzureAdUserEmail"></inject>
-      
-      * Password: <inject key="AzureAdUserPassword"></inject>
-
-         ![](.././media/H1E3T2S5.png "sqlsearch")
-
-1. After authentication, you will see some outputs which show that the script resumes.
-   
-   > **Note**: If the script fails to execute. Please execute/run the script again. 
-
-   ![](.././media/H1E3T2S6.png "sqlsearch")
+   ![](.././media/run.png "sqlsearch")
   
-1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ``SQL Server - Azure Arc extension is successfully installed``
+1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown the image below.
 
-   ![](.././media/H1E3T2S7.png "sqlsearch")
+   ![](.././media/completed.png "sqlsearch")
   
 1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
