@@ -421,6 +421,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
+
+>**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
