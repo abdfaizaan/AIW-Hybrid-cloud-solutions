@@ -42,6 +42,13 @@ In this exercise, you will be performing the following tasks:
 
 1. Now switch back to Windows PowerShell and you will be able to see that you have logged in to Azure.
 
+1. Navigate to **arcadmin** using the below command.
+   
+   ```
+    cd C:\Users\arcadmin 
+   ```  
+    ![](././media/hybrid68.png)
+   
 1. Run the below commands to install the required Azure CLI extensions.
    
    ```
@@ -52,6 +59,7 @@ In this exercise, you will be performing the following tasks:
    ```   
   
     ![](media/install-extensions.png "Lab Environment")
+   
 1. Now run the below command to get the latest version of extensions.
   
    ```
@@ -118,7 +126,17 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     az upgrade
     az extension update --name connectedk8s
     ```
-    ![](.././media/3.png) 
+    ![](.././media/3.png)
+
+     >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
+     >It may take some time, Wait till the installation process get completed.
+     
+     ![](.././media/hybrid57.png)
+   
+     >Click on **Finish** to complete the process.
+     
+    ![](.././media/hybrid58.png)      
+   
    
 1. Azure Arc-enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the command prompt:  
 
