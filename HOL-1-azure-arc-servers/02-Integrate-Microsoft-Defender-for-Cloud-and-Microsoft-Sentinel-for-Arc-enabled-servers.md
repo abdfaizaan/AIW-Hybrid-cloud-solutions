@@ -104,7 +104,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
     ![](.././media/hybrid21.png)
     
-1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template** tab and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
     ![](.././media/hybrid27.png)
     
