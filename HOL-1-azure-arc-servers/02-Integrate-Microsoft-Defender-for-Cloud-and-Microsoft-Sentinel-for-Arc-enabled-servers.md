@@ -23,7 +23,7 @@ You can connect your non-Azure computers in any of the following ways:
    
 1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case, please skip this and the next step.
 
-   ![](.././media/H1-Ex2-task2-02.png)
+   ![](.././media/hybrid55.png)
    
 1. On the **Overview** page, select **Azure subscription.**
    
