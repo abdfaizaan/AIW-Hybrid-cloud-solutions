@@ -184,10 +184,12 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     ![](media/extension-output.png "Lab Environment")
 
 1. To verify the extension installation, switch back to the Azure Portal in the browser search for **Kubernetes - Azure Arc** and select your cluster.
-
-1. Now select **Extension** from the left side menu and check if the Install status is **Installed** or not. If it is not, please refresh after some time and then check.
    
-    ![](media/extension-installed.png "Lab Environment")
+    ![](media/hybrid62.png "Lab Environment")
+   
+1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
+   
+    ![](media/hybrid63.png "Lab Environment")
 
 1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster-ID in the later steps while creating the custom location.
 
@@ -233,7 +235,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      
 1. Explore the overview section. You can see the namespace and Kubernetes cluster details on the overview page.
   
-    ![](./media/cl-2.png "Lab Environment")
+    ![](./media/hybrid64.png "Lab Environment")
 
 1. Now search for the **log analytics workspace** in the Azure portal.
      
@@ -241,7 +243,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
 1. Navigate to **LoganalyticsWS-Direct** workspace.
   
-    ![](./media/select-law.png "Lab Environment")
+    ![](./media/hybrid65.png "Lab Environment")
 
 1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers **(2)** tab, under Log Analytics agent instructions copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
 
@@ -257,9 +259,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
     ![](./media/dc-2.png "Lab Environment")
      
-1. Now, on ```Create Azure Arc data controller``` blade select **Azure Arc-enabled Kubernetes (Direct connectivity mode)**. and click on **Next: Data Controller details**.
+1. Now, on ```Create Azure Arc data controller``` blade select **Azure Arc-enabled Kubernetes (Direct connectivity mode) (1)**. and click on **Next: Data Controller details (2)**.
 
-    ![](./media/dc-3.png "Lab Environment")
+    ![](./media/hybrid66.png "Lab Environment")
    
 1. On the **Data controller details** blade enter the following details:
 
@@ -334,7 +336,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
 1. On the Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
   
-    ![](./media/overview-dc-direct.png "Lab Environment")
+    ![](./media/hybrid67.png "Lab Environment")
 
 ## Task 6: Deploy Azure Arc-enabled SQL Managed Instance using Azure Portal.
 
@@ -440,7 +442,7 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
 
 1. Now we have successfully deployed the Azure Arc-enabled SQL Managed Instance on top of the Directly connected mode Azure Arc data controller, you can explore more on metrics and logs on the same page from the left side menu. Please note that Azure Arc-enabled SQL Managed Instance deployment can take 5 to 10 minutes to change it to ready.
   
-    ![](./media/overview-sqlmi-direct.png "Lab Environment")
+    ![](./media/hybrid69.png "Lab Environment")
 
 ## Task 7: Connecting Azure Arc Data Controller using Azure Data Studio
 
