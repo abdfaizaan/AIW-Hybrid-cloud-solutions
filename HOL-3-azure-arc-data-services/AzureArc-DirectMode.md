@@ -151,8 +151,10 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     ![](media/deploy-pods.png "Lab Environment")
 
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type Azure Arc-enabled Kubernetes resource.
-  
-    ![](media/azurearc-connected.png "Lab Environment")
+
+    ![](media/hybrid59.png "Lab Environment")
+     
+    ![](media/hybrid60.png "Lab Environment")
 
 ## Task 3: Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
@@ -165,6 +167,8 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      ```
      
     The output should be similar to as shown below:**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
+   
+    ![](media/hybrid61.png)   
         
    > **Note**: The Custom Locations feature is dependent on the Cluster Connect feature. So, both features have to be enabled for custom locations to work. Also, az connectedk8s enable features need to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
     
