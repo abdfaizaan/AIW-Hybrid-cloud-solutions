@@ -54,7 +54,9 @@ You can connect your non-Azure computers in any of the following ways:
    - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="98bec6a2-c611-434b-adee-e6227f006309" />
-   
+
+   >**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+
 ## Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
 
 Microsoft Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Microsoft Sentinel. Arc-enabled servers support deploying the Log Analytics agent using the following methods:
