@@ -18,13 +18,13 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/hybrid18.png "searchautoamanage")
 
-3. On Enable Automanage - Azure machine best practices page, select **Azure best practices - Dev / Test** and click on **Next: Machines**.
+3. On Enable Automanage - Azure machine best practices page, select **Azure best practices - Dev / Test (1)** and click on **Next: Machines (2)**.
 
-   ![](.././media/HOL1-EX4-3.png "searchautoamanage")
+   ![](.././media/hybrid45.png "searchautoamanage")
 
-4. In Select machines pane, select the **ubuntu-k8s** Server - Azure Arc and click on **Review + Create**.
+4. In Select machines pane, select the **ubuntu-k8s (1)** Server - Azure Arc and click on **Review + Create (2)**.
 
-   ![](.././media/HOL1-EX4-4.png "searchautoamanage")
+   ![](.././media/hybrid46.png "searchautoamanage")
 
 5. Click on **Create**.
 
