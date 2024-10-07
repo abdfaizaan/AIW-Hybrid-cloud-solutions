@@ -20,11 +20,21 @@ In this exercise, you will be performing the following tasks:
 
 1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
-   ![](.././media/01.png) 
-
-2. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
+   ![](.././media/01.png)
+   
+1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
+   
+   ![](.././media/hybrid47.png)
+   
+1. Then you will recieve an **device verfication code** to you email, enter that code.
+   
+1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
    ![](.././media/02.png)
+   
+1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
+   
+   ![](.././media/hybrid48.png)   
 
 ## Task 2: Deploy App using az k8sconfiguration
 
