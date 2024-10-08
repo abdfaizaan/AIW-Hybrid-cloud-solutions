@@ -23,7 +23,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
   
 1. Click on the **azure-arc** Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
-    ![](/./media/resources-azure-arc-rg.png "Select hyper-v from desktop")
+    ![](.././media/resources-azure-arc-rg.png "Select hyper-v from desktop")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
