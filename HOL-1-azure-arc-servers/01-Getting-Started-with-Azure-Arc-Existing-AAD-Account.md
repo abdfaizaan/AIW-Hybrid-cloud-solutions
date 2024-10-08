@@ -302,7 +302,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v3.png)
     
-1. Select **Machines** from the options on the left side under **Azure Ar resources** of the Azure Arc blade.
+1. Select **Machines** from the options on the left side under **Azure Arc resources** of the Azure Arc blade.
 
     ![](.././media/hybrid2.png)
     
