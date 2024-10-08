@@ -36,21 +36,21 @@ In this exercise, you will be performing the following tasks:
    
 1. On the **Server Details** blade, enter the below details.
  
-   - Subscription: Leave default
+   - Subscription: Leave default **(1)**
 
-   - Resource group: Select **azure-arc** from dropdown list.
+   - Resource group: Select **azure-arc (2)** from dropdown list.
 
-   - Region: Select the same region as the Resource group.
+   - Region: Select the same region as the Resource group. **(3)**
 
-   - Operating Systems: Select **Windows**.
+   - Operating Systems: Select **Windows (4)**.
 
-   - Server Name: Type **sqlvm**
+   - Server Name: Type **sqlvm (5)**
 
-   - License Type: Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid")**.
+   - License Type: Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid") (6)**.
 
-     Now, click on the **Next: Tags** button.
+     Now, click on the **Next: Tags (7)** button.
    
-      ![](.././media/H1E3T1S6.png "sqlsearch")
+      ![](.././media/hybrid41.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
@@ -82,39 +82,35 @@ In this exercise, you will be performing the following tasks:
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
-1. You will be asked to authenticate the PowerShell. Open the browser and paste the URL **`https://microsoft.com/devicelogin`(1)**, paste the **code(2)** and then provide credentials as below.
+1. After running the command, you will see that the script started running.
 
-      * Email/Username: <inject key="AzureAdUserEmail"></inject>
-      
-      * Password: <inject key="AzureAdUserPassword"></inject>
-
-         ![](.././media/H1E3T2S5.png "sqlsearch")
-
-1. After authentication, you will see some outputs which show that the script resumes.
-   
-   > **Note**: If the script fails to execute. Please execute/run the script again. 
-
-   ![](.././media/H1E3T2S6.png "sqlsearch")
+   ![](.././media/run.png "sqlsearch")
   
-1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ``SQL Server - Azure Arc extension is successfully installed``
+1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown the image below.
 
-   ![](.././media/H1E3T2S7.png "sqlsearch")
+   ![](.././media/completed.png "sqlsearch")
   
-1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **Sqlvm** that we just created using the PowerShell script in the previous step.
+1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
-   ![](.././media/hyd17.png "sqlsearch")
+   ![](.././media/hybrid36.png "sqlsearch")
   
-1. Select the **Sqlvm** resource and now you can see the dashboard of **sqlvm** SQL Server -Azure Arc from Azure Portal.
+1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
-   ![](.././media/hyd18.png "H1E3T2S8")
+   ![](.././media/hybrid37.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
 
-1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>**.
+1. Click on the search blade at the top and search for ```Log Analytics workspace```. 
 
-1. Then select **Agents** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a Notepad or Notepad++ for later use.
+   ![](.././media/hybrid38.png "H1E3T2S8")
+   
+1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**.
+   
+   ![](.././media/hybrid39.png "H1E3T2S8")
+   
+1. Then select **Agents (1)** from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
  
-   ![](.././media/H1E3T3S2.png "sqlsearch")
+   ![](.././media/hybrid40.png "sqlsearch")
 
 1. Now, search for **Machines - Azure Arc** from search box and click on **Machines - Azure Arc**.
  
@@ -124,7 +120,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu and click on the **+ Add** button to add a new extension.
+1. Click on the **Extension** button from the left side menu.
  
    ![](.././media/hyd22.png "sqlsearch")
     
@@ -132,13 +128,13 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd23.png "sqlsearch")
 
-1. Search and select the **Log Analytics Agent - Azure Arc** extension and click on the **Next** button to continue.
+1. Search and select the **Log Analytics Agent - Azure Arc (1)(2)** extension and click on the **Next (3)** button to continue.
  
    ![](.././media/hyd24.png "sqlsearch")    
    
 1. At this step, you must enter the Log Analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
-1. Now, enter the Workspace ID and Key that you copied from the previous step, click on **Review + Create** button.
+1. Now, enter the **Workspace ID (1)** and **Key (2)** that you copied from the previous step, click on **Review + Create (3)** button.
  
    ![](.././media/hyd25.png "sqlsearch")
 
@@ -152,7 +148,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
-1. On Connect to sqlvm box, scroll the bar towards Small to open the VM in the smallest window and then click on the **Connect** button.
+1. On Connect to sqlvm box, scroll the bar towards **Small** to open the VM in the smallest window and then click on the **Connect** button.
 
    ![](.././media/scalsqlvm.png "scalsqlvm")
 
@@ -176,19 +172,19 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/H1E3T3S16.png "H1E3T3S16")
  
-1. Then, Go to **sqlvm** SQL Server - Azure Arc resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
+1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
    
    > **Note**: Skip and continue from **Step 20** if **change license type** option is not available.
    
-   ![](.././media/H1E3T3S17.png "H1E3T3S17")
+   ![](.././media/hybrid42.png "H1E3T3S17")
 
-1. Under **SQL Server management details**, select license type as **Paid** and click on **Save**.
+1. Under **SQL Server Configuration**, scroll down and select license type as **License with Software Assurance (1)** and click on **Save (2)**.
 
-   ![](.././media/H1E3T3S18.png "H1E3T3S18")
+   ![](.././media/hybrid43.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
-   ![](.././media/hyd28.png "H1E3T3S19")
+   ![](.././media/hybrid44.png "H1E3T3S19")
    
    > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
    

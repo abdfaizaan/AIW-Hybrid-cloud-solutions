@@ -58,8 +58,8 @@ Welcome to your Hybrid Cloud Solution(Azure Arc) Hands On Lab! We've prepared a 
  
   You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-    ![](.././media/GS14.png "Lab Environment")
-
+   ![](.././media/GS14.png "Lab Environment")
+   
 ### Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.

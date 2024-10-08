@@ -10,21 +10,21 @@ In this exercise, you will be performing the following task:
 
 ## Task 1: Configuring Azure Automanage
 
-1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage** in the search box and select **Automanage - Azure machine best practices**.
+1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage** in the search box and select **Automanage**.
 
-   ![](.././media/hol1-ex4-automanage-1.png "searchautoamanage")
+   ![](.././media/hybrid17.png "searchautoamanage")
    
-2. From the Automanage pane, select **Automanage machines (1)** under Azure machine best practices and click on **+ Enable on existing machine (2)**.
+2. From the Automanage pane, select **Automanage machines (1)** under Machine best practices and click on **+ Enable on existing machine (2)**.
 
-   ![](.././media/hol1-ex4-automanage-3.png "searchautoamanage")
+   ![](.././media/hybrid18.png "searchautoamanage")
 
-3. On Enable Automanage - Azure machine best practices page, select **Azure best practices - Dev / Test** and click on **Next: Machines**.
+3. On Enable Automanage - Azure machine best practices page, select **Azure best practices - Dev / Test (1)** and click on **Next: Machines (2)**.
 
-   ![](.././media/HOL1-EX4-3.png "searchautoamanage")
+   ![](.././media/hybrid45.png "searchautoamanage")
 
-4. In Select machines pane, select the **ubuntu-k8s** Server - Azure Arc and click on **Review + Create**.
+4. In Select machines pane, select the **ubuntu-k8s (1)** Server - Azure Arc and click on **Review + Create (2)**.
 
-   ![](.././media/HOL1-EX4-4.png "searchautoamanage")
+   ![](.././media/hybrid46.png "searchautoamanage")
 
 5. Click on **Create**.
 

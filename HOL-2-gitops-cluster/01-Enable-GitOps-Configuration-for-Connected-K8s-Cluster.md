@@ -20,11 +20,21 @@ In this exercise, you will be performing the following tasks:
 
 1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
-   ![](.././media/01.png) 
-
-2. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
+   ![](.././media/01.png)
+   
+1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
+   
+   ![](.././media/hybrid47.png)
+   
+1. Then you will recieve an **device verfication code** to your email, enter that code.
+   
+1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
    ![](.././media/02.png)
+   
+1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
+   
+   ![](.././media/hybrid48.png)   
 
 ## Task 2: Deploy App using az k8sconfiguration
 
@@ -133,7 +143,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/05.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
+2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/hyd27.png) 
   
@@ -184,7 +194,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
    ![](.././media/pods2.png)   
 
-4. Change the CPU request to **120** in line 32 and then scroll down to the bottom and click on **Commit changes** to confirm the changes to the CPU request.
+4. Change the CPU request to **120** in line 32 and click on **Commit changes** to confirm the changes to the CPU request.
 
    ![](.././media/pods3.png)
    

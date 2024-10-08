@@ -21,9 +21,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
   
-1. Click on the Azure-arc Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
+1. Click on the **azure-arc** Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
-   ![](/./media/resources-azure-arc-rg.png "Select hyper-v from desktop")
+    ![](/./media/resources-azure-arc-rg.png "Select hyper-v from desktop")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -111,6 +111,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y** 
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
      ```
@@ -120,6 +121,8 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 1. Open a new Putty session, re-perform the steps from step 2 to step 4 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
+   
+   > **Note**: If you see any pop-up like **An update package is available, do you want to download it?** click **no**
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
 
@@ -159,7 +162,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
    > Remember, we are using variables declared earlier in step 8. If you have connected with a new putty session, you may have to run steps 4 to 9 again.
      
-   ![](.././media/connected-azure-arc.png "Connected to Arc")
+   ![](.././media/hybrid1.png "Connected to Arc")
 
 1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse TO **azure-arc** resource group
 
@@ -167,13 +170,13 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Then search and verify if **ubuntu-k8s** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
 
-   ![](.././media/hybd5.png "ubuntu k8s onboarded")
+   ![](.././media/hybrid8.png "ubuntu k8s onboarded")
 
 1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the Status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
    
    > **Note**: The operating system and Agent version that you see may not match with the provided screenshot if there were any updates to the Agent/ OS Version.
 
-   ![](.././media/hyd5.png "ubuntu k8s onboard status check")
+   ![](.././media/hybrid29.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
@@ -280,7 +283,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 
 1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
-   ![](.././media/hol1ss3.png "Varify in Azure")
+   ![](.././media/hybrid30.png "Varify in Azure")
 
 1. Azure Arc enabled Kubernetes to deploy a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubuntu-k8s VM:
 
@@ -299,13 +302,13 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v3.png)
     
-1. Select **Machines** from the options on the left side under **Infrastructure** of the Azure Arc blade.
+1. Select **Machines** from the options on the left side under **Azure Ar resources** of the Azure Arc blade.
 
-    ![](.././media/hyd1.png)
+    ![](.././media/hybrid2.png)
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/hyd2.png)
+    ![](.././media/hybrid3.png)
     
 1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
 
@@ -315,38 +318,37 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hyd7.png)
     
-1. In **Assign policy** window, under **Basics** section, select **ellipse(...)**  from **Policy Definitions**.
+1. In **Assign policy** window, under **Basics** section, select **ellipse(...) (1)**  from **Policy Definitions**.
 
-    ![](.././media/HOL1-Ex1-T5-S6.png)
+    ![](.././media/hybrid31.png)
     
-1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Add** button at the bottom.
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux virtual machine sacle sets** and then click on **Add** button at the bottom.
 
     ![](.././media/H1E1T5S7.png)
     
     >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux VMs (1)**. Then move to the **Parameters (2)** blade.
+1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
 
-    ![](.././media/HOL1-Ex1-T5-S8.png)
+    ![](.././media/hybrid10.png)
 
-   > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
+    > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />** from the available list and then click on **Select**.
 
-1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>** from the available list and then click on **Next**.
-
-    ![](.././media/HOL1-Ex1-T5-S9.png)
+    ![](.././media/hybrid6.png)
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/HOL1-Ex1-T5-S10.png)
+    ![](.././media/hybrid54.png)
     
-1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when the Linux machine will be non-compliant. Now, click on the **Review + create**.
+1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed``` **(1)**. This message will be displayed when the Linux machine will be non-compliant. Now, click on the **Review + create (2)**.
 
-    ![](.././media/HOL1-Ex1-T5-S11.png)
+    ![](.././media/hybrid7.png)
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/HOL1-Ex1-T5-S12.png)
+    ![](.././media/hybrid12.png)
     
 1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
@@ -368,23 +370,23 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the **Monitoring configuration** page, click on **Create New** button.
 
-    ![](.././media/hyd10.png)
+    ![](.././media/hybrid32.png)
 
 1. On the Create new rule Enter the following details:
 
-    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false" /> (1)**
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (3)**
     
     - Click on **Create (4)**
 
-        ![](.././media/hyd13.png)
+        ![](.././media/hybrid33.png)
 
 1. Review the configuration, and click on **Configure** button.
 
-    ![](.././media/hyd14.png)
+    ![](.././media/hybrid34.png)
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. The deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
@@ -419,6 +421,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
+
+>**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 

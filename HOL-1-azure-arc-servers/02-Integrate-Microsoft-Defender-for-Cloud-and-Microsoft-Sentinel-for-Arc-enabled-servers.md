@@ -23,7 +23,11 @@ You can connect your non-Azure computers in any of the following ways:
    
 1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case, please skip this and the next step.
 
-   ![](.././media/H1-Ex2-task2-02.png)
+   ![](.././media/hybrid55.png)
+   
+1. On the **Overview** page, select **Azure subscription.**
+   
+   ![](.././media/hybrid15.png)
    
 1. Now, select the subscription listed and click on **Install agents**.
    
@@ -41,7 +45,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
 
-   ![](.././media/H1-Ex2-task2-07.png)
+   ![](.././media/hybrid16.png)
 
    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -50,7 +54,9 @@ You can connect your non-Azure computers in any of the following ways:
    - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="98bec6a2-c611-434b-adee-e6227f006309" />
-   
+
+   >**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+
 ## Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
 
 Microsoft Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Microsoft Sentinel. Arc-enabled servers support deploying the Log Analytics agent using the following methods:
@@ -73,48 +79,46 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
 1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
 
-   ![](.././media/ss1.png)
+    ![](.././media/ss1.png)
     
-2. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
+1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
 
-   > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
+    > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
 
-   ![](.././media/microsoft-sentinel-create.png)
+    ![](.././media/microsoft-sentinel-create.png)
     
-3. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>
-  and then click on the **Add** button.
+1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
+  and then click on the **Add (2)** button.
 
-   ![](.././media/microsoft-sentinel-add.png)
+    ![](.././media/hybrid19.png)
     
-4. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
+1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
-5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
+1. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-   ![](.././media/microsen-success.png)
+    ![](.././media/microsen-success.png)
  
-6. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
+1. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
-   ![](.././media/microsoft-sentinel-overview.png)
+    ![](.././media/hybrid20.png)
 
-7. Click on the **Content Hub** on the Microsoft Sentinel page, Search and select **Syslog** from the second page of the solution. Click on **Install**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search and select **Syslog (2)(3)** from the second page **(4)** of the solution. Click on **Install (5)**. Wait until it's installed before proceeding to the next step.
 
-   ![](.././media/hybridcloud-ex2-t2-1.png)
+    ![](.././media/hybrid21.png)
     
-7. Now, click on the **Workbooks** from the left pane under the **Threat Management** section and search for ```Linux machines``` and select **Linux machines** from the search result.
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template** tab and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
-   ![](.././media/microsoft-sentinel-workbook.png)
+    ![](.././media/hybrid27.png)
     
-8. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
- 
-   ![](.././media/as-08.png)
+1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
-9. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
+1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-   ![](.././media/H1E2T2S9.png)
+    ![](.././media/hybrid25.png)
     
-10. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
-    ![](.././media/as-10.png)
+    ![](.././media/hybrid26.png)
     
 1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
@@ -128,23 +132,23 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    > **Note**: In the above query, against TimeGenerated,  ago(24h) means "24 hours ago" so this query only returns records from the last 24 hours.
 
-   ![](.././media/as-11.png)   
+   ![](.././media/hybrid24.png)   
     
 1. You can save the query for later use by clicking on the **Save (1)** and then **Save as query (2)** button.
 
-    ![](.././media/hol1ex2stp12.png) 
+    ![](.././media/hybrid22.png) 
    
 1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
-    ![](.././media/as-121-v2.png) 
+    ![](.././media/hybrid23.png) 
 
-1. You can see and run the saved **queries** by browsing to **Queries**
+1. You can see and run the saved **queries** by browsing to **Queries hub**
    
-    ![](.././media/as-13-v2.png) 
+    ![](.././media/hybrid13.png) 
    
-1. Then, you will find the `VMProcess` query under **Queries**, click on **Run** to run the query.
+1. Then, you will find the `VMProcess` **(1)** query under **Queries hub**, click on **Run (2)** to run the query.
    
-    ![](.././media/as-131-v2.png) 
+    ![](.././media/hybrid28.png) 
 
 ## Summary
  
