@@ -83,72 +83,72 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
 
-   > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
+      > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
 
-   ![](.././media/microsoft-sentinel-create.png)
+      ![](.././media/microsoft-sentinel-create.png)
     
 1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
   and then click on the **Add (2)** button.
 
-   ![](.././media/hybrid19.png)
+      ![](.././media/hybrid19.png)
     
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
 1. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-   ![](.././media/microsen-success.png)
+      ![](.././media/microsen-success.png)
  
 1. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
-   ![](.././media/hybrid20.png)
+      ![](.././media/hybrid20.png)
 
 1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search and select **Syslog (2)(3)** from the second page **(4)** of the solution. Click on **Install (5)**. Wait until it's installed before proceeding to the next step.
 
-   ![](.././media/hybrid21.png)
+      ![](.././media/hybrid21.png)
     
 1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template** tab and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
-   ![](.././media/hybrid27.png)
+      ![](.././media/hybrid27.png)
     
 1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-   ![](.././media/hybrid25.png)
+      ![](.././media/hybrid25.png)
     
 1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
-   ![](.././media/hybrid26.png)
+      ![](.././media/hybrid26.png)
     
 1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
-   > **Note**: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back later to this task to re-execute the query and filter the data.
+      > **Note**: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back later to this task to re-execute the query and filter the data.
 
-   ```
-   VMProcess 
-   | where TimeGenerated > ago(24h) 
-   | limit 10
-   ```
+      ```
+      VMProcess 
+      | where TimeGenerated > ago(24h) 
+      | limit 10
+      ```
+   
+      > **Note**: In the above query, against TimeGenerated,  ago(24h) means "24 hours ago" so this query only returns records from the last 24 hours.
 
-   > **Note**: In the above query, against TimeGenerated,  ago(24h) means "24 hours ago" so this query only returns records from the last 24 hours.
-
-   ![](.././media/hybrid24.png)   
+      ![](.././media/hybrid24.png)   
     
 1. You can save the query for later use by clicking on the **Save (1)** and then **Save as query (2)** button.
 
-   ![](.././media/hybrid22.png) 
+      ![](.././media/hybrid22.png) 
    
 1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
-   ![](.././media/hybrid23.png) 
+      ![](.././media/hybrid23.png) 
 
 1. You can see and run the saved **queries** by browsing to **Queries hub**
    
-   ![](.././media/hybrid13.png) 
+      ![](.././media/hybrid13.png) 
    
 1. Then, you will find the `VMProcess` **(1)** query under **Queries hub**, click on **Run (2)** to run the query.
    
-   ![](.././media/hybrid28.png) 
+      ![](.././media/hybrid28.png) 
 
 ## Summary
  
