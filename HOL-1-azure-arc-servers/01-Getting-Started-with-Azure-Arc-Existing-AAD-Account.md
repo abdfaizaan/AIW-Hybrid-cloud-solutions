@@ -23,7 +23,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
   
 1. Click on the **azure-arc** Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
-    ![](/./media/resources-azure-arc-rg.png "Select hyper-v from desktop")
+    ![](.././media/resources-azure-arc-rg.png "Select hyper-v from desktop")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -302,7 +302,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v3.png)
     
-1. Select **Machines** from the options on the left side under **Azure Ar resources** of the Azure Arc blade.
+1. Select **Machines** from the options on the left side under **Azure Arc resources** of the Azure Arc blade.
 
     ![](.././media/hybrid2.png)
     
@@ -374,11 +374,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the Create new rule Enter the following details:
 
-    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false" /> (1)**
+    - Data collection rule name: Enter **data-<inject key="DeploymentID/Suffix" /> (1)**
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (3)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (3)**
     
     - Click on **Create (4)**
 
