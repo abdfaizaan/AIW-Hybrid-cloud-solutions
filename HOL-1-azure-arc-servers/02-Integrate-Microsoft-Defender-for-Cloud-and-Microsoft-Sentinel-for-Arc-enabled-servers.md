@@ -79,7 +79,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
 
-   ![](.././media/ss1.png)
+      ![](.././media/ss1.png)
     
 1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
 
