@@ -20,7 +20,7 @@ In this exercise, you will be performing the following task:
 
 3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" /> (2)** from the dropdown and click on **Configure (3)**.
 
-   ![](.././media/hyd31.png "azuremonitor")
+   ![](.././media/hybrid73.png "azuremonitor")
 
 4. You will be able to see the insights data after 30-60 minutes. For now, you can continue with the next HOL and come back later to review the insights.
 
