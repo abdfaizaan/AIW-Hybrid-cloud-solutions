@@ -50,39 +50,39 @@ In this task, you will select an existing policy definition and create a policy 
     
       ![](.././media/HOL2-Ex2-T1-S9.1.png)
       
-    - Configuration resource name: **cluster-config**
+    - Configuration resource name: **cluster-config (1)**
 
       ```bash
       cluster-config
       ```
-    - Operator instance name: **cluster-config**
+    - Operator instance name: **cluster-config (2)**
 
       ```bash
       cluster-config
       ```
-    - Operator namespace: **cluster-config**
+    - Operator namespace: **cluster-config (3)**
 
       ```
       cluster-config
       ```
-    - Operator scope: **cluster**
+    - Operator scope: **cluster (4)**
 
-    - Operator type: **Flux**
+    - Operator type: **Flux (5)**
 
-    - Operator Parameters: **--git-readonly**
+    - Operator Parameters: **--git-readonly (6)**
 
       ```
       --git-readonly
       ```
-    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab.
+    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab.
 
-    - Set the **Enable helm** option to **false**.
+    - Set the **Enable helm** option to **false (8)**.
 
-    - **Leave the other options set to default**
+    - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
      
-      ![](.././media/HOL2-Ex2-T1-S9.2.png)
+      ![](.././media/hybrid72.png)
 
-1. Then, Click on **Next** from the bottom of the page.
+
    
 1. Select the **Create a remediation task (1)** check box and then click **Review+create (2)**, skip the Non-compliance messages.
 
