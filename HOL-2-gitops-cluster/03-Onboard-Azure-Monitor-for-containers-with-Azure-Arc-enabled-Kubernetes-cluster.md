@@ -18,7 +18,7 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/hyd30.png "azuremonitor")
 
-3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" /> (2)** from the dropdown and click on **Configure (3)**.
+3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID/Suffix" /> (2)** from the dropdown and click on **Configure (3)**.
 
    ![](.././media/hybrid73.png "azuremonitor")
 
