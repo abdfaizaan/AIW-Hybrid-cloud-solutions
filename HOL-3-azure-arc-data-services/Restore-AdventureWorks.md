@@ -77,11 +77,11 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 1. In the **Log Analytics workspaces** page, select **LoganalyticsWS-Direct** workspace.
    
-    ![](media/select-law.png "Confirm")
+    ![](media/hybrid65.png "Confirm")
 
-1. Then, from the left navigation menu under **General** select **Logs** **(1)** and on the Queries tab, click on the ```X``` **(2)** at the top right corner as shown in the below image.
+1. Then, from the left navigation menu select **Logs** **(1)** and on the Queries tab, click on the ```X``` **(2)** at the top right corner as shown in the below image.
 
-   ![](media/logaw-1.png "Confirm")
+   ![](media/hybrid71.png "Confirm")
    
 1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
 
