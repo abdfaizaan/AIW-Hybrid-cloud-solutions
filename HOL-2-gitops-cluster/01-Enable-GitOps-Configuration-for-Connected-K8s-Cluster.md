@@ -26,7 +26,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid47.png)
    
-1. Then you will recieve an **device verfication code** to you email, enter that code.
+1. Then you will recieve an **device verfication code** to your email, enter that code.
    
 1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
