@@ -127,7 +127,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     
     - **Confirm Password**: Enter **Password.1!! (5)**    
 
-      ![](images/sqlcnctsetting.png "Confirm")
+      ![](images/hybrid74.png "Confirm")
       
    **Under SQL Instance Settings**
    
@@ -259,7 +259,9 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    ```BASH
    echo %SPN_AUTHORITY%
    ```
-       
+   
+   ![](images/hybrid75.png "Confirm")
+   
 1. If the variables are not defined, set it now using the below commands.
    
    ```
@@ -309,9 +311,9 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
     ![](media/arcsqlindirportl.png "Confirm")
       
-1. Now you will see some basic information about the Azure Arc-enabled SQL Managed Instance.
+1. Now you will see some basic information about the **Azure Arc-enabled SQL Managed Instance**.
       
-    ![](media/arcindirsdjsd.png "Confirm")
+    ![](images/hybrid76.png "Confirm")
    
 1. Now to view your logs in the Azure portal, open the Azure portal and then search for your log analytics workspace by name in the search bar at the top and then select it.
 
@@ -319,11 +321,9 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    
     ![](images/logarc.png "Confirm")
 
-1. Then, from the left navigation menu under **General** select **Logs**
+1. Then, from the left navigation menu select **Logs (1)** then click on the ``X`` **(2)** at the top right corner as shown in the below image.
 
-1. Now on your page that opens up, click on the ``X``  at the top right corner as shown in the below image.
-
-    ![](images/ex4-t6-closepopup-log.png "Confirm")
+    ![](images/hybrid77.png "Confirm")
    
 1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
 
