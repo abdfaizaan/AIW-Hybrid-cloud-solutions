@@ -91,9 +91,9 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
      
     ![](media/logaw-3.png "Confirm")
 
-1. Once the Custom logs are available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
+1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)**.
    
-    ![](media/logaw-4.png "Confirm")
+    ![](media/hybrid79.png "Confirm")
 
 1. Hover the cursor on the table name and select the **Use in editor** button.
    
