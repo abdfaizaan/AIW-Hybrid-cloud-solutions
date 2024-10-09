@@ -470,6 +470,11 @@ Now let us connect to the data controller using Azure Data Studio.
      ```  
         ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
+        >**Note:** If you see any error message in **Cluster Context**, open the **command prompt** and run the below command.
+        ```BASH
+        Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name Arc-Data-Demo-DirectMode -Force
+        ```
+
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
     ![](./media/ads-direct-list.png "Azure Data Studio")
