@@ -331,9 +331,9 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
 1. Then, check if CustomLogs is there under the Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
      
-1. Once the Custom logs are available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
+1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)**.
    
-    ![](media/HOL3-EX3-T5-P15.png "Confirm")
+    ![](media/hybrid78.png "Confirm")
 
 1. Hover the cursor on the table name and select the **Use in editor** button.
    
