@@ -97,7 +97,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 1. Hover the cursor on the table name and select the **Use in editor** button.
    
-    ![](media/logaw-5.png "Confirm")
+    ![](media/hybrid80.png "Confirm")
 
 1. Now, you will have a query in the query editor. Run the query that will show the logs by clicking on **Run** **(1)** button and explore the **Results** **(2)**. 
    
