@@ -75,7 +75,7 @@ In this exercise, you will be performing the following tasks:
    ```
    az version
    ```     
-    ![](media/version-check.png "Lab Environment")
+    ![](media/hybrid81.png "Lab Environment")
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
