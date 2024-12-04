@@ -87,7 +87,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/microsoft-sentinel-create.png)
     
-1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (1)**
+1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)**
   and then click on the **Add (2)** button.
 
       ![](.././media/hybrid19.png)

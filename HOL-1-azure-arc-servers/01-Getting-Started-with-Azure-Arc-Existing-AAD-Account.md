@@ -39,7 +39,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
-1. Then, you need to Select **ARCHOST- <inject key="DeploymentID" enableCopy="false"/>** to connect with the Local Hyper-V server.
+1. Then, you need to Select **ARCHOST-<inject key="DeploymentID/Suffix" />** to connect with the Local Hyper-V server.
 
     ![](.././media/hyd4.png "ARCHOST Server")
 
@@ -334,7 +334,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>** from the available list and then click on **Select**.
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Select**.
 
     ![](.././media/hybrid6.png)
 
