@@ -104,7 +104,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid38.png "H1E3T2S8")
    
-1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**.
+1. Select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
    
    ![](.././media/hybrid39.png "H1E3T2S8")
    
@@ -182,7 +182,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid43.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    
