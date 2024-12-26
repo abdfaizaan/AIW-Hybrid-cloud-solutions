@@ -59,7 +59,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. This VM also has the Kubernetes cluster that we will use in the subsequent labs. So, here we will onboard the ubuntu-k8s VM to Azure Arc
 
-1. From the start menu of the ARCHOST VM, search for **putty** and open it.
+1. From the start menu of the ARCHOST VM (Lab-VM), search for **putty** and open it.
 
     ![](.././media/startputty.png "Search Putty")
      
@@ -97,7 +97,9 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
         ![](.././media/root-login.png "Root Login")
     
- 1. Run the below commands to upgrade the az packages and az module. 
+ 1. Run the below commands to upgrade the az packages and az module.
+
+    >**NOTE:** Copy the commands below, paste them into a notepad, and execute each one individually.
    
      ```
      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
@@ -111,7 +113,8 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
-    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y** 
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**.
+    
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
      ```
