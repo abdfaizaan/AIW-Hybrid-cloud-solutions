@@ -69,6 +69,12 @@ In this exercise, you will be performing the following tasks:
    az extension update --name customlocation
    az extension update --name arcdata 
    ```
+   > Note: If you encounter the below error as shown in the image, please run the following command to upgrade the az cli and complete the installation process. 
+   
+   ```
+   az upgrade
+   ``` 
+    ![](media/E8T1S9-note-2712.png)
    
 1. You can validate that you have all the required extensions with the latest versions by running the below command:
    
@@ -289,7 +295,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
    Under the Metrics and Logs Dashboard Credentials enter the below details.
 
-   * Data controller login: **arcuser (3)**
+   * Data controller Username: **arcuser (3)**
 
    * Password: **Password.1!! (4)**
 
@@ -470,9 +476,14 @@ Now let us connect to the data controller using Azure Data Studio.
      ```  
         ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
-        >**Note:** If you see any error message in **Cluster Context**, open the **command prompt** and run the below command.
+        >**Note:** If you see any error message: **Error loading cluster context** in **Cluster Context**, open the **command prompt** and run the below command.
         ```BASH
-        Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name Arc-Data-Demo-DirectMode -Force
+        az login
+        ```
+        Login to azure using the environment credentials, then execute the below command. 
+
+        ```BASH
+        az aks get-credentials --resource-group azure-arc --name Arc-Data-Demo-DirectModee
         ```
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
