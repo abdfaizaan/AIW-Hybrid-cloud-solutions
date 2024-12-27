@@ -23,7 +23,8 @@ In this task, you will select an existing policy definition and create a policy 
     ![](.././media/hybrid50.png)
     
 1. On the **Policies** blade, click on **Enable extension** to onboard to Azure Policy for Azure Arc-enabled Kubernetes clusters.
-
+    > **Note:** It can about 5 minutes for the extension to enable.
+    
      ![](.././media/HOL2-Ex2-T1-S3.png)
      
 1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
@@ -75,7 +76,7 @@ In this task, you will select an existing policy definition and create a policy 
       --git-readonly
       ```
     - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab.
-
+        > **Note:** Your URL of the forked repo should look like this _https://github.com/your-github-username/Azure/arc-k8s-demo_
     - Set the **Enable helm** option to **false (8)**.
 
     - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
