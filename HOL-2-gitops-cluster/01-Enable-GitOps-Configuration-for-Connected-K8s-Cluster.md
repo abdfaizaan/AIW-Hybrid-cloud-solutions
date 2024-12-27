@@ -30,7 +30,7 @@ In this exercise, you will be performing the following tasks:
    
 1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
-   ![](.././media/02.png)
+   ![](.././media/fork-the-repo-2712.png)
    
 1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
    
