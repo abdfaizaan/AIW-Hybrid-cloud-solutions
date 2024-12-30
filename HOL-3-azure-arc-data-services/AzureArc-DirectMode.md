@@ -48,6 +48,21 @@ In this exercise, you will be performing the following tasks:
     cd C:\Users\arcadmin 
    ```  
     ![](././media/hybrid68.png)
+
+1. Run the below command to upgrade the `az` extension.
+
+   ```
+   az upgrade
+   ```
+   
+   >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
+   >It may take some time, Wait till the installation process get completed.
+     
+   ![](.././media/hybrid57.png)
+   
+   >Click on **Finish** to complete the process.
+     
+   ![](.././media/hybrid58.png)    
    
 1. Run the below commands to install the required Azure CLI extensions.
    
@@ -448,6 +463,14 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
 
 Now let us connect to the data controller using Azure Data Studio.
 
+1. Let us download the latest Windows 64-bit Python version by running the below commands in Windows PowerShell (run as administrator).
+
+   ```
+   choco install wget
+   wget https://www.python.org/ftp/python/3.13.1/python-3.13.1-amd64.exe -OutFile "C:\path\to\save\python-3.13.1-amd64.exe"
+   ```
+   >**Note:** You can also download the file manually by navigating to the official website - https://www.python.org/downloads/ 
+
 1. Open **Azure Data studio** **(1)** from the desktop shortcut, select **Connections** **(2)** and click on **Connect to Existing Azure Arc Controller** **(3)**.
   
     ![](./images/15-05-2024(2).png "Azure Data Studio")
@@ -470,20 +493,32 @@ Now let us connect to the data controller using Azure Data Studio.
      ```  
         ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
-        >**Note:** If you see any error message in **Cluster Context**, open the **command prompt** and run the below command.
+        >**Note:** If you see any error message in **Cluster Context**, open the **Powershell** and run the below command.
         ```BASH
         Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name Arc-Data-Demo-DirectMode -Force
         ```
+        >**Note:** If you still see any error with regards to parsing of the **conifg** file, navigate to the **config** file and remove the three dots **...** from the file and save the file.
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
     ![](./media/ads-direct-list.png "Azure Data Studio")
+
+    >**Note:** If you face an error while connecting to the Azure Arc Data Controller, then run the following commands in Windows Powershell.
+    ```
+    az extension remove --name arcdata
+    ```
+    ```
+    az extension add --name arcdata
+    ```
+    ```
+    pip install regex
+    ```
     
-4. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
+5. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
   
     ![](./media/ads-direct-manage.png "Azure Data Studio")
 
-5. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller
+6. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller
 
    - Name of the Arc Data Controller
 
@@ -539,7 +574,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
    - **Connection type** : Select **Microsoft SQL Server (1)**
    
-   - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(2)**
+   - **Server**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(2)**
 
      >**Note**: Make sure you have entered **IP Address** with **port number**.
    
@@ -570,7 +605,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
  
 - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="9864336d-56ad-4653-9737-e6f3ab34de18" />
 
