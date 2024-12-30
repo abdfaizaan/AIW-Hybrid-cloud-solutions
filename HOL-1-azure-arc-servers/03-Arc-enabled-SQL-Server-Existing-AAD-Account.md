@@ -93,6 +93,38 @@ In this exercise, you will be performing the following tasks:
 1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/hybrid36.png "sqlsearch")
+
+   >**NOTE:** After sometime, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Pricipal Details** tab.
+
+   ```
+   $block = {
+   #Import Environment Credentials
+   CD C:\LabFiles
+   $AppID = "<Application ID>"
+   $AppSecret = "<Secret Key>"
+   $TenantID = "<Tenant ID (Directory ID)>"
+   $SubscriptionId = "<Subscription ID>"
+   $ResourseGroup = "azure-arc"
+   $location = "<Resource group Region>"
+   $passwd = ConvertTo-SecureString $AppSecret -AsPlainText -Force
+   $pscredential = New-Object System.Management.Automation.PSCredential($AppID, $passwd)
+   #Login to Azure
+   Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
+   #Set ExecutionPolicy to Bypass so script can be executed from the terminal
+   Set-ExecutionPolicy Bypass -Scope Process -Force
+   #Run RegisterSqlServerArc.ps1 script to Register SQL VM Server and SQL Server on Azure Arc
+   & '.\RegisterSqlServerArc.ps1'
+
+   }
+   $ap = "demo@pass123"
+   $cred = New-Object -ArgumentList "Administrator",(ConvertTo-SecureString -AsPlainText -Force -String $ap) -TypeName 
+   System.Management.Automation.PSCredential
+
+   # Install ARC agent
+   set-item wsman:\localhost\Client\TrustedHosts -value 192.168.0.4 -Force
+   Invoke-Command -ComputerName 192.168.0.4 -Credential $cred -ScriptBlock $block
+   ```
+
   
 1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
@@ -198,7 +230,7 @@ In this exercise, you will be performing the following tasks:
  
    - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="e9c36253-2523-4964-9996-0b518f38ee52" />
 
