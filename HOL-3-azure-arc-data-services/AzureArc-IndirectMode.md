@@ -201,7 +201,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
 
     - **Connection type** : Select **Microsoft SQL Server** **(1)**
    
-    - **Sever**: Paste the external endpoint value of SQL Managed Instance which you copied earlier **(2)**
+    - **Server**: Paste the external endpoint value of SQL Managed Instance which you copied earlier **(2)**
 
       >**Note**: Make sure you have entered **IP Address** with **port number**.
    
