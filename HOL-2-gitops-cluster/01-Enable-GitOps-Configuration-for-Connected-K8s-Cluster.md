@@ -1,3 +1,4 @@
+# Hands-on Lab 02
 # Exercise 5: Enable GitOps Configuration on connected K8s Cluster
 ### Estimated Duration: 60 Minutes
 In addition to managing and monitoring their Kubernetes clusters, Contoso’s central development teams are building applications for internal inventory management at their distribution sites. They need these applications to be containerized and run on Kubernetes clusters. The locations are spread across the country and Contoso is faced with the challenge of how to uniformly deploy, configure and manage their containerized applications across all these locations. By leveraging GitOps on Azure Arc-enabled Kubernetes, Contoso can centrally declare their Kubernetes configurations and applications in a Git repository and deploy them to all clusters simultaneously. Developers are more empowered because they can commit changes directly in the Git repo and these updates are also automatically rolled out to all the clusters.
@@ -236,4 +237,4 @@ After config-agent has installed the flux instance, resources held in the git re
 
 In this exercise, you deployed a sample Kubernetes app using the az k8sconfiguration command and GitOps. You then updated the linked repository configuration and verified that the connected Kubernetes cluster applied the updates automatically based on the changes made.
 
-### You have successfully completed the lab.
+### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
