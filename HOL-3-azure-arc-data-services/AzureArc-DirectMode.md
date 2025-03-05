@@ -1,6 +1,6 @@
 # Hands-on Lab 03
 # Exercise 7: Deploying Azure Arc Data Controller with direct connectivity mode 
-### Estimated Duration: 40 Minutes  
+### Estimated Duration: 30 Minutes  
 
 In this exercise, you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI.
 
