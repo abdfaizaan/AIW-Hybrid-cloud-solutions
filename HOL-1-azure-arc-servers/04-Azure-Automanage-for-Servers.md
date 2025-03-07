@@ -10,9 +10,9 @@ In this exercise, you will be performing the following task:
 
 ## Task 1: Configuring Azure Automanage
 
-1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage** in the search box and select **Automanage**.
+1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage (1)** in the search box and select **Automanage (2)**.
 
-   ![](.././media/hybrid17.png "searchautoamanage")
+   ![](.././media/arc27.png "searchautoamanage")
    
 2. From the Automanage pane, select **Automanage machines (1)** under Machine best practices and click on **+ Enable on existing machine (2)**.
 
@@ -30,7 +30,7 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/HOL1-EX4-5.png "searchautoamanage")
 
-6. Once the Configuration profile assignment is completed successfully it will take around 20-30 minutes to get the Status as Conformant.
+6. Once the Configuration profile assignment is completed successfully it will take around `20-30 minutes` to get the Status as Conformant.
 
    ![](.././media/hol1-ex4-automanage-7new.png "searchautoamanage")
 
