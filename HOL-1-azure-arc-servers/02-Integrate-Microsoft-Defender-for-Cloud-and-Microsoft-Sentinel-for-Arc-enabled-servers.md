@@ -21,10 +21,6 @@ You can connect your non-Azure computers in any of the following ways:
     
    ![](.././media/arc15.png)
    
-1. `From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case, please skip this and the next step.`
-
-   ![](.././media/hybrid55.png)
-
 1. From the **Overview (1)** page, click on **Enable Defender plans (2)** under Workload protection.   
 
    ![](.././media/arc16.png)
@@ -112,9 +108,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
 
-      ![](.././media/hybrid21.png)
-
-      ![](.././media/arc18.png)      
+      ![](.././media/arc29.png)      
     
 1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template (2)** tab and search for ```Linux machines``` **(3)** then select **Linux machines (4)** from the search result and then click on **Save (5).**
     

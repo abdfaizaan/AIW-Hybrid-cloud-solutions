@@ -240,7 +240,7 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      microk8s start
      ```
      
-   >**Note**: In case you see any error,  Open a new Putty session, re-perform the steps from step 2 to step 4 of the same task 2, run the below command to refresh the certificates and then again run the `microk8s.status` command.
+   >**Note**: In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
 
    ```
    microk8s refresh-certs
@@ -262,6 +262,12 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
    ![](.././media/arc8.png "kube") 
 
+1. Run the following command to log in to the azure portal again.   
+
+   ```
+   az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
+   ```
+
 1. Now, you will Connect the **Kubernetes cluster to Azure Arc** by executing the below command. This command will take a few minutes to onboard the Kubernetes cluster to Azure Arc.
 
    ```
@@ -269,13 +275,9 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ```
     
    ![](.././media/arc9.png "Connect Kubernetes")
-   
-   > **Note**: While running the above command, if you face an error stating **Could not retrieve credential from local cache**, run the following command to log in to the azure portal again.
 
-   ```
-   az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
-   ```
-   
+   > **Note**: This may take some time to complete, please wait untill it is completed.   
+  
 1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
@@ -363,7 +365,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hybrid12.png)
     
-1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
+1. Now, once the policy assignment is created, click on **Refresh**, to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 
     ![](.././media/arc13.png) 
 
@@ -423,13 +425,17 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.
 
+1. Click on **Logs (1)** from the left navigation pane, then again click on **Insights (2)** again then refresh the page.
+
+    ![](.././media/arc30.png)
+
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
     ![](.././media/hyd16.png)
     
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties from the right. If there will be any **Alerts** you can check it by clicking on **Alerts** on the right side 👉.
 
-    ![](.././media/HOL1-EX1-T6-P8.png)
+    ![](.././media/arc31.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  

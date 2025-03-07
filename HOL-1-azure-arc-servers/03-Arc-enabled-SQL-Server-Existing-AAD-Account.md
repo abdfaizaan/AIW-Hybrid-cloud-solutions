@@ -160,7 +160,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd23.png "sqlsearch")
 
-1. Search and select the **Log Analytics Agent - Azure Arc (1)(2)** extension and click on the **Next (3)** button to continue.
+1. Search for **Log Analytics Agent - Azure Arc (1)** extension press **Enter**, then select the **Log Analytics Agent - Azure Arc (2)** and click on the **Next (3)** button to continue.
  
    ![](.././media/hyd24.png "sqlsearch")    
    
@@ -218,7 +218,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc26.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    
