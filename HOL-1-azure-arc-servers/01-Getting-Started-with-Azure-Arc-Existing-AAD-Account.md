@@ -119,7 +119,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
-    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**.
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade please wait untill it is completed.
     
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
