@@ -45,11 +45,11 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    ```
    ![](media/newcp.png "Confirm")
 
-1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and right click on the Connection of your connected SQL Managed Instance Server and click on **New Query**.
+1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and **right click on the Connection of your connected SQL Managed Instance Server (1)** and click on **New Query (2)**.
 
-   ![](media/newq.png "Confirm")
+   ![](media/arc54.png "Confirm")
 
-1. Once the query window is open, paste the below query and execute it to restore the copied database to Azure Arc-enable SQL Managed instance 
+1. Once the query window is open, paste the below query **(1)** and click on **Run (2)** to execute it to restore the copied database to Azure Arc-enable SQL Managed instance 
 
    ```BASH
    RESTORE DATABASE AdventureWorks2012 FROM DISK = '/var/opt/mssql/data/AdventureWorks2012.bak'
@@ -59,15 +59,15 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    GO
    ```
 
-   ![](media/restoreddd.png "Confirm")
+   ![](media/arc55.png "Confirm")
 
-1. Then, right-click on the **arcsql-direct** SQL Managed Instance Server under the CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
+1. Then, right-click on the **arcsql-direct (1)** SQL Managed Instance Server under the CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh (2)**.
 
-   ![](media/restore-direct-4.png "Confirm")
+   ![](media/arc56.png "Confirm")
 
-1. Now expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that the **AdventureWorks2012** database is listed there.
+1. Now expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand **Databases** and verify that the **AdventureWorks2012** database is listed there.
 
-   ![](media/2012.png "Confirm")
+   ![](media/arc57.png "Confirm")
 
 ## Task 2: View Azure Arc Arc-enabled SQL-managed instance logs in Azure Portal
 
@@ -91,13 +91,13 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
      
     ![](media/logaw-3.png "Confirm")
 
-1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)**.
+1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)** select it.
    
     ![](media/hybrid79.png "Confirm")
 
-1. Hover the cursor on the table name and select the **Use in editor** button.
-   
-    ![](media/hybrid80.png "Confirm")
+1. Set the mode to **KQL mode** 
+
+    ![](media/arc59.png "Confirm")
 
 1. Now, you will have a query in the query editor. Run the query that will show the logs by clicking on **Run** **(1)** button and explore the **Results** **(2)**. 
    
@@ -109,9 +109,9 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 Now let us Monitor the SQL MI status using Grafana and Kibana.
   
-1. Navigate back to **Azure Data Studio** and click on the arrow next to **arcdc-direct** under the Azure Arc controller. Then right-click on the **arcsql-direct** and click on **Manage**.
+1. Navigate back to **Azure Data Studio** and click on the arrow next to **arcdc-direct** under the Azure Arc controller. Then right-click on the **arcsql-direct (1)** and click on **Manage (2)**.
 
-   ![](media/restore-direct-6.png "Confirm")
+   ![](media/arc60.png "Confirm")
   
 1. From the SQL-managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
 

@@ -82,6 +82,8 @@ In this exercise, you will be performing the following tasks:
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
+   > **Note:** Make sure that the **sqlvm** is in running state on **Hyper-V**.
+
 1. After running the command, you will see that the script started running.
 
    ![](.././media/run.png "sqlsearch")
@@ -98,34 +100,43 @@ In this exercise, you will be performing the following tasks:
 
    ```
    $block = {
-   #Import Environment Credentials
-   CD C:\LabFiles
-   $AppID = "<Application ID>"
-   $AppSecret = "<Secret Key>"
-   $TenantID = "<Tenant ID (Directory ID)>"
-   $SubscriptionId = "<Subscription ID>"
-   $ResourseGroup = "azure-arc"
-   $location = "<Resource group Region>"
-   $passwd = ConvertTo-SecureString $AppSecret -AsPlainText -Force
-   $pscredential = New-Object System.Management.Automation.PSCredential($AppID, $passwd)
-   #Login to Azure
-   Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
-   #Set ExecutionPolicy to Bypass so script can be executed from the terminal
-   Set-ExecutionPolicy Bypass -Scope Process -Force
-   #Run RegisterSqlServerArc.ps1 script to Register SQL VM Server and SQL Server on Azure Arc
-   & '.\RegisterSqlServerArc.ps1'
+      # Import Environment Credentials
+      CD C:\LabFiles
+      $AppID = "<Application ID>"
+      $AppSecret = "<Secret Key>"
+      $TenantID = "<Tenant ID (Directory ID)>"  
+      $SubscriptionId = "<Subscription ID>"
+      $ResourseGroup = "azure-arc"
+      $location = "<Resource group Region>"
 
+      # Convert secret key to a secure string
+      $passwd = ConvertTo-SecureString -AsPlainText -Force -String $AppSecret
+      $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $AppID, $passwd
+
+      # Login to Azure using Service Principal
+      Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $TenantID
+
+      # Set Execution Policy to allow script execution
+      Set-ExecutionPolicy Bypass -Scope Process -Force
+
+      # Run RegisterSqlServerArc.ps1 script to register SQL VM Server and SQL Server on Azure Arc
+      & '.\RegisterSqlServerArc.ps1'
    }
-   $ap = "demo@pass123"
-   $cred = New-Object -ArgumentList "Administrator",(ConvertTo-SecureString -AsPlainText -Force -String $ap) -TypeName 
-   System.Management.Automation.PSCredential
 
-   # Install ARC agent
-   set-item wsman:\localhost\Client\TrustedHosts -value 192.168.0.4 -Force
+   # Administrator password (should be securely handled)
+   $ap = "demo@pass123"
+
+   # Create credential object for remote authentication (Fixed -TypeName placement)
+   $securePassword = ConvertTo-SecureString -AsPlainText -Force -String $ap
+   $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "Administrator", $securePassword
+
+   # Install Azure Arc Agent - Allow remote connection to the trusted host
+   Set-Item wsman:\localhost\Client\TrustedHosts -Value 192.168.0.4 -Force
+
+   # Execute the script block on the remote machine
    Invoke-Command -ComputerName 192.168.0.4 -Credential $cred -ScriptBlock $block
    ```
-
-  
+ 
 1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
    ![](.././media/hybrid37.png "H1E3T2S8")
