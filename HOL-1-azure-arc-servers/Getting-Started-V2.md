@@ -58,7 +58,13 @@ Welcome to your Hybrid Cloud Solution(Azure Arc) Hands On Lab! We've prepared a 
  
   You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-   ![](.././media/GS14.png "Lab Environment")
+   ![](.././media/arcg1.png "Lab Environment")
+
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.   
+
+   ![](.././media/arcg1.png "Zoom in/out")
    
 ### Virtual Machine & Lab Guide
  
@@ -66,21 +72,21 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 ## Exploring Your Lab Resources
  
-To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-   ![](.././media/15-05-2024.png)
+   ![](.././media/arcg3.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-   ![](.././media/GS8.png)
+   ![](.././media/arcg4.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-  ![](.././media/15-05-2024(1).png)
+  ![](.././media/arcg5.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -127,6 +133,6 @@ Now you're all set to explore the powerful world of technology. Feel free to rea
 
 Now, click on **Next** from the lower right corner to move on to the next page.
 
-![](.././media/lab-next.png)
+![](.././media/arcg6.png)
 
 ### Happy Learning!!
