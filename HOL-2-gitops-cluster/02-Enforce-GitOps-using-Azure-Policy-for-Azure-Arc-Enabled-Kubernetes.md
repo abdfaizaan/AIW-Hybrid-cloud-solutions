@@ -38,9 +38,9 @@ In this task, you will select an existing policy definition and create a policy 
 
     ![](.././media/hybrid51.png)
 
-1. In the **Search (1)** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
+1. In the **Search (1)** window for available definitions, type ```Configure Kubernetes clusters with specified GitOps configuration using no secrets (1)``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
-    ![](.././media/hyd29.png)
+    ![](.././media/arc39.png)
 
 1. Click on **Parameters** blade.
 
@@ -74,7 +74,7 @@ In this task, you will select an existing policy definition and create a policy 
       ```
       --git-readonly
       ```
-    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab.
+    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab. **Make sure to replace  **`Azure`** with your GitHubUsername**
 
     - Set the **Enable helm** option to **false (8)**.
 
@@ -84,13 +84,13 @@ In this task, you will select an existing policy definition and create a policy 
   
 1. Select the **Create a remediation task (1)** check box and then click **Review+create (2)**, skip the Non-compliance messages.
 
-    ![](.././media/hybrid52.png)
+    ![](.././media/arc73.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
-    ![](.././media/HOL2-Ex2-T1-S12.png)
+    ![](.././media/arc74.png)
 
-1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
+1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc** Resource group -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
 
 1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
 

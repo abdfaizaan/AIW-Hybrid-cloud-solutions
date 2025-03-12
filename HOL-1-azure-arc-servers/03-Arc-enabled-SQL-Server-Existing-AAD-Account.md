@@ -82,6 +82,8 @@ In this exercise, you will be performing the following tasks:
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
+   > **Note:** Make sure that the **sqlvm** is in running state on **Hyper-V**.   
+
 1. After running the command, you will see that the script started running.
 
    ![](.././media/run.png "sqlsearch")
@@ -160,7 +162,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd23.png "sqlsearch")
 
-1. Search and select the **Log Analytics Agent - Azure Arc (1)(2)** extension and click on the **Next (3)** button to continue.
+1. Search for **Log Analytics Agent - Azure Arc (1)** extension press **Enter**, then select the **Log Analytics Agent - Azure Arc (2)** and click on the **Next (3)** button to continue.
  
    ![](.././media/hyd24.png "sqlsearch")    
    
