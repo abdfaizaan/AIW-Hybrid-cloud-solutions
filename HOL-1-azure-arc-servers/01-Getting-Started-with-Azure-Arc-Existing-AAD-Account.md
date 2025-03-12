@@ -26,7 +26,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/arc1.png "Select Resource Group from Navigate Option")  
 
-1. Confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
+1. Confirm whether you have a total of 13 records to confirm all the below resources are deployed successfully.
 
     ![](.././media/resources-azure-arc-rg.png "Select hyper-v from desktop")
 
@@ -274,6 +274,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ```
     
    ![](.././media/arc9.png "Connect Kubernetes")
+
+    > **Note**: This may take around `5 to 10 minutes` to complete, please wait untill it is completed.   
  
 1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
 
