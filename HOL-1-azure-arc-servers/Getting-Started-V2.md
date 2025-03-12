@@ -66,7 +66,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
    ![](.././media/arcg1.png "Zoom in/out")
    
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
  
@@ -87,6 +87,14 @@ For convenience, you can open the lab guide in a separate window by selecting th
 Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
   ![](.././media/arcg5.png)
+
+## Lab Validation
+
+After completing the task, hit the **Validate (1)** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
+
+  ![](.././media/arcg7.png)
+
+  If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
 
 ## Let's Get Started with Azure Portal
  
