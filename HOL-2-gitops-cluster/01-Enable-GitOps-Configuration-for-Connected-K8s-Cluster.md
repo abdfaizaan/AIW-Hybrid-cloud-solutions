@@ -116,7 +116,7 @@ In this exercise, you will be performing the following tasks:
 
      >**Note:** Wait untill the command run successfully.
 
-1. Once `microk8s status --wait-ready` command start to run, wait for `20-25 minutes` let it run before prceeding to the next command. After that click on **Ctrl+C** to terminate.  
+1. Once `microk8s status --wait-ready` command start to run, wait for `10-15 minutes` let it run before proceeding to the next command. After that click on **Ctrl+C** to terminate.  
 
 1. Run the below command to install `microsoft.flux` extension.
 
