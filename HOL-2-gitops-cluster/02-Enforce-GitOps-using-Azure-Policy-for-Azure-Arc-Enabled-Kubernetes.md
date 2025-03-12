@@ -30,6 +30,8 @@ In this task, you will select an existing policy definition and create a policy 
 
      ![](.././media/policy-3.png)
 
+     >**Note:** Wait for sometime to get the **go to Azure Policy** link. Click on some other options from left navigation pane and then navigate back to **Policies**.
+
 1. On the **Compliance** blade, click on **Assign policy**.
 
     ![](.././media/policy-4.png)
