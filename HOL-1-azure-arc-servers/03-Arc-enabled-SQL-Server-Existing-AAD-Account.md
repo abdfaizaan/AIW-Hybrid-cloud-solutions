@@ -16,7 +16,7 @@ In this exercise, you will be performing the following tasks:
 
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
-1. Click on the search blade at the top and search for ``SQL Server``, select **SQL Server - Azure Arc**.
+1. Click on the search blade at the top and search for ``SQL Server (1)``, select **SQL Server - Azure Arc (2)**.
  
    ![](.././media/hyd19.png "sqlsearch")
    
@@ -24,9 +24,9 @@ In this exercise, you will be performing the following tasks:
  
    ![](.././media/ss2.png "sqlsearch")
    
-1. In the Adding existing SQL Servers instances page, Click on **Connect Servers**.
+1. In the Adding existing SQL Servers instances page, Click on **Connect SQL Server instance**.
 
-   ![](.././media/ss3.png "sqlsearch")
+   ![](.././media/arc-75.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
@@ -82,6 +82,8 @@ In this exercise, you will be performing the following tasks:
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
+   > **Note:** Make sure that the **sqlvm** is in running state on **Hyper-V**.
+
 1. After running the command, you will see that the script started running.
 
    ![](.././media/run.png "sqlsearch")
@@ -98,43 +100,52 @@ In this exercise, you will be performing the following tasks:
 
    ```
    $block = {
-   #Import Environment Credentials
-   CD C:\LabFiles
-   $AppID = "<Application ID>"
-   $AppSecret = "<Secret Key>"
-   $TenantID = "<Tenant ID (Directory ID)>"
-   $SubscriptionId = "<Subscription ID>"
-   $ResourseGroup = "azure-arc"
-   $location = "<Resource group Region>"
-   $passwd = ConvertTo-SecureString $AppSecret -AsPlainText -Force
-   $pscredential = New-Object System.Management.Automation.PSCredential($AppID, $passwd)
-   #Login to Azure
-   Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
-   #Set ExecutionPolicy to Bypass so script can be executed from the terminal
-   Set-ExecutionPolicy Bypass -Scope Process -Force
-   #Run RegisterSqlServerArc.ps1 script to Register SQL VM Server and SQL Server on Azure Arc
-   & '.\RegisterSqlServerArc.ps1'
+      # Import Environment Credentials
+      CD C:\LabFiles
+      $AppID = "<Application ID>"
+      $AppSecret = "<Secret Key>"
+      $TenantID = "<Tenant ID (Directory ID)>"  
+      $SubscriptionId = "<Subscription ID>"
+      $ResourseGroup = "azure-arc"
+      $location = "<Resource group Region>"
 
+      # Convert secret key to a secure string
+      $passwd = ConvertTo-SecureString -AsPlainText -Force -String $AppSecret
+      $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $AppID, $passwd
+
+      # Login to Azure using Service Principal
+      Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $TenantID
+
+      # Set Execution Policy to allow script execution
+      Set-ExecutionPolicy Bypass -Scope Process -Force
+
+      # Run RegisterSqlServerArc.ps1 script to register SQL VM Server and SQL Server on Azure Arc
+      & '.\RegisterSqlServerArc.ps1'
    }
-   $ap = "demo@pass123"
-   $cred = New-Object -ArgumentList "Administrator",(ConvertTo-SecureString -AsPlainText -Force -String $ap) -TypeName 
-   System.Management.Automation.PSCredential
 
-   # Install ARC agent
-   set-item wsman:\localhost\Client\TrustedHosts -value 192.168.0.4 -Force
+   # Administrator password (should be securely handled)
+   $ap = "demo@pass123"
+
+   # Create credential object for remote authentication (Fixed -TypeName placement)
+   $securePassword = ConvertTo-SecureString -AsPlainText -Force -String $ap
+   $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "Administrator", $securePassword
+
+   # Install Azure Arc Agent - Allow remote connection to the trusted host
+   Set-Item wsman:\localhost\Client\TrustedHosts -Value 192.168.0.4 -Force
+
+   # Execute the script block on the remote machine
    Invoke-Command -ComputerName 192.168.0.4 -Credential $cred -ScriptBlock $block
    ```
-
-  
+ 
 1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
    ![](.././media/hybrid37.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
 
-1. Click on the search blade at the top and search for ```Log Analytics workspace```. 
+1. Click on the search blade at the top, search for ```Log Analytics workspace (1)``` and then select **Log Analytics workspace (2)** from the services.
 
-   ![](.././media/hybrid38.png "H1E3T2S8")
+   ![](.././media/arc21.png "H1E3T2S8")
    
 1. Select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
    
@@ -144,7 +155,7 @@ In this exercise, you will be performing the following tasks:
  
    ![](.././media/hybrid40.png "sqlsearch")
 
-1. Now, search for **Machines - Azure Arc** from search box and click on **Machines - Azure Arc**.
+1. Now, search for **Machines - Azure Arc (1)** from search box and click on **Machines - Azure Arc (2)**.
  
    ![](.././media/hyd20.png "server-azure-arc-search") 
    
@@ -160,11 +171,11 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd23.png "sqlsearch")
 
-1. Search and select the **Log Analytics Agent - Azure Arc (1)(2)** extension and click on the **Next (3)** button to continue.
+1. Search for **Log Analytics Agent - Azure Arc (1)** extension press **Enter**, then select the **Log Analytics Agent - Azure Arc (2)** and click on the **Next (3)** button to continue.
  
    ![](.././media/hyd24.png "sqlsearch")    
    
-1. At this step, you must enter the Log Analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
+1. At this step, you must enter the **Log Analytics workspace ID and a key** to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
 1. Now, enter the **Workspace ID (1)** and **Key (2)** that you copied from the previous step, click on **Review + Create (3)** button.
  
@@ -188,21 +199,21 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/entervmpassword.png "entervmpassword")
 
-1. Click on Start Menu and search for **Microsoft SQL Server Management Studio 18** and open it.
+1. Click on Start Menu and search for **Management**, then select **Microsoft SQL Server Management Studio 18**.
    
    ![](.././media/H1E3T3S13.png "H1E3T3S13")
   
-1. On **Connect to server** pop-up, select **SQLVM** as Server name from drop-down and click on **Connect**.
+1. On **Connect to server** pop-up, select **SQLVM (1)** as Server name from drop-down and click on **Connect (2)**.
 
-   ![](.././media/H1E3T3S14.png "H1E3T3S14")
+   ![](.././media/arc23.png "H1E3T3S14")
    
-1. In the left pane, expand **Security** then **Logins**. In Logins, right-click on **NT AUTHORITY\SYSTEM** and click on **Properties**.
+1. In the left pane, expand **Security (1)** then **Logins (2)**. In Logins, right-click on **NT AUTHORITY\SYSTEM (3)** and click on **Properties (4)**.
 
-   ![](.././media/H1E3T3S15.png "H1E3T3S15")
+   ![](.././media/arc24.png "H1E3T3S15")
   
-1. In Login Properties pane, click on **Server Roles** then enable the **sysadmin** role and click on **Ok**.
+1. In Login Properties pane, click on **Server Roles (1)** then enable the **sysadmin (2)** role and click on **Ok (3)**.
 
-   ![](.././media/H1E3T3S16.png "H1E3T3S16")
+   ![](.././media/arc25.png "H1E3T3S16")
  
 1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
    
@@ -214,7 +225,11 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid43.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Navigate back to **Best practices assessment**.
+
+   ![](.././media/arc26.png "H1E3T3S18")
+
+1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    

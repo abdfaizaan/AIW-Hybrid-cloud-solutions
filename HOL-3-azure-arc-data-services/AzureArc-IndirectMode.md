@@ -35,26 +35,26 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    
 1. Navigate back to **Azure Data studio** and in **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
 
-   ![](./images/15-05-2024(3).png "Azure Data Studio")
+   ![](./images/arc61.png "Azure Data Studio")
    
-1. In the **Connect to Existing Controller** page, provide the following details and click on **Connect**.
+1. In the **Connect to Existing Controller** page, provide the following details and click on **Connect (4)**.
 
-   - **Namespace**:
+   - **Namespace (1)**:
      ```BASH
      arcdc
      ```
    
-   - **Cluster Context**:
+   - **Cluster Context (2)**:
      ```BASH
      Arc-Data-Demo
      ```
 
-   - **Name** :
+   - **Name (3)** :
      ```BASH
      arcdc-indirect
      ```
    
-     ![](./media/newindccnct.png "Connection")
+     ![](./media/arc62.png "Connection")
 
 1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
@@ -99,9 +99,9 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 1. Open **Azure Data Studio** from the desktop if not already opened. 
    > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
 
-1. Now, right-click on the Azure Arc data controller connection, click on Manage, and then click on the **+ New Instance** button within the Azure Arc Data controller dashboard. 
+1. Now, right-click on the **arcdc-indirect (1)** Azure Arc data controller connection, click on **Manage (2)**, and then click on the **+ New Instance (3)** button within the Azure Arc Data controller dashboard. 
 
-   ![](images/nwinstnce.png "Confirm")
+   ![](images/arc63.png "Confirm")
   
 1. Now, select the **Azure SQL Managed Instance - azure arc** and click on **Select** at the bottom of the page.
 
@@ -181,7 +181,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 1. Once the installation is complete, in **Azure Arc Data Controller dashboard** under Azure Arc Resources you can see the newly created Azure Arc-enabled Azure SQL Managed instance.
 
-   ![](images/deployed.png "Confirm")
+   ![](images/arc64.png "Confirm")
 
    > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql-Indir is Ready** at the bottom of the notebook.
 
@@ -189,13 +189,17 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. Now, Right-click on the newly created Azure Arc-enable SQL Managed Instance and click on **Manage**. A new window should open, and you should be able to see the overview of SQL Managed Instance, Copy the **External Endpoint** from the dashboard. We will use the endpoints in the next steps to connect to the Azure Arc-enabled SQL Managed Instance. 
+1. Now, Right-click on the newly created Azure Arc-enable SQL Managed Instance **arcsql-indir (1)** and click on **Manage (2)**.
+
+     ![](images/arc65.png "azdata")
+
+1. A new window should open, and you should be able to see the overview of SQL Managed Instance, Copy the **External Endpoint** from the dashboard. We will use the endpoints in the next steps to connect to the Azure Arc-enabled SQL Managed Instance. 
 
      ![](./media/ads-sqlmi-overview.png "azdata")
 
-1. In Azure Data Studio, in the connections tab within the servers, click on **Add Connection**.
+1. In Azure Data Studio, in the connections tab within the servers, click on **New Connection**.
 
-   ![](images/sql-instance4.png "Confirm")
+   ![](images/arc66.png "Confirm")
 
 1. Enter the following on the connection details page:
 
@@ -295,7 +299,10 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    ```
    az arcdata dc export --type logs --path logs.json --k8s-namespace arcdc --use-k8s
    ```
-    > **Note**: You may see a message "logs.json already exists already, do you want to overwrite it? (Y/N):", then enter `Y` to overwrite. Also if you see any bypass server certificate check, then please enter 'y' to continue. The data will be exported to this location: 'C:\Users\arcadmin\logs.json'
+
+    ![](media/arc67.png "Confirm")
+
+     > **Note**: You may see a message "logs.json already exists already, do you want to overwrite it? (Y/N):", then enter `Y` to overwrite. Also if you see any **bypass server certificate check**, then please enter `y` to continue. The data will be exported to this location: 'C:\Users\arcadmin\logs.json'
 
 1. Upload logs to an existing Azure monitor log analytics workspace:
    
@@ -305,21 +312,21 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
       
 1. After some time, you will see some outputs uploaded to Azure.
 
-    ![](media/newlogsupdate.png "Confirm")
+    ![](media/arc68.png "Confirm")
     
-1. Now open the Azure portal and search for **Azure SQL Managed instances - azure arc**  and select the resource.
+1. Now open the Azure portal and navigate to azure-arc Resource group search for **arcsql-indir (1)**  and select **arcsql-indir (2)** resource.
 
-    ![](media/arcsqlindirportl.png "Confirm")
+    ![](media/arc69.png "Confirm")
       
 1. Now you will see some basic information about the **Azure Arc-enabled SQL Managed Instance**.
       
     ![](images/hybrid76.png "Confirm")
    
-1. Now to view your logs in the Azure portal, open the Azure portal and then search for your log analytics workspace by name in the search bar at the top and then select it.
+1. Now to view your logs in the Azure portal, open the Azure portal and then search for your **Log Analytics workspace** by name in the search bar at the top and then select it.
 
 1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
    
-    ![](images/logarc.png "Confirm")
+    ![](images/arc70.png "Confirm")
 
 1. Then, from the left navigation menu select **Logs (1)** then click on the ``X`` **(2)** at the top right corner as shown in the below image.
 
@@ -331,17 +338,13 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
 1. Then, check if CustomLogs is there under the Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
      
-1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)**.
+1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)** select it.
    
     ![](media/hybrid78.png "Confirm")
 
-1. Hover the cursor on the table name and select the **Use in editor** button.
+1. Now, you will have a query in the query editor. Change the mode to **KQL mode (1)** Run the query that will show the logs by clicking on **Run** **(2)** button and explore the **Results**. 
    
-    ![](media/HOL3-EX3-T5-P16.png "Confirm")
-
-1. Now, you will have a query in the query editor. Run the query that will show the logs by clicking on **Run** **(1)** button and explore the **Results** **(2)**. 
-   
-    ![](media/HOL3-EX3-T5-P17.png "Confirm")
+    ![](images/arc71.png "Confirm")
 
     > **Note**: You might have to resize the editor, to view the logs from the output window.
 
