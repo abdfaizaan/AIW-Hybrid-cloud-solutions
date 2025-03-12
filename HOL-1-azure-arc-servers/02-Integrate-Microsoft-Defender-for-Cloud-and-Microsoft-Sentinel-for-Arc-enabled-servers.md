@@ -17,14 +17,18 @@ You can connect your non-Azure computers in any of the following ways:
   
   * From Microsoft Defender for cloud pages in the Azure portal **(Getting started and Inventory)**
  
-1. Search for **Microsoft Defender for Cloud** in the Azure portal search bar and then click on **Microsoft Defender for Cloud**.
+1. Search for **Microsoft Defender for Cloud (1)** in the Azure portal search bar and then click on **Microsoft Defender for Cloud (2)**.
     
-   ![](.././media/H1-Ex2-task2-001.png)
-   
-1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case, please skip this and the next step.
+   ![](.././media/arc15.png)
 
-   ![](.././media/hybrid55.png)
-   
+1. From the **Overview (1)** page, click on **Enable Defender plans (2)** under Workload protection.   
+
+   ![](.././media/arc16.png)
+
+1. On the **Upgrade (1)** tab, scroll down and then **check on all the checkboxes (2)** and click on **Upgrade (3)**.
+
+   ![](.././media/arc17.png)      
+ 
 1. On the **Overview** page, select **Azure subscription.**
    
    ![](.././media/hybrid15.png)
@@ -102,13 +106,13 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
       ![](.././media/hybrid20.png)
 
-1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search and select **Syslog (2)(3)** from the second page **(4)** of the solution. Click on **Install (5)**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** press **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
 
-      ![](.././media/hybrid21.png)
+      ![](.././media/arc29.png)  
     
-1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template** tab and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template (2)** tab and search for ```Linux machines``` **(3)** then select **Linux machines (4)** from the search result and then click on **Save (5).**
     
-      ![](.././media/hybrid27.png)
+      ![](.././media/arc19.png)
     
 1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
@@ -150,6 +154,8 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    
       ![](.././media/hybrid28.png) 
 
+      ![](.././media/arc20.png)     
+      
 ## Summary
  
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.

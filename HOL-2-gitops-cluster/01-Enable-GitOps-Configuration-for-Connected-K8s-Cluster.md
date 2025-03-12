@@ -27,7 +27,9 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid47.png)
    
-1. Then you will recieve an **device verfication code** to your email, enter that code.
+1. Then you will recieve an **device verfication code** to your email, enter that code **(1)** and then click on **Verify (2)**.
+
+   ![](.././media/arc28.png)
    
 1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
@@ -41,13 +43,13 @@ In this exercise, you will be performing the following tasks:
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the **ARCHOST** VM, search for **putty** and open it with a double click or another way.
+1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **putty (2)**.
 
     ![](.././media/startputty.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the **ubuntuk8s** VM, click on the Open to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
 
-    ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
+    ![](.././media/arc3.png "Enter ubuntu-k8s VM private IP")
     
 1. Enter the **ubuntu-k8s** vm username - ```demouser``` in **login as** and then hit **Enter**. 
 
@@ -89,7 +91,7 @@ In this exercise, you will be performing the following tasks:
       init 6 #TO restart
       ```
 
-1. Open a new Putty session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
+1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
 
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
 
@@ -97,11 +99,30 @@ In this exercise, you will be performing the following tasks:
 
 1. Then, select the first 7 lines and, then right click and copy. 
 
-1. Then, go back to the putty session and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
+1. Then, go back to the **putty** session and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
+
+1. Run the below command to update the kubernate version.    
+
+   ```
+   sudo snap refresh microk8s --channel=1.27/stable
+   microk8s status --wait-ready
+   ```
+
+    ![](.././media/arc72.png "azlogin")   
+
+     >**Note:** Wait untill the command run successfully.
+
+     >**Note:** Once `microk8s status --wait-ready` command start to run, wait for sometime around 5 minutes. After that click on **Ctrl+C** to terminate.  
+
+1. Run the below command to install `microsoft.flux` extension.
+
+   ```
+   az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
+   ```        
 
 1. Copy the below command to any text editor
 
@@ -109,13 +130,17 @@ In this exercise, you will be performing the following tasks:
    az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
 
+1. Copy the below command to any text editor
+
+   ```
+   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
+   ```   
+
 1. Then, replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
 
-   - You have to replace **<githubusername>** in the previous command with the username of the GitHub account to which you had forked the repository. 
+   - You have to replace **\<githubusername>** in the previous command with the `username of the GitHub account` to which you had forked the repository. 
    
-   If you get a prompt asking **Do you want to install the extension k8sconfiguration**, type **Y** and press **Enter**.
-
-   ![](.././media/04.png) 
+   ![](.././media/arc32.png) 
    
      > **Note**: Wait for 5 minutes before performing the next step
 
@@ -131,22 +156,22 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 3: Validate the SourceControlConfiguration
 
-1. Now, to validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed, you have to run the command given below. 
+1. Now, to validate whether the **complianceState** is **Compliant**, you have to run the command given below. 
    
    > **Note**: If the state is pending, retry the same command again after every 1 minute.
 
    ```
-   az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
+   az k8s-configuration flux show --resource-group $ResourceGroup --cluster-name microk8s-cluster --cluster-type connectedClusters --name cluster-config
    ```
      > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
-   The output should include the following value as given here: ``"complianceState": "Installed"``
+   The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/05.png) 
+   ![](.././media/arc33.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
+1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
-   ![](.././media/hyd27.png) 
+   ![](.././media/arc34.png)
   
 ## Task 4: Validate the Kubernetes configuration
 
@@ -163,18 +188,8 @@ After config-agent has installed the flux instance, resources held in the git re
    The output shows that team-a, team-b, gitops, and cluster-config namespaces have been created as shown:
   
    ![](.././media/07.png) 
-   
-2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
-      
-    ```
-    kubectl -n cluster-config get deploy  -o wide
-    ```
-   
-    The output should be as shown:
-   
-    ![](.././media/08.png) 
   
-3. You can explore the other resources deployed as part of the configuration repository by running the following commands:
+1. You can explore the other resources deployed as part of the configuration repository by running the following commands:
 
    ```
    kubectl -n team-a get cm -o yaml
@@ -189,15 +204,23 @@ After config-agent has installed the flux instance, resources held in the git re
     ```
     ![](.././media/pods1.png)
 
-2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
+1. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-3. Navigate to **cluster-apps->arc-k8s-demo.yaml** and edit the yaml file.
+1. Navigate to **main (1)** branch, **cluster-apps (2)**.
 
-   ![](.././media/pods2.png)   
+   ![](.././media/arc36.png)   
 
-4. Change the CPU request to **120** in line 32 and click on **Commit changes** to confirm the changes to the CPU request.
+1. Click on **arc-k8s-demo.yaml (1)** and then **edit (2)** icon to edit the yaml file.   
 
-   ![](.././media/pods3.png)
+   ![](.././media/arc37.png)
+
+1. Change the CPU request to **120 (1)** around 32nd line and click on **Commit changes (2)** to confirm the changes to the CPU request.
+
+   ![](.././media/arc38.png)
+
+1. Click on **Commit changes** again.    
+
+    >**Note:** Repeat the steps for `master` branch as well.
    
 ## Task 6: Verify changes are deployed to the cluster.
 
@@ -210,7 +233,7 @@ After config-agent has installed the flux instance, resources held in the git re
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
 
-      >**Note**: If you don't see any change, retry running the command after a couple of minutes.
+      >**Note**: If you don't see any change, **retry running the command after a couple of minutes** untill the pod name changes..
 
 2.  Replace the pod name that you copied in the previous step and run the command
  
