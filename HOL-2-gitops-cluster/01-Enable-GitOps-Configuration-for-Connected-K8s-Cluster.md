@@ -43,7 +43,7 @@ In this exercise, you will be performing the following tasks:
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the **ARCHOST** VM, search for **putty** and open it with a double click or another way.
+1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **putty (2)**.
 
     ![](.././media/startputty.png "Search Putty")
      
@@ -116,7 +116,7 @@ In this exercise, you will be performing the following tasks:
 
      >**Note:** Wait untill the command run successfully.
 
-     >**Note:** Once `microk8s status --wait-ready` command start to run, wait for sometime around 5 minutes. After that click on **Ctrl+C** to terminate. No output will be displayed here.
+1. Once `microk8s status --wait-ready` command start to run, wait for `20-25 minutes` let it run before prceeding to the next command. After that click on **Ctrl+C** to terminate. 
 
 1. Run the below command to install `microsoft.flux` extension.
 
@@ -163,7 +163,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc33.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
+1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/arc34.png) 
   

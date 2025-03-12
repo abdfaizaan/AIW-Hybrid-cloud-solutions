@@ -285,7 +285,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/hybrid65.png "Lab Environment")
 
-1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers** tab, expand **Log Analytics agent instructions (2)** copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
+1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers tab, expand **Log Analytics agent instructions (2)** copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
 
     ![](./media/arc45.png "Lab Environment")
     

@@ -24,9 +24,9 @@ In this exercise, you will be performing the following tasks:
  
    ![](.././media/ss2.png "sqlsearch")
    
-1. In the Adding existing SQL Servers instances page, Click on **Connect Servers**.
+1. In the Adding existing SQL Servers instances page, Click on **Connect SQL Server instance**.
 
-   ![](.././media/ss3.png "sqlsearch")
+   ![](.././media/arc-75.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
