@@ -48,7 +48,6 @@ In this exercise, you will be performing the following tasks:
    ```
     cd C:\Users\arcadmin 
    ```  
-    ![](././media/hybrid68.png)
 
 1. Run the below command to login to azure.
 
