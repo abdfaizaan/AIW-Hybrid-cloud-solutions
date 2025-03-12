@@ -181,7 +181,7 @@ After config-agent has installed the flux instance, resources held in the git re
  
    The output shows that `team-a, team-b, gitops, and cluster-config` namespaces have been created as shown:
   
-   ![](.././media/arc35.png) 
+   ![](.././media/arc35.png)
    
 1. You can explore the other resources deployed as part of the configuration repository by running the following commands:
 
