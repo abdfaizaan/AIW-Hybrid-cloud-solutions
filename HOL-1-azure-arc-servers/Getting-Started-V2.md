@@ -140,18 +140,10 @@ After completing the task, hit the **Validate (1)** button under Validation tab 
 1. After scanning, click **Next** to proceed.
 
 1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-       
-1. If prompted to stay signed in, you can click "No."
- 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
-  
+
 1. If you see the pop-up **Stay Signed in?**, click **No**.
 
    ![](.././media/GS9.png)
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.  
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
