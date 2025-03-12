@@ -90,9 +90,9 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
 
 ## Lab Validation
 
-After completing the task, hit the **Validate (1)** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
+After completing the task, hit the **Validate** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
-  ![](.././media/arcg7.png)
+  ![](.././media/arc76.png)
 
   If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
 
