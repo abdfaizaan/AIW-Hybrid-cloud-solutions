@@ -11,7 +11,7 @@ In this exercise, you will be performing the following tasks:
 
 - Task 01: Fork the GitHub Arc K8s demo repository
 - Task 02: Deploy App using az k8sconfiguration
-- Task 03: Validate the SourceControlConfiguration
+- Task 03: Validate the FluxConfiguration
 - Task 04: Validate the Kubernetes configuration
 - Task 05: Make changes to cluster declarations in the Git repo.
 - Task 06: Verify changes are deployed to the cluster.
@@ -148,9 +148,9 @@ In this exercise, you will be performing the following tasks:
      
      > The config agent polls Azure for new or updated configurations.
 
-## Task 3: Validate the SourceControlConfiguration
+## Task 3: Validate the FluxConfiguration
 
-1. Now, to validate whether the **complianceState** is **Compliant**, you have to run the command given below. 
+1. Now, to validate whether the **FluxConfiguration** was successfully created and the **complianceState** is **Compliant**, you have to run the command given below. 
    
    > **Note**: If the state is pending, retry the same command again after every 1 minute.
 
