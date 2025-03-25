@@ -4,11 +4,11 @@
 
 ## Overview
 
-Azure Arc is a solution that extends Azure's capabilities to manage and run applications and services across diverse environments such as datacenters, edge locations, and multicloud platforms. It provides a unified approach for developing, operating, and securing both new and existing applications using the same tools, security measures, and governance mechanisms available within the Azure ecosystem. Azure Arc enables you to utilize Azure services such as application management, data, and AI—on existing hardware, virtualization platforms, Kubernetes clusters, IoT devices, and integrated systems.
+Azure Arc is a solution that extends Azure's capabilities to manage and run applications and services across diverse environments such as datacenters, edge locations, and multicloud platforms. It provides a unified approach for developing, operating, and securing both new and existing applications using the same tools, security measures, and governance mechanisms available within the Azure ecosystem. Azure Arc enables you to utilize Azure services such as application management, data, and AI on existing hardware, virtualization platforms, Kubernetes clusters, IoT devices, and integrated systems.
 
 ## Objectives
 
-Azure Arc provides unified management and governance solution for applications and services across diverse environments, enabling organizations to extend Azure's tools, security, and AI capabilities to their on-premises, edge, and multicloud infrastructures. This empowers consistent control and enhanced operational efficiency across all environments.
+Azure Arc provides a unified management and governance solution for applications and services across diverse environments, enabling organizations to extend Azure's tools, security, and AI capabilities to their on-premises, edge, and multicloud infrastructures. This empowers consistent control and enhanced operational efficiency across all environments.
 
 - **Getting Started with Azure Arc:** Azure Arc is a service that extends Azure management to on-premises, other cloud providers, and edge environments. You'll learn how to use Azure Arc to manage resources consistently across your hybrid and multi-cloud deployments.
 
@@ -16,7 +16,7 @@ Azure Arc provides unified management and governance solution for applications a
 
 - **Enabling Azure Automanage for Server - Azure Arc:** Azure Automanage enrols, configures, and monitors the entire lifecycle of dev/test and production VMs for products, services and features such as Azure Security Centre, update management, change tracking, VM inventory, desired state configuration, guest configuration, automation accounts and log analytics.
 
-- **Enable GitOps Configuration on connected K8s Cluster:** Use GitOps to deploy and manage containerized applications on Azure Arc-enabled Kubernetes clusters. You'll configure a Git repository to store the desired state of your Kubernetes applications, and then use an operator to deploy and update these configurations across multiple clusters automatically. This approach centralizes management and empowers developers to contribute directly to the Git repository.
+- **Enable GitOps Configuration on connected K8s Cluster:** Use GitOps to deploy and manage containerized applications on Azure Arc-enabled Kubernetes clusters. You'll configure a Git repository to store the desired state of your Kubernetes applications and then use an operator to deploy and update these configurations across multiple clusters automatically. This approach centralizes management and empowers developers to contribute directly to the Git repository.
 
 - **Enforce GitOps using Azure Policy for Azure Arc-enabled Kubernetes:** Use Azure Policy to enforce that each Azure Arc-enabled Kubernetes cluster has specific GitOps configurations applied to it.
 
@@ -29,9 +29,13 @@ Azure Arc provides unified management and governance solution for applications a
 Participants should have basic knowledge and understanding of the following:
 
 - Basic understanding of Azure Kubernetes Service and managing workloads within them.
+
 - Experience with Azure cloud services, including how to navigate the Azure portal.
+
 - Basic knowledge of Azure Arc.
+
 - Knowledge of Microsoft Sentinel for threat detection and security monitoring.
+
 - Basic knowledge of GitOps.
   
 ## Architecture 
@@ -132,7 +136,7 @@ After completing the task, hit the **Validate** button under the Validation tab 
 
    ![Asklater](.././media/asklater.png)
 
-   >**NOTE:** Do not enable MFA, select **Ask Later**.
+   > **NOTE:** Do not enable MFA, select **Ask Later**.
 
 ## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
 
@@ -143,7 +147,9 @@ After completing the task, hit the **Validate** button under the Validation tab 
 1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
 
    - Open **Google Play Store** (Android) or **App Store** (iOS).
+
    - Search for **Microsoft Authenticator** and tap **Install**.
+
    - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
 
 1. A **QR code** will be displayed on your computer screen.
@@ -172,7 +178,7 @@ Learner Support Contacts:
 
    - Live Chat Support: https://cloudlabs.ai/labs-support
    
-Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
+Now, you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
 
 Now, click on **Next** from the lower right corner to move on to the next page.
 
