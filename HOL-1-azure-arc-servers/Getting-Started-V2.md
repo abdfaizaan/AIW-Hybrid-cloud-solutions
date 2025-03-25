@@ -94,7 +94,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ## Managing Your Virtual Machine
  
-Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
+Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
   ![](.././media/arcg5.png)
 
@@ -163,6 +163,7 @@ After completing the task, hit the **Validate** button under the Validation tab 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
 ## Support Contact
+
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
 
 Learner Support Contacts:
