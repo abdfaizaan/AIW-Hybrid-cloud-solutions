@@ -65,7 +65,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. From the start menu of the ARCHOST VM (Lab-VM), search for **putty (1)** and select **putty (2)**.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/25032025(10).png)
      
 1. In the Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you enter the private IP of the ubuntuk8s VM, click on the **Open (3)** to launch the terminal.
 
