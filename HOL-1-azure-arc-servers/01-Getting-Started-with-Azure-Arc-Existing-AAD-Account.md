@@ -1,4 +1,4 @@
-# HOL 1 : Exercise 1: Getting Started with Azure Arc
+# HOL 1: Exercise 1: Getting Started with Azure Arc
 
 ### Estimated Duration: 60 Minutes
 
@@ -8,12 +8,12 @@ In this exercise, you will learn how to onboard and manage on-premises resources
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Getting Started with Hyper-V Infrastructure.
-- Task 02: Onboard Linux Machine to Azure Arc.
-- Task 03: Onboard Kubernetes Cluster to Azure Arc.
-- Task 04: Verify if the Kubernetes cluster is connected to Azure Arc.
-- Task 05: Create a policy assignment to identify compliant/non-compliant resources.
-- Task 06: Monitor Arc-enabled machines with Azure Monitor.
+- Task 1: Getting Started with Hyper-V Infrastructure.
+- Task 2: Onboard Linux Machine to Azure Arc.
+- Task 3: Onboard Kubernetes Cluster to Azure Arc.
+- Task 4: Verify if the Kubernetes cluster is connected to Azure Arc.
+- Task 5: Create a policy assignment to identify compliant/non-compliant resources.
+- Task 6: Monitor Arc-enabled machines with Azure Monitor.
   
 ## Task 1: Getting Started with Hyper-V Infrastructure
 
@@ -201,7 +201,7 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ./get_helm.sh
    ```
 
-   **Note:** In case you see `Could not find git. It is required  for plugin installation.` Warning: please ignore it and continue with the lab.
+   **Note:** In case you see `Could not find git. It is required  for plugin installation` Warning: please ignore it and continue with the lab.
     
    ![](.././media/installhelm.png "installhelm")
 
@@ -238,13 +238,13 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      microk8s start
      ```
      
-   >**Note:** In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
+        >**Note:** In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
 
-   ```
-   microk8s refresh-certs
-   ```
+        ```
+        microk8s refresh-certs
+        ```
 
-   ![](.././media/k8s-status-running.png "check cluster cluster")
+        ![](.././media/k8s-status-running.png "check cluster cluster")
 
 1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
 
@@ -276,7 +276,7 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
     > **Note:** This may take around `5 to 10 minutes` to complete, please wait untill it is completed.   
  
-1. Once the previous command is executed successfully, the **provisioning state** in the output will show as succeeded.
+1. Once the previous command is executed successfully, the **provisioningState** in the output will show as **Succeeded**.
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
 
@@ -361,11 +361,11 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/hybrid12.png)
+    ![](.././media/25032025(1).png)
     
 1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 
-    ![](.././media/arc13.png) 
+    ![](.././media/25032025(2).png)
 
 1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
@@ -421,11 +421,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/hyd15.png)
 
-    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.
-
-1. Click on **Logs (1)** from the left navigation pane, then click on **Insights (2)** again, and then refresh the page.
-
-    ![](.././media/arc30.png)    
+    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.   
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
@@ -435,17 +431,17 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/arc31.png)
 
-     >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.    
+    >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.    
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    
+    - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
-- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-<validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
+    <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
 
->**Note:** This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+    >**Note:** This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
