@@ -1,6 +1,7 @@
-# Hands-on Lab 02
-# Exercise 4: Enable GitOps Configuration on connected K8s Cluster
+# HOL 02: Exercise 4: Enable GitOps Configuration on connected K8s Cluster
+
 ### Estimated Duration: 60 Minutes
+
 In addition to managing and monitoring their Kubernetes clusters, Contoso’s central development teams are building applications for internal inventory management at their distribution sites. They need these applications to be containerized and run on Kubernetes clusters. The locations are spread across the country and Contoso is faced with the challenge of how to uniformly deploy, configure and manage their containerized applications across all these locations. By leveraging GitOps on Azure Arc-enabled Kubernetes, Contoso can centrally declare their Kubernetes configurations and applications in a Git repository and deploy them to all clusters simultaneously. Developers are more empowered because they can commit changes directly in the Git repo and these updates are also automatically rolled out to all the clusters.
 
 GitOps, as it relates to Kubernetes, is the practice of declaring the desired state of Kubernetes configuration (deployments, namespaces, etc.) in a Git repository followed by a polling and pull-based deployment of these configurations to the cluster using an operator. In this exercise, you will deploy a sample Kubernetes app using the az k8sconfiguration command and gitops and also update the configuration in the repository which you have linked to the connected cluster and verify if the cluster is getting updated based on the changes made. You will be using the Kubernetes cluster with which you connected in the earlier exercise.
@@ -9,13 +10,12 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Fork the GitHub Arc K8s demo repository
-- Task 02: Deploy App using az k8sconfiguration
-- Task 03: Validate the FluxConfiguration
-- Task 04: Validate the Kubernetes configuration
-- Task 05: Make changes to cluster declarations in the Git repo.
-- Task 06: Verify changes are deployed to the cluster.
-
+- Task 1: Fork the GitHub Arc K8s demo repository
+- Task 2: Deploy App using az k8sconfiguration
+- Task 3: Validate the FluxConfiguration
+- Task 4: Validate the Kubernetes configuration
+- Task 5: Make changes to cluster declarations in the Git repo.
+- Task 6: Verify changes are deployed to the cluster.
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
@@ -27,7 +27,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid47.png)
    
-1. Then you will recieve an **device verfication code** to your email, enter that code **(1)** and then click on **Verify (2)**.
+1. Then you will recieve an **Device Verfication Code** to your email, enter that code **(1)** and then click on **Verify (2)**.
 
    ![](.././media/arc28.png)
    
@@ -35,7 +35,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/02.png)
    
-1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
+1. On **Create a new fork**, uncheck the **Copy the master branch only (1)** and click **Create fork(2).**
    
    ![](.././media/hybrid48.png)   
 
@@ -43,11 +43,11 @@ In this exercise, you will be performing the following tasks:
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **putty (2)**.
+1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **Putty (2)**.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/25032025(10).png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2)**. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
 
     ![](.././media/arc3.png "Enter ubuntu-k8s VM private IP")
     
@@ -77,7 +77,9 @@ In this exercise, you will be performing the following tasks:
    demo@pass123
    ```
     
- 1. Run the below commands to upgrade the az packages and az module. 
+ 1. Run the below commands to upgrade the az packages and az module. Leave the last command `init 6` and keep running.
+
+    >**NOTE:** Copy the commands below, paste them into a notepad, and execute each one individually.
    
       ```
       curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
@@ -90,6 +92,12 @@ In this exercise, you will be performing the following tasks:
       az upgrade -y
       init 6 #TO restart
       ```
+
+      > **Note:** If the above commands fail, then please run the below-mentioned command:
+    
+     ```
+     sudo apt-get install python3-pip
+     ```
 
 1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
 
@@ -122,7 +130,9 @@ In this exercise, you will be performing the following tasks:
 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
-   ```        
+   ```
+
+   > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. 
 
 1. Copy the below command to any text editor
 
