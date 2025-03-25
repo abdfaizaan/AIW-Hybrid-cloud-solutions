@@ -37,7 +37,9 @@ In this exercise, you will be performing the following tasks:
    
 1. On **Create a new fork**, uncheck the **Copy the master branch only (1)** and click **Create fork (2).**
    
-   ![](.././media/hybrid48.png)   
+   ![](.././media/hybrid48.png) 
+
+1. Please copy the GitHub repo URL and save it in Notepad for future reference.
 
 ## Task 2: Deploy App using az k8sconfiguration
 
@@ -136,35 +138,65 @@ In this exercise, you will be performing the following tasks:
 
    > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. 
 
-1. Copy the below command to any text editor
+1. On the Azure portal, type **microk8s-cluster (1)** in the search box and select **microk8s-cluster (2)** from the results.
 
-   ```
-   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
-   ```
+   ![](.././media/25032025(11).png "azlogin")
 
-1. Copy the below command to any text editor
+1. On the **microk8s-cluster** resource, select **GitOps (1)** under the Settings section, click **+ Create (2)**.
 
-   ```
-   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
-   ```   
+   ![](.././media/25032025(12).png "azlogin")
 
-1. Then, replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
+1. On the **Basics** tab of create a GitOps page, enter the following details and click on the **Next (4)** button.
 
-   - You have to replace **\<githubusername>** in the previous command with the `username of the GitHub account` to which you had forked the repository. 
-   
-   ![](.././media/arc32.png) 
-   
-     > **Note**: Wait for 5 minutes before performing the next step
+   - Configuration name: **cluster-config (1)**
 
-     > ``Info`` - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your Kubernetes cluster:
+   - Namespace: **microk8s-cluster (2)**
 
-     > *Namespaces*: cluster-config, team-a, team-b
-     
-     > *Deployment*: cluster-config/arc-k8s
+   - Scope: Select **Cluster (3)**
 
-     > *ConfigMap*: team-a/endpoints
-     
-     > The config agent polls Azure for new or updated configurations.
+     ![](.././media/25032025(13).png "azlogin")
+
+1. On the **Source** page of create a GitOps page, enter the following details and click on the **Next (7)** button.
+
+   - Source Kind: **Git Repository (1)**
+
+   - Repository URL: Paste the URL of github repo that you copied earlier **(2)**.
+
+   - Branch: **main (3)**
+
+   - Repository type: **Public (4)**
+
+   - Sync interval (minutes): **1 (5)**
+
+   - Sync timeout (minutes): **1 (6)**
+
+     ![](.././media/25032025(14).png "azlogin")
+
+1. On the Kustomizations page of create a GitOps page, click on the **+ Create**.
+
+   ![](.././media/25032025(15).png "azlogin")
+
+1. On Create a Kustomization page, enter the following details and click **Save (4)**.
+
+   - Instance name: **cluster-config-kustomization (1)**
+
+   - Sync interval (minutes): **1 (2)**
+
+   - Sync timeout (minutes): **1 (3)**
+
+      ![](.././media/25032025(16).png "azlogin")
+
+1. Verify that cluster-config-kustomization is created. Click on **Next**.
+
+   ![](.././media/25032025(17).png "azlogin")
+
+1. On the **Review + create** button, review the configuration, and click on **Create** button.
+
+   ![](.././media/25032025(18).png "azlogin")
+
+1. You should now see the cluster successfully deployed.
+
+   ![](.././media/25032025(19).png "azlogin")
 
 ## Task 3: Validate the FluxConfiguration
 
