@@ -1,4 +1,5 @@
 # Exercise 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud
+
 ### Estimated Duration: 30 Minutes
 This exercise focuses on integrating Azure Arc-enabled servers with Microsoft Sentinel and Microsoft Defender for Cloud to enhance security monitoring and threat detection across hybrid environments. Participants will enable Microsoft Defender for Cloud to monitor non-Azure servers and onboard them to Microsoft Sentinel for security event collection.
 
@@ -35,11 +36,11 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/H1-Ex2-task2-04.png)
 
-1. You find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
+1. You find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it, and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
 
-   > **Note**: Agent monitoring will take a few minutes to update and show the status as **Monitored** for Arc-enabled machine **ubuntu-k8s** as shown in the below screen. You can continue to the next exercise and come back later to check on this.
+   > **Note:** Agent monitoring will take a few minutes to update and show the status as **Monitored** for Arc-enabled machine **ubuntu-k8s** as shown below. You can continue to the next exercise and come back later to check on this.
 
-   > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
+   > Please note that due to some recent updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**. This is a temporary issue that will be fixed in future updates.
 
    ![](.././media/hybrid16.png)
 
@@ -51,7 +52,7 @@ You can connect your non-Azure computers in any of the following ways:
  
 <validation step="98bec6a2-c611-434b-adee-e6227f006309" />
 
-   >**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+   >**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
 
 ## Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
 
@@ -71,9 +72,9 @@ This feature in Azure Arc-enabled servers allows you to deploy the Log Analytics
 #### Using Azure Policy:
 You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azure Arc machine's built-in policy to audit if the Arc-enabled server has the Log Analytics agent installed. If the agent is not installed, it automatically deploys it using a remediation task. Alternatively, if you plan to monitor the machines with Azure Monitor for VMs, use the Enable Azure Monitor for VMs initiative to install and configure the Log Analytics agent.
 
-   > **Note**: You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer **Task 5** in the previous exercise to review it again. Also, the screenshots of the log results can be mismatched because the result can take more time to get the same results. 
+   > **Note:** You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer to **Task 5** in the previous exercise to review it again. Also, the screenshots of the log results can be mismatched because the result can take more time to get the same results. 
 
-1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
+1. Search for **Microsoft Sentinel** on the Azure portal and then select the **Microsoft Sentinel** from the search result.
 
       ![](.././media/ss1.png)
     
@@ -88,11 +89,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
-1. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
+1. Once the Microsoft Sentinel is added, you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
       ![](.././media/microsen-success.png)
  
-1. Click on the **Overview (Preview)** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
+1. Click on the **Overview (Preview)** on the Microsoft Sentinel page, from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
       ![](.././media/25032025(4).png)
 
@@ -104,19 +105,19 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
       ![](.././media/arc19.png)
     
-1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
+1. Then, from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
-1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
+1. Now, go back to the **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under the General section on the left. Disable the **New overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
       ![](.././media/hybrid25.png)
     
-1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size, and you will be able to see the outcome.
 
       ![](.././media/hybrid26.png)
     
-1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
+1. Let us check for **ubuntu-k8s** processes by running the following query. You can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
-      > **Note**: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back later to this task to re-execute the query and filter the data.
+      > **Note:** The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back to this task to re-execute the query and filter the data.
 
       ```
       VMProcess 
@@ -124,7 +125,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
       | limit 10
       ```
    
-      > **Note**: In the above query, against TimeGenerated,  ago (24h) means "24 hours ago" so this query only returns records from the last 24 hours.
+      > **Note:** In the above query, against TimeGenerated,  ago (24h) means "24 hours ago", so this query only returns records from the last 24 hours.
 
       ![](.././media/25032025(6).png)   
     
@@ -148,8 +149,6 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
       
 ## Summary
  
-In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
+In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
-
