@@ -274,7 +274,18 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
     
    ![](.././media/arc9.png "Connect Kubernetes")
 
-    > **Note:** This may take around `5 to 10 minutes` to complete, please wait untill it is completed.   
+    > **Note:** This may take around `5 to 10 minutes` to complete, please wait untill it is completed. 
+
+    > **Note:** If the above commands fail, please run the command below and then retry Step 8.
+ 
+    ```
+    microk8s refresh-certs
+    cd $HOME
+    mkdir .kube
+    cd .kube
+    microk8s config > config
+    cd ..
+    ```
  
 1. Once the previous command is executed successfully, the **provisioningState** in the output will show as **Succeeded**.
 

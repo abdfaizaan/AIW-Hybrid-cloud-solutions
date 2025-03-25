@@ -23,7 +23,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/01.png)
    
-1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
+1. If you click on **Sign in**, You will be prompted to provide your **Github Username or email address (1)** and Password (2) then click on **Sign in (3)**
    
    ![](.././media/hybrid47.png)
    
@@ -35,13 +35,15 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/02.png)
    
-1. On **Create a new fork**, uncheck the **Copy the master branch only (1)** and click **Create fork(2).**
+1. On **Create a new fork**, uncheck the **Copy the master branch only (1)** and click **Create fork (2).**
    
    ![](.././media/hybrid48.png)   
 
 ## Task 2: Deploy App using az k8sconfiguration
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
+
+1. Return to the PuTTY session where you connected to the **ubuntu-k8s** VM. If the session has closed or expired, please follow steps 3 to 7 again.
 
 1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **Putty (2)**.
 
@@ -124,7 +126,7 @@ In this exercise, you will be performing the following tasks:
 
      >**Note:** Wait untill the command run successfully.
 
-1. Once `microk8s status --wait-ready` command start to run, wait for `10-15 minutes` let it run before proceeding to the next command. After that click on **Ctrl+C** to terminate.  
+1. Once the `microk8s status --wait-ready` command starts running, wait for **10-15 minutes** before proceeding to the next command. It needs time for the API server to respond and for at least one node to be registered.
 
 1. Run the below command to install `microsoft.flux` extension.
 
