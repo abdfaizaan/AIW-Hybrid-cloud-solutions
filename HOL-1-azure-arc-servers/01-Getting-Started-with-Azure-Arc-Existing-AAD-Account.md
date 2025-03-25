@@ -129,7 +129,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻 and then click on the `installArcAgentLinux.txt` file to open it.
    
-   > **Note:** If you see any pop-up like **An update package is available, do you want to download it?** click **no**
+   > **Note:** If you see any pop-up like **An update package is available, do you want to download it?** click **No**
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
 
