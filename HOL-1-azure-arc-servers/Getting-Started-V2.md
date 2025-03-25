@@ -1,4 +1,5 @@
-# Hybrid Cloud Solution Hands On Lab
+# Hybrid Cloud Solution(Azure Arc) Hands-On Lab
+
 ### Overall Estimated Duration: 4 Hours
 
 ## Overview
@@ -9,13 +10,19 @@ Azure Arc is a solution that extends Azure's capabilities to manage and run appl
 
 Azure Arc provides unified management and governance solution for applications and services across diverse environments, enabling organizations to extend Azure's tools, security, and AI capabilities to their on-premises, edge, and multicloud infrastructures. This empowers consistent control and enhanced operational efficiency across all environments.
 
-- **Getting Started with Azure Arc**: Azure Arc is a service that extends Azure management to on-premises, other cloud providers, and edge environments. You'll learn how to use Azure Arc to manage resources consistently across your hybrid and multi-cloud deployments.
-- **Onboard Azure Arc-enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud**: Enhance the security of your Azure Arc-enabled servers by enabling Microsoft Defender for Cloud and onboarding these servers to Microsoft Sentinel.
-- **Enabling Azure Automanage for Server - Azure Arc**: Azure Automanage enrols, configures, and monitors the entire lifecycle of dev/test and production VMs for products, services and features such as Azure Security Centre, update management, change tracking, VM inventory, desired state configuration, guest configuration, automation accounts and log analytics.
-- **Enable GitOps Configuration on connected K8s Cluster**: Use GitOps to deploy and manage containerized applications on Azure Arc-enabled Kubernetes clusters. You'll configure a Git repository to store the desired state of your Kubernetes applications, and then use an operator to automatically deploy and update these configurations across multiple clusters. This approach centralizes management and empowers developers to contribute directly to the Git repository.
-- **Enforce GitOps using Azure Policy for Azure Arc-enabled Kubernetes**: Use Azure Policy to enforce that each Azure Arc-enabled Kubernetes cluster has specific GitOps configurations applied to it.
-- **Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster**: Configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
-- **Deploying Azure Arc Data Controller with direct connectivity mode**: Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI.
+- **Getting Started with Azure Arc:** Azure Arc is a service that extends Azure management to on-premises, other cloud providers, and edge environments. You'll learn how to use Azure Arc to manage resources consistently across your hybrid and multi-cloud deployments.
+
+- **Onboard Azure Arc-enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud:** Enhance the security of your Azure Arc-enabled servers by enabling Microsoft Defender for Cloud and onboarding these servers to Microsoft Sentinel.
+
+- **Enabling Azure Automanage for Server - Azure Arc:** Azure Automanage enrols, configures, and monitors the entire lifecycle of dev/test and production VMs for products, services and features such as Azure Security Centre, update management, change tracking, VM inventory, desired state configuration, guest configuration, automation accounts and log analytics.
+
+- **Enable GitOps Configuration on connected K8s Cluster:** Use GitOps to deploy and manage containerized applications on Azure Arc-enabled Kubernetes clusters. You'll configure a Git repository to store the desired state of your Kubernetes applications, and then use an operator to deploy and update these configurations across multiple clusters automatically. This approach centralizes management and empowers developers to contribute directly to the Git repository.
+
+- **Enforce GitOps using Azure Policy for Azure Arc-enabled Kubernetes:** Use Azure Policy to enforce that each Azure Arc-enabled Kubernetes cluster has specific GitOps configurations applied to it.
+
+- **Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster:** Configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
+
+- **Deploying Azure Arc Data Controller with direct connectivity mode:** Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using the Azure portal and Azure CLI.
 
 ## Prerequisites
 
@@ -23,9 +30,9 @@ Participants should have basic knowledge and understanding of the following:
 
 - Basic understanding of Azure Kubernetes Service and managing workloads within them.
 - Experience with Azure cloud services, including how to navigate the Azure portal.
-- Basic knowledge Azure Arc.
+- Basic knowledge of Azure Arc.
 - Knowledge of Microsoft Sentinel for threat detection and security monitoring.
-- Basic knowledge of GitOps .
+- Basic knowledge of GitOps.
   
 ## Architecture 
 
@@ -40,16 +47,22 @@ In the Azure Arc architecture, **Azure Arc** enables unified management for Cont
 The architecture for this lab involves the following key components:
 
 - **Azure Kubernetes Service (AKS):** A managed Kubernetes service for running and managing containerized applications in the cloud.
+
 - **Azure Arc:** Extends Azure management and governance to on-premises, multi-cloud, and edge environments.
+
 - **Azure Monitor:** A unified monitoring service to track application and infrastructure performance.
+
 - **Microsoft Defender for Cloud:** A cloud security solution that provides advanced threat protection for Azure and hybrid environments.
+
 - **Microsoft Sentinel:** A scalable cloud-native security information and event management (SIEM) tool for threat detection and response.
+
 - **GitOps for Kubernetes:** An operational model that uses Git repositories as the source of truth for automated Kubernetes deployments.
+
 - **Azure Data Services:** Cloud-native, managed services for SQL and PostgreSQL, available across hybrid environments with Azure Arc.
 
-## Getting Started with Your Hybrid Cloud Solution Hands On Lab
+## Getting Started with Your Hybrid Cloud Solution Hands-On Lab
  
-Welcome to your Hybrid Cloud Solution(Azure Arc) Hands On Lab! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+Welcome to your Hybrid Cloud Solution(Azure Arc) Hands-On Lab! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
 
 ## Accessing Your Lab Environment
  
@@ -87,11 +100,11 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
 
 ## Lab Validation
 
-After completing the task, hit the **Validate** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
+After completing the task, hit the **Validate** button under the Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
   ![](.././media/arc76.png)
 
-  If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
+  If you need any assistance, please contact us at `cloudlabs-support@spektrasystems.com`
 
 ## Let's Get Started with Azure Portal
  
@@ -155,6 +168,7 @@ The CloudLabs support team is available 24/7, 365 days a year, via email and liv
 Learner Support Contacts:
 
    - Email Support: cloudlabs-support@spektrasystems.com
+
    - Live Chat Support: https://cloudlabs.ai/labs-support
    
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
