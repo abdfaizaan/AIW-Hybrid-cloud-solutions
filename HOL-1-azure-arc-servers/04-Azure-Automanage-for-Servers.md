@@ -6,7 +6,7 @@ In this exercise you will focus on using Azure Automanage to automatically enrol
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Configuring Azure Automanage
+- Task 1: Configuring Azure Automanage
 
 ## Task 1: Configuring Azure Automanage
 
@@ -30,7 +30,7 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/HOL1-EX4-5.png "searchautoamanage")
 
-6. Once the Configuration profile assignment is completed successfully it will take around 20-30 minutes to get the Status as Conformant.
+6. Once the Configuration profile assignment is completed successfully it will take around 5 minutes to get the Status as **Conformant**.
 
    ![](.././media/hol1-ex4-automanage-7new.png "searchautoamanage")
 
