@@ -1,8 +1,8 @@
-# HOL 02: Exercise 4: Enable GitOps Configuration on connected K8s Cluster
+# HOL 02: Exercise 4: Enable GitOps Configuration on Connected K8s Cluster
 
 ### Estimated Duration: 60 Minutes
 
-In addition to managing and monitoring their Kubernetes clusters, Contoso’s central development teams are building applications for internal inventory management at their distribution sites. They need these applications to be containerized and run on Kubernetes clusters. The locations are spread across the country and Contoso is faced with the challenge of how to uniformly deploy, configure and manage their containerized applications across all these locations. By leveraging GitOps on Azure Arc-enabled Kubernetes, Contoso can centrally declare their Kubernetes configurations and applications in a Git repository and deploy them to all clusters simultaneously. Developers are more empowered because they can commit changes directly in the Git repo and these updates are also automatically rolled out to all the clusters.
+In addition to managing and monitoring their Kubernetes clusters, Contoso’s central development teams are building applications for internal inventory management at their distribution sites. They need these applications to be containerized and run on Kubernetes clusters. The locations are spread across the country, and Contoso is faced with the challenge of how to uniformly deploy, configure and manage their containerized applications across all these locations. By leveraging GitOps on Azure Arc-enabled Kubernetes, Contoso can centrally declare their Kubernetes configurations and applications in a Git repository and deploy them to all clusters simultaneously. Developers are more empowered because they can commit changes directly in the Git repo, and these updates are also automatically rolled out to all the clusters.
 
 GitOps, as it relates to Kubernetes, is the practice of declaring the desired state of Kubernetes configuration (deployments, namespaces, etc.) in a Git repository followed by a polling and pull-based deployment of these configurations to the cluster using an operator. In this exercise, you will deploy a sample Kubernetes app using the az k8sconfiguration command and gitops and also update the configuration in the repository which you have linked to the connected cluster and verify if the cluster is getting updated based on the changes made. You will be using the Kubernetes cluster with which you connected in the earlier exercise.
 
@@ -19,7 +19,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
-1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+1. Launch the following GitHub repository URL `https://github.com/Azure/arc-k8s-demo`. In the upper right corner, you will see **Sign in** and **Sign up** options. If you already have a github account, then click on **Sign in**; otherwise, click **Sign up**.
 
    ![](.././media/01.png)
    
@@ -61,7 +61,7 @@ In this exercise, you will be performing the following tasks:
    demouser
    ```
 
-1. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember password will be hidden and will not be visible in the terminal.
+1. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember that the password will be hidden and will not be visible in the terminal.
 
    ```
    demo@pass123
@@ -71,7 +71,7 @@ In this exercise, you will be performing the following tasks:
     
     > Note: To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
 
-1. Login with Sudo. Run the following command and provide the Password `demo@pass123`.
+1. Log in with Sudo. Run the following command and provide the Password `demo@pass123`.
 
    ```
    sudo su
@@ -105,15 +105,15 @@ In this exercise, you will be performing the following tasks:
 
 1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
 
-1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
+1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻 and then click on the `installArcAgentLinux.txt` file to open it.
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
 
-1. Then, select the first 7 lines and, then right click and copy. 
+1. Then, select the first 7 lines and then right-click and copy. 
 
 1. Then, go back to the **putty** session and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
 
-1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
+1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
 
@@ -126,7 +126,7 @@ In this exercise, you will be performing the following tasks:
 
     ![](.././media/arc72.png "azlogin")   
 
-     >**Note:** Wait untill the command run successfully.
+     >**Note:** Wait until the command runs successfully.
 
 1. Once the `microk8s status --wait-ready` command starts running, wait for **10-15 minutes** before proceeding to the next command. It needs time for the API server to respond and for at least one node to be registered.
 
@@ -156,11 +156,11 @@ In this exercise, you will be performing the following tasks:
 
      ![](.././media/25032025(13).png "azlogin")
 
-1. On the **Source** page of create a GitOps page, enter the following details and click on the **Next (7)** button.
+1. On the **Source** tab of create a GitOps page, enter the following details and click on the **Next (7)** button.
 
    - Source Kind: **Git Repository (1)**
 
-   - Repository URL: Paste the URL of github repo that you copied earlier **(2)**.
+   - Repository URL: Paste the URL of the GitHub repo that you copied earlier **(2)**.
 
    - Branch: **main (3)**
 
@@ -172,11 +172,11 @@ In this exercise, you will be performing the following tasks:
 
      ![](.././media/25032025(14).png "azlogin")
 
-1. On the Kustomizations page of create a GitOps page, click on the **+ Create**.
+1. On the Kustomizations tab of create a GitOps page, click on the **+ Create**.
 
    ![](.././media/25032025(15).png "azlogin")
 
-1. On Create a Kustomization page, enter the following details and click **Save (4)**.
+1. On the Create a Kustomization page, enter the following details and click **Save (4)**.
 
    - Instance name: **cluster-config-kustomization (1)**
 
@@ -213,13 +213,13 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc33.png) 
   
-1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
+1. In the Azure Portal, which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/arc34.png)
   
 ## Task 4: Validate the Kubernetes configuration
 
-After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
+After the config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
 
    > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
 
@@ -241,7 +241,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 ## Task 5: Make changes to cluster declarations in the Git repo.
 
-1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
+1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you can see the **arc-k8s-demo-** pod.
 
     ```
     kubectl get pods 
@@ -258,13 +258,13 @@ After config-agent has installed the flux instance, resources held in the git re
 
    ![](.././media/arc37.png)
 
-1. Change the CPU request to **120 (1)** around 32nd line and click on **Commit changes (2)** to confirm the changes to the CPU request.
+1. Change the CPU request to **120 (1)** around the 32nd line and click on **Commit changes (2)** to confirm the changes to the CPU request.
 
    ![](.././media/arc38.png)
 
 1. Click on **Commit changes** again.    
 
-    >**Note:** Repeat the steps for `master` branch as well.
+    >**Note:** Repeat the steps for the `master` branch as well.
    
 ## Task 6: Verify changes are deployed to the cluster.
 
@@ -277,7 +277,7 @@ After config-agent has installed the flux instance, resources held in the git re
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
 
-      >**Note**: If you don't see any change, **retry running the command after a couple of minutes** untill the pod name changes..
+      >**Note**: If you don't see any change, **retry running the command after a couple of minutes** until the pod name changes..
 
 2.  Replace the pod name that you copied in the previous step and run the command
  
