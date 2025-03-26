@@ -71,6 +71,8 @@ In this exercise, you will be performing the following tasks:
    ```
    az upgrade
    ```
+
+   > For Do you want to continue? Type Y and press Enter
    
    >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
    >It may take some time, Wait till the installation process get completed.
