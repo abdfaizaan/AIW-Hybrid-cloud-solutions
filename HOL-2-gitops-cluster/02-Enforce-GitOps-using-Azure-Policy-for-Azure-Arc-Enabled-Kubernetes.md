@@ -82,7 +82,7 @@ In this task, you will select an existing policy definition and create a policy 
 
     - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
      
-       ![](.././media/hybrid72.png)
+       ![](.././media/assignpolicy2-2603.png)
   
 1. Select the **Create a remediation task (1)** check box and then click **Review+create (2)**, skip the Non-compliance messages.
 
