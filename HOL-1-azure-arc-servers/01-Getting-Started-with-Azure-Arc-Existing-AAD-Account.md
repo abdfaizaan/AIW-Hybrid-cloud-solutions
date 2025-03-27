@@ -127,7 +127,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      sudo apt-get install python3-pip
      ```
  
-1. Open a new Putty session, re-perform the steps from step 2 to step 4 of the same task to get the upgraded packages and then continue from  step 7.
+1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
    
