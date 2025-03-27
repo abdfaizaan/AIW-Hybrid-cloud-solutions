@@ -132,6 +132,8 @@ In this exercise, you will be performing the following tasks:
    az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
    ```
 
+    >**Note**: Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.   
+
 1. Replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
    
     ![](.././media/arc32.png) 
