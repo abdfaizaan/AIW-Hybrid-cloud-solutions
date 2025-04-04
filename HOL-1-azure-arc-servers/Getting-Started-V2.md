@@ -60,11 +60,6 @@ Welcome to your Hybrid Cloud Solution(Azure Arc) Hands On Lab! We've prepared a 
 
    ![](.././media/arcg1.png "Lab Environment")
 
-## Lab Guide Zoom In/Zoom Out
-
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.   
-
-   ![](.././media/arcg1.png "Zoom in/out")
    
 ## Virtual Machine & Lab Guide
  
@@ -95,6 +90,12 @@ After completing the task, hit the **Validate** button under Validation tab inte
   ![](.././media/arc76.png)
 
   If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
+
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+   ![](.././media/labzoom-1.png)
 
 ## Let's Get Started with Azure Portal
  
