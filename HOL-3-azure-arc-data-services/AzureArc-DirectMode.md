@@ -523,11 +523,16 @@ Now let us connect to the data controller using Azure Data Studio.
      ```  
         ![asdasd](./media/arc52.png "Azure Data Studio")
 
-        >**Note:** If you see any error message in **Cluster Context**, open the **Powershell** and run the below command.
+        >**Note:** If you see any error message in the **Cluster Context**, open **PowerShell** and run the commands below one by one. After 
+         that, close and reopen **Azure Data Studio** from the desktop, and then repeat Step 4.
+
+        ```BASH
+        Remove-Item C:\Users\arcadmin\.kube\config
+        ```
+
         ```BASH
         Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name Arc-Data-Demo-DirectMode -Force
         ```
-        >Note: **If you still see any error with regards to parsing of the **`conifg`** file, navigate to the **config** file from the file exploer and remove the three dots **`...`** from the bottom of the file and save the file.**
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
@@ -619,10 +624,11 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
      ```BASH
      Password.1!!
      ```
-   
-   Then click on **Connect (6)**
+   - **Trust server Certificate** : Mark it as **True (6)**
+   - Leave the other values as default.
+   - Then click on **Connect (7)**
   
-    ![](./media/ads-8.png "ADS")
+    ![](./media/HOL23-Ex8.png)
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**   
    

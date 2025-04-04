@@ -220,10 +220,11 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
       ```BASH
       Password.1!!
       ```
-    
-    - Click on **Connect** **(6)**
-   
-      ![](./media/cntctosdf.png "azdata")
+    - **Trust server Certificate** : Mark it as **True (6)**
+    - Leave the other values as default.
+    - Then click on **Connect (7)**
+  
+    ![](./media/HOL23-Ex8.png)
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**
 

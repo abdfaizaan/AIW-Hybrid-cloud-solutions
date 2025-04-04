@@ -349,7 +349,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (2)** from the available list and then click on **Select (3)**.
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (2)** from the available list and then click on **Select (3)**.
 
     ![](.././media/hybrid6.png)
 
@@ -393,11 +393,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the Create new rule Enter the following details:
 
-    - Data collection rule name: Enter **data-<inject key="DeploymentID/Suffix" /> (1)**
+    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false"/> (1)**
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (3)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
     
     - Click on **Create (4)**
 

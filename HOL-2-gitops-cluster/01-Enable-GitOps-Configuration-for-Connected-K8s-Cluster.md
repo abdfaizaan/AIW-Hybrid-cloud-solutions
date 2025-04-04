@@ -105,18 +105,21 @@ In this exercise, you will be performing the following tasks:
 
     ![](.././media/variableazlogin.png "azlogin")
 
-1. Run the below command to update the kubernate version.    
+1. Run the below commands one after the other to update the kubernate version.    
 
    ```
    sudo snap refresh microk8s --channel=1.27/stable
+   ```
+
+   ```
    microk8s status --wait-ready
    ```
 
     ![](.././media/arc72.png "azlogin")   
 
-     >**Note:** Wait untill the command run successfully.
+     > **Note:** Wait until the first command runs successfully. This may take around **10–15 minutes**. Then, run the second command, which can take approximately **15–20 minutes** to complete.
 
-1. Once `microk8s status --wait-ready` command start to run, wait for `10-15 minutes` let it run before proceeding to the next command. After that click on **Ctrl+Z** to terminate. 
+     > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
 
 1. Run the below command to install `microsoft.flux` extension.
 

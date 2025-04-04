@@ -147,7 +147,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc21.png "H1E3T2S8")
    
-1. Select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
+1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/>**
    
    ![](.././media/hybrid39.png "H1E3T2S8")
    
@@ -229,7 +229,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc26.png "H1E3T3S18")
 
-1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    
