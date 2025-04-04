@@ -624,8 +624,9 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
      ```BASH
      Password.1!!
      ```
-   
-   Then click on **Connect (6)**
+   - **Trust server Certificate** : Mark it as **True (6)**
+   - Leave the other values as default.
+   - Then click on **Connect (7)**
   
     ![](./media/HOL23-Ex8.png)
 
