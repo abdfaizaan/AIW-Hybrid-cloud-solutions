@@ -627,7 +627,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
    
    Then click on **Connect (6)**
   
-    ![](./media/HOL23-Ex8)
+    ![](./media/HOL23-Ex8.png)
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**   
    
