@@ -118,6 +118,7 @@ In this exercise, you will be performing the following tasks:
     ![](.././media/arc72.png "azlogin")   
 
      > **Note:** Wait until the first command runs successfully. This may take around **10–15 minutes**. Then, run the second command, which can take approximately **15–20 minutes** to complete.
+
      > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
 
 1. Run the below command to install `microsoft.flux` extension.
