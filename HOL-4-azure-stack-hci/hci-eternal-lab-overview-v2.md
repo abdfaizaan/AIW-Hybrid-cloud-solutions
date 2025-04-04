@@ -107,6 +107,12 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 ![](./media/resourses.png)
 
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+![](./media/labzoom-1.png)
+
 ## Login to the Azure portal
 
 1. In the **HCIBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
