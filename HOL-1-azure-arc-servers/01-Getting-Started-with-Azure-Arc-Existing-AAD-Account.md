@@ -54,11 +54,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
      * **sqlvm** - ```192.168.0.4```
   
-     
         ![](.././media/guestvms1.png "Guest VMs")
-       
-    
-        > **Note**: If you see VMs are in the stopped state, and when you click on the Start button, if VMs are not getting started or if it is throwing any error. Then, right-click on Virtual Machine in stopped state and then click on **Delete saved state..**. After that, you can start the VMs and proceed to the next task.
+         
+        > **Note**: If you see VMs are in the stopped state, and when you click on the Start button, if VMs are not getting started or if it is throwing any error. Then, right-click on Virtual Machine in stopped state and then click on **Delete saved state**. After that, you can start the VMs and proceed to the next task.
 
 ## Task 2: Onboard Linux Machine to Azure Arc
 
@@ -75,12 +73,15 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 1. Enter the **ubuntu-k8s** VM username - ```demouser``` in **login as** and then hit **Enter**.
 
     - **Username** : Enter demouser
+
       ```BASH
       demouser
       ```
+
 1. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember the password will be hidden and not be visible in the terminal.
 
     - **Password** : Enter demo@pass123
+
       ```BASH
       demo@pass123
       ```
@@ -119,14 +120,16 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
-    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade please wait untill it is completed.
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
     
-    > **Note**: If in case, the above commands fail then please run the below-mentioned command:
+    > **Note**: If the above commands fail, then please run the below-mentioned command:
     
      ```
      sudo apt-get install python3-pip
      ```
- 
+
+    > **Note**: If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
+  
 1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
