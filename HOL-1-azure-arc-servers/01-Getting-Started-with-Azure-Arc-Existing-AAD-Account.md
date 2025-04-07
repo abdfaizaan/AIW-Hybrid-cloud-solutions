@@ -142,7 +142,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Then, go back to the **putty session** and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
 
-1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
+1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
     
@@ -206,7 +206,7 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ./get_helm.sh
    ```
 
-   **Note**: In case you see `Could not find git. It is required  for plugin installation.` warning, please ignore it and continue with the lab.
+   **Note**: In case you see `Could not find git. It is required  for plugin installation.` Warning: Please ignore it and continue with the lab.
     
    ![](.././media/installhelm.png "installhelm")
 
@@ -265,13 +265,13 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
    ![](.././media/arc8.png "kube") 
 
-1. Run the following command to log in to the azure portal again.   
+1. Run the following command to log in to the Azure portal again.   
 
    ```
    az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
    ```
 
-1. Now, you will Connect the **Kubernetes cluster to Azure Arc** by executing the below command. This command will take a few minutes to onboard the Kubernetes cluster to Azure Arc.
+1. Now, you will connect the **Kubernetes cluster to Azure Arc** by executing the below command. This command will take a few minutes to onboard the Kubernetes cluster to Azure Arc.
 
    ```
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
@@ -281,7 +281,7 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
     > **Note**: This may take around `5 to 10 minutes` to complete, please wait untill it is completed.   
   
-1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
+1. Once the previous command is executed successfully, the **provisioning state** in the output will show as succeeded.
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
 
@@ -314,7 +314,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    ![](.././media/get-pods.png)
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
-Policies can be applied to Arc-enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
+Policies can be applied to Arc-enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** usinga  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
 
 1. From the Azure Portal, search for ```Arc``` **(1)** from the search box and then select **Azure Arc (2)** from the services. 
 
@@ -368,7 +368,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hybrid12.png)
     
-1. Now, once the policy assignment is created, click on **Refresh**, to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
+1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 
     ![](.././media/arc13.png) 
 
@@ -376,9 +376,9 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hyd8.png)    
 
-## Task 6: Monitor Arc Enabled machines with Azure Monitor
+## Task 6: Monitor Arc-enabled machines with Azure Monitor
 
-Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually, or automatically following your configuration management standards. Arc-enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
+Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually or automatically following your configuration management standards. Arc-enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
 
 In this task, let's configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
@@ -394,7 +394,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/hybrid32.png)
 
-1. On the Create new rule Enter the following details:
+1. On the Create new rule, Enter the following details:
 
     - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false"/> (1)**
     
@@ -406,7 +406,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
         ![](.././media/hybrid33.png)
 
-1. Review the configuration, and click on **Configure** button.
+1. Review the configuration and click on the **Configure** button.
 
     ![](.././media/hybrid34.png)
 
@@ -428,7 +428,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.
 
-1. Click on **Logs (1)** from the left navigation pane, then again click on **Insights (2)** again then refresh the page.
+1. Click on **Logs (1)** from the left navigation pane, then click on **Insights (2)** again, and then refresh the page.
 
     ![](.././media/arc30.png)
 
@@ -436,7 +436,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/hyd16.png)
     
-1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties from the right. If there will be any **Alerts** you can check it by clicking on **Alerts** on the right side 👉.
+1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties from the right. If there are any **Alerts**, you can check them by clicking on **Alerts** on the right side 👉.
 
     ![](.././media/arc31.png)
 
@@ -450,7 +450,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
  
 <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
 
->**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+>**Note**: It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
