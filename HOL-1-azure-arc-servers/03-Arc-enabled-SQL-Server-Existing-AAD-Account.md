@@ -92,6 +92,8 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/completed.png "sqlsearch")
   
+    - **Note**: You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
+
 1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/hybrid36.png "sqlsearch")
