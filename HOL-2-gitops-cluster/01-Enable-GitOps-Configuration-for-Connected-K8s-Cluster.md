@@ -11,10 +11,10 @@ In this exercise, you will be performing the following tasks:
 
 - Task 01: Fork the GitHub Arc K8s demo repository
 - Task 02: Deploy App using az k8sconfiguration
-- Task 03: Validate the FluxConfiguration
-- Task 04: Validate the Kubernetes configuration
-- Task 05: Make changes to cluster declarations in the Git repo.
-- Task 06: Verify changes are deployed to the cluster.
+- Task 03: Validate the FluxConfiguration - **Read Only**
+- Task 04: Validate the Kubernetes configuration - **Read Only**
+- Task 05: Make changes to cluster declarations in the Git repo - **Read Only**
+- Task 06: Verify changes are deployed to the cluster - **Read Only**
 
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
@@ -153,7 +153,7 @@ In this exercise, you will be performing the following tasks:
      
      > The config agent polls Azure for new or updated configurations.
 
-## Task 3: Validate the FluxConfiguration
+## Task 3: Validate the FluxConfiguration - Read Only
 
 1. Now, to validate whether the **FluxConfiguration** was successfully created and the **complianceState** is **Compliant**, you have to run the command given below. 
    
@@ -172,7 +172,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc34.png) 
   
-## Task 4: Validate the Kubernetes configuration
+## Task 4: Validate the Kubernetes configuration - Read Only
 
 After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
 
@@ -194,7 +194,7 @@ After config-agent has installed the flux instance, resources held in the git re
    kubectl -n team-a get cm -o yaml
    ```
 
-## Task 5: Make changes to cluster declarations in the Git repo.
+## Task 5: Make changes to cluster declarations in the Git repo - Read Only
 
 1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
 
@@ -221,7 +221,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
     >**Note:** Repeat the steps for `master` branch as well.
    
-## Task 6: Verify changes are deployed to the cluster.
+## Task 6: Verify changes are deployed to the cluster - Read Only
 
 1.  Run the following command in the SSH Session that you have opened to the ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo**
 
@@ -245,15 +245,7 @@ After config-agent has installed the flux instance, resources held in the git re
     
     Observe the **CPU** request value that you updated in the previous steps in the output as shown:
     
-    ![](.././media/pods6.png) 
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- 
-   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-<validation step="f1f20e86-84c1-438d-8082-5d5efac68d67" />  
+    ![](.././media/pods6.png)  
 
 ## Summary
 
