@@ -132,14 +132,14 @@ In this exercise, you will be performing the following tasks:
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
    ```
-   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
+   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch master --kustomization name=cluster-config-kustomization
    ```
 
     >**Note**: Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.   
 
 1. Replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
    
-    ![](.././media/arc32.png) 
+    ![](.././media/cs.png) 
    
      > **Note**: Wait for 5 minutes before performing the next step
 
@@ -166,7 +166,7 @@ In this exercise, you will be performing the following tasks:
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/arc33.png) 
+   ![](.././media/cs2.png) 
   
 1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
@@ -205,7 +205,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 1. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-1. Navigate to **main (1)** branch, **cluster-apps (2)**.
+1. Navigate to **master (1)** branch, **cluster-apps (2)**.
 
    ![](.././media/arc36.png)   
 
