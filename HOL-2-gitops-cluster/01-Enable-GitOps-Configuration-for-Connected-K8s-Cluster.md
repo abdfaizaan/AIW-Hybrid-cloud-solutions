@@ -139,7 +139,7 @@ In this exercise, you will be performing the following tasks:
 
 1. Replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
    
-    ![](.././media/arc32.png) 
+    ![](.././media/cs.png) 
    
      > **Note**: Wait for 5 minutes before performing the next step
 
@@ -166,7 +166,7 @@ In this exercise, you will be performing the following tasks:
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/arc33.png) 
+   ![](.././media/cs2.png) 
   
 1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
