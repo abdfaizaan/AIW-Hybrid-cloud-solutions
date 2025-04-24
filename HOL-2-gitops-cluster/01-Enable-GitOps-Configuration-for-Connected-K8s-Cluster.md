@@ -132,7 +132,7 @@ In this exercise, you will be performing the following tasks:
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
    ```
-   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
+   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch master --kustomization name=cluster-config-kustomization
    ```
 
     >**Note**: Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.   
@@ -205,7 +205,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 1. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-1. Navigate to **main (1)** branch, **cluster-apps (2)**.
+1. Navigate to **master (1)** branch, **cluster-apps (2)**.
 
    ![](.././media/arc36.png)   
 
