@@ -28,7 +28,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
-    ![](.././media/rs.png")
+    ![](.././media/rs.png)
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
