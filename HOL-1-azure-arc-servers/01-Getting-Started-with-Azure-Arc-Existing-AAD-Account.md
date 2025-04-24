@@ -28,7 +28,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
-    ![](.././media/resources-azure-arc-rg.png "Select hyper-v from desktop")
+    ![](.././media/rs.png")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -344,7 +344,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/arc11.png)
     
-    >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
+    >**Note**: If you see multiple policies with the same name, select the Built-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
 1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
 
