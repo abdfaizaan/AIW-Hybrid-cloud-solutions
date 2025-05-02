@@ -44,9 +44,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
-1. Then, you need to Select **ARCHOST-<inject key="DeploymentID" />** to connect with the Local Hyper-V server.
+1. Then, you need to Select **ARCHOST-XXXXXX** to connect with the Local Hyper-V server.
 
     ![](.././media/arc2.png "ARCHOST Server")
+
+    >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find a list of guest virtual machines with private IP addresses.
      
@@ -352,9 +354,11 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (2)** from the available list and then click on **Select (3)**.
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-XXXXXX(2)** from the available list and then click on **Select (3)**.
 
     ![](.././media/hybrid6.png)
+
+    >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
 
 1. Navigate to the **Remediation (1)** blade, enable the checkbox for **Create a remediation task (2)** and then click on the **Next (3)** button.
 
@@ -400,7 +404,9 @@ In this task, let's configure and collect data from your Linux machine by enabli
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-XXXXXX (3)**
+
+    >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
     
     - Click on **Create (4)**
 
