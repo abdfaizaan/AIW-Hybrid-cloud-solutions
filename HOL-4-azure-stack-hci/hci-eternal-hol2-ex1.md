@@ -9,7 +9,7 @@ In this exercise, you will learn how to configure and monitor cluster performanc
 You will be able to complete the following tasks:
 
 - Task 1: Assign the Windows Admin Center Administrator Login role to User
-- Task 2: Configure Windows Admin Center for Azure Stack HCI using Azure Portal
+- Task 2: Configure Windows Admin Center for Azure Local using Azure Portal
 - Task 3: Monitor using the Windows Admin Center dashboard
 - Task 4: Monitor virtual machines
 - Task 5: Monitor servers
@@ -17,28 +17,31 @@ You will be able to complete the following tasks:
 
 ## Task 1: Assign the Windows Admin Center Administrator Login role to User 
 
-1. Navigate to your **Azure Stack HCI resource group** and click on **Access Control**.
+1. Navigate to your resource group named **AzureLocal**
 
-    ![](./media/accesscontrol.png)
+1. Click on **Access control (1)**, then select **+ Add (2)** and choose **Add role assignment (3)** to create a new role.
 
-2. Click on **Add** > **Add Role Assignment**, select **Windows Admin Center Administrator Login** and click on the **Next** button.
+    ![](./media/accesscontrola.png)
 
-    ![](./media/roleassign.png)
+1. Search for and select **Windows Admin Center Administrator Login (1)** and click on the **Next (2)** button.
 
-3. Now under the **Members** page, click on **User, group, or service principle**, select **<inject key="AzureAdUserEmail"></inject>** and click on **Select**. Later, click on **Review + Assign** to complete the assignment.
+    ![](./media/roleassigna.png)
 
-   ![](./media/roletotheuser.png)
+3. On the **Members** page, click **User, group, or service principal (1)**, then select **Select members (2)**. Search for and choose **<inject key="AzureAdUserEmail"></inject> (3)**, and click **Select (4)**. Finally, click **Review + Assign** to complete the role assignment.
 
-4. In the **Review + Assign** tab, click on **Review + Assign** button.
+   ![](./media/roletotheusera.png)
 
-   ![](./media/roletotheuser1.png)
+1. click on **Review + Assign**.
 
+4. Finally, click **Review + Assign** to complete the role assignment.
 
-## Task 2: Configure Windows Admin Center for Azure Stack HCI using Azure Portal.
+   ![](./media/roletotheuser1a.png)
 
-1. Once the deployment is successful, navigate back to **hciboxcluster** Azure Stack HCI. From the left menu, select **Windows Admin Center (preview)** **(1)** under **settings** and click on **SetUp** **(2)**.
+## Task 2: Configure Windows Admin Center for Azure Local using Azure Portal.
 
-   ![](media/wac-setup.png)
+1. Once the deployment is successful, navigate back to **hciboxcluster** Azure Local. From the left menu, select **Windows Admin Center (preview)** **(1)** under **settings** and click on **SetUp** **(2)**.
+
+   ![](media/wac-setupa.png)
 
 2. In the **Windows Admin Center**, pop-up leave the **Listening port** to **6516**. Click on **Install**. 
 
@@ -46,13 +49,11 @@ You will be able to complete the following tasks:
 
     >**Note**: This may take 5 minutes to get ready! Please wait.
 
-
 ## Task 3: Monitor using the Windows Admin Center dashboard
-
 
 1. From the left-side menu, click on **Window Admin Center (Preview)** and click on the **Connect** button to connect to **WAC**.
 
-     ![](media/connectwac.png)
+    ![](media/connectwac.png)
 
 2. The Windows Admin Center dashboard provides alerts and health information about servers, drives, and volumes, as well as details about CPU, memory, and storage usage. The top of the Windows Admin Center dashboard prominently displays critical alerts as soon as you connect to it. The bottom of the dashboard displays cluster performance information, such as input/output operations/second (IOPS) and latency by hour, day, week, month, or year.
 

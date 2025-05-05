@@ -1,19 +1,19 @@
-# Exercise 6: Managing AKS on Azure Stack HCI 
+# Exercise 6: Managing AKS on Azure Local 
 
 ### Estimated Duration: 60 minutes
 
-In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Stack HCI, which involves creating a logical network specifically tailored for AKS on Azure Stack HCI. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Stack HCI via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Stack HCI environment.
+In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Local, which involves creating a logical network specifically tailored for AKS on Azure Local. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Local via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Local environment.
 
 ## Lab Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Create a Logical Network for Azure Stack HCI for AKS
+- Task 1: Create a Logical Network for Azure Local for AKS
 - Task 2: Create an Entra Group for authentication of AKS
-- Task 3: Create AKS on Azure Stack HCI using Azure Portal
-- Task 4: Connecting to the Azure Stack HCI AKS
+- Task 3: Create AKS on Azure Local using Azure Portal
+- Task 4: Connecting to the Azure Local AKS
 
-## Task 1: Create a Logical Network for Azure Stack HCI for AKS
+## Task 1: Create a Logical Network for Azure Local for AKS
 
 1. Navigate to the Resource Group in the Azure portal navigation section.
 
@@ -21,15 +21,15 @@ You will be able to complete the following tasks:
 
 2. From the Resource groups pane, click on **AzureStakHCI** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
+   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
 
-3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Stack HCI.
+3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
 
    ![](media/selecth-ciboxcluster-hci.png)
 
-4. In the **hciboxcluster** Azure Stack HCI, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
+4. In the **hciboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
 
-   ![](media/logic1network-create.png)
+   ![](media/logic1network-createa.png)
 
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
@@ -81,9 +81,7 @@ You will be able to complete the following tasks:
 
     ![](media/newgroupcreate.png)
 
-
-
-## Task 3: Create AKS on Azure Stack HCI using Azure Portal
+## Task 3: Create AKS on Azure Local using Azure Portal
 
 1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services** and select **Kubernetes services**.
 
@@ -91,7 +89,7 @@ You will be able to complete the following tasks:
 
 1. In the **Kubernetes services** tab, click on **+ Create** **(1)** and from the drop-down select **Create a Kubernetes cluster with Azure Arc** **(2)**.
 
-    ![](media/select-kubernetes-add.png)
+    ![](media/select-kubernetes-adda.png)
 
 1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill the fallowing deatils in the Basic and click on **Next: Node Pool** **(7)**.
 
@@ -130,9 +128,9 @@ You will be able to complete the following tasks:
 
      ![](media/aksoverview.png)
     
-## Task 4: Connecting to the Azure Stack HCI AKS
+## Task 4: Connecting to the Azure Local AKS
 
-1. From your jumpVM, open Powershel and run the following command, using the name of your HCIBox resource group.
+1. From your jumpVM, open Powershell and run the following command, using the name of your HCIBox resource group.
 
    >Note: Powershell ISE will not work as it may need some inputs while executing the command. 
 
@@ -149,6 +147,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, you created a Logical Network for Azure Stack HCI for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Stack HCI using Azure Portal and connected to the Azure Stack HCI AKS.
+In this exercise, you created a Logical Network for Azure Local for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Local using Azure Portal and connected to the Azure Local AKS.
 
 ### You have successfully completed the lab
