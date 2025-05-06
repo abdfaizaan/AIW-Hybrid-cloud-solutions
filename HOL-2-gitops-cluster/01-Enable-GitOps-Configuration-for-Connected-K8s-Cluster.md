@@ -199,7 +199,7 @@ After config-agent has installed the flux instance, resources held in the git re
 1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
 
     ```
-    kubectl get pods 
+    kubectl get pods -n cluster-config
     ```
     ![](.././media/pods1.png)
 
@@ -226,7 +226,7 @@ After config-agent has installed the flux instance, resources held in the git re
 1.  Run the following command in the SSH Session that you have opened to the ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo**
 
     ```
-    kubectl get pods 
+    kubectl get pods -n cluster-config
     ```
     ![](.././media/pods4.png) 
     
@@ -237,7 +237,7 @@ After config-agent has installed the flux instance, resources held in the git re
 2.  Replace the pod name that you copied in the previous step and run the command
  
     ```
-    kubectl get pod <podname> -o yaml
+    kubectl get pod <podname> -n cluster-config -o yaml
     ```
     Example: ```kubectl get pod arc-k8s-demo-5779f4d696-fm22j -o yaml```
    
