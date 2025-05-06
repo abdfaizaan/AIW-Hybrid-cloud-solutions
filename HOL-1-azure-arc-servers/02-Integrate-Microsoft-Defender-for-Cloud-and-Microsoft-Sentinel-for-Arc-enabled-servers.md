@@ -91,12 +91,10 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/microsoft-sentinel-create.png)
     
-1. Select the existing log analytics workspace shown named **LogAnalyticsWS-XXXXXX (1)**
+1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
   and then click on the **Add (2)** button.
 
       ![](.././media/hybrid19.png)
-    
-      >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
       
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     

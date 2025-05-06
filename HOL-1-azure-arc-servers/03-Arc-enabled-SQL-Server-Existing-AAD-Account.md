@@ -149,11 +149,9 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc21.png "H1E3T2S8")
    
-1. Select **LogAnalyticsWS-XXXXXX**
+1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**
    
    ![](.././media/hybrid39.png "H1E3T2S8")
-   
-   >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
 
 1. Then select **Agents (1)** from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
  
@@ -233,12 +231,10 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/arc26.png "H1E3T3S18")
 
-1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-XXXXXX (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
 
-   >**Note:** XXXXXX is a six/seven digit unique number can be found under Environment tab check variable with name **DeploymentId/Suffix**
-   
    > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
    
 1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
