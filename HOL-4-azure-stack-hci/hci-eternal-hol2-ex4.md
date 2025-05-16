@@ -1,18 +1,18 @@
-# Exercise 7: Azure Stack HCI VM Provisioning
+# Exercise 7: Azure Local VM Provisioning
 
 ### Estimated Duration: 90 minutes
 
-In this exercise, you will learn how to provision virtual machines (VMs) on Azure Stack HCI. The process involves setting up a logical network, uploading a VM image to Azure Stack HCI storage, and then creating a new virtual machine using this image within the Azure Stack HCI environment. This practical exercise provides a step-by-step walkthrough of deploying VMs on Azure Stack HCI infrastructure.
+In this exercise, you will learn how to provision virtual machines (VMs) on Azure Local. The process involves setting up a logical network, uploading a VM image to Azure Local storage, and then creating a new virtual machine using this image within the Azure Local environment. This practical exercise provides a step-by-step walkthrough of deploying VMs on Azure Local infrastructure.
 
 ## Lab Objectives
 
 You will be able to complete the following tasks:
 
-- Task 1: Create a Logical Network for Azure Stack HCI VM
-- Task 2: Download and Add the VM image to Azure Stack HCI Storage
-- Task 3: Create a Virtual Machine on Azure Stack HCI
+- Task 1: Create a Logical Network for Azure Local VM
+- Task 2: Download and Add the VM image to Azure Local Storage
+- Task 3: Create a Virtual Machine on Azure Local
 
-## Task 1: Create a Logical Network for Azure Stack HCI VM
+## Task 1: Create a Logical Network for Azure Local VM
 
 1. Navigate to the Resource Group in the Azure portal navigation section.
 
@@ -20,15 +20,15 @@ You will be able to complete the following tasks:
 
 2. From the Resource groups pane, click on **AzureStakHCI** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
+   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
 
-3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Stack HCI.
+3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
 
    ![](media/selecth-ciboxcluster-hci.png)
 
-4. In the **hciboxcluster** Azure Stack HCI, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
+4. In the **hciboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
 
-   ![](media/logic2network-create.png)
+   ![](media/logic2network-createa.png)
 
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
@@ -57,9 +57,9 @@ You will be able to complete the following tasks:
 
    ![](media/logic-2network-create.png)
 
-## Task 2: Download and Add the VM image to Azure Stack HCI Storage
+## Task 2: Download and Add the VM image to Azure Local Storage
 
-1. In the **hciboxcluster** Azure Stack HCI, from the left menu select **VM Image** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
+1. In the **hciboxcluster** Azure Local, from the left menu select **VM Image** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
 
    ![](media/vmimage-creat.png)
 
@@ -68,22 +68,22 @@ You will be able to complete the following tasks:
    - Resource group : **AzureStackHCI** **(1)**
    - Save image as: Enter Image name as **hci-vm** **(2)**
    - Custom location: From the drop-down select **jumpstart** **(3)**
-   - Image to download: Select **select Windows 10 Enterprise multi-session, version 21H2 - Gen2** **(4)** VM image.
+   - Image to download: Select **select Windows 10 Enterprise multi-session, version 22H2 - Gen2** **(4)** VM image.
    - Storage path: select **Choose automatically** **(5)**
 
-   ![](media/vmimagebasic.png)
+   ![](media/vmimagebasica.png)
 
 1. In the **Review + Create** tab, click on **Create** button.
 
-   ![](media/vmimagecreate.png)
+   ![](media/vmimagecreatea.png)
 
    > **Note**: VM images download may take upto 1 hour.
     
-1. You can monitor the download Progress by Selecting the **VM images** tab from the lab side menu. Once the VM image download in completed, you can move to the next task of creating the Virtual Machine on Azure Stack HCI.
+1. You can monitor the download Progress by Selecting the **VM images** tab from the lab side menu. Once the VM image download in completed, you can move to the next task of creating the Virtual Machine on Azure Local.
 
    ![](media/vmdownlaodes.png)
 
-## Task 3: Create a Virtual Machine on Azure Stack HCI
+## Task 3: Create a Virtual Machine on Azure Local
 
 1. Navigate to **Virtual Machine** tab from the left side and click on **Create Virtual Machine**.
 
@@ -120,8 +120,6 @@ You will be able to complete the following tasks:
    - Size (GB) : **128** **(2)**
    - Provisioning type: **dynamic** **(3)**
    - Storage path: **Choose Automatically**
-    
-  
 
 4. On the **Networking** tab, Click on **Add network interface** and enter the following details, after adding the details click on **Add** and **Next**.
 
@@ -142,6 +140,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, you created a Logical Network for Azure Stack HCI VM, downloaded and added the VM image to Azure Stack HCI Storage and created a Virtual Machine on Azure Stack HCI.
+In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage and created a Virtual Machine on Azure Local.
 
 ### You have successfully completed the lab

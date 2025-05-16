@@ -17,17 +17,17 @@ You will be able to complete the following tasks:
 
 A Recovery Services vault is a management entity that stores recovery points that are created over time, and it provides an interface to perform backup-related operations. These operations include taking on-demand backups, performing restores, and creating backup policies.
 
-1. In the Azure portal, search for **Backup center** and then navigate to the **Backup center** dashboard.
+1. In the Azure portal, search for **Business Continuity Center** and then navigate to the **Business Continuity Center** dashboard.
 
-   ![](media/hci24-18.png)
+   ![](media/hci24-18a.png)
 
-2. On the Overview pane, select Vault.
+1. Go to **Manage (1)**, select **Vaults (2)**, and click **+ Vaults** to create a new vault.
 
-   ![](media/hci24-19.png)
+   ![](media/hci24-19a.png)
 
-3. Select Recovery Services vault > Continue.
+3. Select **Recovery Services vault (1)**, then click **Continue (2)**.
 
-   ![](media/hci24-20.png)
+   ![](media/hci24-20a.png)
 
 4. On the Recovery Services vault pane, enter the following values:
 
@@ -36,17 +36,15 @@ A Recovery Services vault is a management entity that stores recovery points tha
     - Vault name: **hci-backup-vault** 
     - Region: select the same region where Azure Satck HCI is deployed i.e, **East US**
 
-   ![](media/hci24-21.png)
+    ![](media/hci24-21a.png)
 
-5. After providing the values, select Review + create.
+5. Click on **Review + create**, then select **Create**.
 
-   ![](media/hci24-22.png)
+1. Once the deployment is complete, click on **Go to resource**.
 
-6. To finish creating the Recovery Services vault, select Create.
+    ![](media/hci24-21b.png)
 
-   ![](media/hci24-23.png)
-
-   It can take a while to create the Recovery Services vault. Monitor the status notifications in the Notifications area at the upper right. After the vault is created, it appears in the list of Recovery Services vaults. If the vault doesn't appear, select Refresh.
+    ![](media/hci24-23a.png)
 
 ## Task 2: Connect to On-Premises Hyper-V Virtual Machine
 
@@ -62,7 +60,7 @@ A Recovery Services vault is a management entity that stores recovery points tha
 
    ![](media/hci24-30.png)
 
-4. On the **login** window, enter the password as **ArcPassword123!!** and hit **Enter** to login. 
+4. On the **login** window, enter the password as **Password.1!!** and hit **Enter** to login.
 
    ![](media/hci24-31.png)
 
@@ -76,15 +74,19 @@ A Recovery Services vault is a management entity that stores recovery points tha
 
 2. In the Microsoft Azure Backup Server download page, choose a language, and select **Download**.
 
-   ![](media/hci24-26.png)
+   ![](media/hci24-26a.png)
 
-3. The Azure Backup Server installer is composed of eight files - an installer and seven .bin files. Check **File Name** to select all required files and select **Download** to Download all files to the same folder. You will see a pop-up to Download multiple files, click **Allow**.
+3. The Azure Backup Server installer is composed of eight files - an installer and seven .bin files. Check **File Name** to select all required files and select **Download** to Download all files to the same folder.
 
     ![](media/hci24-33.png)
+
+    > **Note:** If a pop-up appears asking to download multiple files, click **Allow**.
 
 4. Once you've downloaded all files to your Azure Stack Hub virtual machine, go to the download location in the File Explorer. To start the installation, from the list of downloaded files, double-click on **MicrosoftAzureBackupserverInstaller.exe**.
 
     ![](media/hci24-34.png)
+
+  >**Note:** Make sure you have downloaded all the files double check to coinform
 
 5. In the Azure Backup Server wizard, select **Next** to continue.
 
