@@ -1,44 +1,53 @@
-# Hybrid Cloud Solution - Azure Stack HCI
+# Hybrid Cloud Solution - Azure Local
 
 ### Overall Estimated Duration: 8 hours
 
 ## Overview
 
-HCIBox is a turnkey solution that provides a complete sandbox for exploring Azure Stack HCI capabilities and hybrid cloud integration in a virtualized environment. HCIBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Stack HCI and Azure Arc technology without the need for physical hardware.
+HCIBox is a turnkey solution that provides a complete sandbox for exploring Azure Local capabilities and hybrid cloud integration in a virtualized environment. HCIBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Local and Azure Arc technology without the need for physical hardware.
 
-Azure Stack HCI 23H2 is now generally available. 23H2 simplifies the configuration and deployment of HCI clusters and related workloads, like VM management for VM self-service management in the Azure portal. HCIBox has also been updated and now offers clusters built on the new 23H2 OS, and prior Azure Stack HCI releases are no longer part of HCIBox or supported by the Jumpstart team. If you've used earlier versions of HCIBox, you should read this guide thoroughly to understand the new HCIBox deployment process.
+Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. HCIBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of HCIBox.
 
-### Azure Stack HCI capabilities are available in HCIBox
+## Azure Local capabilities available in LocalBox
 
-**2-node Azure Stack HCI cluster**
+### 2-node Azure Local instance
 
-HCIBox automatically creates and configures a two-node Azure Stack HCI cluster using nested virtualization with Hyper-V running on an Azure Virtual Machine. This Hyper-V host creates three guest virtual machines: two Azure Stack HCI nodes (AzSHost1, AzSHost2), and one nested Hyper-V host (AzSMGMT). AzSMGMT itself hosts two guest VMs: an Active Directory domain controller and a Routing and Remote Access Server acting as a virtual router.
+LocalBox automatically creates and configures a two-node Azure Local instance using nested virtualization with Hyper-V running on an Azure Virtual Machine. This Hyper-V host creates three guest virtual machines: two Azure Local machines (_AzLHOST1_, _AzLHOST2_), and one nested Hyper-V host (_AzLMGMT_). _AzLMGMT_ itself hosts two guest VMs: an [Active Directory domain controller](https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview), and a [Routing and Remote Access Server](https://learn.microsoft.com/windows-server/remote/remote-access/remote-access) acting as a virtual router.
 
-![](./media/hci24-overview-3.png)
+![Screenshot showing LocalBox nested virtualization](./nested_virtualization.png)
 
-**Virtual machine management**: HCIBox comes with guest VM management in the Azure portal. The HCIBox documentation will walk you through how to use this feature, including configuring VM images from Azure Marketplace and creating VMs on your cluster.
+### Virtual machine management
 
-**Azure Kubernetes Service on Azure Stack HCI**: Azure Stack HCI includes Azure Kubernetes Services on Azure Stack HCI (AKS hybrid) as part of the default configuration. A user script is provided that can be used to create a workload cluster.
+LocalBox comes with [guest VM management in Azure portal](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). The LocalBox documentation will walk you through how to use this feature, including configuring VM images from Azure marketplace and creating VMs on your instance.
+
+### AKS enabled by Azure Arc on Azure Local
+
+Azure Local includes [AKS enabled by Azure Arc](https://learn.microsoft.com/azure/aks/aksarc/aks-overview) as part of the default configuration. A user script is provided that can be used to create a workload instance.
+
+## LocalBox Azure Consumption Costs
+
+LocalBox resources generate Azure Consumption charges from the underlying Azure resources including core compute, storage, networking and auxiliary services. Note that Azure consumption costs may vary depending the region where LocalBox is deployed. Be mindful of your LocalBox deployments and ensure that you disable or delete LocalBox resources when not in use to avoid unwanted charges. Please see the [Jumpstart LocalBox FAQ](../faq/) for more information on consumption costs.
+
 
 ## Objective
 
 To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
-- **Preparing env with the prerequisites to deploy Azure Stack HCI:** Ensure the infrastructure meets all necessary requirements for a successful Azure Stack HCI deployment, enabling efficient resource utilization and performance.
+- **Preparing env with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all necessary requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
   
-- **Deploying JumpStart-HCIBox in Azure Portal:** Quickly provision a ready-to-use Azure Stack HCI environment using JumpStart-HCIBox for streamlined setup, accelerating time to value for cloud initiatives.
+- **Deploying JumpStart-HCIBox in Azure Portal:** Quickly provision a ready-to-use Azure Local environment using JumpStart-HCIBox for streamlined setup, accelerating time to value for cloud initiatives.
 
 - **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart HCI Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
   
 - **Configure and monitor cluster performance from the Windows Admin Center dashboard:** Set up and track cluster performance metrics through the Windows Admin Center for effective resource management, allowing proactive identification of performance bottlenecks.
   
-- **Azure Backup Server on Azure Stack:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Stack HCI, ensuring business continuity and compliance with data retention policies.
+- **Azure Backup Server on Azure Local:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Local, ensuring business continuity and compliance with data retention policies.
   
-- **Managing AKS on Azure Stack HCI:** Oversee and optimize Azure Kubernetes Service (AKS) deployments on Azure Stack HCI for efficient container orchestration, facilitating rapid application development and deployment.
+- **Managing AKS on Azure Local:** Oversee and optimize Azure Kubernetes Service (AKS) deployments on Azure Local for efficient container orchestration, facilitating rapid application development and deployment.
   
-- **Azure Stack HCI VM Provisioning:** Facilitate the rapid creation and deployment of virtual machines within the Azure Stack HCI environment, enhancing operational efficiency and resource allocation.
+- ** Azure Local machines Provisioning:** Facilitate the rapid creation and deployment of virtual machines within the Azure Local environment, enhancing operational efficiency and resource allocation.
   
-- **Azure Stack HCI Update management using Azure Portal:** Streamline the update management process for Azure Stack HCI through the Azure Portal for improved system reliability and security, ensuring the infrastructure is always up-to-date with the latest features and patches.
+- **Azure Local Update management using Azure Portal:** Streamline the update management process for Azure Local through the Azure Portal for improved system reliability and security, ensuring the infrastructure is always up-to-date with the latest features and patches.
 
 ## Prerequisites
 
@@ -47,16 +56,16 @@ Participants should have:
 - **Basic Cloud Knowledge:** Understanding of cloud computing concepts, including IaaS, PaaS, and SaaS.
 - **Familiarity with Azure Services:** Basic knowledge of Azure services and the Azure Portal interface.
 - **Networking Fundamentals:** Understanding of networking concepts, such as IP addressing, subnets, and routing, which are crucial for configuring hybrid environments.
-- **Windows Server Knowledge:** Proficiency with Windows Server, including installation, configuration, and management, as Azure Stack HCI runs on Windows Server technology.
-- **Virtualization Concepts:** Familiarity with virtualization technologies, including Hyper-V, as Azure Stack HCI utilizes Hyper-Converged Infrastructure.
-- **PowerShell Basics:** Basic knowledge of PowerShell for scripting and automation tasks in Azure and Azure Stack environments.
+- **Windows Server Knowledge:** Proficiency with Windows Server, including installation, configuration, and management, as Azure Local runs on Windows Server technology.
+- **Virtualization Concepts:** Familiarity with virtualization technologies, including Hyper-V, as Azure Local utilizes Hyper-Converged Infrastructure.
+- **PowerShell Basics:** Basic knowledge of PowerShell for scripting and automation tasks in Azure and Azure Local environments.
 - **Storage Fundamentals:** Understanding of storage technologies and concepts, including SAN, NAS, and local storage, which are relevant to HCI setups.
 - **Backup and Disaster Recovery Concepts:** Awareness of backup strategies and disaster recovery planning to effectively implement Azure Backup Server.
-- **Kubernetes Basics:** Familiarity with containerization and Kubernetes concepts, especially for managing AKS on Azure Stack HCI.
+- **Kubernetes Basics:** Familiarity with containerization and Kubernetes concepts, especially for managing AKS on Azure Local.
 
 ## Architechture
 
-The architecture of a Hybrid Cloud Solution using Azure Stack HCI integrates on-premises infrastructure with Azure services, creating a cohesive and flexible environment. At the core, Azure Stack HCI utilizes a hyper-converged infrastructure powered by Windows Server and Hyper-V, enabling efficient virtualization and storage management through Storage Spaces Direct. This on-premises setup connects seamlessly to Azure services via the Azure Portal, allowing organizations to leverage cloud capabilities such as Azure Backup, Azure Kubernetes Service (AKS), and Azure Site Recovery. Management and monitoring are facilitated through Windows Admin Center, providing a unified interface for performance tracking and configuration. The architecture supports a hybrid model that ensures data locality, optimized workload placement, and enhanced disaster recovery, empowering businesses to scale their operations while maintaining control over their data and resources.
+The architecture of a Hybrid Cloud Solution using Azure Local integrates on-premises infrastructure with Azure services, creating a cohesive and flexible environment. At the core, Azure Local utilizes a hyper-converged infrastructure powered by Windows Server and Hyper-V, enabling efficient virtualization and storage management through Storage Spaces Direct. This on-premises setup connects seamlessly to Azure services via the Azure Portal, allowing organizations to leverage cloud capabilities such as Azure Backup, Azure Kubernetes Service (AKS), and Azure Site Recovery. Management and monitoring are facilitated through Windows Admin Center, providing a unified interface for performance tracking and configuration. The architecture supports a hybrid model that ensures data locality, optimized workload placement, and enhanced disaster recovery, empowering businesses to scale their operations while maintaining control over their data and resources.
 
 ## Architechture Diagram
 
@@ -66,18 +75,18 @@ The architecture of a Hybrid Cloud Solution using Azure Stack HCI integrates on-
 
 The architecture for this lab involves the following key components:
 
-- **Azure Stack HCI:** The primary infrastructure service providing a hyper-converged environment that integrates with Azure.
+- **Azure Local:** The primary infrastructure service providing a hyper-converged environment that integrates with Azure.
 - **Azure Backup:** A service that provides backup and disaster recovery capabilities for on-premises and cloud-based resources.
-- **Azure Kubernetes Service (AKS):** A managed container orchestration service that can run on Azure Stack HCI for deploying and managing containerized applications.
-- **Azure Monitor:** A service for monitoring application performance and infrastructure health, offering insights into the operation of Azure Stack HCI environments.
+- **Azure Kubernetes Service (AKS):** A managed container orchestration service that can run on Azure Local for deploying and managing containerized applications.
+- **Azure Monitor:** A service for monitoring application performance and infrastructure health, offering insights into the operation of Azure Local environments.
 - **Azure Site Recovery:** A disaster recovery service that can be used to replicate on-premises workloads to Azure for business continuity.
-- **Windows Server:** The underlying operating system that runs Azure Stack HCI, providing the necessary virtualization capabilities.
-- **Hyper-V:** The virtualization technology used in Azure Stack HCI to host virtual machines.
-- **Windows Admin Center:** A management tool for configuring and monitoring the Azure Stack HCI cluster and its resources.
+- **Windows Server:** The underlying operating system that runs Azure Local, providing the necessary virtualization capabilities.
+- **Hyper-V:** The virtualization technology used in Azure Local to host virtual machines.
+- **Windows Admin Center:** A management tool for configuring and monitoring the Azure Local cluster and its resources.
 
 ## Getting Started with the Lab
  
-Welcome to your Hybrid Cloud Solution - Azure Stack HCI Workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+Welcome to your Hybrid Cloud Solution - Azure Local Workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
 
@@ -149,7 +158,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. From the **Resource** groups pane, click on the **AzureStakHCI** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
+   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
 
 
 ## Support Contact

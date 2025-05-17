@@ -17,7 +17,7 @@ You will be able to complete the following tasks:
 
 ## Task 1: Assign the Windows Admin Center Administrator Login role to User 
 
-1. Navigate to your resource group named **AzureLocal**
+1. Navigate to your resource group named **Azure-Local**
 
 1. Click on **Access control (1)**, then select **+ Add (2)** and choose **Add role assignment (3)** to create a new role.
 
