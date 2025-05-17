@@ -126,7 +126,7 @@ You will be able to complete the following tasks:
 
         $requiredExtensions = @('AzureEdgeTelemetryAndDiagnostics', 'AzureEdgeDeviceManagement', 'AzureEdgeLifecycleManager')
         $attempts = 0
-        $maxAttempts = 90
+        $maxAttempts = 5
 
         do {
             $attempts++
