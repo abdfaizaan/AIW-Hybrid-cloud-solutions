@@ -29,13 +29,17 @@ You will be able to complete the following tasks:
 
 ## Task 2: Create and review the generated ARM template
    
-1. Navigate to the **C:\HCIBox directory**, right-click on the file name **Generate-ARM-Template.ps1**, and select **Run with PowerShell**. A PowerShell window will start and close automatically after the execution and creation of the **Azure Stack HCI ARM template** are complete. 
+1. Open PowerShell 7 from windows bar and run the below command to generate ARM template to validate and deploy stackhci cluster.
+
+```
+     & "$Env:HCIBoxDir\Generate-ARM-Template.ps1"
+```
 
     ![](./media/genarmtemplate.png)
     
-2. Now you will use the generated ARM template to validate the HCI cluster in the Azure portal. Open **File Explorer** on HCIBox-Client and navigate to the **C:\HCIBox** folder. Right-click on the **folder** and open it in **VSCode**.
+3. Now you will use the generated ARM template to validate the HCI cluster in the Azure portal. Open **File Explorer** on HCIBox-Client and navigate to the **C:\HCIBox** folder. Right-click on the **folder** and open it in **VSCode**.
 
-3. Open and review the **hci.json** and **hci.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values.
+4. Open and review the **hci.json** and **hci.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values.
 
     ![](./media/hci24-5.png)
 
