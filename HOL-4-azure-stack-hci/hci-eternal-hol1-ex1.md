@@ -33,116 +33,130 @@ You will be able to complete the following tasks:
    >**Note**: Script execution will take up to 30 to 45 minutes to update the pre-requisites and to onboard Azure Arc Machine to Azure.
 
 ```
-   function Set-HCIDeployPrereqs {
-    param (
-        $HCIBoxConfig,
-        [PSCredential]$localCred,
-        [PSCredential]$domainCred
-    )
-    Invoke-Command -VMName $HCIBoxConfig.MgmtHostConfig.Hostname -Credential $localCred -ScriptBlock {
-        $HCIBoxConfig = $using:HCIBoxConfig
-        $localCred = $using:localcred
-        $domainCred = $using:domainCred
-        Invoke-Command -VMName $HCIBoxConfig.DCName -Credential $domainCred -ArgumentList $HCIBoxConfig -ScriptBlock {
-            $HCIBoxConfig = $args[0]
-            $domainCredNoDomain = new-object -typename System.Management.Automation.PSCredential `
-                -argumentlist ($HCIBoxConfig.LCMDeployUsername), (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
+    function Set-HCIDeployPrereqs {
+    param (
+        $HCIBoxConfig,
+        [PSCredential]$localCred,
+        [PSCredential]$domainCred
+    )
+    Invoke-Command -VMName $HCIBoxConfig.MgmtHostConfig.Hostname -Credential $localCred -ScriptBlock {
+        $HCIBoxConfig = $using:HCIBoxConfig
+        $localCred = $using:localcred
+        $domainCred = $using:domainCred
+        Invoke-Command -VMName $HCIBoxConfig.DCName -Credential $domainCred -ArgumentList $HCIBoxConfig -ScriptBlock {
+            $HCIBoxConfig = $args[0]
+            $domainCredNoDomain = new-object -typename System.Management.Automation.PSCredential `
+                -argumentlist ($HCIBoxConfig.LCMDeployUsername), (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
 
-            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
-            Install-Module AsHciADArtifactsPreCreationTool -Repository PSGallery -Force -Confirm:$false
-            $domainName = $HCIBoxConfig.SDNDomainFQDN.Split('.')
-            $ouName = "OU=$($HCIBoxConfig.LCMADOUName)"
-            foreach ($name in $domainName) {
-                $ouName += ",DC=$name"
-            }
-            $nodes = @()
-            foreach ($node in $HCIBoxConfig.NodeHostConfig) {
-                $nodes += $node.Hostname.ToString()
-            }
-            Add-KdsRootKey -EffectiveTime ((Get-Date).AddHours(-10))
-            New-HciAdObjectsPreCreation -AzureStackLCMUserCredential $domainCredNoDomain -AsHciOUName $ouName
-        }
-    }
+            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
+            Install-Module AsHciADArtifactsPreCreationTool -Repository PSGallery -Force -Confirm:$false
+            $domainName = $HCIBoxConfig.SDNDomainFQDN.Split('.')
+            $ouName = "OU=$($HCIBoxConfig.LCMADOUName)"
+            foreach ($name in $domainName) {
+                $ouName += ",DC=$name"
+            }
+            $nodes = @()
+            foreach ($node in $HCIBoxConfig.NodeHostConfig) {
+                $nodes += $node.Hostname.ToString()
+            }
+            Add-KdsRootKey -EffectiveTime ((Get-Date).AddHours(-10))
+            New-HciAdObjectsPreCreation -AzureStackLCMUserCredential $domainCredNoDomain -AsHciOUName $ouName
+        }
+    }
 
-    foreach ($node in $HCIBoxConfig.NodeHostConfig) {
-        Invoke-Command -VMName $node.Hostname -Credential $localCred -ArgumentList $env:subscriptionId, $env:spnTenantId, $env:spnClientID, $env:spnClientSecret, $env:resourceGroup, $env:azureLocation -ScriptBlock {
-            $subId = $args[0]
-            $tenantId = $args[1]
-            $clientId = $args[2]
-            $clientSecret = $args[3]
-            $resourceGroup = $args[4]
-            $location = $args[5]
+    foreach ($node in $HCIBoxConfig.NodeHostConfig) {
+        Invoke-Command -VMName $node.Hostname -Credential $localCred -ArgumentList $env:subscriptionId, $env:spnTenantId, $env:spnClientID, $env:spnClientSecret, $env:resourceGroup, $env:azureLocation -ScriptBlock {
+            $subId = $args[0]
+            $tenantId = $args[1]
+            $clientId = $args[2]
+            $clientSecret = $args[3]
+            $resourceGroup = $args[4]
+            $location = $args[5]
 
-            # Prep nodes for Azure Arc onboarding
-            winrm quickconfig -quiet
-            netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=allow
+            function ConvertFrom-SecureStringToPlainText {
+                param (
+                    [Parameter(Mandatory = $true)]
+                    [System.Security.SecureString]$SecureString
+                )
 
-            # Register PSGallery as a trusted repo
-            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-            Register-PSRepository -Default -InstallationPolicy Trusted -ErrorAction SilentlyContinue
-            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-            #Enable WAC Installation
-            Get-AsWdacPolicyMode 
-            Enable-AsWdacPolicy -Mode Audit
+                $Ptr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureString)
+                try {
+                    return [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($Ptr)
+                }
+                finally {
+                    [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($Ptr)
+                }
+            }
 
-            #Install Arc registration script from PSGallery
-            Install-Module AzsHCI.ARCinstaller -Force
+            # Prep nodes for Azure Arc onboarding
+            #winrm quickconfig -quiet
+            #netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=allow
 
-            #Install required PowerShell modules in your node for registration
-            Install-Module Az.Accounts -Force
-            Install-Module Az.ConnectedMachine -Force
-            Install-Module Az.Resources -Force
-            $azureAppCred = (New-Object System.Management.Automation.PSCredential $clientId, (ConvertTo-SecureString -String $clientSecret -AsPlainText -Force))
-            Connect-AzAccount -ServicePrincipal -SubscriptionId $subId -TenantId $tenantId -Credential $azureAppCred
-            $armtoken = Get-AzAccessToken
+            # Register PSGallery as a trusted repo
+            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+            Register-PSRepository -Default -InstallationPolicy Trusted -ErrorAction SilentlyContinue
+            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
-            # Workaround for BITS transfer issue
-            Get-NetAdapter StorageA | Disable-NetAdapter -Confirm:$false | Out-Null
-            Get-NetAdapter StorageB | Disable-NetAdapter -Confirm:$false | Out-Null
+            #Install Arc registration script from PSGallery
+            Install-Module AzsHCI.ARCinstaller -Force
 
-            #Invoke the registration script.
-            Invoke-AzStackHciArcInitialization -SubscriptionID $subId -ResourceGroup $resourceGroup -TenantID $tenantId -Region $location -Cloud "AzureCloud" -ArmAccessToken $armtoken.Token -AccountID $clientId
+            #Install required PowerShell modules in your node for registration
+            Install-Module Az.Accounts -Force
+            Install-Module Az.ConnectedMachine -Force
+            Install-Module Az.Resources -Force
+            $azureAppCred = (New-Object System.Management.Automation.PSCredential $clientId, (ConvertTo-SecureString -String $clientSecret -AsPlainText -Force))
+            Connect-AzAccount -ServicePrincipal -SubscriptionId $subId -TenantId $tenantId -Credential $azureAppCred
+            $armtoken = ConvertFrom-SecureStringToPlainText -SecureString ((Get-AzAccessToken -AsSecureString).Token)
 
-            Get-NetAdapter StorageA | Enable-NetAdapter -Confirm:$false | Out-Null
-            Get-NetAdapter StorageB | Enable-NetAdapter -Confirm:$false | Out-Null
-        }
-    }
+            # Workaround for BITS transfer issue
+            Get-NetAdapter StorageA | Disable-NetAdapter -Confirm:$false | Out-Null
+            Get-NetAdapter StorageB | Disable-NetAdapter -Confirm:$false | Out-Null
 
-    Get-AzConnectedMachine -ResourceGroupName $env:resourceGroup | foreach-object {
+            #Invoke the registration script.
+            Invoke-AzStackHciArcInitialization -SubscriptionID $subId -ResourceGroup $resourceGroup -TenantID $tenantId -Region $location -Cloud "AzureCloud" -ArmAccessToken $armtoken -AccountID $clientId -ErrorAction Continue
 
-        Write-Host "Checking extension status for $($PSItem.Name)"
+            Get-NetAdapter StorageA | Enable-NetAdapter -Confirm:$false | Out-Null
+            Get-NetAdapter StorageB | Enable-NetAdapter -Confirm:$false | Out-Null
+        }
+    }
 
-        $requiredExtensions = @('AzureEdgeTelemetryAndDiagnostics', 'AzureEdgeLifecycleManager')
-        $attempts = 0
-        $maxAttempts = 90
+    Get-AzConnectedMachine -ResourceGroupName $env:resourceGroup | foreach-object {
 
-        do {
-            $attempts++
-            $extension = Get-AzConnectedMachineExtension -MachineName $PSItem.Name -ResourceGroupName $env:resourceGroup
+        Write-Host "Checking extension status for $($PSItem.Name)"
 
-            foreach ($extensionName in $requiredExtensions) {
-                $extensionTest = $extension | Where-Object { $_.Name -eq $extensionName }
-                if (!$extensionTest) {
-                    Write-Host "$($PSItem.Name) : Extension $extensionName is missing" -ForegroundColor Yellow
-                    $Wait = $true
-                } elseif ($extensionTest.ProvisioningState -ne "Succeeded") {
-                    Write-Host "$($PSItem.Name) : Extension $extensionName is in place, but not yet provisioned. Current state: $($extensionTest.ProvisioningState)" -ForegroundColor Yellow
-                    $Wait = $true
-                } elseif ($extensionTest.ProvisioningState -eq "Succeeded") {
-                    Write-Host "$($PSItem.Name) : Extension $extensionName is in place and provisioned. Current state: $($extensionTest.ProvisioningState)" -ForegroundColor Green
-                    $Wait = $false
-                }
-            }
+        $requiredExtensions = @('AzureEdgeTelemetryAndDiagnostics', 'AzureEdgeDeviceManagement', 'AzureEdgeLifecycleManager')
+        $attempts = 0
+        $maxAttempts = 90
 
-            if ($Wait){
-            Write-Host "Waiting for extension installation to complete, sleeping for 2 minutes. Attempt $attempts of $maxAttempts"
-            Start-Sleep -Seconds 120
-            } else {
-                break
-            }
+        do {
+            $attempts++
+            $extension = Get-AzConnectedMachineExtension -MachineName $PSItem.Name -ResourceGroupName $env:resourceGroup
 
-        } while ($attempts -lt $maxAttempts)
-       }
+            foreach ($extensionName in $requiredExtensions) {
+                $extensionTest = $extension | Where-Object { $_.Name -eq $extensionName }
+                if (!$extensionTest) {
+                    Write-Host "$($PSItem.Name) : Extension $extensionName is missing" -ForegroundColor Yellow
+                    $Wait = $true
+                } elseif ($extensionTest.ProvisioningState -ne "Succeeded") {
+                    Write-Host "$($PSItem.Name) : Extension $extensionName is in place, but not yet provisioned. Current state: $($extensionTest.ProvisioningState)" -ForegroundColor Yellow
+                    $Wait = $true
+                } elseif ($extensionTest.ProvisioningState -eq "Succeeded") {
+                    Write-Host "$($PSItem.Name) : Extension $extensionName is in place and provisioned. Current state: $($extensionTest.ProvisioningState)" -ForegroundColor Green
+                    $Wait = $false
+                }
+            }
+
+            if ($Wait){
+            Write-Host "Waiting for extension installation to complete, sleeping for 2 minutes. Attempt $attempts of $maxAttempts"
+            Start-Sleep -Seconds 120
+            } else {
+                break
+            }
+
+        } while ($attempts -lt $maxAttempts)
+
+       }
+
 }
 
 $HCIBoxConfig = Import-PowerShellDataFile -Path $Env:HCIBoxConfigFile
@@ -153,14 +167,26 @@ Connect-AzAccount -ServicePrincipal -SubscriptionId $env:subscriptionId -TenantI
 
 # Set credentials
 $localCred = new-object -typename System.Management.Automation.PSCredential `
-   -argumentlist "Administrator", (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
+   -argumentlist "Administrator", (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
 
 $domainCred = new-object -typename System.Management.Automation.PSCredential `
-   -argumentlist (($HCIBoxConfig.SDNDomainFQDN.Split(".")[0]) +"\Administrator"), (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
+   -argumentlist (($HCIBoxConfig.SDNDomainFQDN.Split(".")[0]) +"\Administrator"), (ConvertTo-SecureString $HCIBoxConfig.SDNAdminPassword -AsPlainText -Force)
 
 Write-Host "[Build cluster - Step 9/11] Preparing HCI cluster Azure deployment..." -ForegroundColor Green
-Set-HCIDeployPrereqs -HCIBoxConfig $HCIBoxConfig -localCred $localCred -domainCred $domainCred
+ $DeploymentProgressString = 'Preparing Azure Local cluster deployment'
 
+ $tags = Get-AzResourceGroup -Name $env:resourceGroup | Select-Object -ExpandProperty Tags
+
+ if ($null -ne $tags) {
+     $tags['DeploymentProgress'] = $DeploymentProgressString
+ } else {
+     $tags = @{'DeploymentProgress' = $DeploymentProgressString }
+ }
+
+ $null = Set-AzResourceGroup -ResourceGroupName $env:resourceGroup -Tag $tags
+ $null = Set-AzResource -ResourceName $env:computername -ResourceGroupName $env:resourceGroup -ResourceType 'microsoft.compute/virtualmachines' -Tag $tags -Force
+
+Set-HCIDeployPrereqs -HCIBoxConfig $HCIBoxConfig -localCred $localCred -domainCred $domainCred
 
 
 ```
