@@ -135,6 +135,7 @@ You will be able to complete the following tasks:
    >Note: Powershell ISE will not work as it may need some inputs while executing the command. 
 
     ```
+    az extension update --name connectedk8s
     az connectedk8s proxy -n hciaks -g AzureStackHCI
     ```
      ![](media/proxy.png)
