@@ -1,4 +1,4 @@
-# Exercise 6: Managing AKS on Azure Local 
+# Exercise 5: Managing AKS on Azure Local 
 
 ### Estimated Duration: 60 minutes
 
@@ -19,11 +19,11 @@ You will be able to complete the following tasks:
 
    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
 
-2. From the Resource groups pane, click on **AzureStakHCI** resource group and verify the resources present in it.
+2. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
+   ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
-3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
+3. In the  **Azure-Local** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
 
    ![](media/selecth-ciboxcluster-hci.png)
 
@@ -34,7 +34,7 @@ You will be able to complete the following tasks:
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
     - Subscription : Default subscription **(1)**
-    - Resource group : **AzureStackHCI** **(2)**
+    - Resource group : **Azure-Local** **(2)**
     - Logical network name: **hcibox-aks-lnet-vlan110** **(3)**
     - Virtual switch name: **ConvergedSwitch(hci)** **(4)**
 
@@ -96,7 +96,7 @@ You will be able to complete the following tasks:
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
    | Subscription | Default subscription **(1)** |
-   | Resource group | From the drop-down Select **AzureStackHCI** **(2)**  |
+   | Resource group | From the drop-down Select **Azure-Local** **(2)**  |
    | Kubernetes cluster name | Enter the cluster name as **hciaks** **(3)** |
    | Custom location | From the drop-down Select **jumpstart(EastUS)** **(4)** |
    | Node size | From the drop down select **Standard_A2_v2** **(5)** |
@@ -150,4 +150,4 @@ You will be able to complete the following tasks:
 
 In this exercise, you created a Logical Network for Azure Local for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Local using Azure Portal and connected to the Azure Local AKS.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.

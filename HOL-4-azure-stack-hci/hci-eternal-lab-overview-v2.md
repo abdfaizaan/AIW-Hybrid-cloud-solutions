@@ -14,7 +14,7 @@ Azure Local 23H2 is now generally available. 23H2 simplifies the configuration a
 
 LocalBox automatically creates and configures a two-node Azure Local instance using nested virtualization with Hyper-V running on an Azure Virtual Machine. This Hyper-V host creates three guest virtual machines: two Azure Local machines (_AzLHOST1_, _AzLHOST2_), and one nested Hyper-V host (_AzLMGMT_). _AzLMGMT_ itself hosts two guest VMs: an [Active Directory domain controller](https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview), and a [Routing and Remote Access Server](https://learn.microsoft.com/windows-server/remote/remote-access/remote-access) acting as a virtual router.
 
-![Screenshot showing LocalBox nested virtualization](./nested_virtualization.png)
+![Screenshot showing LocalBox nested virtualization](media/nested_virtualization.png)
 
 ### Virtual machine management
 
@@ -26,7 +26,7 @@ Azure Local includes [AKS enabled by Azure Arc](https://learn.microsoft.com/azur
 
 ## LocalBox Azure Consumption Costs
 
-LocalBox resources generate Azure Consumption charges from the underlying Azure resources including core compute, storage, networking and auxiliary services. Note that Azure consumption costs may vary depending the region where LocalBox is deployed. Be mindful of your LocalBox deployments and ensure that you disable or delete LocalBox resources when not in use to avoid unwanted charges. Please see the [Jumpstart LocalBox FAQ](../faq/) for more information on consumption costs.
+LocalBox resources incur Azure consumption charges based on the underlying services, such as compute, storage, networking, and other associated components. These costs may vary depending on the Azure region where LocalBox is deployed. To avoid unnecessary charges, it's important to monitor your LocalBox deployments and disable or delete resources when they are not in use. Please see the [Jumpstart LocalBox FAQ](../faq/) for more information on consumption costs.
 
 
 ## Objective
@@ -39,13 +39,11 @@ To create a flexible and cost-effective hybrid cloud environment that seamlessly
 
 - **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart HCI Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
   
-- **Configure and monitor cluster performance from the Windows Admin Center dashboard:** Set up and track cluster performance metrics through the Windows Admin Center for effective resource management, allowing proactive identification of performance bottlenecks.
-  
 - **Azure Backup Server on Azure Local:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Local, ensuring business continuity and compliance with data retention policies.
   
 - **Managing AKS on Azure Local:** Oversee and optimize Azure Kubernetes Service (AKS) deployments on Azure Local for efficient container orchestration, facilitating rapid application development and deployment.
   
-- ** Azure Local machines Provisioning:** Facilitate the rapid creation and deployment of virtual machines within the Azure Local environment, enhancing operational efficiency and resource allocation.
+- **Azure Local machines Provisioning:** Facilitate the rapid creation and deployment of virtual machines within the Azure Local environment, enhancing operational efficiency and resource allocation.
   
 - **Azure Local Update management using Azure Portal:** Streamline the update management process for Azure Local through the Azure Portal for improved system reliability and security, ensuring the infrastructure is always up-to-date with the latest features and patches.
 
@@ -92,29 +90,29 @@ Welcome to your Hybrid Cloud Solution - Azure Local Workshop! We've prepared a s
 
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-![](media/hci-env1.png "Lab Environment")
-
 ### Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
+
+![](../media/hci-env1.png "Lab Environment")
  
-## Exploring Your Lab Resources
+### Exploring Your Lab Resources
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](media/hci-env2.png "Lab Environment")
+![](../media/overview-15.png "Lab Environment")
  
-## Utilizing the Split Window Feature
+### Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![](./media/split-01.png)
+![](../media/overview-16.png)
  
-## Managing Your Virtual Machine
+### Managing Your Virtual Machine
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-![](./media/resourses.png)
+![](../media/overview-17.png)
 
 ## Lab Guide Zoom In/Zoom Out
 
@@ -126,7 +124,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. In the **HCIBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
   
-   ![](./media/azure-portal-edge.png)
+   ![](./media/azure-portal-edgea.png)
     
 1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
       
@@ -144,7 +142,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
    ![](./media/asklater.png)
 
-   >**NOTE:** Do not enable MFA, select **Ask Later**.     
+   > **Note**: If prompted with MFA, please follow the steps highlighted under - [Steps to Proceed with MFA Setup if Ask Later Option is Not Visible](#steps-to-proceed-with-mfa-setup-if-ask-later-option-is-not-visible)     
 
 1. If you see the pop-up **Stay signed in?** Click **No**.
 
@@ -156,9 +154,37 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
 
-1. From the **Resource** groups pane, click on the **AzureStakHCI** resource group and verify the resources present in it.
+1. From the **Resource** groups pane, click on the **Azure-Local** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
+   ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
+
+## Steps to Proceed with MFA Setup if Ask Later Option is Not Visible
+
+   > **Note:** Continue with the exercises if MFA is already enabled or the option is unavailable.
+
+1. At the **"More information required"** prompt, select **Next**.
+
+1. On the **"Keep your account secure"** page, select **Next** twice.
+
+1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
+
+   - Open **Google Play Store** (Android) or **App Store** (iOS).
+   - Search for **Microsoft Authenticator** and tap **Install**.
+   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
+
+1. A **QR code** will be displayed on your computer screen.
+
+1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
+
+1. After scanning, click **Next** to proceed.
+
+1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
+       
+1. If prompted to stay signed in, you can click **No**.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
+ 
+1. Now, click on the **Next** from the lower right corner to move to the next page.
 
 
 ## Support Contact
