@@ -1,4 +1,4 @@
-# Exercise 8: Azure Local Update management using Azure Portal  
+# Exercise 7: Azure Local Update management using Azure Portal  
 
 ### Estimated Duration: 30 minutes
 
@@ -12,7 +12,7 @@ You will be able to complete the following task:
 
 ## Task 1: Update Azure Local  
 
-1. Navigate to Azure Stack HCI resource named **hciboxcluster** from AzureStackHCI resource group.
+1. Navigate to Azure Local resource named **hciboxcluster** from Azure-Local resource group.
 
 2. In the Azure Local page, select **Updates (1)** under **Operations (2)** from left menu.
 

@@ -13,14 +13,18 @@ You will be able to complete the following tasks:
 
 
 ## Task 1: Create and review the generated ARM template
-   
-1. Open PowerShell 7 from windows bar and run the below command to generate ARM template to validate and deploy stackhci cluster.
 
-```
+1. In the Windows search bar, type **PowerShell 7** **(1)**, and select Windows **PowerShell 7** **(2)** to open it from the Lab VM.
+
+    ![](./media/powershell7.png)
+
+1. Run the below command to generate ARM template to validate and deploy stackhci cluster.
+
+     ```
      & "$Env:HCIBoxDir\Generate-ARM-Template.ps1"
-```
+     ```
 
-    ![](./media/genarmtemplate.png)
+   ![](./media/genarmtemplate.png)
     
 3. Now you will use the generated ARM template to validate the Azure Local in the Azure portal. Open **File Explorer** on HCIBox-Client and navigate to the **C:\HCIBox** folder. Right-click on the **folder** and open it in **VSCode**.
 
@@ -32,13 +36,13 @@ You will be able to complete the following tasks:
 
 1. Navigate back to your PowerShell window and run the below command to validate you Azure Local deployment and cluster.
 
-```
-    $TemplateFile = Join-Path -Path $env:HCIBoxDir -ChildPath "hci.json"
+     ```
+     $TemplateFile = Join-Path -Path $env:HCIBoxDir -ChildPath "hci.json"
      $TemplateParameterFile = Join-Path -Path $env:HCIBoxDir -ChildPath "hci.parameters.json"
 
-   New-AzResourceGroupDeployment -Name 'hcicluster-validate' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterValidationDeployment -ErrorAction Stop
+     New-AzResourceGroupDeployment -Name 'hcicluster-validate' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterValidationDeployment -ErrorAction Stop
 
-```
+     ```
 
 1. The above command will take approx. 15 mintues to get you deployment validated and showing you Azure Local cluster on Azure Portal.
 
@@ -47,9 +51,9 @@ You will be able to complete the following tasks:
 
 1. Once the validation is completed, run the below command to start the creation of Azure Local.
 
-```
-         New-AzResourceGroupDeployment -Name 'hcicluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
-```
+     ```
+     New-AzResourceGroupDeployment -Name 'hcicluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
+     ```
 
 11. Once the deployment starts, you can navigate to Azure Portal, Select you Azure Local resource and select **Deployment** tab from the left side to see your deployment status.
 
@@ -63,4 +67,4 @@ You will be able to complete the following tasks:
 
 In this exercise, you assigned Azure Arc permission to the Azure Stack HCI resource provider, created and reviewed the generated ARM template and validated and deployed the Azure Local cluster using the Azure portal.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.

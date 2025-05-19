@@ -86,7 +86,7 @@ You will be able to complete the following tasks:
 
 ## Task 5: Monitor servers
 
- You can monitor the host servers that comprise an Azure Stack HCI cluster directly from the Windows Admin Center. If host servers are not configured with sufficient CPU or memory to provide the resources VMs require, they can be a performance bottleneck.
+ You can monitor the host servers that comprise an Azure Local cluster directly from the Windows Admin Center. If host servers are not configured with sufficient CPU or memory to provide the resources VMs require, they can be a performance bottleneck.
 
 1. To monitor servers in Windows Admin Center, select **Servers** from the **Tools** menu on the left.
 
@@ -128,7 +128,7 @@ Storage volumes can fill up quickly, making it important to monitor them on a re
 
 ### Query and process performance history with PowerShell
 
-You can also monitor Azure Stack HCI clusters using PowerShell cmdlets that return information about the cluster and its components. See the [Performance history for Storage Spaces Direct](/windows-server/storage/storage-spaces/performance-history).
+You can also monitor Azure Local clusters using PowerShell cmdlets that return information about the cluster and its components. See the [Performance history for Storage Spaces Direct](/windows-server/storage/storage-spaces/performance-history).
 
 ### Use the Health Service feature
 
@@ -140,6 +140,6 @@ To understand the health and operational states of storage pools, virtual disks,
 
 ## Summary
 
-In this exercise, you assigned the Windows Admin Center Administrator Login role to User, configured Windows Admin Center for Azure Stack HCI using Azure Portal, monitored using the Windows Admin Center dashboard the virtual machines, servers and volumes.
+In this exercise, you assigned the Windows Admin Center Administrator Login role to User, configured Windows Admin Center for Azure Local using Azure Portal, monitored using the Windows Admin Center dashboard the virtual machines, servers and volumes.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.

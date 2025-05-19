@@ -1,4 +1,4 @@
-# Exercise 7: Azure Local VM Provisioning
+# Exercise 6: Azure Local VM Provisioning
 
 ### Estimated Duration: 90 minutes
 
@@ -18,11 +18,11 @@ You will be able to complete the following tasks:
 
    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
 
-2. From the Resource groups pane, click on **AzureStakHCI** resource group and verify the resources present in it.
+2. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rg.png "Select Azure Local Resource Group")
+   ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
-3. In the  **AzureStakHCI** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
+3. In the  **Azure-Local** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
 
    ![](media/selecth-ciboxcluster-hci.png)
 
@@ -33,7 +33,7 @@ You will be able to complete the following tasks:
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
     - Subscription : Default subscription **(1)**
-    - Resource group : **AzureStackHCI** **(2)**
+    - Resource group : **Azure-Local** **(2)**
     - Logical network name: **hcibox-vm-lnet-vlan200** **(3)**
     - Virtual switch name: **ConvergedSwitch(hci)** **(4)**
 
@@ -65,7 +65,7 @@ You will be able to complete the following tasks:
 
 1. In the **Create an image** tab, enter the fallowing details and click on **Review + Create** **(6)** button.
 
-   - Resource group : **AzureStackHCI** **(1)**
+   - Resource group : **Azure-Local** **(1)**
    - Save image as: Enter Image name as **hci-vm** **(2)**
    - Custom location: From the drop-down select **jumpstart** **(3)**
    - Image to download: Select **select Windows 10 Enterprise multi-session, version 22H2 - Gen2** **(4)** VM image.
@@ -92,7 +92,7 @@ You will be able to complete the following tasks:
 2. On the VM Creation page, enter the following details and click on next. 
 
    - Subscription : Default subscription **(1)**
-   - Resource group : **AzureStackHCI** **(2)**
+   - Resource group : **Azure-Local** **(2)**
    - Virtual Machine name: **Win10-StackVM** **(3)**
    - Security type: **Standard** **(4)**
    - Storage path: **Choose Automatically**
@@ -142,4 +142,4 @@ You will be able to complete the following tasks:
 
 In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage and created a Virtual Machine on Azure Local.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.

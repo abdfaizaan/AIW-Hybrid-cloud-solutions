@@ -1,4 +1,4 @@
-# Exercise 5: Azure Backup Server on Azure Stack
+# Exercise 4: Azure Backup Server on Azure Stack
 
 ### Estimated Duration: 60 minutes
 
@@ -32,7 +32,7 @@ A Recovery Services vault is a management entity that stores recovery points tha
 4. On the Recovery Services vault pane, enter the following values:
 
     - Subscription: Select the available subscription to use
-    - Resource group: Use an existing resource group named **AzureStackHCI**
+    - Resource group: Use an existing resource group named **Azure-Local**
     - Vault name: **hci-backup-vault** 
     - Region: select the same region where Azure Satck HCI is deployed i.e, **East US**
 
@@ -206,4 +206,4 @@ In the previous task, you select **Finish** to exit the extraction phase, and st
 
 In this exercise, you created a Recovery Service Vault, connected to the On-Premises Hyper-V Virtual Machine, downloaded and installed Azure Backup Server and install the software package.
 
-### You have successfully completed the lab
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
