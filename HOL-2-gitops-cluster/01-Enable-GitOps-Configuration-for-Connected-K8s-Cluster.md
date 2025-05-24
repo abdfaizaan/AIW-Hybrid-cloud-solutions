@@ -110,10 +110,14 @@ In this exercise, you will be performing the following tasks:
 1. Run the below commands one after the other to update the kubernate version.    
 
    ```
-   sudo snap refresh microk8s --channel=1.27/stable
+   sudo microk8s stop
+   sudo snap remove microk8s
+   sudo snap install microk8s --classic --channel=1.33/stable
+
    ```
 
    ```
+   microk8s start
    microk8s status --wait-ready
    ```
 
