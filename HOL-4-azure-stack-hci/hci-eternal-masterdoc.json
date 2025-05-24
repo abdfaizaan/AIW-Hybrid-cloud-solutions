@@ -1,6 +1,6 @@
 [
     {
-      "Name": "Azure Stack HCI",
+      "Name": "Azure Local",
       "Language": "English",
       "BaseURL": "https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions",
       "Files": [
