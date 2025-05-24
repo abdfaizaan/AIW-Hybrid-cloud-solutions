@@ -130,6 +130,11 @@ In this exercise, you will be performing the following tasks:
 1. Run the below command to install `microsoft.flux` extension.
 
    ```
+   az config set extension.dynamic_install=yes
+   az config set extension.dynamic_install_allow_preview=true
+   ```
+
+   ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
 
