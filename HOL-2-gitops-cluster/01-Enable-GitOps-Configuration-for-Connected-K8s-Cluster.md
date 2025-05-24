@@ -80,14 +80,16 @@ In this exercise, you will be performing the following tasks:
  1. Run the below commands to upgrade the az packages and az module. 
    
       ```
-      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+      apt update -y
+      apt install curl -y
       apt install pip
+      curl -sS https://bootstrap.pypa.io/pip/3.8/get-pip.py -o get-pip.py
       python3 get-pip.py
-      python3 -m pip install -U pip
-      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
-      pip install azure-common
-      apt update
-      az upgrade -y
+      # Upgrade pip globally (for current Python version, e.g., 3.8+)
+      python3 -m pip install --upgrade pip      
+      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.8/site-packages/
+      python3 -m pip install azure-common
+      az upgrade --yes
       init 6 #TO restart
       ```
 
