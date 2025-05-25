@@ -18,9 +18,10 @@ You will be able to complete the following tasks:
 
     ![](./media/powershell7.png)
 
-1. Run the below command to generate ARM template to validate and deploy stackhci cluster.
+1. Update your username and password in the below command and run it to generate ARM template to validate and deploy Azure Local cluster.
 
      ```
+     az login -u YourODLusername -p YourODLpassword 
      & "$Env:LocalBoxDir\Generate-ARM-Template.ps1"
      ```
 
