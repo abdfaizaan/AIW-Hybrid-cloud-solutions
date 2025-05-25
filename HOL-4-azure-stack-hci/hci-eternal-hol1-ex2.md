@@ -21,7 +21,7 @@ You will be able to complete the following tasks:
 1. Run the below command to generate ARM template to validate and deploy stackhci cluster.
 
      ```
-     & "$Env:HCIBoxDir\Generate-ARM-Template.ps1"
+     & "$Env:LocalBoxDir\Generate-ARM-Template.ps1"
      ```
 
    ![](./media/genarmtemplate.png)
@@ -37,10 +37,11 @@ You will be able to complete the following tasks:
 1. Navigate back to your PowerShell window and run the below command to validate you Azure Local deployment and cluster.
 
      ```
-     $TemplateFile = Join-Path -Path $env:HCIBoxDir -ChildPath "hci.json"
-     $TemplateParameterFile = Join-Path -Path $env:HCIBoxDir -ChildPath "hci.parameters.json"
+     $TemplateFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.json"
+    $TemplateParameterFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.parameters.json"
 
-     New-AzResourceGroupDeployment -Name 'hcicluster-validate' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterValidationDeployment -ErrorAction Stop
+     New-AzResourceGroupDeployment -Name 'localcluster-validate' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterValidationDeployment -ErrorAction Stop
+
 
      ```
 
@@ -52,7 +53,8 @@ You will be able to complete the following tasks:
 1. Once the validation is completed, run the below command to start the creation of Azure Local.
 
      ```
-     New-AzResourceGroupDeployment -Name 'hcicluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
+     New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
+
      ```
 
 11. Once the deployment starts, you can navigate to Azure Portal, Select you Azure Local resource and select **Deployment** tab from the left side to see your deployment status.
