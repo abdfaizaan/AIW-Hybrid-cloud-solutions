@@ -87,8 +87,7 @@ You will be able to complete the following tasks:
                }
            } 
 
-           $azureAppCred = (New-Object System.Management.Automation.PSCredential $clientId, (ConvertTo-SecureString -String $clientSecret -AsPlainText -Force))
-           Connect-AzAccount -ServicePrincipal -SubscriptionId $subId -TenantId $tenantId -Credential $azureAppCred
+           Connect-AzAccount -Identity -Tenant $Env:tenantId -Subscription $Env:subscriptionId
            $armtoken = ConvertFrom-SecureStringToPlainText -SecureString ((Get-AzAccessToken -AsSecureString).Token)
 
            #Invoke the registration script.
