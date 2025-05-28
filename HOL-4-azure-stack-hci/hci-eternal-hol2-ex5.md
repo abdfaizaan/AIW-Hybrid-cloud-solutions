@@ -1,4 +1,4 @@
-# Exercise 7: Azure Local Update management using Azure Portal  
+# Exercise 5: Azure Local Update management using Azure Portal  
 
 ### Estimated Duration: 30 minutes
 
