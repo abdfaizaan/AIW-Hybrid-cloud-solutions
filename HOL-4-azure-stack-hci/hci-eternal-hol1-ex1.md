@@ -10,12 +10,12 @@ In this exercise, you'll be preparing the environment for deploying Azure Local,
 
 You will be able to complete the following tasks:
 
-- Task 1: Review the configured virtualized Azure Stack VMs
+- Task 1: Review the configured virtualized Azure Local VMs
 - Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Local
 
-## Task 1: Review the configured virtualized Azure Stack VMs 
+## Task 1: Review the configured virtualized Azure Local VMs 
 
-1. In the LabVM, search for **Hyper-V Manager (1)** in the search box. Select **Hyper-V Manager (2)**.
+1. In the Localbox-Client VM, search for **Hyper-V Manager (1)** in the search box. Select **Hyper-V Manager (2)**.
 
    ![](./media/hci24-1a.png)
     
@@ -213,6 +213,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, reviewed the configured virtualized Azure Stack VMs and onboard Azure Arc Machine to Azure and prepare to deploy Azure Local.
+In this exercise, reviewed the configured virtualized Azure Local VMs and onboard Azure Arc Machine to Azure and prepare to deploy Azure Local.
 
 ### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
