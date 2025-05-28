@@ -1,6 +1,8 @@
-# Exercise 1: Preparing env with the prerequisites to deploy Azure Local 
+# Exercise 1: Preparing env with the prerequisites to deploy Azure Local (READ-ONLY)
 
 ### Overall Estimated Duration: 60 minutes
+
+### Please note that this lab is already performed in the lab envrionment, however please go through with the steps to get familiar.
 
 In this exercise, you'll be preparing the environment for deploying Azure Local, which involves installing and configuring the necessary operating system (e.g., Windows Server), along with any required drivers and software. Additionally, configuring networking components such as switches and routers to meet Azure Local's networking requirements is essential for successful deployment.
 
@@ -29,7 +31,7 @@ You will be able to complete the following tasks:
 
 2. Run the below commands to onboard Azure Arc Machines to Azure:
 
-   >**Note**: Script execution will take up to 30 to 45 minutes to update the pre-requisites and to onboard Azure Arc Machine to Azure.
+   >**Note**:  Please note that this lab is already performed in the lab envrionment, however please go through with the steps to get familiar. you do not need to run the below script.
 
     ```
           function Set-AzLocalDeployPrereqs {
