@@ -12,30 +12,19 @@ You will be able to complete the following tasks:
 - Task 2: Validate and deploy the Azure Local using PowerShell
 
 
-## Task 1: Create and review the generated ARM template
+## Task 1: Review the already generated ARM template
 
-1. In the Windows search bar, type **PowerShell 7** **(1)**, and select Windows **PowerShell 7** **(2)** to open it from the Lab VM.
 
-    ![](./media/powershell7.png)
-
-1. Update your username and password in the below command and run it to generate ARM template to validate and deploy Azure Local cluster.
-
-     ```
-     az login -u YourODLusername -p YourODLpassword 
-     & "$Env:LocalBoxDir\Generate-ARM-Template.ps1"
-     ```
-
-   ![](./media/genarmtemplate.png)
     
-3. Now you will use the generated ARM template to validate the Azure Local in the Azure portal. Open **File Explorer** on HCIBox-Client and navigate to the **C:\HCIBox** folder. Right-click on the **folder** and open it in **VSCode**.
+3. Open **File Explorer** on HCIBox-Client and navigate to the **C:\HCIBox** folder. Right-click on the **folder** and open it in **VSCode**.
 
-4. Open and review the **hci.json** and **hci.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values.
+4. Open and review the **hci.json** and **hci.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values. This has been already generated with script available in Localbox folder.
 
     ![](./media/hci24-5.png)
 
 ## Task 2: Validate and deploy the Azure Local using PowerShell
 
-1. Navigate back to your PowerShell window and run the below command to validate you Azure Local deployment and cluster.
+1. Open PowerShell ISE window and run the below command to validate you Azure Local deployment and cluster.
 
    ```
    $TemplateFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.json"
@@ -46,12 +35,12 @@ You will be able to complete the following tasks:
 
    ```
 
-1. The above command will take approx. 15 mintues to get you deployment validated and showing you Azure Local cluster on Azure Portal.
+1. The above command will take approx. 45 mintues to get you deployment validated and showing you Azure Local cluster on Azure Portal.
 
 1. You can navigate to Azure Portal and can see a new Azure Local resource created in your resource group.
    
 
-1. Once the validation is completed, run the below command to start the creation of Azure Local.
+1. Once the validation is completed, run the below command to start the creation of Azure Local. This command will take approx. 3 hrs to deploy your cluster. 
 
    ```
    New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
