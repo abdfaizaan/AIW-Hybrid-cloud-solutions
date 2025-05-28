@@ -1,4 +1,4 @@
-# Exercise 5: Managing AKS on Azure Local 
+# Exercise 3: Managing AKS on Azure Local 
 
 ### Estimated Duration: 60 minutes
 
