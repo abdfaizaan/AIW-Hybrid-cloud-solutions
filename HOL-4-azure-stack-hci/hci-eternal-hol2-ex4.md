@@ -1,4 +1,4 @@
-# Exercise 6: Azure Local VM Provisioning
+# Exercise 4: Azure Local VM Provisioning
 
 ### Estimated Duration: 90 minutes
 
