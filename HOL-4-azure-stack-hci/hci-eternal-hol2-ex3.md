@@ -136,7 +136,7 @@ You will be able to complete the following tasks:
 
     ```
     az extension update --name connectedk8s
-    az connectedk8s proxy -n hciaks -g AzureStackHCI
+    az connectedk8s proxy -n hciaks -g azure-local
     ```
      ![](media/proxy.png)
    
