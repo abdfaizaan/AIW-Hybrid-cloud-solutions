@@ -16,7 +16,7 @@ You will be able to complete the following tasks:
 
 
     
-3. Open **File Explorer** on HCIBox-Client and navigate to the **C:\Localbox** folder. Right-click on the **folder** and open it in **VSCode**.
+3. Open **File Explorer** on Localbox-Client and navigate to the **C:\Localbox** folder. Right-click on the **folder** and open it in **VSCode**.
 
 4. Open and review the **azlocal.json** and **azlocal.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values. This has been already generated with script available in Localbox folder.
 
