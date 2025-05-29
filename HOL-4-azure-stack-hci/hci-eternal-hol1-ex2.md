@@ -20,8 +20,8 @@ You will be able to complete the following tasks:
 
 4. Open and review the **azlocal.json** and **azlocal.parameters.json files** in **VSCode**. Verify that the **hci.parameters.json file** looks correct without **"-staging"** placeholder parameter values. This has been already generated with script available in Localbox folder.
 
-    ![](./media/hci24-5.png)
-
+    ![image](https://github.com/user-attachments/assets/5f851e45-54e7-4687-8c5c-45f9b7f16ed6)
+    
 ## Task 2: Validate and deploy the Azure Local using PowerShell
 
 1. Open PowerShell ISE window and run the below command to validate you Azure Local deployment and cluster.
