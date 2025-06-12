@@ -4,9 +4,9 @@
 
 ## Overview
 
-HCIBox is a turnkey solution that provides a complete sandbox for exploring Azure Local capabilities and hybrid cloud integration in a virtualized environment. HCIBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Local and Azure Arc technology without the need for physical hardware.
+LocalBox is a turnkey solution that provides a complete sandbox for exploring Azure Local capabilities and hybrid cloud integration in a virtualized environment. LocalBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Local and Azure Arc technology without the need for physical hardware.
 
-Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. HCIBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of HCIBox.
+Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. HCIBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of LocalBox.
 
 ## Azure Local capabilities available in LocalBox
 
@@ -28,16 +28,15 @@ Azure Local includes [AKS enabled by Azure Arc](https://learn.microsoft.com/azur
 
 LocalBox resources incur Azure consumption charges based on the underlying services, such as compute, storage, networking, and other associated components. These costs may vary depending on the Azure region where LocalBox is deployed. To avoid unnecessary charges, it's important to monitor your LocalBox deployments and disable or delete resources when they are not in use. Please see the [Jumpstart LocalBox FAQ](../faq/) for more information on consumption costs.
 
-
 ## Objective
 
 To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
 - **Preparing env with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all necessary requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
   
-- **Deploying JumpStart-HCIBox in Azure Portal:** Quickly provision a ready-to-use Azure Local environment using JumpStart-HCIBox for streamlined setup, accelerating time to value for cloud initiatives.
+- **Deploying JumpStart-LocalBox in Azure Portal:** Quickly provision a ready-to-use Azure Local environment using JumpStart-LocalBox for streamlined setup, accelerating time to value for cloud initiatives.
 
-- **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart HCI Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
+- **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart Local Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
   
 - **Azure Backup Server on Azure Local:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Local, ensuring business continuity and compliance with data retention policies.
   
