@@ -1,4 +1,4 @@
-# Exercise 1: Preparing env with the prerequisites to deploy Azure Local (READ-ONLY)
+# Exercise 1: Preparing environment with the prerequisites to deploy Azure Local (READ-ONLY)
 
 ### Overall Estimated Duration: 60 minutes
 
