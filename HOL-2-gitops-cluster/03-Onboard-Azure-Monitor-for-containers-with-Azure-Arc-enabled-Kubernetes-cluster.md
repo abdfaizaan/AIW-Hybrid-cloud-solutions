@@ -12,7 +12,7 @@ In this exercise, you will be performing the following task:
 
 1. Navigate to **azure-arc** resource group and select **microk8s-cluster** Kubernetes - Azure Arc resource from the resources listed.
 
-   ![](.././media/hol2-ex3-1.png "azuremonitor")
+   ![](.././media/gg-8-1.png "azuremonitor")
 
 2. On the **microk8s-cluster** Kubernetes - Azure Arc pane, select **Insights (1)** under Monitoring from left-hand side menu and click on **Configure monitoring (2)**.
 
