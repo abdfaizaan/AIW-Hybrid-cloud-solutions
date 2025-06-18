@@ -27,7 +27,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid47.png)
    
-1. Then you will recieve an **device verfication code** to your email, enter that code **(1)** and then click on **Verify (2)**.
+1. Then you will receive an **device verification code** to your email, enter that code **(1)** and then click on **Verify (2)**.
 
    ![](.././media/arc28.png)
    
@@ -47,7 +47,7 @@ In this exercise, you will be performing the following tasks:
 
     ![](.././media/startputty.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you entered the private IP of the **ubuntu-k8s** VM, click on the **Open (3)** to launch the terminal.
 
     ![](.././media/arc3.png "Enter ubuntu-k8s VM private IP")
     
