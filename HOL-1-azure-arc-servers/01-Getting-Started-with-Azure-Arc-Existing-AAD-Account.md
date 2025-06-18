@@ -348,7 +348,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
     >**Note**: If you see multiple policies with the same name, select the Built-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
+1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine scale sets (1)**. Then move to the **Parameters (2)** blade.
 
     ![](.././media/gg-2-1.png)
 
