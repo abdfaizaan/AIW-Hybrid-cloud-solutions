@@ -106,7 +106,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
       ![](.././media/hybrid20.png)
 
-1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** pressv **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** press **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
 
       ![](.././media/arc29.png)      
     
