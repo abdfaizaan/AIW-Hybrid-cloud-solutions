@@ -58,7 +58,7 @@ Welcome to your Hybrid Cloud Solution(Azure Arc) Hands On Lab! We've prepared a 
  
   You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-   ![](.././media/arcg1.png "Lab Environment")
+   ![](.././media/gg-1.png "Lab Environment")
 
    
 ## Virtual Machine & Lab Guide
@@ -69,25 +69,25 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-   ![](.././media/arcg3.png)
+   ![](.././media/gg-2.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-   ![](.././media/arcg4.png)
+   ![](.././media/gg-3.png)
  
 ## Managing Your Virtual Machine
  
 Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-  ![](.././media/arcg5.png)
+  ![](.././media/gg-5.png)
 
 ## Lab Validation
 
 After completing the task, hit the **Validate** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
-  ![](.././media/arc76.png)
+  ![](.././media/gg-6.png)
 
   If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
 
@@ -95,25 +95,25 @@ After completing the task, hit the **Validate** button under Validation tab inte
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-   ![](.././media/labzoom-1.png)
+   ![](.././media/gg-7.png)
 
 ## Let's Get Started with Azure Portal
  
 1. In the **LabVM/ARCHost VM**, double-click on the Azure portal shortcut of the Microsoft Edge browser provided on the desktop.
  
-    ![](.././media/GS1.png)
+    ![](.././media/gg-8.png)
  
 2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-      ![](.././media/GS2.png)
+      ![](.././media/gg-9.png)
  
 3. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-      ![](.././media/GS3.png)
+      ![](.././media/gg-10.png)
      
 1. If you see the pop-up **Action Required**, keep default and then click on **Ask later**. If you see the pop-up Help us protect your account, click on **Skip for now**(14 days until this is required), and then click on **Next**.
 
