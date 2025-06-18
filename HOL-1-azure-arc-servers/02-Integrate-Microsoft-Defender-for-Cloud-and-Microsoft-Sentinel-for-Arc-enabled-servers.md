@@ -23,7 +23,7 @@ You can connect your non-Azure computers in any of the following ways:
    
 1. From the **Overview (1)** page, click on **Enable Defender plans (2)** under Workload protection.   
 
-   ![](.././media/arc16.png)
+   ![](.././media/gg-3-2.png)
 
 1. On the **Upgrade (1)** tab, scroll down and then **check on all the checkboxes (2)** and click on **Upgrade (3)**.
 
@@ -37,11 +37,11 @@ You can connect your non-Azure computers in any of the following ways:
    
    > **Note**: If you see that the **Install Agents button is not available**, It means that the agent will get automatically installed with the help of Defender and log analytics.
 
-   ![](.././media/H1-Ex2-task2-03.png)
+   ![](.././media/gg-3-5.png)
 
 1. Click on **Inventory** under **General** from the Microsoft Defender for Cloud.
 
-   ![](.././media/H1-Ex2-task2-04.png)
+   ![](.././media/gg-3-6.png)
 
 1. You find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
 
@@ -49,7 +49,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
 
-   ![](.././media/hybrid16.png)
+   ![](.././media/gg-3-7.png)
 
    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -89,7 +89,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
 
-      ![](.././media/microsoft-sentinel-create.png)
+      ![](.././media/gg-3-9.png)
     
 1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
   and then click on the **Add (2)** button.
