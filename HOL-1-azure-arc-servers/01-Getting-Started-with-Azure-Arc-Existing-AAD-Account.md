@@ -350,7 +350,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
 1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
 
-    ![](.././media/hybrid10.png)
+    ![](.././media/gg-2-1.png)
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
@@ -370,7 +370,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/hybrid12.png)
+    ![](.././media/gg-2-2.png)
     
 1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 
