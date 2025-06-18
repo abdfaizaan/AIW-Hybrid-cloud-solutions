@@ -107,25 +107,32 @@ In this exercise, you will be performing the following tasks:
 
     ![](.././media/variableazlogin.png "azlogin")
 
-1. Run the below commands one after the other to update the kubernate version.    
-
-   ```
-   sudo microk8s stop
-   sudo snap remove microk8s
-   sudo snap install microk8s --classic --channel=1.33/stable
-
-   ```
+1. Run the below commands one after the other.
 
    ```
    microk8s start
    microk8s status --wait-ready
    ```
 
-    ![](.././media/arc72.png "azlogin")   
+    ![](.././media/gg-6-16.png "azlogin")   
 
      > **Note:** Wait until the first command runs successfully. This may take around **10–15 minutes**. Then, run the second command, which can take approximately **15–20 minutes** to complete.
 
      > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
+
+     > **Note:** If the resource `microk8s-cluster` shows **"Not Connected"** in the Azure Portal even after onboarding, you may need to manually refresh the cluster configuration and reconnect it to Azure Arc. Follow the steps below to resolve this:.
+     >
+     > ```bash
+     > microk8s status
+     > microk8s refresh-certs
+     > cd $HOME
+     > cd .kube
+     > microk8s config > config
+     > cd ..
+     > az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
+     > az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
+     > ```
+     > After running these commands, wait a few minutes and then refresh the Azure Portal to verify that the connection status has changed to **Connected**. You can then continue with the next steps in the lab.
 
 1. Run the below command to install `microsoft.flux` extension.
 
