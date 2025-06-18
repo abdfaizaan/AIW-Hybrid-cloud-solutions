@@ -121,7 +121,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     
     - **Instance name**: Enter **arcsql-indir (2)**       
     
-    - **Manged Instance admin login**:  Enter **arcsqluser (3)** 
+    - **Managed Instance admin login**:  Enter **arcsqluser (3)** 
     
     - **Password**: Enter **Password.1!! (4)**
     
@@ -151,7 +151,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     
     - **volume size in Gi(Backups)**: ```1```
     
-    - **Cores Rquest**: ```2```
+    - **Cores Request**: ```2```
     
     - **Cores Limit**: ```4```
     
