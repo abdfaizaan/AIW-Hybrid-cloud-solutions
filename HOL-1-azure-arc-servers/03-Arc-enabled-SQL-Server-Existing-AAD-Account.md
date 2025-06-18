@@ -98,7 +98,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid36.png "sqlsearch")
 
-   >**NOTE:** After sometime, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Pricipal Details** tab.
+   >**NOTE:** After sometime, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Principal Details** tab.
 
    ```
    $block = {
