@@ -35,7 +35,7 @@ You can connect your non-Azure computers in any of the following ways:
    
 1. Now, select the subscription listed and click on **Install agents**.
    
-   > **Note**: If you see that the **Install Agents button is not available**, It means that the agent will get automatically installed with the help of Defender and log analytics.
+   > **Note**: If you see that the **Install Agents button is not available**, it means that the agent will get automatically installed with the help of Defender and log analytics.
 
    ![](.././media/gg-3-5.png)
 
@@ -43,11 +43,11 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/gg-3-6.png)
 
-1. You find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
+1. You find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it, and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
 
-   > **Note**: Agent monitoring will take a few minutes to update and show the status as **Monitored** for Arc-enabled machine **ubuntu-k8s** as shown in the below screen. You can continue to the next exercise and come back later to check on this.
+   > **Note**: Agent monitoring will take a few minutes to update and show the status as **Monitored** for Arc-enabled machine **ubuntu-k8s** as shown in the screen below. You can continue to the next exercise and come back later to check on this.
 
-   > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
+   > Please note that due to some latest updates, the status is not changing to **Monitored** for Arc-enabled machine **ubuntu-k8s**, this is a temporary issue and will be fixed in future updates.   
 
    ![](.././media/gg-3-7.png)
 
@@ -79,9 +79,9 @@ This feature in Azure Arc-enabled servers allows you to deploy the Log Analytics
 #### Using Azure Policy:
 You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azure Arc machine's built-in policy to audit if the Arc-enabled server has the Log Analytics agent installed. If the agent is not installed, it automatically deploys it using a remediation task. Alternatively, if you plan to monitor the machines with Azure Monitor for VMs, use the Enable Azure Monitor for VMs initiative to install and configure the Log Analytics agent.
 
-   > **Note**: You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer **Task 5** in the previous exercise to review it again. Also, the screenshots of the log results can be mismatched because the result can take more time to get the same results. 
+   > **Note**: You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer to **Task 5** in the previous exercise to review it again. Also, the screenshots of the log results can be mismatched because the results can take more time to get the same results. 
 
-1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
+1. Search for ```Microsoft Sentinel``` on the Azure portal and then select the **Microsoft Sentinel** from the search result.
 
       ![](.././media/ss1.png)
     
@@ -98,7 +98,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
       
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
-1. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
+1. Once the Microsoft Sentinel is added, you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
       ![](.././media/microsen-success.png)
  
@@ -161,5 +161,3 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
-
