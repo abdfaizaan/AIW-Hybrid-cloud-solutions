@@ -8,11 +8,11 @@ In the last exercise, you have seen how to enable security measures and monitori
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Login To Azure Portal
+- Task 01: Log in To Azure Portal
 - Task 02: Register Azure Arc-enabled SQL Server.
 - Task 03: Run on-demand SQL Assessment.
 
-## Task 1: Login To Azure Portal
+## Task 1: Log in To Azure Portal
 
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
@@ -24,13 +24,13 @@ In this exercise, you will be performing the following tasks:
  
    ![](.././media/ss2.png "sqlsearch")
    
-1. In the Adding existing SQL Servers instances page, Click on **Connect SQL Server instance**.
+1. In the Adding existing SQL Server instances page, click on **Connect SQL Server instance**.
 
    ![](.././media/arc-75.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
-   > **Note**: We have already completed the prerequisite part for you. 
+   > **Note:** We have already completed the prerequisite part for you. 
     
    ![](.././media/presql.png "sqlsearch")
    
@@ -38,7 +38,7 @@ In this exercise, you will be performing the following tasks:
  
    - Subscription: Leave default **(1)**
 
-   - Resource group: Select **azure-arc (2)** from dropdown list.
+   - Resource group: Select **azure-arc (2)** from the dropdown list.
 
    - Region: Select the same region as the Resource group. **(3)**
 
@@ -56,7 +56,7 @@ In this exercise, you will be performing the following tasks:
  
 1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
-   > **Note**: Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
+   > **Note:** Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
    ![](.././media/runsqlv2.png "sqlsearch")
      
@@ -84,21 +84,21 @@ In this exercise, you will be performing the following tasks:
 
    > **Note:** Make sure that the **sqlvm** is in running state on **Hyper-V**.
 
-1. After running the command, you will see that the script started running.
+1. After running the command, you will see that the script has started running.
 
    ![](.././media/run.png "sqlsearch")
   
-1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown the image below.
+1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown in the image below.
 
    ![](.././media/completed.png "sqlsearch")
   
-    - **Note**: You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
+    - **Note:** You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
 
 1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/hybrid36.png "sqlsearch")
 
-   >**NOTE:** After sometime, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Principal Details** tab.
+   >**NOTE:** After some time, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Principal Details** tab.
 
    ```
    $block = {
@@ -187,7 +187,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd26.png "sqlsearch")
 
-   > **Note**: The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
+   > **Note:** The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
 1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
@@ -197,7 +197,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/scalsqlvm.png "scalsqlvm")
 
-1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size at your convenience.
+1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the SQLVM window at your convenience.
    
    ![](.././media/entervmpassword.png "entervmpassword")
 
@@ -219,7 +219,7 @@ In this exercise, you will be performing the following tasks:
  
 1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
    
-   > **Note**: Skip and continue from **Step 20** if **change license type** option is not available.
+   > **Note:** Skip and continue from **Step 20** if **change license type** option is not available.
    
    ![](.././media/hybrid42.png "H1E3T3S17")
 
@@ -235,13 +235,13 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid44.png "H1E3T3S19")
 
-   > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
+   > **Note:** After enabling the assessment, wait for a few minutes to get it complete. 
    
 1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
     ![](.././media/H1E3T3S21.png "H1E3T3S21")
       
-   > **Note**: Now you can move to the next Exercise, you don't have to wait here for the Result to appear.   
+   > **Note:** Now you can move to the next Exercise, you don't have to wait here for the Result to appear.   
 
    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -256,4 +256,3 @@ In this exercise, you will be performing the following tasks:
 In this exercise, you registered an Azure Arc-enabled SQL Server, enabling centralized management and monitoring of SQL resources. You also performed an on-demand SQL Assessment to evaluate the server's configuration, identify potential issues, and receive recommendations for optimization and best practices.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
