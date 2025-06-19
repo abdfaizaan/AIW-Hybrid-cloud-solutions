@@ -20,11 +20,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Navigate to the **Resource Groups** in the Azure portal navigation section.
 
-    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
+    ![](.././media/gg-121.png "Select Resource Group from Navigate Option")    
   
 1. Click on the **azure-arc** Resource group.
 
-    ![](.././media/arc1.png "Select Resource Group from Navigate Option") 
+    ![](.././media/gg-12.png "Select Resource Group from Navigate Option") 
 
 1. Confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
@@ -88,7 +88,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
 
-        ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
+        ![](.././media/gg-13.png "Enter ubuntu-k8s credentials")
     
         > **Note**: To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
     
@@ -297,7 +297,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    az connectedk8s list -g $ResourceGroup -o table
    ```
      
-   ![](.././media/check-k8s-connectionv2.png "Varify Micro-k8s cluster is connected")
+   ![](.././media/gg-14.png "Varify Micro-k8s cluster is connected")
    
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. 
 
@@ -316,7 +316,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    ![](.././media/get-pods.png)
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
-Policies can be applied to Arc-enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** usinga  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
+Policies can be applied to Arc-enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using a  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
 
 1. From the Azure Portal, search for ```Arc``` **(1)** from the search box and then select **Azure Arc (2)** from the services. 
 
@@ -342,15 +342,15 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hybrid31.png)
     
-1. Search for ```Deploy Log Analytics extension for Linux virtual machine (1)``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux virtual machine sacle sets (2)** and then click on **Add (3)** button at the bottom.
+1. Search for ```Deploy Log Analytics extension for Linux VMs (1)``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs (2)** and then click on **Add (3)** button at the bottom.
 
-    ![](.././media/arc11.png)
+    ![](.././media/gg-15.png)
     
     >**Note**: If you see multiple policies with the same name, select the Built-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine sacle sets (1)**. Then move to the **Parameters (2)** blade.
+1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine scale sets (1)**. Then move to the **Parameters (2)** blade.
 
-    ![](.././media/hybrid10.png)
+    ![](.././media/gg-2-1.png)
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
@@ -370,7 +370,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/hybrid12.png)
+    ![](.././media/gg-2-2.png)
     
 1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 

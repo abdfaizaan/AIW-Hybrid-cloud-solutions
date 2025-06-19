@@ -24,7 +24,7 @@ In this exercise, you will be performing the following task:
 
 4. In Select machines pane, select the **ubuntu-k8s (1)** Server - Azure Arc and click on **Review + Create (2)**.
 
-   ![](.././media/hybrid46.png "searchautoamanage")
+   ![](.././media/gg-4-1.png "searchautoamanage")
 
 5. Click on **Create**.
 
@@ -32,7 +32,7 @@ In this exercise, you will be performing the following task:
 
 6. Once the Configuration profile assignment is completed successfully it will take around `20-30 minutes` to get the Status as Conformant.
 
-   ![](.././media/hol1-ex4-automanage-7new.png "searchautoamanage")
+   ![](.././media/gg-4-2.png "searchautoamanage")
 
 7. You can proceed with the next task and review the status later.
 

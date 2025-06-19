@@ -75,7 +75,7 @@ In this exercise, you will be performing the following tasks:
    az upgrade
    ```
    
-   >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
+   >If prompted with the installation pop-up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
    >It may take some time, Wait till the installation process get completed.
      
    ![](.././media/hybrid57.png)
@@ -189,7 +189,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](media/deploy-pods.png "Lab Environment")
 
-1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernate Azure Arc**.
+1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernates Azure Arc**.
 
     ![](media/hybrid59.png "Lab Environment")
      
@@ -632,7 +632,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**   
    
-1. Now you can see that you are successfully connected with your Azure Arc-enabled SQL MI Server. You can see that under Servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
+1. Now you can see that you are successfully connected with your Azure Arc-enabled SQL MI Server. You can see it listed under **Servers**. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
   
     ![](./media/ads-9.png "ADS")
 
