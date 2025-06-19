@@ -1,6 +1,6 @@
 # Exercise 9: Restoring an AdventureWorks database backup taken from SQL Server 2012 instance
 ### Estimated Duration: 45 Minutes
-Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migration from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc Arc-enabled environment.
+Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities, such as being easy to manage and migrating from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc Arc-enabled environment.
 
 ## Objectives
 
@@ -19,7 +19,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 1. Run the following command to get the list of pods that are running on your data controller. 
 
-   > **Note**: The namespace name for your data controller will be **azure-arc**.
+   > **Note:** The namespace name for your data controller will be **azure-arc**.
 
    ```BASH
    kubectl get pods -n azure-arc
@@ -27,18 +27,19 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    
 1. From the output of the above command, copy the pod name of the SQL MI instance from the output which will be in the following format sqlinstancename-0. If you followed the same naming convention as in the instructions, the pod name will be **arcsql-direct-0**.
 
-   > **Note**: Please copy the Pod Name for the next step.
+   > **Note:** Please copy the Pod Name for the next step.
 
    ![](media/restore-direct-1.png "Confirm")
    
 1. In the Command Prompt, run the following command after replacing the required values. This will remotely execute a command in the Azure SQL Managed instance container to copy the .bak file onto the container from the local directory.
 
-   >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that you had copied matches the one given below: arcsql-direct-0. 
+   >**Note:** The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that you had copied matches the one given below: arcsql-direct-0. 
 
    ```BASH
    cd C:\
    kubectl cp \AdventureWorks2012.bak arcsql-direct-0:var/opt/mssql/data/AdventureWorks2012.bak -n azure-arc
    ```
+
    ![](media/newcp.png "Confirm")
 
 1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and **right click on the Connection of your connected SQL Managed Instance Server (1)** and click on **New Query (2)**.
@@ -99,10 +100,9 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    
     ![](media/logaw-6.png "Confirm")
 
-    > Note: You might have to resize the editor, to view the logs from the output window.
+    > Note: You might have to resize the editor to view the logs from the output window.
 
 ## Summary
 In this exercise, you restored the AdventureWorks database into an Azure Arc-enabled SQL Managed Instance, viewed SQL instance logs in the Azure portal.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
