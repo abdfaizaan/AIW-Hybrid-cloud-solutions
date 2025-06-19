@@ -246,13 +246,13 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      microk8s start
      ```
      
-   >**Note:** In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
+     >**Note:** In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
 
-   ```
-   microk8s refresh-certs
-   ```
+     ```
+     microk8s refresh-certs
+     ```
 
-   ![](.././media/k8s-status-running.png "check cluster cluster")
+     ![](.././media/k8s-status-running.png "check cluster cluster")
 
 1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
 
@@ -351,7 +351,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
     
 1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine scale sets (1)**. Then move to the **Parameters (2)** blade.
 
-    ![](.././media/gg-2-1.png)
+    ![](.././media/hybrid10.png)
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
