@@ -20,11 +20,11 @@ In this exercise, you will be performing the following tasks:
  
    ![](.././media/hyd19.png "sqlsearch")
    
-1. Click on the **Add** button to create the **SQL Server- Azure Arc**. 
+1. Click on the **+ Add** button to create the **Azure Arc | SQL Server**. 
  
    ![](.././media/ss2.png "sqlsearch")
    
-1. In the Adding existing SQL Server instances page, click on **Connect SQL Server instance**.
+1. In the Adding existing SQL Server instances page, click on **Connect SQL Server instances**.
 
    ![](.././media/arc-75.png "sqlsearch")
    
@@ -42,7 +42,7 @@ In this exercise, you will be performing the following tasks:
 
    - Region: Select the same region as the Resource group. **(3)**
 
-   - Operating Systems: Select **Windows (4)**.
+   - Operating systems: Select **Windows (4)**.
 
    - Server Name: Type **sqlvm (5)**
 
@@ -92,9 +92,9 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/completed.png "sqlsearch")
   
-    - **Note:** You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
+   > **Note:** You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
 
-1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+1. Bring back the browser window where you had opened Azure Portal and search for **Azure Arc | SQL Server instances**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/hybrid36.png "sqlsearch")
 
@@ -145,7 +145,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 3: Run on-demand SQL Assessment.
 
-1. Click on the search blade at the top, search for ```Log Analytics workspace (1)``` and then select **Log Analytics workspace (2)** from the services.
+1. Click on the search blade at the top, search for ```Log Analytics workspace (1)``` and then select **Log Analytics workspaces (2)** from the services.
 
    ![](.././media/arc21.png "H1E3T2S8")
    
@@ -153,7 +153,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid39.png "H1E3T2S8")
 
-1. Then select **Agents (1)** from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
+1. Then select **Agents (1)** under Settings section from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
  
    ![](.././media/hybrid40.png "sqlsearch")
 
@@ -165,7 +165,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu.
+1. Click on the **Extensions** button from the left side menu.
  
    ![](.././media/hyd22.png "sqlsearch")
     
@@ -179,7 +179,7 @@ In this exercise, you will be performing the following tasks:
    
 1. At this step, you must enter the **Log Analytics workspace ID and a key** to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
-1. Now, enter the **Workspace ID (1)** and **Key (2)** that you copied from the previous step, click on **Review + Create (3)** button.
+1. Now, enter the **Workspace Id (1)** and **Workspace Key (2)** that you copied from the previous step, click on **Review + create (3)** button.
  
    ![](.././media/hyd25.png "sqlsearch")
 

@@ -39,7 +39,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/gg-3-5.png)
 
-1. Click on **Inventory** under **General** from the Microsoft Defender for Cloud.
+1. Click on **Inventory** under **General** section from the Microsoft Defender for Cloud.
 
    ![](.././media/gg-3-6.png)
 
@@ -85,9 +85,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/ss1.png)
     
-1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
-
-      > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
+1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace. 
 
       ![](.././media/gg-3-9.png)
     
@@ -106,17 +104,17 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
       ![](.././media/hybrid20.png)
 
-1. Click on the **Content Hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** press **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
+1. Click on the **Content hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** press **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
 
       ![](.././media/arc29.png)      
     
-1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template (2)** tab and search for ```Linux machines``` **(3)** then select **Linux machines (4)** from the search result and then click on **Save (5).**
+1. Now, click on the **Workbooks (1)** from the left pane under the **Threat management** section, navigate to **Template (2)** tab and search for ```Linux machines``` **(3)** then select **Linux machines (4)** from the search result and then click on **Save (5).**
     
       ![](.././media/arc19.png)
     
 1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
     
-1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
+1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
       ![](.././media/hybrid25.png)
     

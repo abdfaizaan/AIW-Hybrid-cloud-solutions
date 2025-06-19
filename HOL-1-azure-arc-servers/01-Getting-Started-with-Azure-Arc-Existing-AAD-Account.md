@@ -371,7 +371,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/gg-2-2.png)
+    ![](.././media/gg-2-1.png)
     
 1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
 
@@ -407,7 +407,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
     
     - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-XXXXXX (3)**
 
-    >**Note:** XXXXXX is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
+      >**Note:** XXXXXX is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
     
     - Click on **Create (4)**
 
