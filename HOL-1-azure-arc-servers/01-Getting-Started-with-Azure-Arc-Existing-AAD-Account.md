@@ -44,11 +44,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
-1. Then, you need to select **ARCHOST-XXXXXX** to connect with the Local Hyper-V server.
+1. Then, you need to select **ARCHOST-<inject key="DeploymentID" enableCopy="false" />** to connect with the Local Hyper-V server.
 
     ![](.././media/arc2.png "ARCHOST Server")
 
-    >**Note:** XXXXXX is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
+    >**Note:** <inject key="DeploymentID" enableCopy="false" /> is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find a list of guest virtual machines with private IP addresses.
      
@@ -88,7 +88,6 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
 
-        ![](.././media/gg-13.png "Enter ubuntu-k8s credentials")
     
         > **Note:** To paste any value in the Putty terminal, just copy the value from anywhere and then right-click on the terminal to paste the copied value.
     
@@ -343,7 +342,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hybrid31.png)
     
-1. Search for ```Deploy Log Analytics extension for Linux VMs (1)``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs (2)** and then click on **Add (3)** button at the bottom.
+1. Search for ```Deploy Log Analytics extension for Linux VMs (1)``` in **Available Definitions** and then click on **Configure Log Analytics extension on Azure Arc enabled Linux servers (2)** and then click on **Add (3)** button at the bottom.
 
     ![](.././media/gg-15.png)
     
@@ -355,7 +354,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-XXXXXX(2)** from the available list and then click on **Select (3)**.
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />(2)** from the available list and then click on **Select (3)**.
 
     ![](.././media/hybrid6.png)
 
