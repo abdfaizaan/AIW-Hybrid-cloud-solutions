@@ -54,7 +54,7 @@ In this exercise, you will be performing the following tasks:
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
-1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
+1. On the **Run Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
    > **Note:** Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
