@@ -19,6 +19,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
+In this task, you will create a personal copy (fork) of the public arc-k8s-demo GitHub repository. This will serve as the source for your GitOps deployment, allowing changes in your repo to reflect automatically in the connected Kubernetes cluster
+
 1. Launch the following GitHub repository URL ```https://github.com/CloudLabsAI-Azure/arc-k8s-demo```. In the upper right corner, you will see **Sign in** and **Sign up** options. If you already have a github account, then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png)
@@ -40,6 +42,8 @@ In this exercise, you will be performing the following tasks:
    ![](.././media/hybrid48.png)   
 
 ## Task 2: Deploy App using az k8s configuration
+
+Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You will connect the cluster to Azure Arc, install the Flux GitOps operator, and deploy a sample app by linking your forked GitHub repo. This sets up the GitOps automation pipeline for your cluster.
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
@@ -177,6 +181,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 3: Validate the FluxConfiguration - Read Only
 
+This task ensures that your GitOps setup is active. You will check the configuration status using the Azure CLI and Azure Portal, confirming that the cluster is successfully polling from your GitHub repo and is in a “Compliant” state.
+
 1. Now, to validate whether the **FluxConfiguration** was successfully created and the **complianceState** is **Compliant**, you have to run the command given below. 
    
    > **Note:** If the state is pending, retry the same command again after every 1 minute.
@@ -196,7 +202,7 @@ In this exercise, you will be performing the following tasks:
   
 ## Task 4: Validate the Kubernetes configuration - Read Only
 
-After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
+Now you will verify that the Kubernetes resources (like namespaces, deployments, and config maps) defined in your GitHub repository are deployed on the cluster. This confirms that GitOps is working and syncing properly.
 
    > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
 
@@ -217,6 +223,8 @@ After config-agent has installed the flux instance, resources held in the git re
    ```
 
 ## Task 5: Make changes to cluster declarations in the Git repo - Read Only
+
+In this task, you will simulate a real-world GitOps update. You’ll edit the YAML file in your forked repo to change a CPU request value. This triggers a new deployment rollout handled automatically by the GitOps operator.
 
 1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
 
@@ -244,6 +252,8 @@ After config-agent has installed the flux instance, resources held in the git re
     >**Note:** Repeat the steps for `master` branch as well.
    
 ## Task 6: Verify changes are deployed to the cluster - Read Only
+
+Finally, you will validate that the changes made to the Git repo are reflected on the Kubernetes cluster. By inspecting the updated pod configuration, you’ll confirm that the new CPU value has been applied—demonstrating GitOps in action.
 
 1.  Run the following command in the SSH Session that you have opened to the ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo**
 

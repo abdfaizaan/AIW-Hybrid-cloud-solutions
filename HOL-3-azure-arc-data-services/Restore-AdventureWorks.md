@@ -68,6 +68,8 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 ## Task 2: View Azure Arc Arc-enabled SQL-managed instance logs in Azure Portal
 
+In this task, you will use the Azure Portal to access your Log Analytics workspace. You’ll explore the sqlManagedInstances_agent_logs_CL table under Custom Logs to view diagnostic and operational logs from your Arc-enabled SQL Managed Instance, using the KQL query editor.
+
 1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for **Log Analytics workspace** in the search bar at the top and then select it.
 
    ![](./media/search-law.png "Lab Environment")
