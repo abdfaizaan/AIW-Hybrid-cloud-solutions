@@ -342,13 +342,13 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hybrid31.png)
     
-1. Search for ```Deploy Log Analytics extension for Linux VMs (1)``` in **Available Definitions** and then click on **Configure Log Analytics extension on Azure Arc enabled Linux servers (2)** and then click on **Add (3)** button at the bottom.
+1. Search for ```Configure Log Analytics extension on Azure Arc enabled Linux servers (1)``` in **Available Definitions** and then click on **Configure Log Analytics extension on Azure Arc enabled Linux servers (2)** and then click on **Add (3)** button at the bottom.
 
     ![](.././media/gg-15.png)
     
     >**Note:** If you see multiple policies with the same name, select the Built-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, **rename** the **Assignment** name to **Deploy Log Analytics extension for Linux virtual machine scale sets (1)**. Then move to the **Parameters (2)** blade.
+1. After selecting the policy definition, **rename** the **Assignment** name to **Configure Log Analytics extension on Azure Arc enabled Linux servers (1)**. Then move to the **Parameters (2)** blade.
 
     ![](.././media/hybrid10.png)
 
