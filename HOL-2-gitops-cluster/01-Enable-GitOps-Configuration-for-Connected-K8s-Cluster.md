@@ -145,7 +145,11 @@ In this exercise, you will be performing the following tasks:
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
 
-    >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.    
+    >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.
+    >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
+    > ```
+    > sudo snap refresh microk8s --channel=1.26/stable
+    > ``` 
 
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
