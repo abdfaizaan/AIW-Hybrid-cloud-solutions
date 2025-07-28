@@ -91,11 +91,9 @@ In this exercise, you will be performing the following tasks:
    az extension add --name connectedk8s
    az extension add --name k8s-configuration
    az extension add --name customlocation   
-   ```   
-  
-    ![](media/install-extensions.png "Lab Environment")
-
-     >**Note:** If you get any warnings, please ignore. They are not errors.
+   ```
+   
+   >**Note:** If you get any warnings, please ignore. They are not errors.
    
 1. Now run the below command to get the latest version of extensions.
   
@@ -113,8 +111,9 @@ In this exercise, you will be performing the following tasks:
    
    ```
    az version
-   ```     
-    ![](media/arc40.png "Lab Environment")
+   ```
+   
+   ![](media/arc40.png "Lab Environment")
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
@@ -124,9 +123,9 @@ In this exercise, you will be performing the following tasks:
    az provider register --namespace Microsoft.Kubernetes
    az provider register --namespace Microsoft.KubernetesConfiguration
    az provider register --namespace Microsoft.ExtendedLocation
-   ``` 
+   ```
    
-    ![](media/register-provider.png "Lab Environment")
+   ![](media/register-provider.png "Lab Environment")
    
 ## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
@@ -150,7 +149,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
 1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
    
-    ![](media/provisionstate.png "Lab Environment")
+   ![](media/provisionstate.png "Lab Environment")
 
 1. Verify whether the Azure Arc-enabled Kubernetes cluster is onboarded and connected to the resource group in the Azure subscription by running the following command:
 
@@ -187,13 +186,13 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
    The output should be similar to as shown below:    
   
-    ![](media/deploy-pods.png "Lab Environment")
+   ![](media/deploy-pods.png "Lab Environment")
 
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernetes Azure Arc**.
 
-    ![](media/hybrid59.png "Lab Environment")
+   ![](media/hybrid59.png "Lab Environment")
      
-    ![](media/hybrid60.png "Lab Environment")
+   ![](media/hybrid60.png "Lab Environment")
 
 ## Task 3: Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
