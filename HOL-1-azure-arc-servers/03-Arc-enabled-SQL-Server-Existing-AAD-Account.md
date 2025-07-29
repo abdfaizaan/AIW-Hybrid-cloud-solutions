@@ -14,6 +14,8 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Log in To Azure Portal
 
+In this task, you will begin by navigating the Azure Portal to onboard an existing SQL Server instance to Azure Arc. You’ll use the graphical interface to initiate the onboarding wizard, provide resource group and region details, and generate a PowerShell script that facilitates the registration process. This script will be executed in the next task to connect the SQL Server instance to Azure Arc. This step ensures that SQL Server is discoverable and manageable from Azure.
+
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
 1. Click on the search blade at the top and search for ``SQL Server (1)``, select **SQL Server - Azure Arc (2)**.
@@ -54,13 +56,15 @@ In this exercise, you will be performing the following tasks:
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
-1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
+1. On the **Run Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
    > **Note:** Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
    ![](.././media/runsqlv2.png "sqlsearch")
      
 ## Task 2: Register Azure Arc-enabled SQL Server.
+
+Now that the registration script is prepared, you will switch to the LabVM/ARCHost VM and execute a PowerShell script that registers the SQL Server instance to Azure Arc. This task links the on-prem SQL Server running on the sqlvm virtual machine to Azure, enabling visibility and management from the Azure Portal. If the initial registration doesn't show a "Connected" state, you’ll also learn how to manually re-register the SQL Server using service principal credentials and remote PowerShell execution.
 
 1. Minimize the Azure Portal Browser window. 
 
@@ -144,6 +148,8 @@ In this exercise, you will be performing the following tasks:
    ![](.././media/hybrid37.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
+
+With the SQL Server onboarded, this task walks you through setting up monitoring and assessment features. You’ll integrate the SQL Server with Log Analytics by installing the Log Analytics Agent extension. You will then configure SQL Server permissions and license type, and initiate a best practices assessment from the Azure Portal. This assessment provides a detailed evaluation of the SQL Server instance's configuration, helping identify security gaps, performance issues, and optimization recommendations.
 
 1. Click on the search blade at the top, search for ```Log Analytics workspace (1)``` and then select **Log Analytics workspaces (2)** from the services.
 

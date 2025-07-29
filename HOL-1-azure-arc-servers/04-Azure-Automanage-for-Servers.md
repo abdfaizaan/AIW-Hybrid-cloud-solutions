@@ -10,6 +10,8 @@ In this exercise, you will be performing the following task:
 
 ## Task 1: Configuring Azure Automanage
 
+In this task, you will enable Azure Automanage on the ubuntu-k8s Arc-enabled server. Automanage applies best practices for VM management, such as security, updates, and monitoring, using services like Azure Security Center and Log Analytics. You will use the Dev/Test configuration profile to automate and simplify the VM’s management lifecycle.
+
 1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage (1)** in the search box and select **Automanage (2)**.
 
    ![](.././media/arc27.png "searchautoamanage")

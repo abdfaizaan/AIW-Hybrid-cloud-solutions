@@ -10,6 +10,8 @@ In this exercise, you will be performing the following task:
 
 ## Task 1: Configuring Azure Monitor
 
+In this task, you will enable Azure Monitor for your Azure Arc-enabled Kubernetes cluster. You’ll link the cluster to a Log Analytics workspace, configure monitoring, and then explore cluster performance and insights using the Azure Portal. Full telemetry (nodes, pods, containers) becomes visible after some time.
+
 1. Navigate to **azure-arc** resource group and select **microk8s-cluster** Kubernetes - Azure Arc resource from the resources listed.
 
    ![](.././media/gg-8-1.png "azuremonitor")
@@ -18,7 +20,7 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/hyd30.png "azuremonitor")
 
-3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown and click on **Configure (3)**.
+3. On the Configure Container insights blade, scroll down to the bottom and click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown, from cost oresets dropdown select **Standard (2)**  and click on **Configure (3)**.
 
    ![](.././media/hybrid73.png "azuremonitor")
 
