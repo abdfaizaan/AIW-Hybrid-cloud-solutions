@@ -119,7 +119,6 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      pip install azure-common
      apt update
      az upgrade -y
-     init 6
      ```
 
     > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
@@ -131,7 +130,15 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      ```
 
     > **Note:** If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
-  
+
+1. After the above commands complete, execute the following 'init 6' to reboot the system:
+
+    ```
+     init 6
+    ```
+    > **Note:** A pop-up will appear with the message `PuTTY Fatal Error: Remote side unexpectedly closed network connection`.
+    > This is expected behavior during the reboot process. Click on **OK** and close the pop-up and proceed with the next step.
+
 1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
@@ -222,6 +229,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
     >**Note:** If you face any exceptions while updating the CLI version, please rerun the command again.
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
+
+    >**Note:** If the message "Unable to load extension connectedk8s: No module named azure.graphrbac" appears, rerun the command.
 
    ```
    az extension update --name connectedk8s
