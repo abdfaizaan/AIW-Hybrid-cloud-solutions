@@ -29,19 +29,26 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
     az login
     ```
     
+    >**Note:** If the `az login` gives a AssertionError, run the following command.Later again run the `az login` command and continue with the next step
+
+    ```
+    Remove-Item -Recurse -Force "C:\Users\arcadmin\.azure\cliextensions\arcdata"
+    az extension add --name arcdata
+    ```
+
 1. After running the above command, a browser tab will open to log in to the Azure portal.
 
 1. On the **Sign into Microsoft Azure** tab, you will see the login screen. Enter the following **Email/Username** and then click on **Next**.
 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
 
 1. Now enter the following **Password** and click on **Sign in**.
 
-   * Password: <inject key="AzureAdUserPassword"></inject>
+   * Password: **<inject key="AzureAdUserPassword"></inject>**
 
 1. After adding the credentials, you will see that you have logged into Microsoft Azure.
 
-    ![](media/login-success.png "Lab Environment")
+    ![](media/login-success.png)
 
 1. Now switch back to Windows PowerShell and you will be able to see that you have logged in to Azure.
 
@@ -49,43 +56,8 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    
    ```
     cd C:\Users\arcadmin 
-   ```  
+   ```      
 
-1. Run the below command to log in to Azure.
-
-    ```
-    az login
-    ```
-
-1. After running the above command, a browser tab will open to log in to the Azure portal.
-
-1. On the **Sign into Microsoft Azure** tab, you will see the login screen. Enter the following **Email/Username** and then click on **Next**.
-
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-
-1. Now enter the following **Password** and click on **Sign in**.
-
-   * Password: <inject key="AzureAdUserPassword"></inject>
-
-1. After adding the credentials, you will see that you have logged into Microsoft Azure.
-
-    ![](media/login-success.png "Lab Environment")    
-
-1. Run the below command to upgrade the `az` extension.
-
-   ```
-   az upgrade
-   ```
-   
-   >If prompted with the installation pop-up, check the **I accept the terms in License Agreement (1)** and click **Install (2)**
-   >It may take some time. Wait till the installation process gets completed.
-     
-   ![](.././media/hybrid57.png)
-   
-   >Click on **Finish** to complete the process.
-     
-   ![](.././media/hybrid58.png)    
-   
 1. Run the below commands to install the required Azure CLI extensions.
    
    ```
@@ -115,7 +87,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az version
    ```
    
-   ![](media/arc40.png "Lab Environment")
+   ![](media/arc40.png)
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
@@ -127,7 +99,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az provider register --namespace Microsoft.ExtendedLocation
    ```
    
-   ![](media/register-provider.png "Lab Environment")
+   ![](media/register-provider.png)
    
 ## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
@@ -151,7 +123,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
 1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
    
-   ![](media/provisionstate.png "Lab Environment")
+   ![](media/provisionstate.png)
 
 1. Verify whether the Azure Arc-enabled Kubernetes cluster is onboarded and connected to the resource group in the Azure subscription by running the following command:
 
@@ -159,24 +131,14 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    az connectedk8s list -g azure-arc -o table
    ```  
   
-    ![](media/list-table.png "Lab Environment")
+    ![](media/list-table.png)
 
      >**Note:** If you encounter the following error, run the commands below to complete the Azure CLI installation process, and then try executing the previous command again.
     
     ```
-    az upgrade
     az extension update --name connectedk8s
     ```
-    ![](.././media/3.png)
-
-     >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install (2)**
-     >It may take some time. Wait till the installation process gets completed.
-     
-     ![](.././media/hybrid57.png)
-   
-     >Click on **Finish** to complete the process.
-     
-    ![](.././media/hybrid58.png)      
+    ![](.././media/3.png)    
    
 1. Azure Arc-enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the command prompt:  
 
@@ -188,13 +150,13 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
    The output should be similar to as shown below:    
   
-   ![](media/deploy-pods.png "Lab Environment")
+   ![](media/deploy-pods.png)
 
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernetes Azure Arc**.
 
-   ![](media/hybrid59.png "Lab Environment")
+   ![](media/hybrid59.png)
      
-   ![](media/hybrid60.png "Lab Environment")
+   ![](media/hybrid60.png)
 
 ## Task 3: Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
@@ -222,15 +184,15 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
 1. After running the above command you will notice that the **Provisioning State** is **Succeeded**. If it is pending, it is because the extension may take a few minutes to complete the installation.
    
-    ![](media/extension-output.png "Lab Environment")
+    ![](media/extension-output.png)
 
 1. To verify the extension installation, switch back to the Azure Portal in the browser search for **Kubernetes - Azure Arc** and select your cluster.
    
-    ![](media/hybrid62.png "Lab Environment")
+    ![](media/hybrid62.png)
    
 1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
    
-    ![](media/hybrid63.png "Lab Environment")
+    ![](media/hybrid63.png)
 
 1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster-ID in the later steps while creating the custom location.
 
@@ -241,7 +203,7 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
      
    > **Note:** The clusterID is stored in the $clusterID parameter and you will be using this parameter only in the later steps.
        
-    ![zx](media/clusterid.png "Lab Environment")
+    ![zx](media/clusterid.png)
     
 1. Now run the below command to get the Azure Resource Manager identifier of the cluster extension deployed on top of the Azure Arc-enabled Kubernetes cluster, referenced in the later steps as extensionId:
 
@@ -252,7 +214,7 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
    > **Note:** The extension resource ID is stored in the $extensionID parameter and you will be using this parameter only in the later steps.  
    
-   ![sad](media/extensionid.png "Lab Environment")
+   ![sad](media/extensionid.png)
     
 1. Now run the below command to create a custom location by referencing the Azure Arc-enabled Kubernetes cluster ID and the extension ID.
 
@@ -262,33 +224,33 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
     
    > **Note:** This can take up to 2 minutes to complete the creation of a custom location. The output should be as shown below:    
     
-    ![dfs](media/arc41.png "Lab Environment")
+    ![dfs](media/arc41.png)
      
 1. To verify the custom location deployment, switch back to the browser and log in to [Azure Portal](https://portal.azure.com) if not already done.
 
 1. Search for **custom location (1)** in the search bar and select **custom locations (2)**.
    
-    ![sdf](./media/arc42.png "Lab Environment")
+    ![sdf](./media/arc42.png)
       
 1. After selecting the custom locations from the search bar, select your **azurearc-nyc-location**.
 
-    ![](./media/arc43.png "Lab Environment")
+    ![](./media/arc43.png)
      
 1. Explore the overview section. You can see the namespace and Kubernetes cluster details on the overview page.
   
-    ![](./media/hybrid64.png "Lab Environment")
+    ![](./media/hybrid64.png)
 
 1. Now search for the **Log Analytics workspace (1)** in the Azure portal and select **Log Analytics workspace (2)**.
      
-    ![](./media/arc44.png "Lab Environment")
+    ![](./media/arc44.png)
 
 1. Navigate to **LoganalyticsWS-Direct** workspace.
   
-    ![](./media/hybrid65.png "Lab Environment")
+    ![](./media/hybrid65.png)
 
 1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers tab, expand **Log Analytics agent instructions (2)** copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
 
-    ![](./media/arc45.png "Lab Environment")
+    ![](./media/arc45.png)
     
 ## Task 4: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
 
@@ -296,15 +258,15 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
 1. From the Azure Portal, search for **Azure arc data controllers (1)** from the search box and then select **Azure arc data controllers (2)**.  
 
-    ![](./media/arc46.png "Lab Environment")
+    ![](./media/arc46.png)
 
 1. After selecting the Azure Arc data controller, click on the **+ Create** button to deploy ```Azure arc data controller```.
 
-    ![](./media/dc-2.png "Lab Environment")
+    ![](./media/dc-2.png)
      
 1. Now, on ```Create Azure Arc data controller``` blade, select **Azure Arc-enabled Kubernetes (Direct connectivity mode) (1)**. and click on **Next: Data Controller details (2)**.
 
-    ![](./media/hybrid66.png "Lab Environment")
+    ![](./media/hybrid66.png)
    
 1. On the **Data controller details** blade, enter the following details:
 
@@ -316,7 +278,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
    * Custom location: Select the available custom location from dropdown **(4)**.
 
-        ![](./media/arc47.png "Lab Environment")
+        ![](./media/arc47.png)
       
 1. Now scroll down and enter the below details in the remaining sections.
    
@@ -340,29 +302,29 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
    After entering all the required details, click on **Next: Additional settings** (6)
 
-    ![](./media/dc-5.png "Lab Environment")
+    ![](./media/dc-5.png)
 
 1. In the Additional settings blade, select the **LoganalyticsWS-Direct** **(1)** from the dropdown for the Log Analytics workspace. You will see that the Log Analytics workspace ID occurs by default. Enter the **Log Analytics primary key** **(2)** which you have copied to Notepad earlier in task 2 and click on the **Next: Tags (3)** button.
    
-    ![](./media/dc-6.png "Lab Environment")
+    ![](./media/dc-6.png)
     
 1. Leave default on **Tags** blade and click on **Next: Review + Create** button. to start the Azure Arc data controller deployment.
   
-    ![](./media/dc-7.png "Lab Environment")
+    ![](./media/dc-7.png)
 
 1. On Review + Create Blade, you can check all the given details and click on the **Create** button to start the Azure Arc data controller deployment.
 
     > **Note:** The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
   
-    ![](./media/review-dc-direct.png "Lab Environment")
+    ![](./media/review-dc-direct.png)
    
 1. Once the deployment is completed, click on the **Go to resource group** button.
  
-    ![](./media/complete-dc-direct.png "Lab Environment")
+    ![](./media/complete-dc-direct.png)
    
 1. From the **azure-arc** resource group, select **arcdc-direct** Azure Arc Data Controller from the resources.
  
-    ![](./media/rg-dc-direct.png "Lab Environment")  
+    ![](./media/rg-dc-direct.png)  
    
 ## Task 5: Monitor the creation of Azure Arc data controller on the cluster.
 
@@ -373,15 +335,15 @@ In this task, you will monitor the deployment of the Azure Arc Data Controller o
    ```
    kubectl get datacontrollers -n azure-arc
    ```  
-    > **Note:** The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
+    > **Note:** The deployment of the Azure Arc Data Controller can take 10–15 minutes to complete. If it takes significantly longer, please delete the `arcdc-direct` Azure Arc Data Controller and redeploy.
   
-    ![](./media/status-dc-direct.png "Lab Environment")
+    ![](./media/status-dc-direct.png)
    
 1. Once the data controller state is changed to ready, proceed to the next steps. Please note that the data controller deployment can take `5-to-10 minutes` to change it to ready.
 
 1. On the Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
   
-    ![](./media/hybrid67.png "Lab Environment")
+    ![](./media/hybrid67.png)
 
 ## Task 6: Deploy Azure Arc-enabled SQL Managed Instance using Azure Portal.
 
@@ -391,11 +353,11 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
 
 1. Now search for **SQL Managed Instance - Azure Arc (1)** and select **SQL Managed Instance - Azure Arc (2)**.
    
-    ![](./media/arc48.png "Lab Environment")
+    ![](./media/arc48.png)
    
 1. Click on the **+ Create** button to create the SQL Managed instance - Azure Arc.
 
-    ![](./media/sqlman-2.png "Lab Environment")
+    ![](./media/sqlman-2.png)
 
 1. Now on the **Basics** tab, enter the below details:
 
@@ -415,7 +377,7 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
     
      - **Compute + Storage:** Click on **Configure compute + storage (6)**
       
-        ![](./media/arc49.png "Lab Environment")
+        ![](./media/arc49.png)
       
 1. Now on **Compute + Storage** blade enter the following details:
     
@@ -425,7 +387,7 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
        
      - License Type: **License Included (3)**
        
-        ![](./media/arcbasiclicense.png "Lab Environment")
+        ![](./media/arcbasiclicense.png)
        
      - High availability: Select **1 replica (4)**
        
@@ -439,7 +401,7 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
          
        - CPU vCores Limit: Enter ```2``` **(8)**
          
-          ![](./media/arcr.png "Lab Environment")
+          ![](./media/arcr.png)
          
      - Instance Storage
 
@@ -463,7 +425,7 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
       
     After adding all the above details, click on the **Apply (13)** button.  
         
-      ![](./media/arc51.png "Lab Environment")
+      ![](./media/arc51.png)
    
 1. Under the Administrator account, enter the below details:
 
@@ -475,19 +437,19 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
 
    After adding all the required details, click on the **Review + Create (4)** button to review all details.
 
-   ![sds](./media/sqlman-6.png "Lab Environment")
+   ![sds](./media/sqlman-6.png)
     
 1. Now, click on the **Create** button to start the deployment.  
    
-    ![](./media/review-sqlmi-direct.png "Lab Environment")
+    ![](./media/review-sqlmi-direct.png)
 
 1. After some time, you will see that the deployment of **SQL Managed Instance - Azure Arc** is completed. Now click on the **Go to resource** button to navigate to the resource.
   
-    ![](./media/complete-sqlmi-direct.png "Lab Environment")
+    ![](./media/complete-sqlmi-direct.png)
 
 1. Now we have successfully deployed the Azure Arc-enabled SQL Managed Instance on top of the Directly connected mode Azure Arc data controller, you can explore more on metrics and logs on the same page from the left side menu. Please note that Azure Arc-enabled SQL Managed Instance deployment can take 5 to 10 minutes to change it to ready.
   
-    ![](./media/hybrid69.png "Lab Environment")
+    ![](./media/hybrid69.png)
 
 ## Task 7: Connecting Azure Arc Data Controller using Azure Data Studio
 
@@ -509,7 +471,7 @@ Now, let us connect to the data controller using Azure Data Studio.
 
 1. Open **Azure Data studio** **(1)** from the desktop shortcut, select **Connections** **(2)** and click on **Connect to Existing Azure Arc Controller** **(3)**.
   
-    ![](./images/15-05-2024(2).png "Azure Data Studio")
+    ![](./images/15-05-2024(2).png)
    
 2. On the Connect to Existing Controller page, provide the following details and click on **Connect (4)**.
 
@@ -527,7 +489,7 @@ Now, let us connect to the data controller using Azure Data Studio.
      ```BASH
      arcdc-direct
      ```  
-        ![asdasd](./media/arc52.png "Azure Data Studio")
+        ![asdasd](./media/arc52.png)
 
         >**Note:** If you see any error message in the **Cluster Context**, open **PowerShell** and run the commands below one by one. After that, close and reopen **Azure Data Studio** from the desktop, and then repeat Step 4.
 
@@ -541,9 +503,9 @@ Now, let us connect to the data controller using Azure Data Studio.
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
-    ![](./media/ads-direct-list.png "Azure Data Studio")
+    ![](./media/ads-direct-list.png)
 
-    >**Note:** If you face an error while connecting to the Azure Arc Data Controller, then run the following commands in Windows Powershell.
+    >**Note:** If you face an error while connecting to the Azure Arc Data Controller, then run the following commands in Windows Powershell. If the `pip` is not recognized ignore and continue to connect the data controller.
 
     ```
     az extension remove --name arcdata
@@ -559,7 +521,7 @@ Now, let us connect to the data controller using Azure Data Studio.
     
 5. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
   
-    ![](./media/ads-direct-manage.png "Azure Data Studio")
+    ![](./media/ads-direct-manage.png)
 
 6. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller
 
@@ -587,7 +549,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
 1. You can see the Azure Arc-enabled SQL Managed Instance named **arcsql-direct** listed under Azure Arc Data Controller named **arcdc-direct** at the bottom left of the Azure Data Studio. Right-click on the **arcsql-direct** and select **Manage**.
   
-    ![](./media/ads-sqlmi-manage.png "")
+    ![](./media/ads-sqlmi-manage.png)
 
 1. Once you are in the SQL-managed instance - Azure Arc dashboard, you can see the following details about the data controller:
 
@@ -607,8 +569,10 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
    Make sure you copy the **External Endpoint with port number** and save it in a notepad for use later in the task.   
   
-    ![](./media/ads-sqlmi-overview.png "ADS")
+    ![](./media/ads-sqlmi-overview.png)
 
+    >**Note:** Please make sure the Managed instance is ready and is showing the `Managed Instance Admin`.
+    
 1. In the Connections tab of Azure Data Studio, within the servers, click on **New Connection**.
   
     ![](images/arc53.png "Confirm")
@@ -640,11 +604,11 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
   
     ![](./media/HOL23-Ex8.png)
 
-      **Note:** If you see a connection error message then click on **Enable trust server certificate.**   
+    >**Note:** If you see a connection error message then click on **Enable trust server certificate.**   
    
 1. Now you can see that you are successfully connected with your Azure Arc-enabled SQL MI Server. You can see it listed under **Servers**. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
   
-    ![](./media/ads-9.png "ADS")
+    ![](./media/ads-9.png)
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:

@@ -449,6 +449,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
+    >**Note:** If the Logical Disk Performance data is not visible, please wait for 2–3 minutes for it to load and again refresh the page.
+
     ![](.././media/hyd16.png)
     
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties on the right. If there are any **Alerts**, you can check them by clicking on **Alerts** on the right side 👉.
