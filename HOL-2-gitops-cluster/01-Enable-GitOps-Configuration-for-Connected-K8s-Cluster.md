@@ -144,13 +144,14 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    az config set extension.dynamic_install=yes
    az config set extension.dynamic_install_allow_preview=true
    ```
+   >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.
 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
 
-    >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.
     >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
+
     > ```
     > sudo snap refresh microk8s --channel=1.26/stable
     > ``` 
@@ -237,7 +238,7 @@ In this task, you will simulate a real-world GitOps update. You’ll edit the YA
 
 1. Navigate to **master (1)** branch, **cluster-apps (2)**.
 
-   ![](.././media/arc36.png)   
+   ![](.././media/arcgit813.png)   
 
 1. Click on **arc-k8s-demo.yaml (1)** and then **edit (2)** icon to edit the yaml file.   
 
@@ -249,7 +250,7 @@ In this task, you will simulate a real-world GitOps update. You’ll edit the YA
 
 1. Click on **Commit changes** again.    
 
-    >**Note:** Repeat the steps for `master` branch as well.
+    >**Note:** Repeat the steps for `master` branch as well, if done in main.
    
 ## Task 6: Verify changes are deployed to the cluster - Read Only
 
