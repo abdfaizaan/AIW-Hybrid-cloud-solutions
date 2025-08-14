@@ -51,15 +51,6 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/gg-3-7.png)
 
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- 
-   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-<validation step="98bec6a2-c611-434b-adee-e6227f006309" />
-
-   >**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
 
 ## Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
 
@@ -182,6 +173,17 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/arc20.png)       
 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+<validation step="98bec6a2-c611-434b-adee-e6227f006309" />
+
+   >**Note**: This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+   
 ## Summary
  
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.

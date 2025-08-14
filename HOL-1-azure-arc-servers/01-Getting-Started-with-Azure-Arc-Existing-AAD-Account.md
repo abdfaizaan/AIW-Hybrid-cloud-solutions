@@ -389,6 +389,16 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hyd8.png)    
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+<validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
+
+>**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+
 ## Task 6: Monitor Arc-enabled machines with Azure Monitor
 
 Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually or automatically following your configuration management standards. Arc-enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
@@ -458,16 +468,6 @@ In this task, let's configure and collect data from your Linux machine by enabli
     ![](.././media/arc31.png)
 
      >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- 
-- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-<validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
-
->**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
