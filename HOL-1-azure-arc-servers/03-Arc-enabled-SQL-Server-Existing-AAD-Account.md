@@ -102,7 +102,7 @@ Now that the registration script is prepared, you will switch to the LabVM/ARCHo
 
    ![](.././media/hybrid36.png "sqlsearch")
 
-   >**NOTE:** After some time, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Principal Details** tab.
+   >**NOTE:** Wait for 5-10 minutes to show from registered to connected, if you don't see the Mode as **Connected**, then open a new Powershell window and run the below script, ensure to update the values in the `$block` section to define your variables. You can fetch these values from the **Environment > Service Principal Details** tab.
 
    ```
    $block = {
@@ -242,7 +242,13 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
    ![](.././media/hybrid44.png "H1E3T3S19")
 
    > **Note:** After enabling the assessment, wait for a few minutes to get it complete. 
-   
+
+2. Once the assessment is enabled, refresh the page every 3 minutes until **Assessment Scheduled** is displayed. When it appears, click **Run Assessment**. You should then see **Assessment in Progress**.
+
+   >**Note:** The assessment in progress will take some time. Continue with the next exercise, and come back later to check. Once the assessment is completed, `click on the completed assessment` to view the results, as shown in the next step.
+
+   ![](.././media/assessment.png "H1E3T3S19")
+
 1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
     ![](.././media/H1E3T3S21.png "H1E3T3S21")
