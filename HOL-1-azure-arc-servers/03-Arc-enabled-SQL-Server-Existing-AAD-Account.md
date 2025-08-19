@@ -1,5 +1,5 @@
 # Exercise 3: Onboard SQL Server to Arc
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 ## Overview 
 
 In the last exercise, you have seen how to enable security measures and monitoring for Arc-enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
@@ -38,19 +38,19 @@ In this task, you will begin by navigating the Azure Portal to onboard an existi
    
 1. On the **Server Details** blade, enter the below details.
  
-   - Subscription: Leave default **(1)**
+   - **Subscription:** Leave default **(1)**
 
-   - Resource group: Select **azure-arc (2)** from the dropdown list.
+   - **Resource group:** Select **azure-arc (2)** from the dropdown list.
 
-   - Region: Select the same region as the Resource group. **(3)**
+   - **Region:** Select the same region as the Resource group. **(3)**
 
-   - Operating systems: Select **Windows (4)**.
+   - **Operating systems:** Select **Windows (4)**.
 
-   - Server Name: Type **sqlvm (5)**
+   - **Server Name:** Type **sqlvm (5)**
 
-   - License Type: Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid") (6)**.
+   - **License Type:** Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid") (6)**.
 
-     Now, click on the **Next: Tags (7)** button.
+   - Now, click on the **Next: Tags (7)** button.
    
       ![](.././media/hybrid41.png "sqlsearch")
    
@@ -195,7 +195,7 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    > **Note:** The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
-1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
+1. From the desktop, open **Hyper-V Manager** and **double click** on **sqlvm** to connect to the Hyper-V sqlvm.
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
@@ -268,3 +268,5 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 In this exercise, you registered an Azure Arc-enabled SQL Server, enabling centralized management and monitoring of SQL resources. You also performed an on-demand SQL Assessment to evaluate the server's configuration, identify potential issues, and receive recommendations for optimization and best practices.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

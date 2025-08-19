@@ -45,3 +45,5 @@ In this task, you will enable Azure Monitor for your Azure Arc-enabled Kubernete
 In this exercise, you configured Azure Monitor for containers to track performance and gain insights for an Azure Arc-enabled Kubernetes resource, enabling enhanced monitoring and visibility.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

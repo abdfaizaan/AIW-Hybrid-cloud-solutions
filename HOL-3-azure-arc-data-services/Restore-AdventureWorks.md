@@ -108,3 +108,5 @@ In this task, you will use the Azure Portal to access your Log Analytics workspa
 In this exercise, you restored the AdventureWorks database into an Azure Arc-enabled SQL Managed Instance, viewed SQL instance logs in the Azure portal.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

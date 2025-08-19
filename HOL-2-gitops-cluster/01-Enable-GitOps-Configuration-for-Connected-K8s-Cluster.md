@@ -286,3 +286,5 @@ Finally, you will validate that the changes made to the Git repo are reflected o
 In this exercise, you deployed a sample Kubernetes app using the az k8sconfiguration command and GitOps. You then updated the linked repository configuration and verified that the connected Kubernetes cluster applied the updates automatically based on the changes made.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)
