@@ -117,6 +117,10 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    - Click **Save (6)**
 
       ![](.././media/image3.9.png)
+
+1. Please select **East US (1)** under **Save workbook to..** pop-up and click on **yes (2)**
+
+      ![](.././media/new-save-note.png)
     
 1. Then from the bottom-right corner of the Microsoft Defender portal, click on **Yes** to save the workbook. 
     
