@@ -387,7 +387,8 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
 1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
-    ![](.././media/hyd8.png)    
+    ![](.././media/hyd8.png)   
+    >**Note:** It may take 20–30 minutes for the compliance status to be reflected after the Log Analytics Agent is deployed on the ubuntu-k8s VM. You can continue with the next task and check the compliance state later. Once the Log Analytics Agent shows as Compliant, click **Validate** below.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -413,7 +414,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/enable-insights.png)
 
-1. On the **Monitoring configuration** page, click on **Create New** button.
+1. In the **Monitoring configuration** window, click on **Create New** to add new data collection rule.
 
     ![](.././media/hybrid32.png)
 
@@ -423,9 +424,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
     
     - Enable processes and dependencies (Map): Check the box **(2)**
     
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-XXXXXX (3)**
-
-      >**Note:** XXXXXX is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
     
     - Click on **Create (4)**
 
@@ -474,3 +473,5 @@ In this task, let's configure and collect data from your Linux machine by enabli
 In this exercise, you explored the fundamentals of setting up Hyper-V infrastructure, onboarded a Linux machine to Azure Arc, and integrated a Kubernetes cluster into Azure Arc while verifying the setup. Additionally, you created a policy assignment to identify compliant and non-compliant resources across your environment. Finally, you enabled monitoring for Arc-enabled machines using Azure Monitor to ensure real-time tracking and performance insights, streamlining management and governance across hybrid and multi-cloud environments.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+![](.././media/arcg6.png)
