@@ -310,7 +310,7 @@ Now, let us verify if the Kubernetes cluster is connected to Azure Arc and is in
    
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. 
 
-1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
+1. Click on **Refresh (1)** on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource (2)**.
 
    ![](.././media/hybrid30.png "Varify in Azure")
 
@@ -347,7 +347,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hyd7.png)
     
-1. In **Assign policy** window, under **Basics** section, select **ellipse(...) (1)**  from **Policy Definitions**.
+1. In the **Assign policy** window, under the **Basics** section, click the **ellipsis (…) button (1)** next to **Policy definition**.
 
     ![](.././media/hybrid31.png)
     
@@ -363,7 +363,7 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />(2)** from the available list and then click on **Select (3)**.
+1. On the **Parameters** Section, **under Log Analytics workspace**, click on the **ellipsis (…) (1)** which opens a new pane for **Log Analytics Workspace**. From the list of workspaces, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />(2)** , and then click **Select (3)**.
 
     ![](.././media/hybrid6.png)
 
@@ -373,15 +373,15 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/arc12.png)
     
-1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed``` **(1)**. This message will be displayed when the Linux machine will be non-compliant. Now, click on the **Review + create (2)**.
+1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed``` **(1)**. This message will appear when a Linux machine policy assignment status is in **non-compliant** state. Then, click **Review + create (2)**.
 
     ![](.././media/hybrid7.png)
     
-1. On **Review + create** blade, select **Create** to confirm.
+1. On **Review + create** blade, verify the assignments and select **Create** to confirm.
 
     ![](.././media/gg-2-1.png)
     
-1. Now, once the policy assignment is created, click on **Refresh** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. 
+1. Now, once the policy assignment is created, click on **Refresh (1)** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started (2)** state. 
 
     ![](.././media/arc13.png) 
 
