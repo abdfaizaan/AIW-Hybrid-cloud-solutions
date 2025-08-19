@@ -122,8 +122,6 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/new-save-note.png)
     
-1. Then from the bottom-right corner of the Microsoft Defender portal, click on **Yes** to save the workbook. 
-    
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
       >**Note:** Skip this step if your screen does not match the screenshot provided. This option may not appear due to recent UI changes.
