@@ -42,6 +42,10 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. In the **Search (1)** window for available definitions, type ```Configure Kubernetes clusters with specified GitOps configuration using no secrets (1)``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
+    ```
+    Configure Kubernetes clusters with specified GitOps configuration using no secrets
+    ```
+    
     ![](.././media/arc39.png)
 
 1. Click on **Parameters** blade.

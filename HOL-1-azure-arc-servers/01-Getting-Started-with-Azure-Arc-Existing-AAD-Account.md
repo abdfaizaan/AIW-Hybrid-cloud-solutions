@@ -119,7 +119,6 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      pip install azure-common
      apt update
      az upgrade -y
-     init 6
      ```
 
     > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
@@ -131,7 +130,15 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      ```
 
     > **Note:** If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
-  
+
+1. After the above commands complete, execute the following 'init 6' to reboot the system:
+
+    ```
+     init 6
+    ```
+    > **Note:** A pop-up will appear with the message `PuTTY Fatal Error: Remote side unexpectedly closed network connection`.
+    > This is expected behavior during the reboot process. Click on **OK** and close the pop-up and proceed with the next step.
+
 1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
@@ -222,6 +229,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
     >**Note:** If you face any exceptions while updating the CLI version, please rerun the command again.
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
+
+    >**Note:** If the message "Unable to load extension connectedk8s: No module named azure.graphrbac" appears, rerun the command.
 
    ```
    az extension update --name connectedk8s
@@ -380,6 +389,16 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hyd8.png)    
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+ 
+<validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
+
+>**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+
 ## Task 6: Monitor Arc-enabled machines with Azure Monitor
 
 Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually or automatically following your configuration management standards. Arc-enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
@@ -440,6 +459,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
+    >**Note:** If the Logical Disk Performance data is not visible, please wait for 2–3 minutes for it to load and again refresh the page.
+
     ![](.././media/hyd16.png)
     
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties on the right. If there are any **Alerts**, you can check them by clicking on **Alerts** on the right side 👉.
@@ -447,16 +468,6 @@ In this task, let's configure and collect data from your Linux machine by enabli
     ![](.././media/arc31.png)
 
      >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
- 
-- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-<validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
-
->**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 

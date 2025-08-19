@@ -55,6 +55,23 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    
      ![](./media/arc62.png "Connection")
 
+      >**Note:** If you encounter the error Could not connect to controller arcdc: No Resource, follow these steps:
+      1. Copy the commands below into a notepad.
+      2. Replace `<subscriptionid>` with your actual subscription ID, which can be found on the **Environment** page under the Service Principal Details tab.
+      3. Run the commands one by one.
+      > **Info:** The command `kubectl get datacontroller -n arcdc` helps confirm if the `arcdc` namespace resource exists. If not found, proceed with the creation command.
+
+      ```
+      kubectl get datacontroller -n arcdc
+      az arcdata dc create --profile-name azure-arc-aks-premium-storage --k8s-namespace arcdc --name arcdc --resource-group azure-arc --location eastus --connectivity-mode indirect --use-k8s --subscription <subscriptionid>
+      ```
+
+      >**Note:** **Final Step**. After the arcdata dc create command completes successfully, run the following command again to verify that the arcdc state is shown as **Ready**:
+
+      ```
+      kubectl get datacontroller -n arcdc
+      ```
+
 1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
     ![](./media/indirectmode-3.png "")
@@ -179,11 +196,15 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    ![](images/readydoneindir.png)
 
+   >**Note:** If the text **arcsql-Indir is Ready** is not seen, click on the **TASKS** and confirm the `Installing Notebook dependencies succeeded`
+
+   ![](images/succeed.png)
+
 1. Once the installation is complete, in **Azure Arc Data Controller dashboard** under Azure Arc Resources, you can see the newly created Azure Arc-enabled Azure SQL Managed instance.
 
-   ![](images/arc64.png "Confirm")
-
    > **Note:** You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql-Indir is Ready** at the bottom of the notebook.
+
+   ![](images/arc64.png)
 
 ## Task 4: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
 
@@ -267,6 +288,8 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    ![](images/hybrid75.png "Confirm")
    
 1. If the variables are not defined, set them now using the below commands.
+
+   >**Note:** If the `WORKSPACE_ID` and `WORKSPACE_SHARED_KEY` do not display any values, use the same values that were used in the earlier direct method.
    
    ```
    SET WORKSPACE_ID=<workspaceId>
@@ -309,6 +332,11 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
     ```
     az arcdata dc upload  --path logs.json
     ```
+    >**Note:** If the above command fails with `You need to install 'msrestazure' to use this feature` run the following command.
+
+   ```
+    pip install msrestazure --target "C:\Users\arcadmin\.azure\cliextensions\arcdata"
+   ```
       
 1. After some time, you will see some outputs uploaded to Azure.
 
@@ -324,9 +352,9 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    
 1. Now, to view your logs in the Azure portal, open the Azure portal and then search for your **Log Analytics workspace** by name in the search bar at the top and then select it.
 
-1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
+1. In the **Log Analytics workspaces** page, select your workspace **LoganalyticsWS-Direct**.
    
-    ![](images/arc70.png "Confirm")
+    ![](images/arc701.png "Confirm")
 
 1. Then, from the left navigation menu select **Logs (1)**, then click on the ``X`` **(2)** at the top right corner as shown in the below image.
 
