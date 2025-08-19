@@ -6,7 +6,7 @@ In this exercise, you will focus on using Azure Automanage to automatically enro
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Configuring Azure Automanage
+- Task 1: Configuring Azure Automanage
 
 ## Task 1: Configuring Azure Automanage
 
@@ -43,3 +43,5 @@ In this task, you will enable Azure Automanage on the ubuntu-k8s Arc-enabled ser
 In this task, you used Azure Automanage to enroll and configure a VM, applying the "Azure best practices - Dev/Test" profile. This setup automates lifecycle management, including security, updates, change tracking, and monitoring through tools like Azure Security Centre and Log Analytics.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

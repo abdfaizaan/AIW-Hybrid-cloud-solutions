@@ -9,12 +9,12 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Fork the GitHub Arc K8s demo repository
-- Task 02: Deploy App using az k8s configuration
-- Task 03: Validate the FluxConfiguration - **Read Only**
-- Task 04: Validate the Kubernetes configuration - **Read Only**
-- Task 05: Make changes to cluster declarations in the Git repo - **Read Only**
-- Task 06: Verify changes are deployed to the cluster - **Read Only**
+- Task 1: Fork the GitHub Arc K8s demo repository
+- Task 2: Deploy App using az k8s configuration
+- Task 3: Validate the FluxConfiguration - **Read Only**
+- Task 4: Validate the Kubernetes configuration - **Read Only**
+- Task 5: Make changes to cluster declarations in the Git repo - **Read Only**
+- Task 6: Verify changes are deployed to the cluster - **Read Only**
 
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
@@ -286,3 +286,5 @@ Finally, you will validate that the changes made to the Git repo are reflected o
 In this exercise, you deployed a sample Kubernetes app using the az k8sconfiguration command and GitOps. You then updated the linked repository configuration and verified that the connected Kubernetes cluster applied the updates automatically based on the changes made.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

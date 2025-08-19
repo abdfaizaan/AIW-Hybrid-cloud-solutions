@@ -6,8 +6,8 @@ This exercise focuses on integrating Azure Arc-enabled servers with Microsoft Se
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Enable Microsoft Defender for Cloud.
-- Task 02: Onboard Azure Arc-enabled servers to Microsoft Sentinel
+- Task 1: Enable Microsoft Defender for Cloud.
+- Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
    
 ## Task 1: Enable Microsoft Defender for Cloud.
 Microsoft Defender for Cloud can monitor the security posture of your non-Azure computers, but first, you need to connect them to Azure.
@@ -99,14 +99,12 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/image3.7.png) 
 
-1. In the Microsoft Defender portal:
-   - In the Microsoft Defender portal, click **Microsoft Sentinel (1)**.
-   - Click **Content management (2)**.
-   - Select **Content hub (3)**.
-   - In the search bar, type **Syslog (4)** and press Enter.
-   - From the search results, select **Syslog (5)**.
-   - Click **Install (6)**.
-   - Wait until the installation is complete before moving to the next step.
+1. In the **Microsoft Defender** portal, go to **Microsoft Sentinel (1)** > **Content management (2)** > **Content hub (3)**.
+
+1. Use the search bar to type **Syslog (4)**, then press Enter and select **Syslog (5)** from the results.
+
+1. Click **Install (6)** and wait for the installation to complete before proceeding.
+
 
       >**Note:** If the screen does not appear as shown in the screenshot, sign out of the portal and log back in.
 
@@ -119,8 +117,10 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    - Click **Save (6)**
 
       ![](.././media/image3.9.png)
-    
-1. Then from the bottom-right corner of the Microsoft Defender portal, click on **Yes** to save the workbook. 
+
+1. Please select **East US (1)** under **Save workbook to..** pop-up and click on **yes (2)**
+
+      ![](.././media/new-save-note.png)
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
@@ -128,7 +128,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/hybrid25.png)
 
-1. Click on **Logs (1)**, switch to **KQL mode (2)**, enter the query `union InsightsMetrics`, and click **Run (3)** to execute it.
+1. Click on **Logs (1)** under **General** of **Microsoft Sentinal**, switch to **KQL mode (2)**, enter the query `union InsightsMetrics`, and click **Run (3)** to execute it.
 
       ```
       union InsightsMetrics
@@ -167,7 +167,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    
       ![](.././media/hybrid13.png) 
    
-1. Then, you will find the `VMProcess` **(1)** query under **Queries hub**, click on **Run (2)** to run the query.
+1. Under **Queries hub** seach for `VMProcess` **(1)** and click on **Run (2)** to run the query.
    
       ![](.././media/hybrid28.png) 
 
@@ -189,3 +189,5 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)

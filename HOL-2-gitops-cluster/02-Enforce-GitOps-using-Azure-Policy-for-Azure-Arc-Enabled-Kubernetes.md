@@ -8,7 +8,7 @@ In this exercise, you will see how to use Azure Policy to enforce that each Azur
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Create a Policy Assignment
+- Task 1: Create a Policy Assignment
 
 ## Task 1: Create a Policy Assignment
 
@@ -119,3 +119,5 @@ You don't have to wait for the compliance state to change. You can move ahead to
 In this exercise, you used Azure Policy to enforce that specific GitOps configurations are applied to each Azure Arc-enabled Kubernetes cluster, ensuring consistent governance and compliance across the clusters.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+ ![](.././media/arcg6.png)
