@@ -6,8 +6,8 @@ This exercise focuses on integrating Azure Arc-enabled servers with Microsoft Se
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Enable Microsoft Defender for Cloud.
-- Task 02: Onboard Azure Arc-enabled servers to Microsoft Sentinel
+- Task 1: Enable Microsoft Defender for Cloud.
+- Task 2: Onboard Azure Arc-enabled servers to Microsoft Sentinel
    
 ## Task 1: Enable Microsoft Defender for Cloud.
 Microsoft Defender for Cloud can monitor the security posture of your non-Azure computers, but first, you need to connect them to Azure.

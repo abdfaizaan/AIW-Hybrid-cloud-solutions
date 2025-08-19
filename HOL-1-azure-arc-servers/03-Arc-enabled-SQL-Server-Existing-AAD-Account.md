@@ -8,9 +8,9 @@ In the last exercise, you have seen how to enable security measures and monitori
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Log in To Azure Portal
-- Task 02: Register Azure Arc-enabled SQL Server.
-- Task 03: Run on-demand SQL Assessment.
+- Task 1: Log in To Azure Portal
+- Task 2: Register Azure Arc-enabled SQL Server.
+- Task 3: Run on-demand SQL Assessment.
 
 ## Task 1: Log in To Azure Portal
 

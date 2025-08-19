@@ -6,7 +6,7 @@ In this exercise, you will focus on using Azure Automanage to automatically enro
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Configuring Azure Automanage
+- Task 1: Configuring Azure Automanage
 
 ## Task 1: Configuring Azure Automanage
 

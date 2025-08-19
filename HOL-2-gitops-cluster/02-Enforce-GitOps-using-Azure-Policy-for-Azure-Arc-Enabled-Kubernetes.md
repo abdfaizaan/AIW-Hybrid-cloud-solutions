@@ -8,7 +8,7 @@ In this exercise, you will see how to use Azure Policy to enforce that each Azur
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Create a Policy Assignment
+- Task 1: Create a Policy Assignment
 
 ## Task 1: Create a Policy Assignment
 

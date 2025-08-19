@@ -7,12 +7,12 @@ In this exercise, you will learn how to onboard and manage on-premises resources
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Getting Started with Hyper-V Infrastructure.
-- Task 02: Onboard Linux Machine to Azure Arc.
-- Task 03: Onboard Kubernetes Cluster to Azure Arc.
-- Task 04: Verify if the Kubernetes cluster is connected to Azure Arc.
-- Task 05: Create a policy assignment to identify compliant/non-compliant resources.
-- Task 06: Monitor Arc-enabled machines with Azure Monitor.
+- Task 1: Getting Started with Hyper-V Infrastructure.
+- Task 2: Onboard Linux Machine to Azure Arc.
+- Task 3: Onboard Kubernetes Cluster to Azure Arc.
+- Task 4: Verify if the Kubernetes cluster is connected to Azure Arc.
+- Task 5: Create a policy assignment to identify compliant/non-compliant resources.
+- Task 6: Monitor Arc-enabled machines with Azure Monitor.
   
 ## Task 1: Getting Started with Hyper-V Infrastructure
 

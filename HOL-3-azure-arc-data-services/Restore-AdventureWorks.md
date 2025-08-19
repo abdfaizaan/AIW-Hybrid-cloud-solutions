@@ -6,8 +6,8 @@ Contoso has some applications that use SQL Server as the backend database. They 
 
 In this exercise, you will be performing the following tasks:
 
-- Task 01: Restore the AdventureWorks2012 database into Azure SQL Managed instance - Azure Arc Using Kubectl.
-- Task 02: View Azure Arc Arc-enabled SQL-managed instance logs in Azure Portal.
+- Task 1: Restore the AdventureWorks2012 database into Azure SQL Managed instance - Azure Arc Using Kubectl.
+- Task 2: View Azure Arc Arc-enabled SQL-managed instance logs in Azure Portal.
 
 ## Task 1: Restore the AdventureWorks2012 database into Azure SQL Managed instance - Azure Arc Using Kubectl
 

@@ -6,7 +6,7 @@ In this exercise, you will see how to configure Azure Monitor for containers and
 
 In this exercise, you will be performing the following task:
 
-- Task 01: Configuring Azure Monitor
+- Task 1: Configuring Azure Monitor
 
 ## Task 1: Configuring Azure Monitor
 
