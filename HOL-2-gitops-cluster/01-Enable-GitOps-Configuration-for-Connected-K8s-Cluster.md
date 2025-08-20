@@ -154,7 +154,7 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
     >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
 
     > ```
-    > sudo snap refresh microk8s --channel=1.26/stable
+    > sudo snap refresh microk8s --channel=1.30/stable
     > ``` 
 
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
