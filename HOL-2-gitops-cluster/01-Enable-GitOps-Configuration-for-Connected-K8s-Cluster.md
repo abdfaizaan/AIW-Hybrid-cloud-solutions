@@ -196,7 +196,9 @@ This task ensures that your GitOps setup is active. You will check the configura
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/cs2.png) 
+   ![](.././media/cs2.png)
+
+   >**Note:**  If the **complianceState": "Non-Compliant**, kinldy ignore, since the flux check for a manifest file which is not present in the github repo, the status remains **Non-Complaint**, you can continue with next steps.
   
 1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
