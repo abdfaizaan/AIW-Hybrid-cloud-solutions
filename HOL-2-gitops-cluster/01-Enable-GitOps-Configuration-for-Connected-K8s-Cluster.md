@@ -136,7 +136,8 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
      > az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
      > az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
      > ```
-     > After running these commands, wait a few minutes and then refresh the Azure Portal to verify that the connection status has changed to **Connected**. You can then continue with the next steps in the lab.
+     >    ![](.././media/new-connectivity.png "connectivity")   
+     > After running these commands, make sure connectivity status is **Connected**, then wait a few minutes and then refresh the Azure Portal to verify that the connection status has changed to **Connected**. You can then continue with the next steps in the lab.
 
 1. Run the below command to install `microsoft.flux` extension.
 
@@ -149,11 +150,11 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
-
+    >**Note:** If the command takes longer than **15 minutes** to run, terminate the process by pressing **Ctrl + Z**. The extension installation will continue in the Azure portal for adding the **Flux** extension to the **microk8s-cluster (Kubernetes - Azure Arc)**.
     >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
 
     > ```
-    > sudo snap refresh microk8s --channel=1.26/stable
+    > sudo snap refresh microk8s --channel=1.30/stable
     > ``` 
 
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
@@ -195,7 +196,9 @@ This task ensures that your GitOps setup is active. You will check the configura
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/cs2.png) 
+   ![](.././media/cs2.png)
+
+   >**Note:**  If the **complianceState": "Non-Compliant**, kinldy ignore, since the flux check for a manifest file which is not present in the github repo, the status remains **Non-Complaint**, you can continue with next steps.
   
 1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
