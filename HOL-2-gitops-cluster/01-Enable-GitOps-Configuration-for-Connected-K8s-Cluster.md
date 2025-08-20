@@ -136,7 +136,8 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
      > az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
      > az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
      > ```
-     > After running these commands, wait a few minutes and then refresh the Azure Portal to verify that the connection status has changed to **Connected**. You can then continue with the next steps in the lab.
+     >    ![](.././media/new-connectivity.png "connectivity")   
+     > After running these commands, make sure connectivity status is **Connected**, then wait a few minutes and then refresh the Azure Portal to verify that the connection status has changed to **Connected**. You can then continue with the next steps in the lab.
 
 1. Run the below command to install `microsoft.flux` extension.
 
