@@ -139,7 +139,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     az extension update --name connectedk8s
     ```
     ![](.././media/3.png)
-   > **Note:** if you get a warning as below, kinldy run `az upragde -y` and continue udpating the az module version and retry the above step. This installation might take 5-7 mins       
+   > **Note:** if you get a warning as below, kinldy run `choco install azure-cli -y` and continue udpating the az module version and retry the above step. This installation might take 5-7 mins       
    >    ![](.././media/az-upgrade.png)
    
 1. Azure Arc-enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the command prompt:  
