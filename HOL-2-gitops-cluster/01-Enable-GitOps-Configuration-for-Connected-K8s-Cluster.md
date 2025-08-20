@@ -150,7 +150,7 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
-
+    >**Note:** If the command takes longer than **15 minutes** to run, terminate the process by pressing **Ctrl + Z**. The extension installation will continue in the Azure portal for adding the **Flux** extension to the **microk8s-cluster (Kubernetes - Azure Arc)**.
     >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
 
     > ```
