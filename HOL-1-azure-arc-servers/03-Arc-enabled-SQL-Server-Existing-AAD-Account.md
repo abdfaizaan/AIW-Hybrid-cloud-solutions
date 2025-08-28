@@ -96,7 +96,7 @@ Now that the registration script is prepared, you will switch to the LabVM/ARCHo
 
    ![](.././media/newdevlogin.png "newimage")
 
-1. click on continue to confirm your login.
+1. click on **continue** to confirm your login.
 
    ![](.././media/loginconfirm.png "loginconfirm")
   
