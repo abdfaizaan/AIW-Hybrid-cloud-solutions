@@ -88,15 +88,22 @@ Now that the registration script is prepared, you will switch to the LabVM/ARCHo
 
    > **Note:** Make sure that the **sqlvm** is in running state on **Hyper-V**.
 
-1. After running the command, you will see that the script has started running.
+1. while the script is executing, poweshell will ask you for device-authentication. Copy the **code** provided from powershell.
 
    ![](.././media/run.png "sqlsearch")
+
+1. Open https://microsoft.com/devicelogin in a brower and **paste the code (1)** and click on **Next (2)** to select the azure account to authenticate.
+
+   ![](.././media/newdevlogin.png "newimage")
+
+1. click on continue to confirm your login.
+
+   ![](.././media/loginconfirm.png "loginconfirm")
   
 1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown in the image below.
 
    ![](.././media/completed.png "sqlsearch")
-  
-   > **Note:** You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
+
 
 1. Bring back the browser window where you had opened Azure Portal and search for **Azure Arc | SQL Server instances**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 

@@ -11,11 +11,7 @@ In this exercise, you will be performing the following tasks:
 
 - Task 1: Fork the GitHub Arc K8s demo repository
 - Task 2: Deploy App using az k8s configuration
-- Task 3: Validate the FluxConfiguration - **Read Only**
-- Task 4: Validate the Kubernetes configuration - **Read Only**
-- Task 5: Make changes to cluster declarations in the Git repo - **Read Only**
-- Task 6: Verify changes are deployed to the cluster - **Read Only**
-
+- Task 3: Validate the Kubernetes configuration - **Read Only**
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
@@ -145,12 +141,14 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    az config set extension.dynamic_install=yes
    az config set extension.dynamic_install_allow_preview=true
    ```
-   >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.
 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
+    >**Note:** Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.
+
     >**Note:** If the command takes longer than **15 minutes** to run, terminate the process by pressing **Ctrl + Z**. The extension installation will continue in the Azure portal for adding the **Flux** extension to the **microk8s-cluster (Kubernetes - Azure Arc)**.
+
     >**Note:** If the execution fails, update your MicroK8s cluster by running the following command and retry Step 14:
 
     > ```
@@ -180,31 +178,8 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
      > *ConfigMap*: team-a/endpoints
      
      > The config agent polls Azure for new or updated configurations.
-
-## Task 3: Validate the FluxConfiguration - Read Only
-
-This task ensures that your GitOps setup is active. You will check the configuration status using the Azure CLI and Azure Portal, confirming that the cluster is successfully polling from your GitHub repo and is in a “Compliant” state.
-
-1. Now, to validate whether the **FluxConfiguration** was successfully created and the **complianceState** is **Compliant**, you have to run the command given below. 
-   
-   > **Note:** If the state is pending, retry the same command again after every 1 minute.
-
-   ```
-   az k8s-configuration flux show --resource-group $ResourceGroup --cluster-name microk8s-cluster --cluster-type connectedClusters --name cluster-config
-   ```
-     > **Note:** that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
-
-   The output should include the following value as given here: ``"complianceState": "Compliant"``
-
-   ![](.././media/cs2.png)
-
-   >**Note:**  If the **complianceState": "Non-Compliant**, kinldy ignore, since the flux check for a manifest file which is not present in the github repo, the status remains **Non-Complaint**, you can continue with next steps.
   
-1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
-
-   ![](.././media/arc34.png) 
-  
-## Task 4: Validate the Kubernetes configuration - Read Only
+## Task 3: Validate the Kubernetes configuration - Read Only
 
 Now you will verify that the Kubernetes resources (like namespaces, deployments, and config maps) defined in your GitHub repository are deployed on the cluster. This confirms that GitOps is working and syncing properly.
 
@@ -225,64 +200,6 @@ Now you will verify that the Kubernetes resources (like namespaces, deployments,
    ```
    kubectl -n team-a get cm -o yaml
    ```
-
-## Task 5: Make changes to cluster declarations in the Git repo - Read Only
-
-In this task, you will simulate a real-world GitOps update. You’ll edit the YAML file in your forked repo to change a CPU request value. This triggers a new deployment rollout handled automatically by the GitOps operator.
-
-1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
-
-    ```
-    kubectl get pods -n cluster-config
-    ```
-    ![](.././media/pods1.png)
-
-1. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
-
-1. Navigate to **master (1)** branch, **cluster-apps (2)**.
-
-   ![](.././media/arcgit813.png)   
-
-1. Click on **arc-k8s-demo.yaml (1)** and then **edit (2)** icon to edit the yaml file.   
-
-   ![](.././media/arc37.png)
-
-1. Change the CPU request to **120 (1)** around 32nd line and click on **Commit changes (2)** to confirm the changes to the CPU request.
-
-   ![](.././media/arc38.png)
-
-1. Click on **Commit changes** again.    
-
-    >**Note:** Repeat the steps for `master` branch as well, if done in main.
-   
-## Task 6: Verify changes are deployed to the cluster - Read Only
-
-Finally, you will validate that the changes made to the Git repo are reflected on the Kubernetes cluster. By inspecting the updated pod configuration, you’ll confirm that the new CPU value has been applied—demonstrating GitOps in action.
-
-1.  Run the following command in the SSH Session that you have opened to the ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo**
-
-    ```
-    kubectl get pods -n cluster-config
-    ```
-    ![](.././media/pods4.png) 
-    
-    Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
-
-      >**Note:** If you don't see any change, **retry running the command after a couple of minutes** until it changes.
-
-2.  Replace the pod name that you copied in the previous step and run the command
- 
-    ```
-    kubectl get pod <podname> -n cluster-config -o yaml
-    ```
-    
-    Example: ```kubectl get pod arc-k8s-demo-5779f4d696-fm22j -o yaml```
-   
-    ![](.././media/pods5.png)   
-    
-    Observe the **CPU** request value that you updated in the previous steps in the output as shown:
-    
-    ![](.././media/pods6.png)  
 
 ## Summary
 

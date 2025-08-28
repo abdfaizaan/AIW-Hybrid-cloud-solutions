@@ -104,8 +104,15 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       ```
     
         ![](.././media/root-login.png "Root Login")
+
+ 1. Run the below to to install **pip**.  
+
+     ```
+     apt-get install python3-pip
+     ```
+    > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**.
     
- 1. Run the below commands to upgrade the az packages and az module. Leave the last command `init 6` keep running.
+ 1. Once **pip** is installed successfully, run the below commands to upgrade the az packages and az module.
 
     >**NOTE:** Copy the commands below, paste them into a notepad, and execute each one individually.
    
@@ -122,12 +129,6 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      ```
 
     > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
-    
-    > **Note:** If the above commands fail, then please run the below-mentioned command:
-    
-     ```
-     sudo apt-get install python3-pip
-     ```
 
     > **Note:** If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
 
@@ -253,8 +254,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      ```
      microk8s start
      ```
-     
-     >**Note:** In case you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
+     > **Note:** This command takes a while to execuite, please wait until it executes successfully.
+     >**Note:** In case if you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
 
      ```
      microk8s refresh-certs
@@ -366,8 +367,6 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 1. On the **Parameters** Section, **under Log Analytics workspace**, click on the **ellipsis (…) (1)** which opens a new pane for **Log Analytics Workspace**. From the list of workspaces, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />(2)** , and then click **Select (3)**.
 
     ![](.././media/hybrid6.png)
-
-    >**Note:** XXXXXX is a six/seven digit unique number that can be found under the Environment tab, check variable with name **DeploymentId/Suffix**
 
 1. Navigate to the **Remediation (1)** blade, enable the checkbox for **Create a remediation task (2)** and then click on the **Next (3)** button.
 
