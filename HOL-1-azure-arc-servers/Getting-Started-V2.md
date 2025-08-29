@@ -36,7 +36,7 @@ In the Azure Arc architecture, **Azure Arc** enables unified management for Cont
 
 ## Architecture Diagram
 
-![Architecture](.././media/architecture12.JPG)
+![Architecture](.././media/architecture12.png)
 
 ## Explanation of Components
 
@@ -161,3 +161,4 @@ Now, click on **Next** from the lower right corner to move on to the next page.
 ![](.././media/arcg6.png)
 
 ### Happy Learning!!
+

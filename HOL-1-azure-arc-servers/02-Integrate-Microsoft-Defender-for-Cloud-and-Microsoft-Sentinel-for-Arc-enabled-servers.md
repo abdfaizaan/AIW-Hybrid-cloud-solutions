@@ -105,7 +105,6 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Click **Install (6)** and wait for the installation to complete before proceeding.
 
-
       >**Note:** If the screen does not appear as shown in the screenshot, sign out of the portal and log back in.
 
       ![](.././media/image3.8.png)      
