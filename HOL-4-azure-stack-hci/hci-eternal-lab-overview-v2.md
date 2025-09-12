@@ -18,7 +18,7 @@ LocalBox automatically creates and configures a two-node Azure Local instance us
 
 ### Virtual machine management
 
-LocalBox comes with [guest VM management in Azure portal](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). The LocalBox documentation will walk you through how to use this feature, including configuring VM images from Azure marketplace and creating VMs on your instance.
+LocalBox comes with [guest VM management in Azure portal](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). The LocalBox documentation will walk you through how to use this feature, including configuring VM images from the Azure marketplace and creating VMs on your instance.
 
 ### AKS enabled by Azure Arc on Azure Local
 
@@ -32,7 +32,7 @@ LocalBox resources incur Azure consumption charges based on the underlying servi
 
 To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
-- **Preparing env with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all necessary requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
+- **Preparing the environment with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
   
 - **Deploying JumpStart-LocalBox in Azure Portal:** Quickly provision a ready-to-use Azure Local environment using JumpStart-LocalBox for streamlined setup, accelerating time to value for cloud initiatives.
 
@@ -64,7 +64,7 @@ Participants should have:
 
 The architecture of a Hybrid Cloud Solution using Azure Local integrates on-premises infrastructure with Azure services, creating a cohesive and flexible environment. At the core, Azure Local utilizes a hyper-converged infrastructure powered by Windows Server and Hyper-V, enabling efficient virtualization and storage management through Storage Spaces Direct. This on-premises setup connects seamlessly to Azure services via the Azure Portal, allowing organizations to leverage cloud capabilities such as Azure Backup, Azure Kubernetes Service (AKS), and Azure Site Recovery. Management and monitoring are facilitated through Windows Admin Center, providing a unified interface for performance tracking and configuration. The architecture supports a hybrid model that ensures data locality, optimized workload placement, and enhanced disaster recovery, empowering businesses to scale their operations while maintaining control over their data and resources.
 
-## Architechture Diagram
+## Architecture Diagram
 
 ![](./media/hci24-overview-2.png)
 
