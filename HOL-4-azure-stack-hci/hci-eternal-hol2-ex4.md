@@ -1,6 +1,6 @@
 # Exercise 3: Azure Local VM Provisioning
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 In this exercise, you will learn how to provision virtual machines (VMs) on Azure Local. The process involves setting up a logical network, uploading a VM image to Azure Local storage, and then creating a new virtual machine using this image within the Azure Local environment. This practical exercise provides a step-by-step walkthrough of deploying VMs on Azure Local infrastructure.
 
@@ -9,7 +9,7 @@ In this exercise, you will learn how to provision virtual machines (VMs) on Azur
 You will be able to complete the following tasks:
 
 - Task 1: Create a Logical Network for Azure Local VM
-- Task 2: Download and Add the VM image to Azure Local Storage
+- Task 2: Download and add the VM image to Azure Local Storage
 - Task 3: Create a Virtual Machine on Azure Local
 
 ## Task 1: Create a Logical Network for Azure Local VM
@@ -30,9 +30,9 @@ You will be able to complete the following tasks:
 
    ![](media/Ex3-2.png)
 
-5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
+5. In the **Create logical network** tab, under Basic, fill in the following details and click on **Next: Network Configuration** **(5)**.
 
-    - Subscription : Default subscription **(1)**
+    - Subscription: Default subscription **(1)**
     - Resource group : **Azure-Local** **(2)**
     - Logical network name: **localbox-vm-lnet-vlan200** **(3)**
     - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
@@ -77,9 +77,9 @@ You will be able to complete the following tasks:
 
    ![](media/vmimagecreatea.png)
 
-   > **Note**: VM images download may take upto 1 hour.
+   > **Note**: VM images download may take up to 1 hour.
     
-1. You can monitor the download Progress by Selecting the **VM images** tab from the lab side menu. Once the VM image download in completed, you can move to the next task of creating the Virtual Machine on Azure Local.
+1. You can monitor the download Progress by selecting the **VM images** tab from the lab side menu. Once the VM image download is completed, you can move to the next task of creating the Virtual Machine on Azure Local.
 
    ![](media/vmdownlaodes.png)
 
@@ -89,14 +89,14 @@ You will be able to complete the following tasks:
 
    ![](media/createvms.png)
 
-2. On the VM Creation page, enter the following details and click on next. 
+2. On the VM Creation page, enter the following details and click Next. 
 
-   - Subscription : Default subscription **(1)**
+   - Subscription: Default subscription **(1)**
    - Resource group : **Azure-Local** **(2)**
    - Virtual Machine name: **Win10-StackVM** **(3)**
    - Security type: **Standard** **(4)**
    - Storage path: **Choose Automatically**
-   - Image: **Select the VM image that you downloaded in previous step**
+   - Image: **Select the VM image that you downloaded in the previous step**
    - Virtual Processor count: **4**
    - Memory (MB): **8192**
    - Memory Type: **Static**
@@ -114,19 +114,19 @@ You will be able to complete the following tasks:
 
       ![](media/vmcreate4.png)
 
-3. On the **Disks** tab, Click on **Add New disk** and enter the following details, after adding the details click on **Add** and **Next**. 
+3. On the **Disks** tab, click on **Add New disk** and enter the following details. After adding the details, click on **Add** and **Next**. 
 
    - Name : **wind10-disk** **(1)**
    - Size (GB) : **128** **(2)**
    - Provisioning type: **dynamic** **(3)**
    - Storage path: **Choose Automatically**
 
-4. On the **Networking** tab, Click on **Add network interface** and enter the following details, after adding the details click on **Add** and **Next**.
+4. On the **Networking** tab, click on **Add network interface** and enter the following details. After adding the details, click on **Add** and **Next**.
 
    - Name : **win10-nic** **(1)**
    - Network : **localbox-vm-lnet-vlan200** **(2)**
    - IPv4 type: **Static** **(3)**
-   - Allocation Methon: **Automatic**
+   - Allocation Method: **Automatic**
 
    ![](media/nic.png)
 
@@ -140,6 +140,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage and created a Virtual Machine on Azure Local.
+In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage, and created a Virtual Machine on Azure Local.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
