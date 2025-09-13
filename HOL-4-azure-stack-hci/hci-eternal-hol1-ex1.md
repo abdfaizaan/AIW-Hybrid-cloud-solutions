@@ -1,6 +1,6 @@
 # Exercise 1: Preparing environment with the prerequisites to deploy Azure Local (READ-ONLY)
 
-### Overall Estimated Duration: 60 minutes
+### Overall Estimated Duration: 60 Minutes
 
 ### Please note that this lab has already been performed in the lab environment, but please go through the steps to get familiar.
 
@@ -216,3 +216,5 @@ You will be able to complete the following tasks:
 In this exercise, review the configured virtualized Azure Local VMs and onboard the Azure Arc Machine to Azure and prepare to deploy Azure Local.
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+
+![](./media/Next.png)

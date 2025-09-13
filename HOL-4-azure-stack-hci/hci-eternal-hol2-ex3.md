@@ -1,6 +1,6 @@
 # Exercise 4: Managing AKS on Azure Local 
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
 In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Local, which involves creating a logical network specifically tailored for AKS on Azure Local. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Local via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Local environment.
 
@@ -38,7 +38,7 @@ You will be able to complete the following tasks:
     - Logical network name: **localbox-aks-lnet-vlan110** **(3)**
     - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
 
-      ![](media/logic-1network-basic.png)
+      ![](media/Ex4-0.png)
 
 6. In the **Network Configuation** tab, under the fallowing deatils and click on **Next: Tags** **(9)**.
 
@@ -57,7 +57,7 @@ You will be able to complete the following tasks:
 
 8. In the **Review + Create** tab, click on on **Create** button.
 
-   ![](media/logic-1network-create.png)
+   ![](media/Ex4-2.png)
 
 ## Task 2: Create an Entra Group for authentication of AKS
 
@@ -122,11 +122,11 @@ You will be able to complete the following tasks:
 
 2. Click on the AKS cluster to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
-     ![](media/aksoverview.png)
+     ![](media/Ex4-3.png)
     
 ## Task 4: Connecting to the Azure Local AKS
 
-1. From your jumpVM, open PowerShell and run the following command, using the name of your localBox resource group.
+1. From your Localbox-Client VM, open PowerShell and run the following command, using the name of your localBox resource group.
 
    >Note: PowerShell ISE will not work as it may need some inputs while executing the command. 
 
@@ -135,11 +135,11 @@ You will be able to complete the following tasks:
     az extension update --name connectedk8s
     az connectedk8s proxy -n localaks -g azure-local
     ```
-     ![](media/proxy.png)
+     ![](media/Ex4-4.png)
    
    >Note: If you get any option to install any extension, please enter **Y**.    
 
-3. From JumpVM, open a new PowerShell session, and then in the new shell, you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
+3. From Localbox-Client VM, open a new PowerShell session, and then in the new shell, you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
 
     ![](media/kubconnected.png)
 
@@ -149,3 +149,4 @@ In this exercise, you created a Logical Network for Azure Local for AKS, created
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
 
+![](./media/Next.png)

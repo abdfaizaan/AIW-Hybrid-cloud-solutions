@@ -14,11 +14,11 @@ You will be able to complete the following tasks:
 
 ## Task 1: Review the already generated ARM template
 
-1. In the Localbox-Client VM searchbar, type **VS Code (1)**, then click on **VS Code (2)** from the results.
+1. In the Localbox-Client VM searchbar, type **VS Code (1)**, then click on **Visual Studio Code (2)** from the results.
 
     ![](./media/Ex2-11.png)
 
-1. Click on **File (1)** from the top left corner, from the dropdown select **Open Folder... (2)**.
+1. Click on **File (1)** from the top left corner, from the list select **Open Folder... (2)**.
 
     ![](./media/Ex2-9.png)
 
@@ -98,16 +98,16 @@ You will be able to complete the following tasks:
     
    ```
 
-11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployment** tab from the left side to see your deployment status.
-
-     ![](./media/deploymentstarted.png)
+11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployments** under Settings to see your **deployment status (2)**.
    
-12. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh** to get the latest status on deployment.
+12. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh (3)** to get the latest status on deployment.
 
-     ![](./media/deplomentstatehci.png)
+     ![](./media/NewEx3-6.png)
 
 ## Summary
 
 In this exercise, you assigned Azure Arc permission to the Azure Local resource provider, created and reviewed the generated ARM template, and validated and deployed the Azure Local cluster using the Azure portal.
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+
+![](./media/Next.png)

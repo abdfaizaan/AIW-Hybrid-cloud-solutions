@@ -12,15 +12,23 @@ You will be able to complete the following task:
 
 ## Task 1: Update Azure Local  
 
-1. Navigate to the Azure Local resource named **localboxcluster** from the Azure-Local resource group.
+1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
-2. In the Azure Local page, select **Updates (1)** under **Operations (2)** from left menu.
+   ![](media/Ex3-0.png)
 
-   ![](media/hci24-11a.png)
+2. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
 
-3. From the Updates pane, click on **One-time update**.
+   ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
-   ![](media/hci24-12a.png)
+3. In the  **Azure-Local** resource group in the search bar search for **localboxcluster** **(1)** and select **localboxcluster** **(2)** Azure Local.
+
+   ![](media/Ex3-1.png)
+
+2. In the Azure Local page, select **Updates (1)** under **Operations** from left menu.
+
+3. From the Updates pane, click on **One-time update (2)**.
+
+   ![](media/Ex4-5.png)
 
 4. In the Install updates pane from Azure Update manager, verify the available updates and click on **Next**.
 
@@ -28,11 +36,11 @@ You will be able to complete the following task:
   
 5. Select the available updates to install and click on **Next**.
 
-   ![](media/hci24-14.png)
+   ![](media/Ex5-0.png)
 
 6. From the Review + install pane, review the selected updates and click on **Install**.
 
-   ![](media/hci24-15.png)
+   ![](media/Ex5-1.png)
 
 7. You will see a notification that **Installation started on 1 Azure Local systems**. Also, you will be able to see the In-progress status from the Updates pane.
 
@@ -40,7 +48,7 @@ You will be able to complete the following task:
 
 8. Updating the Azure Local Cluster will take around 2 Hours. Once it's updated successfully, you will be able to see the status as **Up to date** and the update readiness as **Healthy** as shown in the screenshot below.
 
-   ![](media/hci24-17.png)
+   ![](media/Ex5-2.png)
 
 ## Summary
 

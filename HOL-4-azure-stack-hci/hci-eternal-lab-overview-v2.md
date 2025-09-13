@@ -1,6 +1,6 @@
 # Hybrid Cloud Solution - Azure Local
 
-### Overall Estimated Duration: 8 hours
+### Overall Estimated Duration: 8 Hours
 
 ## Overview
 
@@ -93,25 +93,25 @@ Once you're ready to dive in, your virtual machine and lab guide will be right a
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
-![](../media/hci-env1.png "Lab Environment")
+![](./media/GettingStarted-0.png "Lab Environment")
  
 ### Exploring Your Lab Resources
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](../media/overview-15.png "Lab Environment")
+![](./media/GettingStarted-1.png "Lab Environment")
  
 ### Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![](../media/overview-16.png)
+![](./media/GettingStarted-2.png)
  
 ### Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, restart or stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-![](../media/overview-17.png)
+![](./media/GettingStarted-3.png)
 
 ## Lab Guide Zoom In/Zoom Out
 
@@ -125,17 +125,17 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
   
    ![](./media/azure-portal-edgea.png)
     
-1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
+1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next (2)**. 
       
-   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject> (1)**
   
-     ![](./media/user-email.png "Enter Email")
+   ![](./media/GettingStarted-4.png)
    
-1. Now, enter the **password** that you have already received for the above account.
+1. Now, enter the **password** that you have already received for the above account, then click on **Sign in (2).**
       
-   * Password: **<inject key="AzureAdUserPassword"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject> (1)**
   
-     ![](./media/user-pass.png "Enter Password")
+      ![](./media/GettingStarted-5.png)
 
 1. On the **Action Required** pop-up click on **Ask later**.
 
@@ -145,13 +145,15 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. If you see the pop-up **Stay signed in?** Click **No**.
 
+   ![](./media/GettingStarted-6.png)
+
 1. If you see the pop-up, **You have free Azure Advisor recommendations!** close the window to continue the lab.
 
 1. If the **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
-1. Navigate to the Resource Group in the Azure portal navigation section.
+1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
-   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+   ![](media/Ex3-0.png)
 
 1. From the **Resource** groups pane, click on the **Azure-Local** resource group and verify the resources present in it.
 
@@ -194,8 +196,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+Now, click on **Next >>** from the lower right corner to move on to the next page.
 
-![](../media/lab-next.png)
+![](./media/Next.png)
 
 ### Happy Learning!!

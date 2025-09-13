@@ -14,21 +14,21 @@ You will be able to complete the following tasks:
 
 ## Task 1: Create a Logical Network for Azure Local VM
 
-1. Navigate to the Resource Group in the Azure portal navigation section.
+1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
-   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+    ![](media/Ex3-0.png)
 
 2. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
 
-   ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
+    ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
 3. In the  **Azure-Local** resource group in the search bar search for **localboxcluster** **(1)** and select **localboxcluster** **(2)** Azure Local.
 
-   ![](media/Ex3-1.png)
+    ![](media/Ex3-1.png)
 
 4. In the **localboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
-
-   ![](media/Ex3-2.png)
+ 
+    ![](media/Ex3-2.png)
 
 5. In the **Create logical network** tab, under Basic, fill in the following details and click on **Next: Network Configuration** **(5)**.
 
@@ -37,7 +37,7 @@ You will be able to complete the following tasks:
     - Logical network name: **localbox-vm-lnet-vlan200** **(3)**
     - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
 
-      ![](media/Ex4-0.png)
+      ![](media/NewEx3-0.png)
 
 6. In the **Network Configuation** tab, under the fallowing deatils and click on **Next: Tags** **(7)**.
 
@@ -55,91 +55,101 @@ You will be able to complete the following tasks:
 
 8. In the **Review + Create** tab, click on on **Create** button.
 
-   ![](media/Ex4-1.png)
+    ![](media/Ex4-1.png)
 
 ## Task 2: Download and Add the VM image to Azure Local Storage
 
-1. In the **localboxcluster** Azure Local, from the left menu select **VM Image** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
+1. In the **localboxcluster** Azure Local, from the left menu select **VM images** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
 
-   ![](media/vmimage-creat.png)
+    ![](media/NewEx3-3.png)
 
-1. In the **Create an image** tab, enter the fallowing details and click on **Review + Create** **(6)** button.
+1. In the **Create an image** tab, enter the fallowing details and click on **Review + create** **(6)** button.
 
-   - Resource group : **Azure-Local** **(1)**
+   - Resource group: **Azure-Local** **(1)**
    - Save image as: Enter Image name as **local-vm** **(2)**
    - Custom location: From the drop-down select **jumpstart** **(3)**
    - Image to download: Select **select Windows 10 Enterprise multi-session, version 22H2 - Gen2** **(4)** VM image.
    - Storage path: select **Choose automatically** **(5)**
 
-   ![](media/vmimagebasica.png)
+     ![](media/NewEx3-1.png)
 
 1. In the **Review + Create** tab, click on **Create** button.
 
-   ![](media/vmimagecreatea.png)
+    ![](media/NewEx3-2.png)
 
    > **Note**: VM images download may take up to 1 hour.
     
-1. You can monitor the download Progress by selecting the **VM images** tab from the lab side menu. Once the VM image download is completed, you can move to the next task of creating the Virtual Machine on Azure Local.
+1. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of localboxcluster resource. Once the VM image download is completed, you will see Status as **Available (2)**.
 
-   ![](media/vmdownlaodes.png)
+    ![](media/NewEx3-7.png)
+
+1. Now, you can move to the next task of creating the Virtual Machine on Azure Local.
 
 ## Task 3: Create a Virtual Machine on Azure Local
 
-1. Navigate to **Virtual Machine** tab from the left side and click on **Create Virtual Machine**.
+1. 
+1. In the **localboxcluster** Azure Local, from the left menu select **Virtual machines (1)** under Resources, then click on **+ Create VM (2)**.
 
-   ![](media/createvms.png)
+    ![](media/NewEx3-5.png)
 
-2. On the VM Creation page, enter the following details and click Next. 
+2. On the **Create an Azure Arc virtual machine** page, enter the following details: 
 
    - Subscription: Default subscription **(1)**
    - Resource group : **Azure-Local** **(2)**
    - Virtual Machine name: **Win10-StackVM** **(3)**
    - Security type: **Standard** **(4)**
-   - Storage path: **Choose Automatically**
-   - Image: **Select the VM image that you downloaded in the previous step**
-   - Virtual Processor count: **4**
-   - Memory (MB): **8192**
-   - Memory Type: **Static**
-   - VM Extension: **Keep it checked**
+   - Storage path: **Choose Automatically (5)**
+   - Image: **Select the VM image that you downloaded in the previous step (6)**
+   - Virtual Processor count: **4 (7)**
+   - Memory (MB): **8192 (8)**
+   - Memory Type: **Static (9)**
+   - VM Extension: **Keep it checked (10)**
       
-   ![](media/vmcreate1.png)
+     ![](media/NewEx3-8.png)
       
    Administrator account
    
     - Username: **arcdemo**
     - Password: **ArcPassword123!!**
     - Keep unchecked the **Domain Join**
-  
-      ![](media/vmcreate2.png)
+    - Then click on **Next (5)**
 
-      ![](media/vmcreate4.png)
+      ![](media/NewEx3-9.png)
 
-3. On the **Disks** tab, click on **Add New disk** and enter the following details. After adding the details, click on **Add** and **Next**. 
+3. On the **Disks** tab, click on **Add New disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
 
-   - Name : **wind10-disk** **(1)**
-   - Size (GB) : **128** **(2)**
-   - Provisioning type: **dynamic** **(3)**
-   - Storage path: **Choose Automatically**
+   - Name : **wind10-disk** **(2)**
+   - Size (GB) : **128** **(3)**
+   - Provisioning type: **dynamic** **(4)**
+   - Storage path: **Choose Automatically (5)**
 
-4. On the **Networking** tab, click on **Add network interface** and enter the following details. After adding the details, click on **Add** and **Next**.
+     ![](media/NewEx3-10.png)
 
-   - Name : **win10-nic** **(1)**
-   - Network : **localbox-vm-lnet-vlan200** **(2)**
-   - IPv4 type: **Static** **(3)**
-   - Allocation Method: **Automatic**
+4. On the **Networking** tab, click on **Add network interface (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**.
 
-   ![](media/nic.png)
+   - Name : **win10-nic** **(2)**
+   - Network : **localbox-vm-lnet-vlan200** **(3)**
+   - IPv4 type: **Static** **(4)**
+   - Allocation Method: **Automatic (5)**
+
+     ![](media/NewEx3-11.png)
 
 5. Click on **Next** and **Create** to start the VM deployment.
 
-   ![](media/startcreationvm.png)
+   ![](media/NewEx3-12.png)
+
+1. Once the deployment is complete, click on **Go to resource.** 
+
+     ![](media/NewEx3-14.png)
 
 6. Once the VM is created, click on the **Go to resource** button and review the VM configuration.
 
-   ![](media/win10overview.png)
+   ![](media/NewEx3-13.png)
 
 ## Summary
 
 In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage, and created a Virtual Machine on Azure Local.
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+
+![](./media/Next.png)
