@@ -1,6 +1,6 @@
 # Exercise 5: Azure Local Update management using Azure Portal  
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 30 Minutes
 
 In this exercise, you'll be checking for updates in Azure Local via the Azure Portal involves leveraging Azure Arc for centralized management and update assessment. Administrators can deploy updates seamlessly across clusters, scheduling and monitoring the process for minimal disruption and optimal infrastructure performance. This integration streamlines hybrid cloud operations, enhancing agility and security across on-premises and Azure environments.
 
@@ -12,13 +12,13 @@ You will be able to complete the following task:
 
 ## Task 1: Update Azure Local  
 
-1. Navigate to Azure Local resource named **localboxcluster** from Azure-Local resource group.
+1. Navigate to the Azure Local resource named **localboxcluster** from the Azure-Local resource group.
 
 2. In the Azure Local page, select **Updates (1)** under **Operations (2)** from left menu.
 
    ![](media/hci24-11a.png)
 
-3. From Updates pane, click on **One-time update**.
+3. From the Updates pane, click on **One-time update**.
 
    ![](media/hci24-12a.png)
 
@@ -30,15 +30,15 @@ You will be able to complete the following task:
 
    ![](media/hci24-14.png)
 
-6. From Review + install pane, review the selected updates and click on **Install**.
+6. From the Review + install pane, review the selected updates and click on **Install**.
 
    ![](media/hci24-15.png)
 
-7. You will see a notification that **Installation started on 1 Azure Local systems**. Also, you will be able to see the In-progress status from Updates pane.
+7. You will see a notification that **Installation started on 1 Azure Local systems**. Also, you will be able to see the In-progress status from the Updates pane.
 
    ![](media/hci24-16.1a.png)
 
-8. Updating the Azure Local Cluster will take around 2 Hours. Once it's updated successfully, you will be able to see the status as **Up to date** and the update readiness as **Healthy** as shown in the below screenshot.
+8. Updating the Azure Local Cluster will take around 2 Hours. Once it's updated successfully, you will be able to see the status as **Up to date** and the update readiness as **Healthy** as shown in the screenshot below.
 
    ![](media/hci24-17.png)
 
@@ -46,4 +46,4 @@ You will be able to complete the following task:
 
 In this exercise, you updated the **localboxcluster** Azure Local resource.
 
-### You have successfully completed the lab
+### You have successfully completed the lab!
