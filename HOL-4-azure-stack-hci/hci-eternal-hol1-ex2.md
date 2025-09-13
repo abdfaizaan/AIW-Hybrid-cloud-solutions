@@ -1,6 +1,6 @@
 # Exercise 2: Deploying Azure Local in Azure Portal
 
-### Estimated Duration: 180 minutes
+### Estimated Duration: 180 Minutes
 
 In this exercise, you will be deploying an Azure Local solution using a generated ARM template. You can deploy it either through the Azure portal by uploading the template and specifying deployment parameters or using PowerShell for automated deployment, offering flexibility and control over the deployment process. Here, you will be deploying Azure Local using PowerShell commands.
 
@@ -38,7 +38,7 @@ You will be able to complete the following tasks:
 
 1. From the left navigation pane, select **Resource providers (1)** under Settings.
 
-1. In the search bar of Resource providers page, search for **Hybrid (2)**, select **Microsoft.HybridCloud (3)**, then click on **Register (4).**
+1. In the search bar of the Resource Providers page, search for **Hybrid (2)**, select **Microsoft.HybridCloud (3)**, then click on **Register (4).**
 
     ![](./media/Ex2-2.png)
 
@@ -46,7 +46,7 @@ You will be able to complete the following tasks:
 
     ![](./media/Ex2-3.png)
 
-1. On Microsoft Entra ID page, from the left navigation pane, select **Enterprise applications** under Manage.
+1. On the Microsoft Entra ID page, from the left navigation pane, select **Enterprise applications** under Manage.
 
     ![](./media/Ex2-4.png)
 
@@ -58,11 +58,11 @@ You will be able to complete the following tasks:
 
     ![](./media/Ex2-6.png)
 
-1. On **Microsoft.AzureStackHCI Resource Provider | Overview** page, click on **copy icon** to copy the **Object ID** an  paste it in the Notepad as you need this in further steps.
+1. On **Microsoft.AzureStackHCI Resource Provider | Overview** page, click on the **copy icon** to copy the **Object ID** and  paste it into Notepad, as you need this in further steps.
 
     ![](./media/Ex2-7.png)
 
-1. Open and review the **azlocal.json** and **azlocal.parameters.json files** in **VSCode**. Verify that the **azlocal.parameters.json file** looks correct without **"-staging"** placeholder parameter values. This has been already generated with script available in Localbox folder.
+1. Open and review the **azlocal.json** and **azlocal.parameters.json files** in **VSCode**. Verify that the **azlocal.parameters.json file** looks correct without **"-staging"** placeholder parameter values. This has already been generated with the script available in the Localbox folder.
 
      ![](./media/Ex2-12.png)
 
@@ -76,7 +76,7 @@ You will be able to complete the following tasks:
     
 ## Task 2: Validate and deploy the Azure Local using PowerShell
 
-1. Open PowerShell ISE window and run the below command to validate you Azure Local deployment and cluster.
+1. Open PowerShell ISE window and run the below command to validate your Azure Local deployment and cluster.
 
    ```
    $TemplateFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.json"
@@ -86,19 +86,19 @@ You will be able to complete the following tasks:
     
    ```
 
-1. The above command will take approx. 45 mintues to get you deployment validated and showing you Azure Local cluster on Azure Portal.
+1. The above command will take approximately. 45 minutes to get your deployment validated and show you the Azure Local cluster on the Azure Portal.
 
-1. You can navigate to Azure Portal and can see a new Azure Local resource created in your resource group.
+1. You can navigate to the Azure Portal and see a new Azure Local resource created in your resource group.
    
 
-1. Once the validation is completed, run the below command to start the creation of Azure Local. This command will take approx. 3 hrs to deploy your cluster. 
+1. Once the validation is completed, run the command below to start the creation of Azure Local. This command will take approximately. 3 hrs to deploy your cluster. 
 
    ```
    New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
     
    ```
 
-11. Once the deployment starts, you can navigate to Azure Portal, Select you Azure Local resource and select **Deployment** tab from the left side to see your deployment status.
+11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployment** tab from the left side to see your deployment status.
 
      ![](./media/deploymentstarted.png)
    
@@ -108,6 +108,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, you assigned Azure Arc permission to the Azure Local resource provider, created and reviewed the generated ARM template and validated and deployed the Azure Local cluster using the Azure portal.
+In this exercise, you assigned Azure Arc permission to the Azure Local resource provider, created and reviewed the generated ARM template, and validated and deployed the Azure Local cluster using the Azure portal.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
