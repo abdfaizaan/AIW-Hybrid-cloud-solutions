@@ -9,7 +9,7 @@ In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) 
 You will be able to complete the following tasks:
 
 - Task 1: Create a Logical Network for Azure Local for AKS
-- Task 2: Create an Entra Group for authentication of AKS
+- Task 2: Create an Entra Group for the authentication of AKS
 - Task 3: Create AKS on Azure Local using Azure Portal
 - Task 4: Connecting to the Azure Local AKS
 
@@ -31,9 +31,9 @@ You will be able to complete the following tasks:
 
    ![](media/Ex3-2.png)
 
-5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
+5. In the **Create logical network** tab, under Basic, fill in the following details and click on **Next: Network Configuration** **(5)**.
 
-    - Subscription : Default subscription **(1)**
+    - Subscription: Default subscription **(1)**
     - Resource group : **Azure-Local** **(2)**
     - Logical network name: **localbox-aks-lnet-vlan110** **(3)**
     - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
@@ -87,7 +87,7 @@ You will be able to complete the following tasks:
 
     ![](media/Ex3-5.png)
 
-1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill the fallowing deatils in the Basic and click on **Next: Node Pool** **(7)**.
+1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill in the following details in the Basic section and click on **Next: Node Pool** **(7)**.
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
@@ -120,15 +120,15 @@ You will be able to complete the following tasks:
 
    ![](media/Ex3-8.png)
 
-2. Click on the AKS cluster to view details such as Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
+2. Click on the AKS cluster to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
      ![](media/aksoverview.png)
     
 ## Task 4: Connecting to the Azure Local AKS
 
-1. From your jumpVM, open Powershell and run the following command, using the name of your localBox resource group.
+1. From your jumpVM, open PowerShell and run the following command, using the name of your localBox resource group.
 
-   >Note: Powershell ISE will not work as it may need some inputs while executing the command. 
+   >Note: PowerShell ISE will not work as it may need some inputs while executing the command. 
 
     ```
     az extension add -n connectedk8s
@@ -139,12 +139,13 @@ You will be able to complete the following tasks:
    
    >Note: If you get any option to install any extension, please enter **Y**.    
 
-3. From JumpVM,Open a new powershell session and then in the new shell you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
+3. From JumpVM, open a new PowerShell session, and then in the new shell, you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
 
     ![](media/kubconnected.png)
 
 ## Summary
 
-In this exercise, you created a Logical Network for Azure Local for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Local using Azure Portal and connected to the Azure Local AKS.
+In this exercise, you created a Logical Network for Azure Local for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Local using Azure Portal, and connected to the Azure Local AKS.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+
