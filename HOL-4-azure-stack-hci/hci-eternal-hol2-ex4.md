@@ -22,22 +22,22 @@ You will be able to complete the following tasks:
 
    ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
-3. In the  **Azure-Local** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
+3. In the  **Azure-Local** resource group in the search bar search for **localboxcluster** **(1)** and select **localboxcluster** **(2)** Azure Local.
 
-   ![](media/selecth-ciboxcluster-hci.png)
+   ![](media/Ex3-1.png)
 
-4. In the **hciboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
+4. In the **localboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
 
-   ![](media/logic2network-createa.png)
+   ![](media/Ex3-2.png)
 
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
     - Subscription : Default subscription **(1)**
     - Resource group : **Azure-Local** **(2)**
-    - Logical network name: **hcibox-vm-lnet-vlan200** **(3)**
-    - Virtual switch name: **ConvergedSwitch(hci)** **(4)**
+    - Logical network name: **localbox-vm-lnet-vlan200** **(3)**
+    - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
 
-      ![](media/logic-2network-basic.png)
+      ![](media/Ex4-0.png)
 
 6. In the **Network Configuation** tab, under the fallowing deatils and click on **Next: Tags** **(7)**.
 
@@ -55,18 +55,18 @@ You will be able to complete the following tasks:
 
 8. In the **Review + Create** tab, click on on **Create** button.
 
-   ![](media/logic-2network-create.png)
+   ![](media/Ex4-1.png)
 
 ## Task 2: Download and Add the VM image to Azure Local Storage
 
-1. In the **hciboxcluster** Azure Local, from the left menu select **VM Image** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
+1. In the **localboxcluster** Azure Local, from the left menu select **VM Image** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
 
    ![](media/vmimage-creat.png)
 
 1. In the **Create an image** tab, enter the fallowing details and click on **Review + Create** **(6)** button.
 
    - Resource group : **Azure-Local** **(1)**
-   - Save image as: Enter Image name as **hci-vm** **(2)**
+   - Save image as: Enter Image name as **local-vm** **(2)**
    - Custom location: From the drop-down select **jumpstart** **(3)**
    - Image to download: Select **select Windows 10 Enterprise multi-session, version 22H2 - Gen2** **(4)** VM image.
    - Storage path: select **Choose automatically** **(5)**
@@ -124,7 +124,7 @@ You will be able to complete the following tasks:
 4. On the **Networking** tab, Click on **Add network interface** and enter the following details, after adding the details click on **Add** and **Next**.
 
    - Name : **win10-nic** **(1)**
-   - Network : **hcibox-vm-lnet-vlan200** **(2)**
+   - Network : **localbox-vm-lnet-vlan200** **(2)**
    - IPv4 type: **Static** **(3)**
    - Allocation Methon: **Automatic**
 

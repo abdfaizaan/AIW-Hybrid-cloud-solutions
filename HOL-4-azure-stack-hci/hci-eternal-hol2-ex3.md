@@ -15,30 +15,30 @@ You will be able to complete the following tasks:
 
 ## Task 1: Create a Logical Network for Azure Local for AKS
 
-1. Navigate to the Resource Group in the Azure portal navigation section.
+1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
-   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+   ![](media/Ex3-0.png)
 
 2. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
 
    ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
 
-3. In the  **Azure-Local** resource group in the search bar search for **hciboxcluster** **(1)** and select **hciboxcluster** **(2)** Azure Local.
+3. In the  **Azure-Local** resource group in the search bar search for **localboxcluster** **(1)** and select **localboxcluster** **(2)** Azure Local.
 
-   ![](media/selecth-ciboxcluster-hci.png)
+   ![](media/Ex3-1.png)
 
-4. In the **hciboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
+4. In the **localboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
 
-   ![](media/logic1network-createa.png)
+   ![](media/Ex3-2.png)
 
 5. In the **Create logical network** tab, under Basic fill the fallowing details and click on **Next: Network Configuartion** **(5)**.
 
     - Subscription : Default subscription **(1)**
     - Resource group : **Azure-Local** **(2)**
-    - Logical network name: **hcibox-aks-lnet-vlan110** **(3)**
-    - Virtual switch name: **ConvergedSwitch(hci)** **(4)**
+    - Logical network name: **localbox-aks-lnet-vlan110** **(3)**
+    - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
 
-   ![](media/logic-1network-basic.png)
+      ![](media/logic-1network-basic.png)
 
 6. In the **Network Configuation** tab, under the fallowing deatils and click on **Next: Tags** **(9)**.
 
@@ -61,17 +61,13 @@ You will be able to complete the following tasks:
 
 ## Task 2: Create an Entra Group for authentication of AKS
 
-1. In the Azure portal, click on the search blade at the top and search for **Microsoft Entra id** and select **Microsoft Entra id**.
+1. In the Azure portal, click on the search blade at the top and search for **Microsoft Entra ID (1)** and select **Microsoft Entra ID (2)**.
 
-   ![](media/entraid.png)
+    ![](./media/Ex2-3.png)
 
-10. In the **Microsoft Entra id** tab, from the left menu select **Groups** under Manage. 
+10. On the **Microsoft Entra ID** Overview page, click on **+ Add (1)**, then select **Group (2)** from the list. 
 
-    ![](media/group.png)
-
-11. In the **Groups | All groups** tab, select **All groups** **(1)**,  and click on **New Group** **(2)**.
-
-    ![](media/addgroup.png)
+    ![](media/Ex3-3.png)
 
 12. In the **New Group** tab, enter the **Group name** as **aks-auth** **(1)**, click on the **No Owner Selected** **(2)** under **Owners**, from the search **(3)** and select **(4)** for user **ODL_User <inject key="DeploymentID"></inject>**, and click on **Select** **(5)**.
 
@@ -83,13 +79,13 @@ You will be able to complete the following tasks:
 
 ## Task 3: Create AKS on Azure Local using Azure Portal
 
-1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services** and select **Kubernetes services**.
+1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services (1)** and select **Kubernetes services (2)**.
 
-    ![](media/select-kubernetes-services.png)
+    ![](media/Ex3-4.png)
 
 1. In the **Kubernetes services** tab, click on **+ Create** **(1)** and from the drop-down select **Create a Kubernetes cluster with Azure Arc** **(2)**.
 
-    ![](media/select-kubernetes-adda.png)
+    ![](media/Ex3-5.png)
 
 1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill the fallowing deatils in the Basic and click on **Next: Node Pool** **(7)**.
 
@@ -97,12 +93,12 @@ You will be able to complete the following tasks:
    | ---------------------------- |---------------------------------------------------------------|
    | Subscription | Default subscription **(1)** |
    | Resource group | From the drop-down Select **Azure-Local** **(2)**  |
-   | Kubernetes cluster name | Enter the cluster name as **hciaks** **(3)** |
+   | Kubernetes cluster name | Enter the cluster name as **localaks** **(3)** |
    | Custom location | From the drop-down Select **jumpstart(EastUS)** **(4)** |
    | Node size | From the drop down select **Standard_A2_v2** **(5)** |
-   | Key pair name | Enter the Key pair name as **hciaks** **(6)** |
+   | Key pair name | Enter the Key pair name as **localaks** **(6)** |
 
-   ![](media/creat-aks-basic.png)
+   ![](media/Ex3-6.png)
 
 1. In the **Node Pool** tab, leave it default and click in **Next: Access**.
 
@@ -110,19 +106,19 @@ You will be able to complete the following tasks:
 
    ![](media/aksauth.png)
 
-1. In the **Choose Microsoft Entra group for cluster-admin ClusterRoleBinding** pop-up select **aks-auth** group and click on **Select**.
+1. In the **Choose Microsoft Entra group for cluster-admin ClusterRoleBinding** pop-up select **aks-auth (1)** group and click on **Select (2)**.
 
    ![](media/select-group.png)
 
 2. In the **Access** tab, click on **Next: Networking**.
 
-2. In the **Networking** tab, select **Local network** as **hcibox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + Create** **(3)** .
+2. In the **Networking** tab, select **Local network** as **localbox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + Create** **(3)** .
 
-   ![](media/aksnetwork.png)
+   ![](media/Ex3-7.png)
 
 2. In the **Review + Create** tab, click on **Review**.
 
-   ![](media/akscreate.png)
+   ![](media/Ex3-8.png)
 
 2. Click on the AKS cluster to view details such as Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
@@ -130,14 +126,14 @@ You will be able to complete the following tasks:
     
 ## Task 4: Connecting to the Azure Local AKS
 
-1. From your jumpVM, open Powershell and run the following command, using the name of your HCIBox resource group.
+1. From your jumpVM, open Powershell and run the following command, using the name of your localBox resource group.
 
    >Note: Powershell ISE will not work as it may need some inputs while executing the command. 
 
     ```
     az extension add -n connectedk8s
     az extension update --name connectedk8s
-    az connectedk8s proxy -n hciaks -g azure-local
+    az connectedk8s proxy -n localaks -g azure-local
     ```
      ![](media/proxy.png)
    

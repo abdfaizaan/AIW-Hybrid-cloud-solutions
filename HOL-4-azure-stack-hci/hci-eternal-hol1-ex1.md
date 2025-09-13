@@ -205,7 +205,7 @@ You will be able to complete the following tasks:
       Set-AzLocalDeployPrereqs -LocalBoxConfig $LocalBoxConfig -localCred $localCred -domainCred $domainCred
     ```
 
-3. Navigate to the Azure portal and verify the Azure Arc Machines onboarded to Azure, named **AzSHOST1** and **AzSHOST2**.
+3. Navigate to the Azure portal and verify the Azure Arc Machines onboarded to Azure, named **AzLHOST1** and **AzlHOST2**.
 
     >**Note**: If you see that only one Azure Arc machine got onboarded, please re-perform the previous step to complete the onboarding. 
 

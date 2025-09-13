@@ -12,7 +12,7 @@ You will be able to complete the following task:
 
 ## Task 1: Update Azure Local  
 
-1. Navigate to Azure Local resource named **hciboxcluster** from Azure-Local resource group.
+1. Navigate to Azure Local resource named **localboxcluster** from Azure-Local resource group.
 
 2. In the Azure Local page, select **Updates (1)** under **Operations (2)** from left menu.
 
@@ -44,6 +44,6 @@ You will be able to complete the following task:
 
 ## Summary
 
-In this exercise, you updated the **hciboxcluster** Azure Local resource.
+In this exercise, you updated the **localboxcluster** Azure Local resource.
 
 ### You have successfully completed the lab
