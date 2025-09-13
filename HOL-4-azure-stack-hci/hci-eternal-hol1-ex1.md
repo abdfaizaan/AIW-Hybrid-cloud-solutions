@@ -2,7 +2,7 @@
 
 ### Overall Estimated Duration: 60 minutes
 
-### Please note that this lab is already performed in the lab envrionment, however please go through with the steps to get familiar.
+### Please note that this lab has already been performed in the lab environment, but please go through the steps to get familiar.
 
 In this exercise, you'll be preparing the environment for deploying Azure Local, which involves installing and configuring the necessary operating system (e.g., Windows Server), along with any required drivers and software. Additionally, configuring networking components such as switches and routers to meet Azure Local's networking requirements is essential for successful deployment.
 
@@ -19,7 +19,7 @@ You will be able to complete the following tasks:
 
    ![](./media/hci24-1a.png)
     
-2. From Hyper-V Manager, click on **HCIBOX-CLIENT** and review that the **AzSHOST1**, **AzSHOST2**, and **AzSMGMT** virtual machines are up and running, as shown in the below screenshot.
+2. From Hyper-V Manager, click on **HCIBOX-CLIENT** and review that the **AzSHOST1**, **AzSHOST2**, and **AzSMGMT** virtual machines are up and running, as shown in the screenshot below.
 
    ![](./media/hci24-2.png)
 
@@ -29,9 +29,9 @@ You will be able to complete the following tasks:
 
    ![](./media/hci24-3a.png)
 
-2. Run the below commands to onboard Azure Arc Machines to Azure:
+2. Run the commands below to onboard Azure Arc Machines to Azure:
 
-   >**Note**:  Please note that this lab is already performed in the lab envrionment, however please go through with the steps to get familiar. you do not need to run the below script.
+   >**Note**:  Please note that this lab has already been performed in the lab environment, however, please go through the steps to get familiar. You do not need to run the script below.
 
     ```
           function Set-AzLocalDeployPrereqs {
@@ -213,6 +213,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, reviewed the configured virtualized Azure Local VMs and onboard Azure Arc Machine to Azure and prepare to deploy Azure Local.
+In this exercise, review the configured virtualized Azure Local VMs and onboard the Azure Arc Machine to Azure and prepare to deploy Azure Local.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
