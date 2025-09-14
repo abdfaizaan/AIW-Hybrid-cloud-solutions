@@ -39,7 +39,7 @@ You will be able to complete the following tasks:
 
       ![](media/NewEx3-0.png)
 
-6. In the **Network Configuation** tab, under the fallowing deatils and click on **Next: Tags** **(7)**.
+6. In the **Network Configuation** tab, under the following deatils and click on **Next: Tags** **(7)**.
 
     | **Variables**                | **Values**                                                    |
     | ---------------------------- |---------------------------------------------------------------|
@@ -79,7 +79,7 @@ You will be able to complete the following tasks:
 
    > **Note**: VM images download may take up to 1 hour.
     
-1. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of localboxcluster resource. Once the VM image download is completed, you will see Status as **Available (2)**.
+1. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of the localboxcluster resource. Once the VM image download is completed, you will see the Status as **Available (2)**.
 
     ![](media/NewEx3-7.png)
 
@@ -105,7 +105,7 @@ You will be able to complete the following tasks:
    - Memory Type: **Static (9)**
    - VM Extension: **Keep it checked (10)**
       
-     ![](media/NewEx3-8.png)
+      ![](media/NewEx3-8.png)
       
    Administrator account
    
@@ -116,7 +116,7 @@ You will be able to complete the following tasks:
 
       ![](media/NewEx3-9.png)
 
-3. On the **Disks** tab, click on **Add New disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
+4. On the **Disks** tab, click on **Add New disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
 
    - Name : **wind10-disk** **(2)**
    - Size (GB) : **128** **(3)**
@@ -125,7 +125,7 @@ You will be able to complete the following tasks:
 
      ![](media/NewEx3-10.png)
 
-4. On the **Networking** tab, click on **Add network interface (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**.
+5. On the **Networking** tab, click on **Add network interface (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**.
 
    - Name : **win10-nic** **(2)**
    - Network : **localbox-vm-lnet-vlan200** **(3)**
@@ -134,7 +134,7 @@ You will be able to complete the following tasks:
 
      ![](media/NewEx3-11.png)
 
-5. Click on **Next** and **Create** to start the VM deployment.
+6. Click on **Next** and **Create** to start the VM deployment.
 
    ![](media/NewEx3-12.png)
 
