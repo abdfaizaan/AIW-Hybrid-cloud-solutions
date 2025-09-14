@@ -98,7 +98,7 @@ You will be able to complete the following tasks:
    | Node size | From the drop down select **Standard_A2_v2** **(5)** |
    | Key pair name | Enter the Key pair name as **localaks** **(6)** |
 
-   ![](media/Ex3-6.png)
+   ![](media/image-3a.png)
 
 1. In the **Node Pool** tab, leave it default and click in **Next: Access**.
 
