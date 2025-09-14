@@ -106,7 +106,7 @@ You will be able to complete the following tasks:
       
      ![](media/NewEx3-8.png)
       
-   Administrator account
+- **Administrator account**
    
     - Username: **arcdemo**
     - Password: **ArcPassword123!!**
