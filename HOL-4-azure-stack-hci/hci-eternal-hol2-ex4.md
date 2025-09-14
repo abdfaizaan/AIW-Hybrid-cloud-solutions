@@ -87,7 +87,6 @@ You will be able to complete the following tasks:
 
 ## Task 3: Create a Virtual Machine on Azure Local
 
-1. 
 1. In the **localboxcluster** Azure Local, from the left menu select **Virtual machines (1)** under Resources, then click on **+ Create VM (2)**.
 
     ![](media/NewEx3-5.png)
