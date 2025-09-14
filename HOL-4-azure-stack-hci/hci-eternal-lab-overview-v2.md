@@ -1,12 +1,12 @@
 # Hybrid Cloud Solution - Azure Local
 
-### Overall Estimated Duration: 8 hours
+### Overall Estimated Duration: 8 Hours
 
 ## Overview
 
 LocalBox is a turnkey solution that provides a complete sandbox for exploring Azure Local capabilities and hybrid cloud integration in a virtualized environment. LocalBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Local and Azure Arc technology without the need for physical hardware.
 
-Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. HCIBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of LocalBox.
+Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. localBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of LocalBox.
 
 ## Azure Local capabilities available in LocalBox
 
@@ -18,7 +18,7 @@ LocalBox automatically creates and configures a two-node Azure Local instance us
 
 ### Virtual machine management
 
-LocalBox comes with [guest VM management in Azure portal](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). The LocalBox documentation will walk you through how to use this feature, including configuring VM images from Azure marketplace and creating VMs on your instance.
+LocalBox comes with [guest VM management in Azure portal](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). The LocalBox documentation will walk you through how to use this feature, including configuring VM images from the Azure marketplace and creating VMs on your instance.
 
 ### AKS enabled by Azure Arc on Azure Local
 
@@ -32,11 +32,11 @@ LocalBox resources incur Azure consumption charges based on the underlying servi
 
 To create a flexible and cost-effective hybrid cloud environment that seamlessly integrates on-premises and cloud resources, enabling organizations to optimize performance, streamline management, and enhance scalability while ensuring security and compliance. This approach allows businesses to leverage existing investments, modernize applications, and improve disaster recovery and backup capabilities, ultimately driving innovation and agility in a rapidly evolving digital landscape.
 
-- **Preparing env with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all necessary requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
+- **Preparing the environment with the prerequisites to deploy Azure Local:** Ensure the infrastructure meets all requirements for a successful Azure Local deployment, enabling efficient resource utilization and performance.
   
 - **Deploying JumpStart-LocalBox in Azure Portal:** Quickly provision a ready-to-use Azure Local environment using JumpStart-LocalBox for streamlined setup, accelerating time to value for cloud initiatives.
 
-- **Verify the JumpStart HCI Box deployment:** Confirm the successful deployment of the JumpStart Local Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
+- **Verify the JumpStart Local Box deployment:** Confirm the successful deployment of the JumpStart Local Box to ensure readiness for subsequent configurations, minimizing potential issues during production rollout.
   
 - **Azure Backup Server on Azure Local:** Implement Azure Backup Server to enhance data protection and recovery capabilities within Azure Local, ensuring business continuity and compliance with data retention policies.
   
@@ -56,7 +56,7 @@ Participants should have:
 - **Windows Server Knowledge:** Proficiency with Windows Server, including installation, configuration, and management, as Azure Local runs on Windows Server technology.
 - **Virtualization Concepts:** Familiarity with virtualization technologies, including Hyper-V, as Azure Local utilizes Hyper-Converged Infrastructure.
 - **PowerShell Basics:** Basic knowledge of PowerShell for scripting and automation tasks in Azure and Azure Local environments.
-- **Storage Fundamentals:** Understanding of storage technologies and concepts, including SAN, NAS, and local storage, which are relevant to HCI setups.
+- **Storage Fundamentals:** Understanding of storage technologies and concepts, including SAN, NAS, and local storage, which are relevant to Azure local setups.
 - **Backup and Disaster Recovery Concepts:** Awareness of backup strategies and disaster recovery planning to effectively implement Azure Backup Server.
 - **Kubernetes Basics:** Familiarity with containerization and Kubernetes concepts, especially for managing AKS on Azure Local.
 
@@ -64,7 +64,7 @@ Participants should have:
 
 The architecture of a Hybrid Cloud Solution using Azure Local integrates on-premises infrastructure with Azure services, creating a cohesive and flexible environment. At the core, Azure Local utilizes a hyper-converged infrastructure powered by Windows Server and Hyper-V, enabling efficient virtualization and storage management through Storage Spaces Direct. This on-premises setup connects seamlessly to Azure services via the Azure Portal, allowing organizations to leverage cloud capabilities such as Azure Backup, Azure Kubernetes Service (AKS), and Azure Site Recovery. Management and monitoring are facilitated through Windows Admin Center, providing a unified interface for performance tracking and configuration. The architecture supports a hybrid model that ensures data locality, optimized workload placement, and enhanced disaster recovery, empowering businesses to scale their operations while maintaining control over their data and resources.
 
-## Architechture Diagram
+## Architecture Diagram
 
 ![](./media/hci24-overview-2.png)
 
@@ -93,25 +93,25 @@ Once you're ready to dive in, your virtual machine and lab guide will be right a
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
-![](../media/hci-env1.png "Lab Environment")
+![](./media/GettingStarted-0.png "Lab Environment")
  
 ### Exploring Your Lab Resources
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](../media/overview-15.png "Lab Environment")
+![](./media/GettingStarted-1.png "Lab Environment")
  
 ### Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![](../media/overview-16.png)
+![](./media/GettingStarted-2.png)
  
 ### Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, restart or stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-![](../media/overview-17.png)
+![](./media/GettingStarted-3.png)
 
 ## Lab Guide Zoom In/Zoom Out
 
@@ -121,21 +121,21 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 ## Login to the Azure portal
 
-1. In the **HCIBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
+1. In the **LocalBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
   
    ![](./media/azure-portal-edgea.png)
     
-1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next**. 
+1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next (2)**. 
       
-   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject> (1)**
   
-     ![](./media/user-email.png "Enter Email")
+   ![](./media/GettingStarted-4.png)
    
-1. Now, enter the **password** that you have already received for the above account.
+1. Now, enter the **password** that you have already received for the above account, then click on **Sign in (2).**
       
-   * Password: **<inject key="AzureAdUserPassword"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject> (1)**
   
-     ![](./media/user-pass.png "Enter Password")
+      ![](./media/GettingStarted-5.png)
 
 1. On the **Action Required** pop-up click on **Ask later**.
 
@@ -145,13 +145,15 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. If you see the pop-up **Stay signed in?** Click **No**.
 
+   ![](./media/GettingStarted-6.png)
+
 1. If you see the pop-up, **You have free Azure Advisor recommendations!** close the window to continue the lab.
 
 1. If the **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
-1. Navigate to the Resource Group in the Azure portal navigation section.
+1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
-   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+   ![](media/Ex3-0.png)
 
 1. From the **Resource** groups pane, click on the **Azure-Local** resource group and verify the resources present in it.
 
@@ -194,8 +196,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+Now, click on **Next >>** from the lower right corner to move on to the next page.
 
-![](../media/lab-next.png)
+![](./media/Next.png)
 
 ### Happy Learning!!
