@@ -42,6 +42,10 @@ You will be able to complete the following tasks:
 
     ![](./media/Ex2-2.png)
 
+1. Similarly, on the Resource Providers page, search for **Hybrid**, select **Microsoft.HybridContainerService**, then click on **Register.**
+
+    ![](./media/Ex2-14.png)     
+
 1. In the **Azure portal** search bar, type **Microsoft Entra ID (1)** and select **Microsoft Entra ID (2)** under the services. 
 
     ![](./media/Ex2-3.png)
