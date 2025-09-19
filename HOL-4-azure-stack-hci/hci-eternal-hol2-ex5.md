@@ -32,7 +32,7 @@ You will be able to complete the following task:
 
 4. In the Install updates pane from Azure Update manager, verify the available updates and click on **Next**.
 
-   ![](media/hci24-13a.png)
+   ![](media/ex5-3.png)
   
 5. Select the available updates to install and click on **Next**.
 
@@ -55,3 +55,9 @@ You will be able to complete the following task:
 In this exercise, you updated the **localboxcluster** Azure Local resource.
 
 ### You have successfully completed the lab!
+
+## Conclusion
+
+By completing the **Hybrid Cloud Solution - Azure Local** Hands-On lab, you have successfully  gained practical experience with the key stages of working with **Azure Local** in a hybrid cloud setup. Beginning with the prerequisite environment configuration, you moved through deployment in the Azure portal, virtual machine provisioning, and container orchestration using **AKS on Azure Local**. Finally, you explored how to manage updates within Azure Local directly from the Azure portal. By completing all exercises, you now have a solid understanding of how Azure Local integrates with Azure services, supports VM and container workloads, and provides centralized management and update capabilities. This hands-on experience highlights how Azure Local extends the Azure control plane into on-premises or edge environments, enabling consistent hybrid cloud operations.
+
+
