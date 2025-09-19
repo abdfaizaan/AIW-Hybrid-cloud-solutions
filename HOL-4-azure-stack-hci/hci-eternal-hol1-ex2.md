@@ -14,6 +14,8 @@ You will be able to complete the following tasks:
 
 ## Task 1: Review the already generated ARM template
 
+In this task, you will review the pre-generated ARM template and parameter files for Azure Local in VS Code and assign the Azure Arc permission to the Azure Local resource provider.
+
 1. In the Localbox-Client VM searchbar, type **VS Code (1)**, then click on **Visual Studio Code (2)** from the results.
 
     ![](./media/Ex2-11.png)
@@ -74,11 +76,12 @@ You will be able to complete the following tasks:
 
     ![](./media/Ex2-8.png)
 
-
 1. Press **Ctrl + S** to save the file.
 
     
 ## Task 2: Validate and deploy the Azure Local using PowerShell
+
+In this task, you will validate and deploy the Azure Local cluster using PowerShell with the pre-configured ARM template and parameter files.
 
 1. Open PowerShell ISE window and run the below command to validate your Azure Local deployment and cluster.
 

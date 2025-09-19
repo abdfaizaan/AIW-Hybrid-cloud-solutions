@@ -15,6 +15,8 @@ You will be able to complete the following tasks:
 
 ## Task 1: Review the configured virtualized Azure Local VMs 
 
+In this task, you will use Hyper-V Manager on the Localbox-Client VM to review the status of the deployed Azure Local virtual machines.
+
 1. In the Localbox-Client VM, search for **Hyper-V Manager (1)** in the search box. Select **Hyper-V Manager (2)**.
 
    ![](./media/hci24-1a.png)
@@ -24,6 +26,8 @@ You will be able to complete the following tasks:
    ![](./media/ex1.png)
 
 ## Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Local 
+
+In this task, you will review the process of onboarding Azure Local hosts to Azure Arc using PowerShell and verify the registered Arc machines.
 
 1. In the Windows search bar, type **PowerShell ISE** **(1)**, and select Windows **PowerShell ISE** **(2)** to open it from the Lab VM.
 

@@ -15,6 +15,8 @@ You will be able to complete the following tasks:
 
 ## Task 1: Create a Logical Network for Azure Local for AKS
 
+In this task, you will create a logical network in the localboxcluster to provide IP addressing, VLAN, and gateway configuration for AKS deployment.
+
 1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
    ![](media/Ex3-0.png)
@@ -61,6 +63,8 @@ You will be able to complete the following tasks:
 
 ## Task 2: Create an Entra Group for authentication of AKS
 
+In this task, you will configure an Entra ID group to manage authentication and authorization for AKS.
+
 1. In the Azure portal, click on the search blade at the top and search for **Microsoft Entra ID (1)** and select **Microsoft Entra ID (2)**.
 
     ![](./media/Ex2-3.png)
@@ -78,6 +82,8 @@ You will be able to complete the following tasks:
     ![](media/newgroupcreate.png)
 
 ## Task 3: Create AKS on Azure Local using Azure Portal
+
+In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBAC authentication and network integration.
 
 1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services (1)** and select **Kubernetes services (2)**.
 
@@ -125,6 +131,8 @@ You will be able to complete the following tasks:
      ![](media/Ex4-3.png)
     
 ## Task 4: Connecting to the Azure Local AKS
+
+In this task, you will connect to the newly created AKS cluster from the Localbox-Client VM using Azure CLI and kubectl.
 
 1. From your Localbox-Client VM, open PowerShell and run the following command, using the name of your localBox resource group.
 
