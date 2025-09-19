@@ -14,6 +14,8 @@ You will be able to complete the following tasks:
 
 ## Task 1: Create a Logical Network for Azure Local VM
 
+In this task, you will create a logical network in the localboxcluster to enable VM connectivity with defined IP ranges, VLAN, DNS, and gateway.
+
 1. On the **Azure portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
 
     ![](media/Ex3-0.png)
@@ -59,6 +61,8 @@ You will be able to complete the following tasks:
 
 ## Task 2: Download and Add the VM image to Azure Local Storage
 
+In this task, you will download a Windows 10 Enterprise multi-session VM image from the Azure Marketplace and stored it in Azure Local.
+
 1. In the **localboxcluster** Azure Local, from the left menu select **VM images** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
 
     ![](media/NewEx3-3.png)
@@ -86,6 +90,8 @@ You will be able to complete the following tasks:
 1. Now, you can move to the next task of creating the Virtual Machine on Azure Local.
 
 ## Task 3: Create a Virtual Machine on Azure Local
+
+In this task, you will provision a new VM in the localboxcluster using the logical network and VM image configured in the previous tasks.
 
 1. In the **localboxcluster** Azure Local, from the left menu select **Virtual machines (1)** under Resources, then click on **+ Create VM (2)**.
 
@@ -148,7 +154,7 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this exercise, you created a Logical Network for Azure Local VM, downloaded and added the VM image to Azure Local Storage, and created a Virtual Machine on Azure Local.
+In this exercise, you created the complete environment for running a VM in Azure Local. You created a logical network, added a Windows 10 Enterprise VM image from the Azure Marketplace, and deployed a fully configured virtual machine. This demonstrated the end-to-end process of preparing, networking, and provisioning compute resources in Azure Local.
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
 
