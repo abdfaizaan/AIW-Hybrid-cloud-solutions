@@ -108,19 +108,20 @@ You will be able to complete the following tasks:
       
 - **Administrator account**
    
-    - Username: **arcdemo**
-    - Password: **ArcPassword123!!**
-    - Keep unchecked the **Domain Join**
+    - Username: **arcdemo (1)**
+    - Password: **ArcPassword123!! (2)**
+    - Confirm password: **ArcPassword123!! (3)**
+    - Keep unchecked the **Enable domain join (4)**
     - Then click on **Next (5)**
 
       ![](media/NewEx3-9.png)
 
-4. On the **Disks** tab, click on **Add New disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
+4. On the **Disks** tab, click on **Add new disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
 
    - Name : **wind10-disk** **(2)**
    - Size (GB) : **128** **(3)**
-   - Provisioning type: **dynamic** **(4)**
-   - Storage path: **Choose Automatically (5)**
+   - Provisioning type: **Dynamic** **(4)**
+   - Storage path: **Choose automatically (5)**
 
      ![](media/NewEx3-10.png)
 
@@ -133,7 +134,7 @@ You will be able to complete the following tasks:
 
      ![](media/NewEx3-11.png)
 
-6. Click on **Next** and **Create** to start the VM deployment.
+6. Click on **Next**, then **Create** to start the VM deployment.
 
    ![](media/NewEx3-12.png)
 
@@ -141,7 +142,7 @@ You will be able to complete the following tasks:
 
      ![](media/NewEx3-14.png)
 
-6. Once the VM is created, click on the **Go to resource** button and review the VM configuration.
+6. On the newly created VM page, review the VM configuration.
 
    ![](media/NewEx3-13.png)
 

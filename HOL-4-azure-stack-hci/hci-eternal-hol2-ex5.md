@@ -32,7 +32,7 @@ You will be able to complete the following task:
 
 4. In the Install updates pane from Azure Update manager, verify the available updates and click on **Next**.
 
-   ![](media/hci24-13a.png)
+   ![](media/ex5-3.png)
   
 5. Select the available updates to install and click on **Next**.
 

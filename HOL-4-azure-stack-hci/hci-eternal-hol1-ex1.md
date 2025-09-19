@@ -19,7 +19,7 @@ You will be able to complete the following tasks:
 
    ![](./media/hci24-1a.png)
     
-2. From Hyper-V Manager, click on **HCIBOX-CLIENT** and review that the **AzLHOST1**, **AzLHOST2**, and **AzLMGMT** virtual machines are up and running, as shown in the screenshot below.
+2. From Hyper-V Manager, click on **LOCALBOX-CLIENT** and review that the **AzLHOST1**, **AzLHOST2**, and **AzLMGMT** virtual machines are up and running, as shown in the screenshot below.
 
    ![](./media/ex1.png)
 

@@ -90,21 +90,21 @@ You will be able to complete the following tasks:
     
    ```
 
-1. The above command will take approximately. 45 minutes to get your deployment validated and show you the Azure Local cluster on the Azure Portal.
+1. The above command will take approximately 45 minutes to get your deployment validated and show you the Azure Local cluster on the Azure Portal.
 
 1. You can navigate to the Azure Portal and see a new Azure Local resource created in your resource group.
    
 
-1. Once the validation is completed, run the command below to start the creation of Azure Local. This command will take approximately. 3 hrs to deploy your cluster. 
+1. Once the validation is completed, run the command below to start the creation of Azure Local. This command will take approximately 3 hrs to deploy your cluster. 
 
    ```
    New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
     
    ```
 
-11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployments** under Settings to see your **deployment status (2)**.
+11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployments (1)** under Settings to see your **deployment status (3)**.
    
-12. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh (3)** to get the latest status on deployment.
+12. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh (2)** to get the latest status on deployment.
 
      ![](./media/NewEx3-6.png)
 
