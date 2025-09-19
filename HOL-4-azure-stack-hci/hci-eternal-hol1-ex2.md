@@ -76,7 +76,6 @@ In this task, you will review the pre-generated ARM template and parameter files
 
     ![](./media/Ex2-8.png)
 
-
 1. Press **Ctrl + S** to save the file.
 
     
