@@ -91,7 +91,7 @@ Once you're ready to dive in, your virtual machine and lab guide will be right a
 
 ### Virtual Machine & Lab Guide
  
-Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
+Your virtual machine is your workhorse throughout the workshop. The **Guide** is your roadmap to success.
 
 ![](./media/GettingStarted-0.png "Lab Environment")
  
@@ -121,7 +121,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 ## Login to the Azure portal
 
-1. In the **LocalBox-Client** virtual machine, double-click on the Microsoft Edge browser shortcut that is provided on the desktop.
+1. In the **LocalBox-Client** virtual machine, double-click on the **Microsoft Edge** browser shortcut that is provided on the desktop.
   
    ![](./media/azure-portal-edgea.png)
     
