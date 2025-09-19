@@ -1,6 +1,6 @@
 # Exercise 1: Preparing environment with the prerequisites to deploy Azure Local (READ-ONLY)
 
-### Overall Estimated Duration: 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ### Please note that this lab has already been performed in the lab environment, but please go through the steps to get familiar.
 
@@ -19,9 +19,9 @@ You will be able to complete the following tasks:
 
    ![](./media/hci24-1a.png)
     
-2. From Hyper-V Manager, click on **HCIBOX-CLIENT** and review that the **AzSHOST1**, **AzSHOST2**, and **AzSMGMT** virtual machines are up and running, as shown in the screenshot below.
+2. From Hyper-V Manager, click on **HCIBOX-CLIENT** and review that the **AzLHOST1**, **AzLHOST2**, and **AzLMGMT** virtual machines are up and running, as shown in the screenshot below.
 
-   ![](./media/hci24-2.png)
+   ![](./media/ex1.png)
 
 ## Task 2: Onboard Azure Arc Machine to Azure and prepare to deploy Azure Local 
 
@@ -205,11 +205,11 @@ You will be able to complete the following tasks:
       Set-AzLocalDeployPrereqs -LocalBoxConfig $LocalBoxConfig -localCred $localCred -domainCred $domainCred
     ```
 
-3. Navigate to the Azure portal and verify the Azure Arc Machines onboarded to Azure, named **AzLHOST1** and **AzlHOST2**.
+3. Navigate to the Azure portal and verify the Azure Arc Machines onboarded to Azure, named **AzLHOST1** and **AzLHOST2**.
 
     >**Note**: If you see that only one Azure Arc machine got onboarded, please re-perform the previous step to complete the onboarding. 
 
-   ![](./media/hci24-4.png)
+   ![](./media/ex2.png)
 
 ## Summary
 

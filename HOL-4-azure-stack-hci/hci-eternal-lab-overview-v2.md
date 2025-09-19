@@ -4,9 +4,9 @@
 
 ## Overview
 
-LocalBox is a turnkey solution that provides a complete sandbox for exploring Azure Local capabilities and hybrid cloud integration in a virtualized environment. LocalBox is designed to be completely self-contained within a single Azure subscription and resource group, which will make it easy for a user to get hands-on with Azure Local and Azure Arc technology without the need for physical hardware.
+**LocalBox** is a turnkey solution that delivers a fully integrated sandbox for exploring **Azure Local** capabilities and hybrid cloud integration within a virtualized environment. Purpose-built to operate entirely within a single Azure subscription and resource group, LocalBox provides a streamlined way for users to gain hands-on experience with **Azure Local** and **Azure Arc** technologies without requiring dedicated physical hardware. 
 
-Azure Local 23H2 is now generally available. 23H2 simplifies the configuration and deployment of Azure Local instances and related workloads, like VM management for VM self-service management in the Azure portal. localBox has also been updated and now offers Azure Local instances built on the new 23H2 OS, and prior Azure Local releases are no longer part of LocalBox.
+With the general availability of **Azure Local 23H2**, the platform introduces simplified configuration and deployment of Azure Local instances, including enhanced support for virtual machine (VM) self-service management directly through the Azure portal. LocalBox has been updated to align with this release, offering Azure Local instances based on the new 23H2 operating system. Previous versions of Azure Local are no longer included in LocalBox, ensuring users always work with the latest capabilities.
 
 ## Azure Local capabilities available in LocalBox
 
@@ -139,7 +139,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. On the **Action Required** pop-up click on **Ask later**.
 
-   ![](./media/asklater.png)
+   ![](./media/MFA.png)
 
    > **Note**: If prompted with MFA, please follow the steps highlighted under - [Steps to Proceed with MFA Setup if Ask Later Option is Not Visible](#steps-to-proceed-with-mfa-setup-if-ask-later-option-is-not-visible)     
 
