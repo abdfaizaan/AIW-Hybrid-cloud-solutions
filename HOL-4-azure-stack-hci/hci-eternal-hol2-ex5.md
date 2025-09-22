@@ -56,8 +56,6 @@ In this task, you will perform updates on the localboxcluster Azure Local resour
 
 In this exercise, you successfully updated the **localboxcluster** Azure Local cluster through the Azure portal. The update process ensured the system was brought to the latest version, and the final status showed up to date with Healthy readiness.
 
-### You have successfully completed the lab!
+### You have successfully completed the Hands-on lab!
 
 By completing the **Hybrid Cloud Solution - Azure Local** Hands-On lab, you have successfully  gained practical experience with the key stages of working with **Azure Local** in a hybrid cloud setup. Beginning with the prerequisite environment configuration, you moved through deployment in the Azure portal, virtual machine provisioning, and container orchestration using **AKS on Azure Local**. Finally, you explored how to manage updates within Azure Local directly from the Azure portal. By completing all exercises, you now have a solid understanding of how Azure Local integrates with Azure services, supports VM and container workloads, and provides centralized management and update capabilities. This hands-on experience highlights how Azure Local extends the Azure control plane into on-premises or edge environments, enabling consistent hybrid cloud operations.
-
-
