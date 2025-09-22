@@ -35,7 +35,7 @@ In this task, you will review the process of onboarding Azure Local hosts to Azu
 
 2. Run the commands below to onboard Azure Arc Machines to Azure:
 
-   >**Note**:  Please note that this lab has already been performed in the lab environment, however, please go through the steps to get familiar. You do not need to run the script below.
+   >**Note**:  Please note that this lab has already been performed in the lab environment; however, please go through the steps to get familiar. You do not need to run the script below.
 
     ```
           function Set-AzLocalDeployPrereqs {
