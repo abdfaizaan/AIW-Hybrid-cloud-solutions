@@ -29,6 +29,36 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. If the **Do you trust the authors of the files in this folder?** option is prompted, click on **Yes, I trust the authors**.
 
+1.  Navigate to the **Azure portal**, Click on the **CloudShell** from the top and then select the **Powershell**.
+
+    ![](./media/lab02a1.png)
+
+1. Click on **No storage account required**, choose your subscription, and then click **Apply**.
+
+    ![](./media/lab02a2.png)
+
+1. Open PowerShell and run the commands to register the required Resource Provide
+
+    ```
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridCompute"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.GuestConfiguration"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridConnectivity"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.AzureStackHCI"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.Kubernetes"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.KubernetesConfiguration"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.ExtendedLocation"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.ResourceConnector"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridContainerService"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.Attestation"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.Storage"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.Insights"
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.KeyVault"
+    ```
+
+    ![](./media/lab02a3.png)
+
+    ![](./media/lab02a4.png)
+
 1. Navigate to the **Azure portal**, in search bar type **Subscriptions (1)** and select **Subscriptions (2)** under the services. 
 
     ![](./media/Ex2-0.png)
@@ -41,9 +71,13 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. In the search bar of the Resource Providers page, search for **Hybrid (2)**, select **Microsoft.HybridCloud (3)**, then click on **Register (4).**
 
+    >**Note:** You can verify all Resource Providers here to ensure they are registered successfully.
+
     ![](./media/Ex2-2.png)
 
 1. Similarly, on the Resource Providers page, search for **Hybrid**, select **Microsoft.HybridContainerService**, then click on **Register.**
+
+    >**Note:** You can verify all Resource Providers here to ensure they are registered successfully.
 
     ![](./media/Ex2-14.png)     
 
