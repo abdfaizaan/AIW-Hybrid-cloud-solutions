@@ -11,7 +11,6 @@ You will be able to complete the following tasks:
 - Task 1: Create and review the generated ARM template
 - Task 2: Validate and deploy the Azure Local using PowerShell
 
-
 ## Task 1: Review the already generated ARM template
 
 In this task, you will review the pre-generated ARM template and parameter files for Azure Local in VS Code and assign the Azure Arc permission to the Azure Local resource provider.
@@ -28,7 +27,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
     ![](./media/Ex2-10.png)
 
-1. If **Do you trust the authors of the files in this folder?** option is prompted, click on **Yes, I trust the authors**.
+1. If the **Do you trust the authors of the files in this folder?** option is prompted, click on **Yes, I trust the authors**.
 
 1. Navigate to the **Azure portal**, in search bar type **Subscriptions (1)** and select **Subscriptions (2)** under the services. 
 
@@ -78,7 +77,6 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Press **Ctrl + S** to save the file.
 
-    
 ## Task 2: Validate and deploy the Azure Local using PowerShell
 
 In this task, you will validate and deploy the Azure Local cluster using PowerShell with the pre-configured ARM template and parameter files.
@@ -90,19 +88,16 @@ In this task, you will validate and deploy the Azure Local cluster using PowerSh
    $TemplateParameterFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.parameters.json"
     
    New-AzResourceGroupDeployment -Name 'localcluster-validate' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterValidationDeployment -ErrorAction Stop
-    
    ```
 
 1. The above command will take approximately 45 minutes to get your deployment validated and show you the Azure Local cluster on the Azure Portal.
 
 1. You can navigate to the Azure Portal and see a new Azure Local resource created in your resource group.
-   
 
 1. Once the validation is completed, run the command below to start the creation of Azure Local. This command will take approximately 3 hrs to deploy your cluster. 
 
    ```
    New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
-    
    ```
 
 11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployments (1)** under Settings to see your **deployment status (3)**.
