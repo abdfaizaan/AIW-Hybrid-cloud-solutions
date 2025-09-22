@@ -142,12 +142,9 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
    ![](./media/MFA.png)
 
    > **Note**: If prompted with MFA, please follow the steps highlighted under - [Steps to Proceed with MFA Setup if Ask Later Option is Not Visible](#steps-to-proceed-with-mfa-setup-if-ask-later-option-is-not-visible)     
-
 1. If you see the pop-up **Stay signed in?** Click **No**.
 
    ![](./media/GettingStarted-6.png)
-
-1. If you see the pop-up, **You have free Azure Advisor recommendations!** close the window to continue the lab.
 
 1. If the **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
@@ -186,7 +183,6 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
  
 1. Now, click on the **Next** from the lower right corner to move to the next page.
-
 
 ## Support Contact
  
