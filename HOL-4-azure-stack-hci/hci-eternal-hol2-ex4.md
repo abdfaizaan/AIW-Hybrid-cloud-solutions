@@ -61,7 +61,7 @@ In this task, you will create a logical network in the localboxcluster to enable
 
 ## Task 2: Download and Add the VM image to Azure Local Storage
 
-In this task, you will download a Windows 10 Enterprise multi-session VM image from the Azure Marketplace and stored it in Azure Local.
+In this task, you will download a Windows 10 Enterprise multi-session VM image from the Azure Marketplace and store it in Azure Local.
 
 1. In the **localboxcluster** Azure Local, from the left menu select **VM images** **(1)** under **Resources**, click on **+ Add VM Image** **(2)**, and click on **From Azure Marketplace** **(3)**.
 
@@ -100,7 +100,7 @@ In this task, you will provision a new VM in the localboxcluster using the logic
 2. On the **Create an Azure Arc virtual machine** page, enter the following details: 
 
    - Subscription: Default subscription **(1)**
-   - Resource group : **Azure-Local** **(2)**
+   - Resource group: **Azure-Local** **(2)**
    - Virtual Machine name: **Win10-StackVM** **(3)**
    - Security type: **Standard** **(4)**
    - Storage path: **Choose Automatically (5)**
@@ -124,8 +124,8 @@ In this task, you will provision a new VM in the localboxcluster using the logic
 
 4. On the **Disks** tab, click on **Add new disk (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**. 
 
-   - Name : **wind10-disk** **(2)**
-   - Size (GB) : **128** **(3)**
+   - Name: **wind10-disk** **(2)**
+   - Size (GB): **128** **(3)**
    - Provisioning type: **Dynamic** **(4)**
    - Storage path: **Choose automatically (5)**
 
@@ -133,8 +133,8 @@ In this task, you will provision a new VM in the localboxcluster using the logic
 
 5. On the **Networking** tab, click on **Add network interface (1)** and enter the following details. After adding the details, click on **Add (6)** and **Next (7)**.
 
-   - Name : **win10-nic** **(2)**
-   - Network : **localbox-vm-lnet-vlan200** **(3)**
+   - Name: **win10-nic** **(2)**
+   - Network: **localbox-vm-lnet-vlan200** **(3)**
    - IPv4 type: **Static** **(4)**
    - Allocation Method: **Automatic (5)**
 
@@ -156,6 +156,6 @@ In this task, you will provision a new VM in the localboxcluster using the logic
 
 In this exercise, you created the complete environment for running a VM in Azure Local. You created a logical network, added a Windows 10 Enterprise VM image from the Azure Marketplace, and deployed a fully configured virtual machine. This demonstrated the end-to-end process of preparing, networking, and provisioning compute resources in Azure Local.
 
-### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![](./media/Next.png)
