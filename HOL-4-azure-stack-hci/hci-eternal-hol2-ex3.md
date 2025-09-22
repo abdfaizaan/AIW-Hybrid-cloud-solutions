@@ -36,7 +36,7 @@ In this task, you will create a logical network in the localboxcluster to provid
 5. In the **Create logical network** tab, under Basic, fill in the following details and click on **Next: Network Configuration** **(5)**.
 
     - Subscription: Default subscription **(1)**
-    - Resource group : **Azure-Local** **(2)**
+    - Resource group: **Azure-Local** **(2)**
     - Logical network name: **localbox-aks-lnet-vlan110** **(3)**
     - Virtual switch name: **ConvergedSwitch(compute_management_storage)** **(4)**
 
@@ -69,15 +69,15 @@ In this task, you will configure an Entra ID group to manage authentication and 
 
     ![](./media/Ex2-3.png)
 
-10. On the **Microsoft Entra ID** Overview page, click on **+ Add (1)**, then select **Group (2)** from the list. 
+1. On the **Microsoft Entra ID** Overview page, click on **+ Add (1)**, then select **Group (2)** from the list. 
 
     ![](media/Ex3-3.png)
 
-12. In the **New Group** tab, enter the **Group name** as **aks-auth** **(1)**, click on the **No Owner Selected** **(2)** under **Owners**, from the search **(3)** and select **(4)** for user **ODL_User <inject key="DeploymentID"></inject>**, and click on **Select** **(5)**.
+1. In the **New Group** tab, enter the **Group name** as **aks-auth** **(1)**, click on the **No Owner Selected** **(2)** under **Owners**, from the search **(3)** and select **(4)** for user **ODL_User <inject key="DeploymentID"></inject>**, and click on **Select** **(5)**.
 
     ![](media/createnewgroup.png)
 
-13. In the **New Group** tab, click on **Create** button.
+1. In the **New Group** tab, click on **Create** button.
 
     ![](media/newgroupcreate.png)
 
@@ -116,17 +116,17 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
    ![](media/select-group.png)
 
-2. In the **Access** tab, click on **Next: Networking**.
+1. In the **Access** tab, click on **Next: Networking**.
 
-2. In the **Networking** tab, select **Local network** as **localbox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + Create** **(3)** .
+1. In the **Networking** tab, select **Local network** as **localbox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + create** **(3)** .
 
    ![](media/Ex3-7.png)
 
-2. In the **Review + Create** tab, click on **Review**.
+1. In the **Review + create** tab, click on **Review**.
 
    ![](media/Ex3-8.png)
 
-2. Click on the AKS cluster to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
+1. Click on the AKS cluster to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
      ![](media/Ex4-3.png)
     
@@ -145,7 +145,7 @@ In this task, you will connect to the newly created AKS cluster from the Localbo
     ```
      ![](media/Ex4-4.png)
    
-   >Note: If you get any option to install any extension, please enter **Y**.    
+   >**Note:** If you get any option to install any extension, please enter **Y**.    
 
 3. From Localbox-Client VM, open a new PowerShell session, and then in the new shell, you will have kubectl access to your cluster. Try running some kubectl commands for yourself.
 
@@ -155,6 +155,6 @@ In this task, you will connect to the newly created AKS cluster from the Localbo
 
 In this exercise, you created a Logical Network for Azure Local for AKS, created an Entra Group for authentication of AKS, created AKS on Azure Local using Azure Portal, and connected to the Azure Local AKS.
 
-### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![](./media/Next.png)
