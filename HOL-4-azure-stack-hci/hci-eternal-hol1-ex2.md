@@ -37,7 +37,9 @@ In this task, you will review the pre-generated ARM template and parameter files
 
     ![](./media/lab02a2.png)
 
-1. Open PowerShell and run the commands to register the required Resource Provide
+1. Open PowerShell and run the commands to register the required Resource Provide.
+
+   >**Note:** It will take 2-3 minutes to get registered.
 
     ```
     Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridCompute"
