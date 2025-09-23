@@ -134,11 +134,11 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
 In this task, you will connect to the newly created AKS cluster from the Localbox-Client VM using Azure CLI and kubectl.
 
-1. From your Localbox-Client VM, open PowerShell and run the following command, using the name of your localBox resource group.
+1. On the Localbox-Client VM, search **Windows PowerShell (1)** and select **Windows PowerShell (2)**, right-click, and select **Run as Administrator (3)**. Then execute the following command in the powershell
      
      ![](media/windows-powershell.jpg)
    
-   >Note: PowerShell ISE will not work as it may need some inputs while executing the command. 
+   >**Note:** PowerShell ISE will not work as it may need some inputs while executing the command. 
 
     ```
     az extension add -n connectedk8s
@@ -160,3 +160,4 @@ In this exercise, you created a Logical Network for Azure Local for AKS, created
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![](./media/pag-05.jpg)
+
