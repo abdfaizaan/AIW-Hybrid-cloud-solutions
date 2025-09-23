@@ -63,9 +63,13 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Navigate to the **Azure portal**, in search bar type **Subscriptions (1)** and select **Subscriptions (2)** under the services. 
 
+    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
+
     ![](./media/Ex2-0.png)
 
 1. Select the **available** subscription.
+
+    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
 
     ![](./media/Ex2-1.png)
 
