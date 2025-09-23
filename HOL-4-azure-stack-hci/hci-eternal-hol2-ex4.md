@@ -46,7 +46,7 @@ In this task, you will create a logical network in the localboxcluster to enable
     | **Variables**                | **Values**                                                    |
     | ---------------------------- |---------------------------------------------------------------|
     | IP address assignment | **Static** **(1)** |
-    | IPv4 address space    | **192.168.200.0** **(2)** from the drop down  address prefix select **\24** **(3)** |
+    | IPv4 address space    | **192.168.200.0** **(2)** from the drop down  address prefix select **/24** **(3)** |
     | Default Gateway       | Enter Default Gateway address as **192.168.200.1** **(4)** |
     | DNS Servers           | Enter DNS Servers **192.168.1.254** **(5)** |
     | VLAN ID               | Enter **200** **(6)** | 

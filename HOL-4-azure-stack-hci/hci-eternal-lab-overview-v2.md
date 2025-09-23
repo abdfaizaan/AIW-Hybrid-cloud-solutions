@@ -99,7 +99,7 @@ Your virtual machine is your workhorse throughout the workshop. The **Guide** is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](./media/GettingStarted-1.png "Lab Environment")
+![](./media/env-2309.png "Lab Environment")
  
 ### Utilizing the Split Window Feature
  
@@ -109,13 +109,13 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ### Managing Your Virtual Machine
  
-Feel free to **start, restart or stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
+Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
 ![](./media/GettingStarted-3.png)
 
 ## Lab Guide Zoom In/Zoom Out
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
 ![](./media/labzoom-1.png)
 
@@ -127,13 +127,13 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
     
 1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next (2)**. 
       
-   * Email/Username: **<inject key="AzureAdUserEmail"></inject> (1)**
+    - Email/Username: **<inject key="AzureAdUserEmail"></inject> (1)**
   
-   ![](./media/GettingStarted-4.png)
+      ![](./media/GettingStarted-4.png)
    
 1. Now, enter the **password** that you have already received for the above account, then click on **Sign in (2).**
       
-   * Password: **<inject key="AzureAdUserPassword"></inject> (1)**
+    - Password: **<inject key="AzureAdUserPassword"></inject> (1)**
   
       ![](./media/GettingStarted-5.png)
 
@@ -166,9 +166,9 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
 
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
+    - Open **Google Play Store** (Android) or **App Store** (iOS).
+    - Search for **Microsoft Authenticator** and tap **Install**.
+    - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
 
 1. A **QR code** will be displayed on your computer screen.
 
