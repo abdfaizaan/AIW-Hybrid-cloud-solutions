@@ -221,4 +221,4 @@ In this exercise, review the configured virtualized Azure Local VMs and onboard 
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
 
-![](./media/Next.png)
+![](./media/pg-02.jpg)

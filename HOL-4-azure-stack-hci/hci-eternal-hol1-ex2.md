@@ -148,4 +148,4 @@ In this exercise, you assigned Azure Arc permission to the Azure Local resource 
 
 ### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
 
-![](./media/Next.png)
+![](./media/pg-03.jpg)
