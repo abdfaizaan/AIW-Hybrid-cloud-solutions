@@ -35,6 +35,8 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Click on **No storage account required**, choose your subscription, and then click **Apply**.
 
+    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
+
     ![](./media/lab02a2.png)
 
 1. Open PowerShell and run the commands to register the required Resource Provide.
