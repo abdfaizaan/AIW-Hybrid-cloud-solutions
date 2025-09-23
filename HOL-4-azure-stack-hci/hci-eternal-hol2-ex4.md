@@ -158,4 +158,4 @@ In this exercise, you created the complete environment for running a VM in Azure
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
-![](./media/Next.png)
+![](./media/pg-04.jpg)
