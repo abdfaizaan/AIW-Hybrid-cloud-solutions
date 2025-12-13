@@ -14,7 +14,7 @@ With the general availability of **Azure Local 23H2**, the platform introduces s
 
 LocalBox automatically creates and configures a two-node Azure Local instance using nested virtualization with Hyper-V running on an Azure Virtual Machine. This Hyper-V host creates three guest virtual machines: two Azure Local machines (_AzLHOST1_, _AzLHOST2_), and one nested Hyper-V host (_AzLMGMT_). _AzLMGMT_ itself hosts two guest VMs: an [Active Directory domain controller](https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview), and a [Routing and Remote Access Server](https://learn.microsoft.com/windows-server/remote/remote-access/remote-access) acting as a virtual router.
 
-![Screenshot showing LocalBox nested virtualization](media/nested_virtualization.png)
+![Screenshot showing LocalBox nested virtualization](media/nested_virtualization2.png)
 
 ### Virtual machine management
 
