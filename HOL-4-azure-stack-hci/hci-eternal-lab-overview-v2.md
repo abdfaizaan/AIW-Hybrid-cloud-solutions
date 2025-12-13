@@ -66,7 +66,7 @@ The architecture of a Hybrid Cloud Solution using Azure Local integrates on-prem
 
 ## Architecture Diagram
 
-![](./media/hci24-overview-2.png)
+![](./media/architecturelocal.png)
 
 ## Explanation of Components
 
