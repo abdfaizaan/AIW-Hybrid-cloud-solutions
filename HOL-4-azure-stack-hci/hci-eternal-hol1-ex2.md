@@ -44,6 +44,7 @@ In this task, you will review the pre-generated ARM template and parameter files
    >**Note:** It will take 2-3 minutes to get registered.
 
     ```
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridCloud"
     Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridCompute"
     Register-AzResourceProvider -ProviderNamespace "Microsoft.GuestConfiguration"
     Register-AzResourceProvider -ProviderNamespace "Microsoft.HybridConnectivity"
@@ -71,8 +72,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Select the **available** subscription.
 
-    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
-
+    
     ![](./media/Ex2-1.png)
 
 1. From the left navigation pane, select **Resource providers (1)** under Settings.
