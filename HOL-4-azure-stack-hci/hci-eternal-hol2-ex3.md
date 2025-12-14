@@ -85,13 +85,9 @@ In this task, you will configure an Entra ID group to manage authentication and 
 
 In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBAC authentication and network integration.
 
-1. In the Azure portal, click on the search blade at the top and search for **Kubernetes services (1)** and select **Kubernetes services (2)**.
+1. In the Azure portal, click on the search blade at the top and search for **Azure Arc** and select **Kubernetes Clusters** under infrastructure from left side menu.
 
-    ![](media/Ex3-4.png)
-
-1. In the **Kubernetes services** tab, click on **+ Create** **(1)** and from the drop-down select **Create a Kubernetes cluster with Azure Arc** **(2)**.
-
-    ![](media/Ex3-5.png)
+1. In the **Kubernetes Clusters** tab, click on **+ Add** **(1)** and from the drop-down select **Create a Kubernetes cluster**.
 
 1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill in the following details in the Basic section and click on **Next: Node Pool** **(7)**.
 
@@ -160,4 +156,5 @@ In this exercise, you created a Logical Network for Azure Local for AKS, created
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![](./media/pag-05.jpg)
+
 
