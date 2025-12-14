@@ -89,7 +89,7 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
 1. In the **Kubernetes Clusters** tab, click on **+ Add** **(1)** and from the drop-down select **Create a Kubernetes cluster**.
 
-1. In the **Create a Kubernetes cluster with Azure Arc​** tab, fill in the following details in the Basic section and click on **Next: Node Pool** **(7)**.
+1. In the **Create a Kubernetes cluster** tab, fill in the following details in the Basic section and click on **Next: Node Pool** **(7)**.
 
    | **Variables**                | **Values**                                                    |
    | ---------------------------- |---------------------------------------------------------------|
@@ -156,5 +156,6 @@ In this exercise, you created a Logical Network for Azure Local for AKS, created
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![](./media/pag-05.jpg)
+
 
 
