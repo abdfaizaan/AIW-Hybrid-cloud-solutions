@@ -20,15 +20,15 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Navigate to the **Resource Groups** in the Azure portal navigation section.
 
-    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
+    ![](.././media/new/1.png)    
   
 1. Click on the **azure-arc** Resource group.
 
-    ![](.././media/gg-12.png "Select Resource Group from Navigate Option") 
+    ![](.././media/new/2.png) 
 
 1. Confirm whether you have a total of 12 records to confirm that all the below resources are deployed successfully.
 
-    ![](.././media/rs.png)
+    ![](.././media/new/3.png)
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -42,7 +42,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Now, double-click on the **Hyper-V Manager** from the desktop of the provided Virtual Machine to start the Hyper-V Manager.
 
-    ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
+    ![](.././media/new/4.png)
 
 1. Then, you need to select **ARCHOST-<inject key="DeploymentID" enableCopy="false" />** to connect with the Local Hyper-V server.
 
@@ -64,9 +64,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. This VM also has the Kubernetes cluster that we will use in the subsequent labs. So, here we will onboard the ubuntu-k8s VM to Azure Arc
 
-1. From the start menu of the ARCHOST VM (Lab-VM), search for **putty (1)** and select  **putty (2)**.
+1. From the start menu of the ARCHOST VM (Lab-VM), search for **putty (1)** and select **PuTTY (2)**.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/new/5.png)
      
 1. In the Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2)**. Once you enter the private IP of the ubuntuk8s VM, click on the **Open (3)** to launch the terminal.
 
@@ -74,7 +74,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
 1. Enter the **ubuntu-k8s** VM username - ```demouser``` in **login as** and then hit **Enter**.
 
-    - **Username** : Enter demouser
+    - **Username** : Enter `demouser`
 
       ```BASH
       demouser
@@ -82,7 +82,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember, the password will be hidden and not be visible in the terminal.
 
-    - **Password** : Enter demo@pass123
+    - **Password** : Enter `demo@pass123`
 
       ```BASH
       demo@pass123
@@ -140,17 +140,19 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     > **Note:** A pop-up will appear with the message `PuTTY Fatal Error: Remote side unexpectedly closed network connection`.
     > This is expected behavior during the reboot process. Click on **OK** and close the pop-up and proceed with the next step.
 
-1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 7.
+1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 10.
     
-1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
+1. Next, you have to navigate back to the desktop of **Lab VM**, and click on the `installArcAgentLinux.txt` file to open it.
    
    > **Note:** If you see any pop-up like **An update package is available, do you want to download it?** click **no**
 
-   ![](.././media/variableazlogin.gif "Install Arc Agent")
+   ![](.././media/new/6.png)
 
 1. Then, **select the first 7 lines and, then right click and copy**. 
 
 1. Then, go back to the **putty session** and paste it into the ubuntu-k8s VM by doing a right click, and it will start executing. 
+
+   ![](.././media/variableazlogin.gif "Install Arc Agent")
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
@@ -182,23 +184,23 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
    azcmagent connect --resource-group $ResourceGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret
    ```
 
-   > Remember, we are using variables declared earlier in step 8. If you have connected with a new putty session, you may have to run steps 4 to 9 again.
+   > Remember, we are using variables declared earlier in step 13.
      
    ![](.././media/hybrid1.png "Connected to Arc")
 
 1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1, and browse to the **azure-arc** resource group
 
-1. Now click on **Refresh** from the Azure Arc overview page.
+1. Now click on **Refresh (1)** from the Azure Arc overview page.
 
-1. Then search and verify if **ubuntu-k8s** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
+1. Then verify if **ubuntu-k8s (2)** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
 
-   ![](.././media/hybrid8.png "ubuntu k8s onboarded")
+   ![](.././media/new/7.png)
 
 1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the Status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
    
    > **Note:** The operating system and Agent version that you see may not match the provided screenshot if there were any updates to the Agent/ OS Version.
 
-   ![](.././media/hybrid29.png "ubuntu k8s onboard status check")
+   ![](.././media/new/8.png)
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
