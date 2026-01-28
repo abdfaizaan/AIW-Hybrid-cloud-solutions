@@ -58,7 +58,7 @@ Welcome to your Hybrid Cloud Solution(Azure Arc) Hands-On Lab! We've prepared a 
  
   You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-   ![](.././media/gg-1.png "Lab Environment")
+   ![](.././media/new/vm2.png)
 
 ## Virtual Machine & Lab Guide
  
@@ -68,25 +68,25 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-   ![](.././media/gg-2.png)
+   ![](.././media/new/env.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-   ![](.././media/gg-3.png)
+   ![](.././media/new/split.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
+Feel free to **Start, Stop, or Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
-  ![](.././media/gg-5.png)
+  ![](.././media/new/res.png)
 
 ## Lab Validation
 
 After completing the task, hit the **Validate** button under the Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task; if not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
-  ![](.././media/gg-6.png)
+  ![](.././media/new/valid.png)
 
   If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com  
 
@@ -94,32 +94,30 @@ After completing the task, hit the **Validate** button under the Validation tab 
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-   ![](.././media/gg-7.png)
+   ![](.././media/new/zoom.png)
 
 ## Let's Get Started with Azure Portal
  
-1. In the **LabVM/ARCHost VM**, double-click on the Azure portal shortcut of the Microsoft Edge browser provided on the desktop.
+1. In the **Lab VM**, double-click on the **Azure portal** shortcut of the Microsoft Edge browser provided on the desktop.
  
-    ![](.././media/gg-8.png)
+    ![](.././media/new/azure.png)
  
-2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials and click **Next (2)**:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail" enableCopy="false"/>
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject> **(1)**
  
-      ![](.././media/gg-9.png)
+      ![](.././media/new/signin.png)
+
+3. Next, provide your temporary password and click on **Sign in (2)**:
  
-3. Next, provide your password:
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject> **(1)**
  
-   - **Password:** <inject key="AzureAdUserPassword" enableCopy="false"/>
- 
-      ![](.././media/gg-10.png)
+      ![](.././media/new/pass.png)
      
-1. If you see the pop-up **Action Required**, keep default and then click on **Ask later**. If you see the pop-up Help us protect your account, click on **Skip for now**(14 days until this is required), and then click on **Next**.
+4. If you see the pop-up **Stay Signed in?**, click **No**.
 
-   ![Asklater](.././media/asklater.png)
+   ![](.././media/new/stay.png)
 
-   >**NOTE:** Do not enable MFA, select **Ask Later**.
-   
 ## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
 
 1. At the **"More information required"** prompt, select **Next**.
@@ -142,7 +140,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
  
 1. If you see the pop-up **Stay Signed in?**, click **No**.
 
-   ![](.././media/GS9.png)
+   ![](.././media/new/stay.png)
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
@@ -156,7 +154,7 @@ Learner Support Contacts:
    
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+Now, click on **Next >>** from the lower right corner to move on to the next page.
 
 ![](.././media/arcg6.png)
 
