@@ -1,5 +1,7 @@
 # Hands-on Lab 02
+
 # Exercise 5: Enable GitOps Configuration on connected K8s Cluster
+
 ### Estimated Duration: 60 Minutes
 In addition to managing and monitoring their Kubernetes clusters, Contoso’s central development teams are building applications for internal inventory management at their distribution sites. They need these applications to be containerized and run on Kubernetes clusters. The locations are spread across the country, and Contoso is faced with the challenge of how to uniformly deploy, configure and manage their containerized applications across all these locations. By leveraging GitOps on Azure Arc-enabled Kubernetes, Contoso can centrally declare its Kubernetes configurations and applications in a Git repository and deploy them to all clusters simultaneously. Developers are more empowered because they can commit changes directly in the Git repo, and these updates are also automatically rolled out to all the clusters.
 
@@ -17,9 +19,9 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will create a personal copy (fork) of the public arc-k8s-demo GitHub repository. This will serve as the source for your GitOps deployment, allowing changes in your repo to reflect automatically in the connected Kubernetes cluster
 
-1. Launch the following GitHub repository URL ```https://github.com/CloudLabsAI-Azure/arc-k8s-demo```. In the upper right corner, you will see **Sign in** and **Sign up** options. If you already have a github account, then click on **Sign in**, otherwise **Sign up**.
+1. Launch the following GitHub repository URL ```https://github.com/CloudLabsAI-Azure/arc-k8s-demo```. In the upper right corner, you will see **Sign in (1)** and **Sign up (2)** options. If you already have a github account, then click on **Sign in**, otherwise **Sign up**.
 
-   ![](.././media/01.png)
+   ![](.././media/new/9.png)
    
 1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
    
@@ -31,11 +33,11 @@ In this task, you will create a personal copy (fork) of the public arc-k8s-demo 
    
 1. Now, from the upper right corner, click on the **Fork** to fork the repository to your GitHub account.
 
-   ![](.././media/02.png)
+   ![](.././media/new/a1.png)
    
-1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
+1. On **Create a new fork**, uncheck the **Copy the** `master` **branch only (1)** and click **Create fork (2).**
    
-   ![](.././media/hybrid48.png)   
+   ![](.././media/new/a2.png)   
 
 ## Task 2: Deploy App using az k8s configuration
 
@@ -43,11 +45,11 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **putty (2)**.
+1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **PuTTY (2)**.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/new/a3.png)
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you have entered the private IP of the **ubuntu-k8s** VM, click on the **Open (3)** to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2)**. Once you have entered the private IP of the **ubuntu-k8s** VM, click on the **Open (3)** to launch the terminal.
 
     ![](.././media/arc3.png "Enter ubuntu-k8s VM private IP")
     
@@ -63,7 +65,7 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    demo@pass123
    ```
 
-    ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
+    ![](.././media/new/a4.png)
     
     > Note: To paste any value in the Putty terminal, just copy the value from anywhere and then right-click on the terminal to paste the copied value.
 
@@ -93,15 +95,17 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
       init 6 #TO restart
       ```
 
-1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
+1. Open a new **Putty** session, re-perform the steps from **Step 2 - Step 6** of the this task and then continue from **Step 9**.
 
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
 
-   ![](.././media/variableazlogin.gif "Install Arc Agent")
+   ![](.././media/new/a5.png)
 
 1. Then, select the first 7 lines and, then right click and copy. 
 
 1. Then, go back to the **putty session** and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
+
+   ![](.././media/variableazlogin.gif "Install Arc Agent")
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
