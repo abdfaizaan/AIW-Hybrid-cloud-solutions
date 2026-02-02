@@ -163,7 +163,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. You can save the query for later use by clicking on the **Save (1)** and then **Save as query (2)** button.
 
-      ![](.././media/hybrid22.png) 
+      ![](.././media/new/r1.png) 
    
 1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
@@ -173,11 +173,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. You can see and run the saved **queries** by browsing to **Queries hub**
    
-      ![](.././media/hybrid13.png) 
+      ![](.././media/new/r2.png) 
    
 1. Under **Queries hub** seach for `VMProcess` **(1)** and click on **Run (2)** to run the query.
    
-      ![](.././media/hybrid28.png) 
+      ![](.././media/new/r4.png) 
 
       ![](.././media/arc20.png)       
 
@@ -196,6 +196,6 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
  ![](.././media/arcg6.png)
