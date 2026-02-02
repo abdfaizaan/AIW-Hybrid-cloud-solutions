@@ -408,74 +408,38 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
 Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually or automatically following your configuration management standards. Arc-enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
 
-In this task, let's configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
-
 1. In **ubuntu-k8s** Machine - Azure Arc blade, from the left navigation pane, expand **Monitoring (1)** and select **Insights (2)**.
 
     ![](.././media/new/q10.png)
     
-1. Click on the **Enable** on Insights blade. You may have to scroll down to see the **Enable** button.
+1. Verify that the Arc Server Status shows **Connected**, confirming the machine is successfully connected and healthy.
 
-    ![](.././media/enable-insights.png)
+    ![](.././media/new/r6.png)
 
-1. In the **Monitoring configuration** window, click on **Create New** to add new data collection rule.
+1. Scroll down on the Insights page and verify that the Metrics sections (CPU / Availability / Memory, Network, and Disk) are visible.
 
-    ![](.././media/hybrid32.png)
+    ![](.././media/new/r5.png)
 
-1. On the Create new rule, enter the following details:
+1. Click on **Configure**.
 
-    - Data collection rule name: Enter **data-<inject key="DeploymentID" enableCopy="false"/> (1)**
-    
-    - Enable processes and dependencies (Map): Check the box **(2)**
-    
-    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false"/> (3)**
-    
-    - Click on **Create (4)**
+    ![](.././media/new/y5.png)
 
-        ![](.././media/hybrid33.png)
+1. Then click on **Review + enable**.
 
-1. Review the configuration and click on the **Configure** button.
+    ![](.././media/new/y6a.png)
 
-    ![](.././media/hybrid34.png)
+1. From the top menu bar, click on **Metrics based visualizations (Preview)** and select **Log based visualizations (Classic)**.
 
-1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **Deployment in progress..**. The deployment will take approx `15-20 minutes` to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
+    ![](.././media/new/y3.png)
 
-    > Note: If you are still seeing the Enable button even after clicking on Enable. Once the extensions are installed, it will automatically change. You can move on to the next task.
+1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the graphical representation of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
-    ![](.././media/arc14.png)
-    
-1. Once the deployment is completed, you will see a **notification (1)** in the upper right corner that says **Deployment succeeded (2)**.
+    ![](.././media/new/y4.png)
 
-    ![](.././media/hyd9.png)
-
-    >**Note:** If the MMA installation deployment fails, follow the given workaround here: [Enabling insights workaround](https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/blob/FY-23/HOL-1-azure-arc-servers/Workaroun_MMA_Installation.md)
-
-1. Once the deployment has succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once. You may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
-
-    ![](.././media/hyd15.png)
-
-    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left, or you can move on to the next page and come back later to view the insights.
-
-1. Click on **Logs (1)** from the left navigation pane, then click on **Insights (2)** again, and then refresh the page.
-
-    ![](.././media/arc30.png)
-
-1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
-
-    >**Note:** If the Logical Disk Performance data is not visible, please wait for 2–3 minutes for it to load and again refresh the page.
-
-    ![](.././media/hyd16.png)
-    
-1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties on the right. If there are any **Alerts**, you can check them by clicking on **Alerts** on the right side 👉.
-
-    ![](.././media/arc31.png)
-
-     >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.
- 
 ## Summary 
 
 In this exercise, you explored the fundamentals of setting up Hyper-V infrastructure, onboarded a Linux machine to Azure Arc, and integrated a Kubernetes cluster into Azure Arc while verifying the setup. Additionally, you created a policy assignment to identify compliant and non-compliant resources across your environment. Finally, you enabled monitoring for Arc-enabled machines using Azure Monitor to ensure real-time tracking and performance insights, streamlining management and governance across hybrid and multi-cloud environments.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
 ![](.././media/arcg6.png)

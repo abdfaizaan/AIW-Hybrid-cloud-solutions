@@ -155,19 +155,7 @@ Now that the registration script is prepared, you will switch to the LabVM/ARCHo
 
 With the SQL Server onboarded, this task walks you through setting up monitoring and assessment features. You’ll integrate the SQL Server with Log Analytics by installing the Log Analytics Agent extension. You will then configure SQL Server permissions and license type, and initiate a best practices assessment from the Azure Portal. This assessment provides a detailed evaluation of the SQL Server instance's configuration, helping identify security gaps, performance issues, and optimization recommendations.
 
-1. In the **Azure Portal**, search for **Log Analytics workspace (1)** and select **Log Analytics workspaces (2)** from the results.
-
-   ![](.././media/new/e5.png)
-   
-1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**
-   
-   ![](.././media/hybrid39.png "H1E3T2S8")
-
-1. Then select **Agents (1)** under Settings section from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
- 
-   ![](.././media/hybrid40.png "sqlsearch")
-
-1. Now, search for **Machines - Azure Arc (1)** from search box and click on **Machines - Azure Arc (2)**.
+1. Search for **Machines - Azure Arc (1)** from search box and click on **Machines - Azure Arc (2)**.
  
    ![](.././media/hyd20.png "server-azure-arc-search") 
    
@@ -175,27 +163,21 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extensions** button from the left side menu.
+1. From the left navigation pane, expand **Settings (1)**, select **Extensions (2)** and click on the **+ Add (3)**.
  
-   ![](.././media/hyd22.png "sqlsearch")
-    
-1. Click on the **+ Add** button to add a new extension.
+   ![](.././media/new/r7.png)
 
-   ![](.././media/hyd23.png "sqlsearch")
-
-1. Search for **Log Analytics Agent - Azure Arc (1)** extension press **Enter**, then select the **Log Analytics Agent - Azure Arc (2)** and click on the **Next (3)** button to continue.
+1. Search for **Azure Monitor Agent (1)** extension press **Enter**, then select the **Azure Monitor Agent for Windows (Recommended) (2)** and click on the **Next (3)** button to continue.
  
-   ![](.././media/hyd24.png "sqlsearch")    
+   ![](.././media/new/r8.png)
    
-1. At this step, you must enter the **Log Analytics workspace ID and a key** to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
-  
-1. Now, enter the **Workspace Id (1)** and **Workspace Key (2)** that you copied from the previous step, click on **Review + create (3)** button.
- 
-   ![](.././media/hyd25.png "sqlsearch")
+1. On **Create** tab, click on **Review + create**.
 
-1. Review the configuration, and click on **Create**.
+   ![](.././media/new/r9.png)
 
-   ![](.././media/hyd26.png "sqlsearch")
+1. Then click on **Create** to add an extension. 
+
+   ![](.././media/new/r10.png)
 
    > **Note:** The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
@@ -203,9 +185,9 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
-1. On Connect to sqlvm box, scroll the bar towards **Small** to open the VM in the smallest window and then click on the **Connect** button.
+1. On Connect to sqlvm box, scroll the bar towards **Small (1)** to open the VM in the smallest window and then click on the **Connect (2)** button.
 
-   ![](.././media/scalsqlvm.png "scalsqlvm")
+   ![](.././media/new/t4.png)
 
 1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the SQLVM window at your convenience.
    
@@ -227,6 +209,14 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    ![](.././media/arc25.png "H1E3T3S16")
  
+1. From the left navigation pane, expand **Windows management (1)**, select **Best Practices Assessment (preview) (2)** and then click on **Attest to your license type (2)** from the top.
+
+   ![](.././media/new/y1.png)
+
+1. Under Azure benifits, check the box for **Activate Azure benifits (1)** and click **Confirm (2)**.
+
+   ![](.././media/new/y2.png)
+
 1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
    
    > **Note:** Skip and continue from **Step 20** if **change license type** option is not available.
