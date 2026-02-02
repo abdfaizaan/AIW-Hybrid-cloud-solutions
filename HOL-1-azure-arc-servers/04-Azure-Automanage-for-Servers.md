@@ -24,7 +24,7 @@ In this task, you will enable Azure Automanage on the ubuntu-k8s Arc-enabled ser
 
    ![](.././media/hybrid45.png "searchautoamanage")
 
-4. In Select machines pane, select the **ubuntu-k8s (1)** Server - Azure Arc and click on **Review + Create (2)**.
+4. In Select machines pane, select the **ubuntu-k8s (1)** server and click on **Review + Create (2)**.
 
    ![](.././media/gg-4-1.png "searchautoamanage")
 
