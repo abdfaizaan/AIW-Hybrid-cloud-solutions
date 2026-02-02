@@ -17,13 +17,13 @@ You can connect your non-Azure computers in any of the following ways:
   
   * From Microsoft Defender for cloud pages in the Azure portal **(Getting started and Inventory)**
  
-1. Search for **Microsoft Defender for Cloud (1)** in the Azure portal search bar and then click on **Microsoft Defender for Cloud (2)**.
+1. In the **Azure Portal**, search for **Microsoft Defender for Cloud (1)** in the search bar and click **Microsoft Defender for Cloud (2)**.
     
-   ![](.././media/arc15.png)
+   ![](.././media/new/a8.png)
    
-1. From the **Overview (1)** page, click on **Enable Defender plans (2)** under Workload protection.   
+1. From the **Overview** page, under Workload protection, click on **Enable Defender plans** .   
 
-   ![](.././media/gg-3-2.png)
+   ![](.././media/new/a9.png)
 
 1. On the **Upgrade (1)** tab, scroll down and then **check on all the checkboxes (2)** and click on **Upgrade (3)**.
 
