@@ -313,9 +313,11 @@ Now, let us verify if the Kubernetes cluster is connected to Azure Arc and is in
    
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. 
 
+   ![](.././media/new/a11.png)
+
 1. Click on **Refresh (1)** on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource (2)**.
 
-   ![](.././media/hybrid30.png "Varify in Azure")
+   ![](.././media/new/a10.png)
 
 1. Azure Arc enabled Kubernetes to deploy a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubuntu-k8s VM:
 
@@ -328,6 +330,7 @@ Now, let us verify if the Kubernetes cluster is connected to Azure Arc and is in
    ![](.././media/get-pods.png)
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
+
 Policies can be applied to Arc-enabled servers in the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using a  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
 
 1. From the **Azure Portal**, search for **Azure Arc (1)** in the search box and select **Azure Arc (2)** from the services. 
@@ -342,49 +345,49 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/hybrid3.png)
     
-1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
+1. From **ubuntu-k8s** server blade, expand **Operations (1)** and select **Policies (2)** from the left navigation pane.
 
-    ![](.././media/hyd6.png)
+    ![](.././media/new/a12.png)
     
 1. Click on **Assign policy** to assign a policy to the connected **ubuntu-k8s** machine.
 
     ![](.././media/hyd7.png)
     
-1. In the **Assign policy** window, under the **Basics** section, click the **ellipsis (…) button (1)** next to **Policy definition**.
+1. In the **Assign policy** window, under the **Basics** section, click the **ellipsis (…)** next to **Policy definition**.
 
-    ![](.././media/hybrid31.png)
+    ![](.././media/new/q1.png)
     
-1. Search for ```Configure Log Analytics extension on Azure Arc enabled Linux servers (1)``` in **Available Definitions** and then click on **Configure Log Analytics extension on Azure Arc enabled Linux servers (2)** and then click on **Add (3)** button at the bottom.
+1. In **Available Definitions** page, search for `Configure Linux Arc-enabled machines to run Azure Monitor Agent` **(1)** and select **Configure Linux Arc-enabled machines to run Azure Monitor Agent (2)** and then click on **Add (3)** button at the bottom.
 
-    ![](.././media/gg-15.png)
+    ![](.././media/new/q2.png)
     
-    >**Note:** If you see multiple policies with the same name, select the Built-in policy when choosing the Deploy Log Analytics extension for Linux VMs.
+1. Now, rename the **Assignment name** to **Configure Linux Arc-enabled machines to run Azure Monitor Agent (1)** and click on **Parameters (2)** blade.
+
+    ![](.././media/new/q3.png)
+
+1. On **Parameters** blade, click on **Next**.
+
+    ![](.././media/new/q8.png)
+
+1. On **Remediation** blade, enable the checkbox for **Create a remediation task (2)** and then click on the **Next (3)** button.
+
+    ![](.././media/new/q4a.png)
     
-1. After selecting the policy definition, **rename** the **Assignment** name to **Configure Log Analytics extension on Azure Arc enabled Linux servers (1)**. Then move to the **Parameters (2)** blade.
+1. On **Managed identity** blade, click on **Next**.
 
-    ![](.././media/hybrid10.png)
+    ![](.././media/new/q5.png)
 
-    > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
+1. On **Non-compliance messages** blade, enter ```Log Analytics agent is not installed``` **(1)** message. This message will appear when a Linux machine policy assignment status is in **non-compliant** state. Then, click **Review + create (2)**.
 
-1. On the **Parameters** Section, **under Log Analytics workspace**, click on the **ellipsis (…) (1)** which opens a new pane for **Log Analytics Workspace**. From the list of workspaces, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />(2)** , and then click **Select (3)**.
-
-    ![](.././media/hybrid6.png)
-
-1. Navigate to the **Remediation (1)** blade, enable the checkbox for **Create a remediation task (2)** and then click on the **Next (3)** button.
-
-    ![](.././media/arc12.png)
-    
-1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed``` **(1)**. This message will appear when a Linux machine policy assignment status is in **non-compliant** state. Then, click **Review + create (2)**.
-
-    ![](.././media/hybrid7.png)
+    ![](.././media/new/q6.png)
     
 1. On **Review + create** blade, verify the assignments and select **Create** to confirm.
 
-    ![](.././media/gg-2-1.png)
+    ![](.././media/new/q7.png)
     
-1. Now, once the policy assignment is created, click on **Refresh (1)** to see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started (2)** state. 
+1. Now, once the policy assignment is created, click on **Refresh (1)** to see the assigned policy in the **Non complaint (2)** state. 
 
-    ![](.././media/arc13.png) 
+    ![](.././media/new/q9.png)
 
 1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
@@ -407,9 +410,9 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
 In this task, let's configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
-1. In the Azure Portal, from **ubuntu-k8s** Machine - Azure Arc blade, select **Insights** under **Monitoring** section on the left.
+1. In **ubuntu-k8s** Machine - Azure Arc blade, from the left navigation pane, expand **Monitoring (1)** and select **Insights (2)**.
 
-    ![](.././media/hyd3.png)
+    ![](.././media/new/q10.png)
     
 1. Click on the **Enable** on Insights blade. You may have to scroll down to see the **Enable** button.
 
