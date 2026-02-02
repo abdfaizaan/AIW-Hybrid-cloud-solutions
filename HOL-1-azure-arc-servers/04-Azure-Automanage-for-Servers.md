@@ -1,5 +1,7 @@
 # Exercise 4: Enabling Azure Automanage for Server - Azure Arc
+
 ### Estimated Duration: 30 Minutes
+
 In this exercise, you will focus on using Azure Automanage to automatically enroll, configure, and monitor a server connected to Azure Arc. Azure Automanage simplifies the lifecycle management of virtual machines (VMs) by applying best practices for security, updates, and monitoring. It leverages services like Azure Security Center, Update Management, and Log Analytics for comprehensive VM management.
 
 ## Objective
@@ -10,7 +12,7 @@ In this exercise, you will be performing the following task:
 
 ## Task 1: Configuring Azure Automanage
 
-In this task, you will enable Azure Automanage on the ubuntu-k8s Arc-enabled server. Automanage applies best practices for VM management, such as security, updates, and monitoring, using services like Azure Security Center and Log Analytics. You will use the Dev/Test configuration profile to automate and simplify the VM’s management lifecycle.
+In this task, you will enable Azure Automanage on the sqlvm Arc-enabled server. Automanage applies best practices for VM management, such as security, updates, and monitoring, using services like Azure Security Center and Log Analytics. You will use the Dev/Test configuration profile to automate and simplify the VM’s management lifecycle.
 
 1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage (1)** in the search box and select **Automanage (2)**.
 
@@ -24,17 +26,17 @@ In this task, you will enable Azure Automanage on the ubuntu-k8s Arc-enabled ser
 
    ![](.././media/hybrid45.png "searchautoamanage")
 
-4. In Select machines pane, select the **ubuntu-k8s (1)** Server - Azure Arc and click on **Review + Create (2)**.
+4. In Select machines pane, select the **sqlvm (1)** server and click on **Review + Create (2)**.
 
-   ![](.././media/gg-4-1.png "searchautoamanage")
+   ![](.././media/new/t1.png)
 
 5. Click on **Create**.
 
-   ![](.././media/HOL1-EX4-5.png "searchautoamanage")
+   ![](.././media/new/t2.png)
 
-6. Once the Configuration profile assignment is completed successfully, it will take around `20-30 minutes` to get the Status as Conformant.
+6. Once the Configuration profile assignment is completed successfully, it will take around `20-30 minutes` to get the Status as **Conformant**.
 
-   ![](.././media/gg-4-2.png "searchautoamanage")
+   ![](.././media/new/t3.png)
 
 7. You can proceed with the next task and review the status later.
 

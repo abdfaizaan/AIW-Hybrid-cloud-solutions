@@ -24,7 +24,7 @@ In this task, you will select an existing policy definition and create a policy 
     
 1. On the **Policies** blade, click on **Enable extension** to onboard to Azure Policy for Azure Arc-enabled Kubernetes clusters.
 
-     ![](.././media/HOL2-Ex2-T1-S3.png)
+     ![](.././media/new/e6.png)
      
 1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
@@ -50,7 +50,7 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. Click on **Parameters** blade.
 
-1. Provide the following details under the **Parameters** tab
+1. Provide the following details under the **Parameters** tab.
 
     - Uncheck the **Only show parameters that need input or review** box to see all the parameters
     

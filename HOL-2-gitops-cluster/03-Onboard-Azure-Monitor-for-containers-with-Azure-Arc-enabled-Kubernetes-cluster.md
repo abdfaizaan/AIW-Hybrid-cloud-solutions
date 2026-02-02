@@ -14,23 +14,31 @@ In this task, you will enable Azure Monitor for your Azure Arc-enabled Kubernete
 
 1. Navigate to **azure-arc** resource group and select **microk8s-cluster** Kubernetes - Azure Arc resource from the resources listed.
 
-   ![](.././media/gg-8-1.png "azuremonitor")
+   ![](.././media/new/e7.png)
 
-2. On the **microk8s-cluster** Kubernetes - Azure Arc pane, select **Insights (1)** under Monitoring from left-hand side menu and click on **Configure monitoring (2)**.
+1. On the **microk8s-cluster** pane, expand **Monitoring (1)** from the left navigation pane, select **Insights (2)** and click on **Configure monitoring (3)**.
 
-   ![](.././media/hyd30.png "azuremonitor")
+   ![](.././media/new/e8.png)
 
-3. On the Configure Container insights blade, scroll down to the bottom and click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown, from cost oresets dropdown select **Standard (2)**  and click on **Configure (3)**.
+1. Under **Capabilities**, click on **Customize capabilities**.
+
+   ![](.././media/new/e9.png)
+
+1. For the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown, from Logs presets dropdown select **Standard (2)** and click on **Save (3)**.
+
+   ![](.././media/new/e10.png)
+
+1. On the Configure Container insights blade, scroll down to the bottom and click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown, from cost oresets dropdown select **Standard (2)**  and click on **Configure (3)**.
 
    ![](.././media/hybrid73.png "azuremonitor")
 
-4. You will be able to see the insights data after `30-60 minutes`. For now, you can continue with the next HOL and come back later to review the insights.
+1. You will be able to see the insights data after `30-60 minutes`. For now, you can continue with the next HOL and come back later to review the insights.
 
-5. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours (1)**. Click on **Cluster (2)** and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
+1. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours (1)**. Click on **Cluster (2)** and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
 
    ![](.././media/hol2-ex3-4.png "azuremonitor")
 
-6. In the same pane, filter the **Time range = Last 6 Hours (1)** and click on **Nodes (2)** and select **ubuntu-k8s**. Here you can observe that the ubuntu-k8s server azure-arc node is listed below, which defines the integration of Azure Arc connected cluster with Azure Monitor for Containers.
+1. In the same pane, filter the **Time range = Last 6 Hours (1)** and click on **Nodes (2)** and select **ubuntu-k8s**. Here you can observe that the ubuntu-k8s server azure-arc node is listed below, which defines the integration of Azure Arc connected cluster with Azure Monitor for Containers.
 
    ![](.././media/hol2-ex3-5.png "azuremonitor")
 
