@@ -250,9 +250,25 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
   
     ![](./media/hybrid65.png)
 
-1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers tab, expand **Log Analytics agent instructions (2)** copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
+1. From the **Overview** page, copy the Worspace id in a notepad file for later use while creating the Azure arc data controller.
 
-    ![](./media/arc45.png)
+    ![](./media/loganal.png)
+
+1. Open CloudShell from the Azure portal.
+
+   ![](./media/cloudsell.png)
+
+1. Select Powershell. If you are opening CloudShell for the first time, it will prompt you to select a storage account. Select **No storage account required** and choose the **default subscription**.Click on **Apply**
+
+1. Now, in the powershell window, paste the following command
+   
+      ```
+       Get-AzOperationalInsightsWorkspaceSharedKey -ResourceGroupName "azure-arc" -Name "LoganalyticsWS-Direct"
+    
+      ```  
+1.  Copy the value of the primary key in a notepad file and proceed with the next task. 
+
+    ![](./media/pmkey.png)
     
 ## Task 4: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
 
