@@ -225,9 +225,13 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    ![](.././media/new/qq2.png)
 
-1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
+1. Once the assessment is **Completed**, click on it to see the results.
 
-    ![](.././media/H1E3T3S21.png "H1E3T3S21")
+    ![](.././media/new/qq3.png)
+
+1. The **Assessment results** will look like below:
+
+    ![](.././media/new/qq4.png)
       
    > **Note:** Now you can move to the next Exercise, you don't have to wait here for the Result to appear.   
 

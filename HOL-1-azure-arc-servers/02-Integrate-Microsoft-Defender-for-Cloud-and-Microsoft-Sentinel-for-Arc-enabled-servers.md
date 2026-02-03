@@ -130,7 +130,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Select **East US (1)** under **Save workbook to..** pop-up and click on **Yes (2)**
 
-      ![](.././media/new/aa4.png)
+      ![](.././media/new/qq5.png)
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
@@ -189,6 +189,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/arc20.png)       
 
+      > **Note**: The data might take time to get populated. You can continue with next exercise.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
