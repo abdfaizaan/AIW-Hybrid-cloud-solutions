@@ -209,39 +209,21 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
    ![](.././media/arc25.png "H1E3T3S16")
  
-1. From the left navigation pane, expand **Windows management (1)**, select **Best Practices Assessment (preview) (2)** and then click on **Attest to your license type (2)** from the top.
+1. In **azure-arc** resouce group, search for **sqlvm (1)** and select **sqlvm - SQL Server Instance (2)**.
 
-   ![](.././media/new/y1.png)
+   ![](.././media/new/aa7.png)
 
-1. Under Azure benifits, check the box for **Activate Azure benifits (1)** and click **Confirm (2)**.
+1. From the left navigation pane, expand **Settings (1)**, select **Best practices assessment (2)**, select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (3)** from the drop-down and click on **Enable assessment (4)**.
 
-   ![](.././media/new/y2.png)
+   ![](.././media/new/aa8.png)
 
-1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
-   
-   > **Note:** Skip and continue from **Step 20** if **change license type** option is not available.
-   
-   ![](.././media/hybrid42.png "H1E3T3S17")
-
-1. Under **SQL Server Configuration**, scroll down and select license type as **License with Software Assurance (1)** and click on **Save (2)**.
-
-   ![](.././media/hybrid43.png "H1E3T3S18")
-
-1. Navigate back to **Best practices assessment**.
-
-   ![](.././media/arc26.png "H1E3T3S18")
-
-1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
-
-   ![](.././media/hybrid44.png "H1E3T3S19")
-
-   > **Note:** After enabling the assessment, wait for a few minutes to get it complete. 
-
-2. Once the assessment is enabled, refresh the page every 3 minutes until **Assessment Scheduled** is displayed. When it appears, click **Run Assessment**. You should then see **Assessment in Progress**.
+2. Once the assessment is enabled, refresh the page every 3 minutes until **Assessment Scheduled** is displayed. When it appears, click **Run Assessment (1)**. You should then see **Assessment in Progress**.
 
    >**Note:** The assessment in progress will take some time. Continue with the next exercise, and come back later to check. Once the assessment is completed, `click on the completed assessment` to view the results, as shown in the next step.
 
-   ![](.././media/assessment.png "H1E3T3S19")
+   ![](.././media/new/qq1.png)
+
+   ![](.././media/new/qq2.png)
 
 1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
@@ -261,6 +243,6 @@ With the SQL Server onboarded, this task walks you through setting up monitoring
 
 In this exercise, you registered an Azure Arc-enabled SQL Server, enabling centralized management and monitoring of SQL resources. You also performed an on-demand SQL Assessment to evaluate the server's configuration, identify potential issues, and receive recommendations for optimization and best practices.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
  ![](.././media/arcg6.png)

@@ -26,9 +26,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/new/2.png) 
 
-1. Confirm whether you have a total of 12 records to confirm that all the below resources are deployed successfully.
+1. Confirm whether you have a total of 13 records to confirm that all the below resources are deployed successfully.
 
-    ![](.././media/new/3.png)
+    ![](.././media/new/aq1.png)
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -103,7 +103,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
     
-        ![](.././media/root-login.png "Root Login")
+        ![](.././media/new/aq2.png)
 
  1. Run the below to to install **pip**.  
 
@@ -112,41 +112,17 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      ```
     > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**.
     
- 1. Once **pip** is installed successfully, run the below commands to upgrade the az packages and az module.
-
-    >**NOTE:** Copy the commands below, paste them into a notepad, and execute each one individually.
-   
-     ```
-     curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
-     apt-get update
-     apt install pip
-     python3 get-pip.py
-     python3 -m pip install -U pip
-     python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
-     pip install azure-common
-     apt update
-     az upgrade -y
-     ```
-
-    > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
-
-    > **Note:** If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
-
-1. After the above commands complete, execute the following 'init 6' to reboot the system:
-
-    ```
-     init 6
-    ```
-    > **Note:** A pop-up will appear with the message `PuTTY Fatal Error: Remote side unexpectedly closed network connection`.
-    > This is expected behavior during the reboot process. Click on **OK** and close the pop-up and proceed with the next step.
-
-1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 10.
+1. Open a new Putty session, re-perform the steps from **Step 2** to **Step 5** of the same task to get the upgraded packages and then continue from  **Step 8**.
     
 1. Next, you have to navigate back to the desktop of **Lab VM**, and click on the `installArcAgentLinux.txt` file to open it.
    
    > **Note:** If you see any pop-up like **An update package is available, do you want to download it?** click **no**
 
    ![](.././media/new/6.png)
+
+   > **Note:** If you see any pop-up, select **Notepad ++ (1)**, check the box for **Always use this app to open .txt files (2)** and click **OK (3)**.
+
+   ![](.././media/new/aq3.png)
 
 1. Then, **select the first 7 lines and, then right click and copy**. 
 
@@ -158,10 +134,25 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
     ![](.././media/variableazlogin.png "azlogin")
     
+1. Run the following commands:
+
+   ```
+   export MSFT_ARC_TEST=true
+   sudo systemctl set-environment MSFT_ARC_TEST=true
+   ```
+
+1. Run the following commands:
+
+   ```
+   sudo ufw --force enable
+   sudo ufw deny out from any to 169.254.169.254
+   sudo ufw default allow incoming
+   ```
+
 1. Now, to download the Azure Arc installation package for Linux, run the below command:
 
    ```
-   wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
+   wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
    ```
     
    ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
@@ -169,7 +160,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 1. Then, to install Azure Arc agent on the VM, run the below command:
 
    ```
-   bash ~/install_linux_azcmagent.sh
+   bash ~/Install_linux_azcmagent.sh
    ```
 
    ![](.././media/run-installation.png "Install Arc Agent")
@@ -225,11 +216,16 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 1. Next, you have to run the below command to ensure the Azure CLI version and custom location extension for Az CLI are the latest.
 
     ```
-    az upgrade -y
     az extension add --name customlocation
     ```
     
     >**Note:** If you face any exceptions while updating the CLI version, please rerun the command again.
+
+1. Run the below command to install **connectedk8s** extension.
+
+    ```
+    az extension add --name connectedk8s
+    ```
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
 
@@ -257,27 +253,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      microk8s start
      ```
      > **Note:** This command takes a while to execuite, please wait until it executes successfully.
-     >**Note:** In case if you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
-
-     ```
-     microk8s refresh-certs
-     ```
 
      ![](.././media/k8s-status-running.png "check cluster cluster")
-
-1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
-
-     > **Info:** A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl command-line tool (or other clients).
-
-   ```
-   cd $HOME
-   mkdir .kube
-   cd .kube
-   microk8s config > config
-   cd ..
-   ```
-
-   ![](.././media/arc8.png "kube") 
 
 1. Run the following command to log in to the Azure portal again.   
 
@@ -290,7 +267,6 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ```
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
    ```
-    
    ![](.././media/arc9.png "Connect Kubernetes")
 
     > **Note:** This may take around `5 to 10 minutes` to complete, please wait until it is completed.   
@@ -331,7 +307,7 @@ Now, let us verify if the Kubernetes cluster is connected to Azure Arc and is in
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
 
-Policies can be applied to Arc-enabled servers in the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using a  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
+In this task, a policy assignment will be created and applied to the ubuntu-k8s Arc-enabled server to ensure that the Azure Monitor Agent (AMA) is automatically installed and configured through Azure Policy. This allows Azure to continuously evaluate the machine’s compliance state and remediate configuration drift.
 
 1. From the **Azure Portal**, search for **Azure Arc (1)** in the search box and select **Azure Arc (2)** from the services. 
 
@@ -373,6 +349,8 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/new/q4a.png)
     
+    > **Note:** If you are not able to see the checkbox, wait for few seconds.  
+
 1. On **Managed identity** blade, click on **Next**.
 
     ![](.././media/new/q5.png)
@@ -385,14 +363,19 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/new/q7.png)
     
-1. Now, once the policy assignment is created, click on **Refresh (1)** to see the assigned policy in the **Non complaint (2)** state. 
+1. Now, once the policy assignment is created, click on **Refresh (1)** to see the assigned policy in the **Not started (2)** state or **Non complaint (2)**. 
+
+    ![](.././media/new/aq5.png)
 
     ![](.././media/new/q9.png)
 
-1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
+1. After the policy assignment is created, the policy will appear in the list with the Compliance state as Not started. This indicates that Azure Policy evaluation and remediation have not yet begun.
 
-    ![](.././media/hyd8.png)   
-    >**Note:** It may take 20–30 minutes for the compliance status to be reflected after the Log Analytics Agent is deployed on the ubuntu-k8s VM. You can continue with the next task and check the compliance state later. Once the Log Analytics Agent shows as Compliant, click **Validate** below.
+    Once the policy engine starts evaluation, it will trigger remediation to deploy the Azure Monitor Agent (Log Analytics Agent) on the ubuntu-k8s Hyper-V guest VM. After the agent is successfully installed and evaluated, the compliance state will automatically change to Compliant.
+
+    ![](.././media/new/aa6.png)
+
+    >**Note:** This process can take approximately 20–30 minutes. You may proceed to the next task.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -401,8 +384,6 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
-
->**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
 
 ## Task 6: Monitor Arc-enabled machines with Azure Monitor
 
@@ -428,11 +409,23 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
     ![](.././media/new/y6a.png)
 
+1. And click on **Enable**.
+
+    ![](.././media/new/aq6.png)
+
+1. Wait for the Onboarding process to complete.
+
+    ![](.././media/new/aq7.png)
+
 1. From the top menu bar, click on **Metrics based visualizations (Preview)** and select **Log based visualizations (Classic)**.
 
     ![](.././media/new/y3.png)
 
+    >**Note:** Refresh the page, if you are not able to see **Metrics based visualizations (Preview)**.
+
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the graphical representation of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
+
+    ![](.././media/new/aq8.png)
 
     ![](.././media/new/y4.png)
 
