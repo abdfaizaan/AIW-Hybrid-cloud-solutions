@@ -26,9 +26,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/new/2.png) 
 
-1. Confirm whether you have a total of 12 records to confirm that all the below resources are deployed successfully.
+1. Confirm whether you have a total of 13 records to confirm that all the below resources are deployed successfully.
 
-    ![](.././media/new/3.png)
+    ![](.././media/new/aq1.png)
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -103,7 +103,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
     
-        ![](.././media/root-login.png "Root Login")
+        ![](.././media/new/aq2.png)
 
  1. Run the below to to install **pip**.  
 
@@ -112,41 +112,17 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      ```
     > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**.
     
- 1. Once **pip** is installed successfully, run the below commands to upgrade the az packages and az module.
-
-    >**NOTE:** Copy the commands below, paste them into a notepad, and execute each one individually.
-   
-     ```
-     curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
-     apt-get update
-     apt install pip
-     python3 get-pip.py
-     python3 -m pip install -U pip
-     python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
-     pip install azure-common
-     apt update
-     az upgrade -y
-     ```
-
-    > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. This may take some time to upgrade; please wait until it is completed.
-
-    > **Note:** If you encounter a warning such as **"Error parsing dependencies of python-debian: Invalid version '0.1.36ubuntul'"**, you can safely ignore it and proceed to the next step.
-
-1. After the above commands complete, execute the following 'init 6' to reboot the system:
-
-    ```
-     init 6
-    ```
-    > **Note:** A pop-up will appear with the message `PuTTY Fatal Error: Remote side unexpectedly closed network connection`.
-    > This is expected behavior during the reboot process. Click on **OK** and close the pop-up and proceed with the next step.
-
-1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from  step 10.
+1. Open a new Putty session, re-perform the steps from **Step 2** to **Step 5** of the same task to get the upgraded packages and then continue from  **Step 8**.
     
 1. Next, you have to navigate back to the desktop of **Lab VM**, and click on the `installArcAgentLinux.txt` file to open it.
    
    > **Note:** If you see any pop-up like **An update package is available, do you want to download it?** click **no**
 
    ![](.././media/new/6.png)
+
+   > **Note:** If you see any pop-up, select **Notepad ++ (1)**, check the box for **Always use this app to open .txt files (2)** and click **OK (3)**.
+
+   ![](.././media/new/aq3.png)
 
 1. Then, **select the first 7 lines and, then right click and copy**. 
 
@@ -158,10 +134,25 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
     ![](.././media/variableazlogin.png "azlogin")
     
+1. Run the following commands:
+
+   ```
+   export MSFT_ARC_TEST=true
+   sudo systemctl set-environment MSFT_ARC_TEST=true
+   ```
+
+1. Run the following commands:
+
+   ```
+   sudo ufw --force enable
+   sudo ufw deny out from any to 169.254.169.254
+   sudo ufw default allow incoming
+   ```
+
 1. Now, to download the Azure Arc installation package for Linux, run the below command:
 
    ```
-   wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
+   wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
    ```
     
    ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
@@ -169,7 +160,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 1. Then, to install Azure Arc agent on the VM, run the below command:
 
    ```
-   bash ~/install_linux_azcmagent.sh
+   bash ~/Install_linux_azcmagent.sh
    ```
 
    ![](.././media/run-installation.png "Install Arc Agent")
@@ -230,6 +221,12 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
     ```
     
     >**Note:** If you face any exceptions while updating the CLI version, please rerun the command again.
+
+1. Run the below command to install **connectedk8s** extension.
+
+    ```
+    az extension add --name connectedk8s
+    ```
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
 
