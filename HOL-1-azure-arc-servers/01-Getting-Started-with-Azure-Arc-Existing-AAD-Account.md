@@ -288,6 +288,10 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
    ```
     
+   ```
+   az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location --skip-ssl-verification
+   ```
+
    ![](.././media/arc9.png "Connect Kubernetes")
 
     > **Note:** This may take around `5 to 10 minutes` to complete, please wait until it is completed.   
@@ -370,6 +374,8 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/new/q4a.png)
     
+    > **Note:** If you are not able to see the checkbox, wait for few seconds.  
+
 1. On **Managed identity** blade, click on **Next**.
 
     ![](.././media/new/q5.png)
@@ -382,13 +388,16 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/new/q7.png)
     
-1. Now, once the policy assignment is created, click on **Refresh (1)** to see the assigned policy in the **Non complaint (2)** state. 
+1. Now, once the policy assignment is created, click on **Refresh (1)** to see the assigned policy in the **Not started (2)** state or **Non complaint (2)**. 
+
+    ![](.././media/new/aq5.png)
 
     ![](.././media/new/q9.png)
 
 1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
-    ![](.././media/hyd8.png)   
+    ![](.././media/hyd8.png)
+
     >**Note:** It may take 20–30 minutes for the compliance status to be reflected after the Log Analytics Agent is deployed on the ubuntu-k8s VM. You can continue with the next task and check the compliance state later. Once the Log Analytics Agent shows as Compliant, click **Validate** below.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
@@ -425,11 +434,23 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
     ![](.././media/new/y6a.png)
 
+1. And click on **Enable**.
+
+    ![](.././media/new/aq6.png)
+
+1. Wait for the Onboarding process to complete.
+
+    ![](.././media/new/aq7.png)
+
 1. From the top menu bar, click on **Metrics based visualizations (Preview)** and select **Log based visualizations (Classic)**.
 
     ![](.././media/new/y3.png)
 
+    >**Note:** Refresh the page, if you are not able to see **Metrics based visualizations (Preview)**.
+
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the graphical representation of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
+
+    ![](.././media/new/aq8.png)
 
     ![](.././media/new/y4.png)
 
