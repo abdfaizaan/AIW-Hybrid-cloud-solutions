@@ -120,15 +120,15 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    ![](images/arc63.png "Confirm")
   
-1. Now, select the **Azure SQL Managed Instance - azure arc** and click on **Select** at the bottom of the page.
+1. Now, select the **Azure SQL Managed Instance - azure arc (1)** and click on **Select (2)** at the bottom of the page.
 
-   ![](./images/15-05-2024(4).png "Azure Data Studio")
+   ![](./images/1.png "Azure Data Studio")
    
 1. On the next page that opens, read the Microsoft Privacy statement, and then click on the **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through them.
 
    > **Note:** You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc-enabled Azure SQL Managed Instance. You don't have to worry about the installation of any of those tools because we have already installed the required tools for you.
 
-   ![](images/deploybsnnext.png "Confirm")
+   ![](images/2.png "Confirm")
 
 1. In the deploy **Azure SQL Managed Instance - Azure Arc blade**, enter the following information:
 
@@ -144,7 +144,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     
     - **Confirm Password:** Enter **Password.1!! (5)**    
 
-      ![](images/hybrid74.png "Confirm")
+      ![](./images/3.png "Confirm")
       
    **Under SQL Instance Settings**
    
@@ -176,21 +176,21 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     
     - **Memory Limit:** Enter ```4``` 
      
-      ![](images/devbus.png "Confirm")
+      ![](./images/4.png "Confirm")
 
-      ![](images/deploysqlm.png "Confirm") 
+      ![](./images/5.png "Confirm") 
 
 1. Leave the other things to default and click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
    
-1. If prompted, select **New Python installation** and click on **Next** button.
+1. If prompted, select **New Python installation (1)** and click on **Next (2)** button.
 
    > **Note:** If you are not prompted with the below screen, you can skip to step 10.
 
-   ![](images/configure-python-runtime.png)
+   ![](images/6.png)
   
 1. On the Install Dependencies tab, click on **Install**.
 
-   ![](images/install-dependencies.png)
+   ![](images/7.png)
      
 1. After clicking on Install, a Notebook will open up and the cell execution will start automatically to deploy the **SQL Managed Instance**. Once the deployment is complete, you will see the text **arcsql-Indir is Ready** at the bottom of the notebook as shown in the screenshot. The deployment of **Azure SQL Managed instance - Azure Arc** will take around 5-10 minutes to complete. During this time, you can explore the commands in the notebook.
 
@@ -245,7 +245,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
     - Leave the other values as default.
     - Then click on **Connect (7)**
   
-    ![](./media/HOL23-Ex8.png)
+    ![](images/8.png)
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**
 
@@ -352,27 +352,27 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    
 1. Now, to view your logs in the Azure portal, open the Azure portal and then search for your **Log Analytics workspace** by name in the search bar at the top and then select it.
 
-1. In the **Log Analytics workspaces** page, select your workspace **LoganalyticsWS-Direct**.
+1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
    
-    ![](images/arc701.png "Confirm")
+    ![](images/9.png "Confirm")
 
 1. Then, from the left navigation menu select **Logs (1)**, then click on the ``X`` **(2)** at the top right corner as shown in the below image.
 
     ![](images/hybrid77.png "Confirm")
    
-1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
+1. And then, click on ```tables``` icon to expand the Schema and Filter tab.
 
-    ![](images/ex4-t6-closepopup-log1.png "Confirm")
+    ![](images/10.png "Confirm")
 
 1. Then, check if CustomLogs is there under the Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
      
 1. Once the Custom logs are available, expand Custom Logs **(1)** at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL (2)** select it.
    
-    ![](media/hybrid78.png "Confirm")
+    ![](images/11.png "Confirm")
 
 1. Now, you will have a query in the query editor. Change the mode to **KQL mode (1)**. Run the query that will show the logs by clicking on **Run** **(2)** button and explore the **Results**. 
    
-    ![](images/arc71.png "Confirm")
+    ![](./images/12.png "Confirm")
 
     > **Note:** You might have to resize the editor to view the logs from the output window.
 
