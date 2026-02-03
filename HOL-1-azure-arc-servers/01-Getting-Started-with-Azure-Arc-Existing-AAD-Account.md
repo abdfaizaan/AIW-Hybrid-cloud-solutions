@@ -216,7 +216,6 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 1. Next, you have to run the below command to ensure the Azure CLI version and custom location extension for Az CLI are the latest.
 
     ```
-    az upgrade -y
     az extension add --name customlocation
     ```
     
@@ -254,27 +253,8 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
      microk8s start
      ```
      > **Note:** This command takes a while to execuite, please wait until it executes successfully.
-     >**Note:** In case if you still see the **microk8s is in not running state**,  please run the below command to refresh the certificates and then again run the `microk8s.status` command.
-
-     ```
-     microk8s refresh-certs
-     ```
 
      ![](.././media/k8s-status-running.png "check cluster cluster")
-
-1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
-
-     > **Info:** A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl command-line tool (or other clients).
-
-   ```
-   cd $HOME
-   mkdir .kube
-   cd .kube
-   microk8s config > config
-   cd ..
-   ```
-
-   ![](.././media/arc8.png "kube") 
 
 1. Run the following command to log in to the Azure portal again.   
 
@@ -287,11 +267,6 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ```
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
    ```
-    
-   ```
-   az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location --skip-ssl-verification
-   ```
-
    ![](.././media/arc9.png "Connect Kubernetes")
 
     > **Note:** This may take around `5 to 10 minutes` to complete, please wait until it is completed.   
