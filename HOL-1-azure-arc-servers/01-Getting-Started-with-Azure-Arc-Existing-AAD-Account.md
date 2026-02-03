@@ -373,6 +373,8 @@ In this task, a policy assignment will be created and applied to the ubuntu-k8s 
 
     Once the policy engine starts evaluation, it will trigger remediation to deploy the Azure Monitor Agent (Log Analytics Agent) on the ubuntu-k8s Hyper-V guest VM. After the agent is successfully installed and evaluated, the compliance state will automatically change to Compliant.
 
+    ![](.././media/new/aa6.png)
+
     >**Note:** This process can take approximately 20–30 minutes. You may proceed to the next task.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
