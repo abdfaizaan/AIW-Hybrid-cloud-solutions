@@ -105,13 +105,6 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
         ![](.././media/new/aq2.png)
 
- 1. Run the below to to install **pip**.  
-
-     ```
-     apt-get install python3-pip
-     ```
-    > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**.
-    
 1. Open a new Putty session, re-perform the steps from **Step 2** to **Step 5** of the same task to get the upgraded packages and then continue from  **Step 8**.
     
 1. Next, you have to navigate back to the desktop of **Lab VM**, and click on the `installArcAgentLinux.txt` file to open it.
