@@ -130,7 +130,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Select **East US (1)** under **Save workbook to..** pop-up and click on **Yes (2)**
 
-      ![](.././media/new-save-note.png)
+      ![](.././media/new/aa4.png)
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
@@ -151,13 +151,13 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around the Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
-      ![](.././media/hybrid26.png)
+      ![](.././media/new/aa5.png)
     
       > **Note**: The data might take around 30 mins to get populated.
 
 1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
-      > **Note**: The data might take around 30 mins to get populated.
+      > **Note**: The data might take time to get populated. You can continue with next steps.
 
       ```
       VMProcess 
