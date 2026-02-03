@@ -307,7 +307,7 @@ Now, let us verify if the Kubernetes cluster is connected to Azure Arc and is in
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
 
-Policies can be applied to Arc-enabled servers in the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices, such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant, such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a published policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using a  policy on the ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
+In this task, a policy assignment will be created and applied to the ubuntu-k8s Arc-enabled server to ensure that the Azure Monitor Agent (AMA) is automatically installed and configured through Azure Policy. This allows Azure to continuously evaluate the machine’s compliance state and remediate configuration drift.
 
 1. From the **Azure Portal**, search for **Azure Arc (1)** in the search box and select **Azure Arc (2)** from the services. 
 
@@ -369,11 +369,11 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 
     ![](.././media/new/q9.png)
 
-1. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
+1. After the policy assignment is created, the policy will appear in the list with the Compliance state as Not started. This indicates that Azure Policy evaluation and remediation have not yet begun.
 
-    ![](.././media/hyd8.png)
+    Once the policy engine starts evaluation, it will trigger remediation to deploy the Azure Monitor Agent (Log Analytics Agent) on the ubuntu-k8s Hyper-V guest VM. After the agent is successfully installed and evaluated, the compliance state will automatically change to Compliant.
 
-    >**Note:** It may take 20–30 minutes for the compliance status to be reflected after the Log Analytics Agent is deployed on the ubuntu-k8s VM. You can continue with the next task and check the compliance state later. Once the Log Analytics Agent shows as Compliant, click **Validate** below.
+    >**Note:** This process can take approximately 20–30 minutes. You may proceed to the next task.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
@@ -382,8 +382,6 @@ Policies can be applied to Arc-enabled servers in the same way they are applied 
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
  
 <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
-
->**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
 
 ## Task 6: Monitor Arc-enabled machines with Azure Monitor
 
