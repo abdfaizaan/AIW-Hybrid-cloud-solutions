@@ -27,8 +27,14 @@ You can connect your non-Azure computers in any of the following ways:
 
 1. On the **Upgrade (1)** tab, scroll down and then **check on all the checkboxes (2)** and click on **Upgrade (3)**.
 
-   ![](.././media/new/w1.png)
+   ![](.././media/new/aa1.png)
    
+   > **Note**: If you are unable see Log Analytics, wait for few seconds.
+
+1. From the top, click on **Microsoft Defender for Cloud | Overview**.
+
+   ![](.././media/new/aa2.png)
+
 1. On the **Overview** page, select **Azure subscription.**
    
    ![](.././media/hybrid15.png)
@@ -83,7 +89,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
   and then click on the **Add (2)** button.
 
-      ![](.././media/new/w4.png)
+      ![](.././media/new/aa3.png)
       
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
@@ -102,6 +108,8 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 1. Expand **Content management (1)**, click on the **Content hub (2)** and click on the **Click here to go to the Defender portal (3)**.
 
       ![](.././media/new/w7.png)
+
+      >**Note:** If the option is not visible, click on any other tab and again click on **Content hub**.
 
 1. In the **Microsoft Defender** portal, go to **Microsoft Sentinel (1)** > **Content management (2)** > **Content hub (3)**.
 
