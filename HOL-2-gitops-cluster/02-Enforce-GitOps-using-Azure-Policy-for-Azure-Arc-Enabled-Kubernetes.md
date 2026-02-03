@@ -87,15 +87,15 @@ In this task, you will select an existing policy definition and create a policy 
 
     - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
      
-       ![](.././media/hybrid72.png)
+       ![](.././media/ny-1.png)
   
 1. Select the **Create a remediation task (1)** check box and then click **Review + create (2)**, skip the Non-compliance messages.
 
-    ![](.././media/arc73.png)
+    ![](.././media/ny-2.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
-    ![](.././media/arc74.png)
+    ![](.././media/ny-3.png)
 
 1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc** Resource group -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
 
