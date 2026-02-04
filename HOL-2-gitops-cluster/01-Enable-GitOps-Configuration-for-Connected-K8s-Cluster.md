@@ -79,24 +79,6 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    demo@pass123
    ```
     
- 1. Run the below commands to upgrade the az packages and az module. 
-   
-      ```
-      apt update -y
-      apt install curl -y
-      apt install pip
-      curl -sS https://bootstrap.pypa.io/pip/3.8/get-pip.py -o get-pip.py
-      python3 get-pip.py
-      # Upgrade pip globally (for current Python version, e.g., 3.8+)
-      python3 -m pip install --upgrade pip      
-      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.8/site-packages/
-      python3 -m pip install azure-common
-      az upgrade --yes
-      init 6 #TO restart
-      ```
-
-1. Open a new **Putty** session, re-perform the steps from **Step 2 - Step 6** of the this task and then continue from **Step 9**.
-
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
 
    ![](.././media/new/a5.png)
