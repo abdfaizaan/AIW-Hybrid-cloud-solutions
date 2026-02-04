@@ -249,6 +249,65 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
      ![](.././media/k8s-status-running.png "check cluster cluster")
 
+1. Run the following commands one by one and press **Enter** in any prompt about Country or state.
+
+   ```
+   mkdir cadir
+   ```
+
+   ```
+   openssl genrsa -out cadir/ca.key 2048
+   ```
+
+   ```
+   openssl req -x509 -new -nodes \
+     -key cadir/ca.key \
+     -sha256 -days 360 \
+     -out cadir/ca.crt \
+     -addext "keyUsage=critical,digitalSignature,keyCertSign"
+   ```
+
+   ![](.././media/new/as1.png)
+
+1. Execute the following commands one by one to refresh the microk8s certificates.
+
+   ```
+   microk8s refresh-certs cadir
+   ```
+
+   ```
+   microk8s stop
+   microk8s start
+   ```
+
+   ![](.././media/new/as3.png)
+
+1. Now execute the following commands one by one.
+
+   ```
+   sudo microk8s config > new-config.yaml
+   ```
+
+   ```
+   mkdir -p ~/.kube
+   cp new-config.yaml ~/.kube/config
+   ```
+
+   ```
+   kubectl get nodes
+   ```
+
+   ```
+   az aks install-cli
+   ```
+
+   ```
+   az extension remove -n connectedk8s
+   az extension add -n connectedk8s
+   ```
+
+   ![](.././media/new/as4a.png)
+
 1. Run the following command to log in to the Azure portal again.   
 
    ```
@@ -260,13 +319,14 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
    ```
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
    ```
+   
    ![](.././media/arc9.png "Connect Kubernetes")
 
     > **Note:** This may take around `5 to 10 minutes` to complete, please wait until it is completed.   
   
-1. Once the previous command is executed successfully, the **provisioning state** in the output will show as succeeded.
+1. Once the previous command is executed successfully, the **provisioning state** in the output will show as **Succeeded**.
 
-   ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
+   ![](.././media/new/as2.png)    
 
 ## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
 
