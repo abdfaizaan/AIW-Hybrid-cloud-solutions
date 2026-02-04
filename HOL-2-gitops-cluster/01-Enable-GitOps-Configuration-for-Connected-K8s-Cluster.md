@@ -160,6 +160,10 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
     > sudo snap refresh microk8s --channel=1.30/stable
     > ``` 
 
+1. Once the previous command is executed successfully, the provisioning state in the output will show as **Succeeded**.
+
+    ![](.././media/new/as5.png)
+
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
    ```
@@ -168,7 +172,7 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
 
     >**Note:** Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.
 
-1. Replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in Putty:
+1. Once the previous command is executed successfully, the compliance state in the output will show as **Pending**:
    
     ![](.././media/cs.png) 
    
@@ -196,7 +200,7 @@ Now you will verify that the Kubernetes resources (like namespaces, deployments,
    kubectl get ns --show-labels
    ```
  
-   The output shows that `team-a, team-b, gitops, and cluster-config` namespaces have been created as shown:
+   The output shows that `team-a, team-b, and cluster-config` namespaces have been created as shown:
   
    ![](.././media/arc35.png)
    
