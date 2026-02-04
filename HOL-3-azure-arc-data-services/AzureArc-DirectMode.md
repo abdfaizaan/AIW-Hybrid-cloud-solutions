@@ -123,9 +123,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
    > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details. `This can take up to 5 minutes to complete`. 
 
-1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
+1. Once the previous command is executed successfully, the provisioning state in output will show as **Succeeded**.
    
-   ![](media/provisionstate.png)
+   ![](media/new/5.png)
 
 1. Verify whether the Azure Arc-enabled Kubernetes cluster is onboarded and connected to the resource group in the Azure subscription by running the following command:
 
@@ -133,7 +133,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    az connectedk8s list -g azure-arc -o table
    ```  
   
-    ![](media/list-table.png)
+    ![](media/new/6.png)
 
      >**Note:** If you encounter the following error, run the commands below to complete the Azure CLI installation process, and then try executing the previous command again.
     
@@ -141,6 +141,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     az extension update --name connectedk8s
     ```
     ![](.././media/3.png)
+
    > **Note:** if you get a warning as below, kinldy run `choco install azure-cli -y` and continue udpating the az cli version and retry the above step by opening a new powershell terminal. This installation might take 5-7 mins.    
    >    ![](.././media/az-upgrade.png)
    
@@ -154,12 +155,14 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
    The output should be similar to as shown below:    
   
-   ![](media/deploy-pods.png)
+   ![](media/new/8.png)
 
-1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernetes Azure Arc**.
+1. Navigate to **azure-arc** resource group. Click on **Arc-Data-Demo-DirectMode** of the resource type **Kubernetes - Azure Arc**.
 
-   ![](media/hybrid59.png)
+   ![](media/new/7.png)
      
+1. You can see the status as **Connected**.
+
    ![](media/hybrid60.png)
 
 ## Task 3: Create a custom location on the Azure Arc-enabled Kubernetes cluster
@@ -174,7 +177,7 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
      
     The output should be similar to as shown below:**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
    
-    ![](media/hybrid61.png)   
+    ![](media/new/9.png)
         
    > **Note:** The Custom Locations feature is dependent on the Cluster Connect feature. So, both features have to be enabled for custom locations to work. Also, az connectedk8s enable features need to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
     
@@ -190,9 +193,9 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
    
     ![](media/extension-output.png)
 
-1. To verify the extension installation, switch back to the Azure Portal in the browser search for **Kubernetes - Azure Arc** and select your cluster.
+1. To verify the extension installation, navigate back to azure-arc resource group, in the search bar, search for **Kubernetes - Azure Arc (1)** and select **Arc-Data-Demo-DirectMode (2)**.
    
-    ![](media/hybrid62.png)
+    ![](media/new/10.png)
    
 1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
    
