@@ -308,12 +308,6 @@ We have onboarded the Linux VM to Azure Arc and verified it in task 2. Now, you 
 
    ![](.././media/new/as4a.png)
 
-1. Run the following command to log in to the Azure portal again.   
-
-   ```
-   az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
-   ```
-
 1. Now, you will connect the **Kubernetes cluster to Azure Arc** by executing the below command. This command will take a few minutes to onboard the Kubernetes cluster to Azure Arc.
 
    ```
