@@ -28,11 +28,15 @@ In this task, you will enable Azure Monitor for your Azure Arc-enabled Kubernete
 
    ![](.././media/new/e10.png)
 
-1. On the Configure Container insights blade, scroll down to the bottom and click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false" />(2)** from the dropdown, from cost oresets dropdown select **Standard (2)**  and click on **Configure (3)**.
+1. From the bottom, click on **Review + enable**.
 
-   ![](.././media/hybrid73.png "azuremonitor")
+   ![](.././media/new/ss2.png)
 
-1. You will be able to see the insights data after `30-60 minutes`. For now, you can continue with the next HOL and come back later to review the insights.
+1. Then click on **Enable**.
+
+   ![](.././media/new/ss3.png)
+
+1. You will be able to see the insights data after `30-60 minutes`. For now, you can continue with the next **HOL** and come back later to review the insights.
 
 1. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours (1)**. Click on **Cluster (2)** and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
 
@@ -52,6 +56,6 @@ In this task, you will enable Azure Monitor for your Azure Arc-enabled Kubernete
 
 In this exercise, you configured Azure Monitor for containers to track performance and gain insights for an Azure Arc-enabled Kubernetes resource, enabling enhanced monitoring and visibility.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
  ![](.././media/arcg6.png)
