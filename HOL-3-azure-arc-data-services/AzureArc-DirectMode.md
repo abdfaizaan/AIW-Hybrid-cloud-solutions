@@ -21,10 +21,12 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will connect a running Azure Kubernetes Service (AKS) cluster to Azure using Azure Arc. You’ll log in to Azure, install and update required CLI extensions, register necessary resource providers, and run the onboarding command to register the Kubernetes cluster with Azure Arc.
 
-1. Open **Windows PowerShell** by double-clicking on the **Windows PowerShell** icon from the desktop of your ARCHOST VM and run the below command to log in to Azure.
+1. Open **Windows PowerShell** by double-clicking on the **Windows PowerShell** icon from the desktop of your ARCHOST VM
 
-    ![](././media/windpwsh.png)
+    ![](././media/new/1.png)
     
+1. Run the below command to log in to Azure.
+
     ```
     az login
     ```
@@ -48,7 +50,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
 
 1. After adding the credentials, you will see that you have logged into Microsoft Azure.
 
-    ![](media/login-success.png)
+    ![](media/new/4.png)
 
 1. Now switch back to Windows PowerShell and you will be able to see that you have logged in to Azure.
 
@@ -87,7 +89,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az version
    ```
    
-   ![](media/arc40.png)
+   ![](media/new/2.png)
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
@@ -99,7 +101,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az provider register --namespace Microsoft.ExtendedLocation
    ```
    
-   ![](media/register-provider.png)
+   ![](media/new/3.png)
    
 ## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
