@@ -546,9 +546,9 @@ Now, let us connect to the data controller using Azure Data Studio.
     pip install regex
     ```
     
-5. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
+5. Right-click on the **arcdc-direct (1)** Azure Arc Controller and select **Manage (2)**.
   
-    ![](./media/ads-direct-manage.png)
+    ![](./media/new/q6.png)
 
 6. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller
 
