@@ -191,15 +191,15 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
 1. After running the above command you will notice that the **Provisioning State** is **Succeeded**. If it is pending, it is because the extension may take a few minutes to complete the installation.
    
-    ![](media/extension-output.png)
+    ![](media/new/12.png)
 
 1. To verify the extension installation, navigate back to azure-arc resource group, in the search bar, search for **Kubernetes - Azure Arc (1)** and select **Arc-Data-Demo-DirectMode (2)**.
    
     ![](media/new/10.png)
    
-1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
+1. From the left navigation, expand **Settings (1)**, select **Extension (2)** and check if the Install status is **Succeeded (3)** or not. If it is not, please refresh after some time and then check.
    
-    ![](media/hybrid63.png)
+    ![](media/new/11.png)
 
 1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster-ID in the later steps while creating the custom location.
 
@@ -241,11 +241,11 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
       
 1. After selecting the custom locations from the search bar, select your **azurearc-nyc-location**.
 
-    ![](./media/arc43.png)
+    ![](media/new/13.png)
      
 1. Explore the overview section. You can see the namespace and Kubernetes cluster details on the overview page.
   
-    ![](./media/hybrid64.png)
+    ![](media/new/14.png)
 
 1. Now search for the **Log Analytics workspace (1)** in the Azure portal and select **Log Analytics workspace (2)**.
      
@@ -257,13 +257,17 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
 1. From the **Overview** page, copy the Worspace id in a notepad file for later use while creating the Azure arc data controller.
 
-    ![](./media/loganal.png)
+    ![](media/new/15.png)
 
-1. Open CloudShell from the Azure portal.
+1. Open **CloudShell** from the Azure portal.
 
-   ![](./media/cloudsell.png)
+   ![](media/new/q1.png)
 
-1. Select Powershell. If you are opening CloudShell for the first time, it will prompt you to select a storage account. Select **No storage account required** and choose the **default subscription**.Click on **Apply**
+1. Click on **Powershell (1)**, then select **No storage account required (2)** and choose the **default subscription (3)**.Click on **Apply (4)**
+
+   ![](media/new/q2a.png)
+
+   ![](media/new/q3a.png)
 
 1. Now, in the powershell window, paste the following command
    
@@ -281,7 +285,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
 1. From the Azure Portal, search for **Azure arc data controllers (1)** from the search box and then select **Azure arc data controllers (2)**.  
 
-    ![](./media/arc46.png)
+    ![](media/new/q4.png)
 
 1. After selecting the Azure Arc data controller, click on the **+ Create** button to deploy ```Azure arc data controller```.
 
@@ -317,7 +321,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
    
    Under the Metrics and Logs Dashboard Credentials enter the below details.
 
-   * Data controller login: **arcuser (3)**
+   * Username: **arcuser (3)**
 
    * Password: **Password.1!! (4)**
 
@@ -339,7 +343,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
     > **Note:** The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
   
-    ![](./media/review-dc-direct.png)
+    ![](./media/new/q5.png)
    
 1. Once the deployment is completed, click on the **Go to resource group** button.
  
