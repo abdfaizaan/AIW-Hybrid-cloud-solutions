@@ -18,7 +18,6 @@ Azure Arc provides a unified management and governance solution for applications
 - **Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster:** Configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
 - **Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQL Managed Instance Business Critical:** Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI, and later you will be creating the Azure Arc-enabled SQL Managed Instance Business Critical on top of the Azure Arc Data Controller. In the short term, you will be preparing an infrastructure for the next exercise to restore the Databases into the Azure SQL Managed Instance.
 - **Restoring an AdventureWorks database backup taken from a SQL Server 2012 instance:** Restore the AdventureWorks2012 database into an Azure Arc-enabled SQL managed instance using kubectl, then view the instance logs in the Azure portal, and finally monitor the instance using Azure Data Studio.
-- **Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQL Managed Instance Business Critical in Indirect connectivity mode:** Connect to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio. We will also create an Azure Arc-enabled SQL Managed Instance Business Critical on top of an Azure Arc Data Controller with indirect connectivity mode.
 
 ## Prerequisites
 
@@ -36,7 +35,7 @@ In the Azure Arc architecture, **Azure Arc** enables unified management for Cont
 
 ## Architecture Diagram
 
-![Architecture](.././media/architecture12.png)
+![Architecture](.././media/new/arch.png)
 
 ## Explanation of Components
 
@@ -117,32 +116,6 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 4. If you see the pop-up **Stay Signed in?**, click **No**.
 
    ![](.././media/new/stay.png)
-
-## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
-
-1. At the **"More information required"** prompt, select **Next**.
-
-1. On the **"Keep your account secure"** page, select **Next** twice.
-
-1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-1. A **QR code** will be displayed on your computer screen.
-
-1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-1. After scanning, click **Next** to proceed.
-
-1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
- 
-1. If you see the pop-up **Stay Signed in?**, click **No**.
-
-   ![](.././media/new/stay.png)
-
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
 ## Support Contact
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.

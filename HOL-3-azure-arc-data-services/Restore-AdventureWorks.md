@@ -105,8 +105,9 @@ In this task, you will use the Azure Portal to access your Log Analytics workspa
     > Note: You might have to resize the editor to view the logs from the output window.
 
 ## Summary
+
 In this exercise, you restored the AdventureWorks database into an Azure Arc-enabled SQL Managed Instance, viewed SQL instance logs in the Azure portal.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the lab.
 
- ![](.././media/arcg6.png)
+By completing this lab, you gained hands-on experience with Azure Arc to extend Azure management, security, and data services to hybrid and multicloud environments. You onboarded servers and SQL instances to Arc for centralized monitoring and governance, integrated Microsoft Defender for Cloud and Microsoft Sentinel for enhanced security, and enabled Azure Automanage for streamlined VM lifecycle management. You also implemented GitOps configurations on Azure Arc-enabled Kubernetes clusters, enforced compliance using Azure Policy, and configured Azure Monitor for container insights. Finally, you deployed Azure Arc Data Controllers and SQL Managed Instance in direct connectivity mode, restored databases, and validated management capabilities using Azure Data Studio. This end-to-end exercise demonstrated how to build, secure, and operate a hybrid cloud solution consistently across on-premises, edge, and multicloud infrastructures.
