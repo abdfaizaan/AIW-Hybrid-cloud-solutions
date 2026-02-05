@@ -79,24 +79,6 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
    demo@pass123
    ```
     
- 1. Run the below commands to upgrade the az packages and az module. 
-   
-      ```
-      apt update -y
-      apt install curl -y
-      apt install pip
-      curl -sS https://bootstrap.pypa.io/pip/3.8/get-pip.py -o get-pip.py
-      python3 get-pip.py
-      # Upgrade pip globally (for current Python version, e.g., 3.8+)
-      python3 -m pip install --upgrade pip      
-      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.8/site-packages/
-      python3 -m pip install azure-common
-      az upgrade --yes
-      init 6 #TO restart
-      ```
-
-1. Open a new **Putty** session, re-perform the steps from **Step 2 - Step 6** of the this task and then continue from **Step 9**.
-
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
 
    ![](.././media/new/a5.png)
@@ -160,6 +142,10 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
     > sudo snap refresh microk8s --channel=1.30/stable
     > ``` 
 
+1. Once the previous command is executed successfully, the provisioning state in the output will show as **Succeeded**.
+
+    ![](.././media/new/as5.png)
+
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
    ```
@@ -168,7 +154,7 @@ Here, you will log into the ubuntu-k8s VM and configure it using Azure CLI. You 
 
     >**Note:** Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.
 
-1. Replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in Putty:
+1. Once the previous command is executed successfully, the compliance state in the output will show as **Pending**:
    
     ![](.././media/cs.png) 
    
@@ -196,7 +182,7 @@ Now you will verify that the Kubernetes resources (like namespaces, deployments,
    kubectl get ns --show-labels
    ```
  
-   The output shows that `team-a, team-b, gitops, and cluster-config` namespaces have been created as shown:
+   The output shows that `team-a, team-b, and cluster-config` namespaces have been created as shown:
   
    ![](.././media/arc35.png)
    
@@ -210,6 +196,6 @@ Now you will verify that the Kubernetes resources (like namespaces, deployments,
 
 In this exercise, you deployed a sample Kubernetes app using the az k8sconfiguration command and GitOps. You then updated the linked repository configuration and verified that the connected Kubernetes cluster applied the updates automatically based on the changes made.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
  ![](.././media/arcg6.png)

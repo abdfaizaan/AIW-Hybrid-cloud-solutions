@@ -21,10 +21,12 @@ In this exercise, you will be performing the following tasks:
 
 In this task, you will connect a running Azure Kubernetes Service (AKS) cluster to Azure using Azure Arc. You’ll log in to Azure, install and update required CLI extensions, register necessary resource providers, and run the onboarding command to register the Kubernetes cluster with Azure Arc.
 
-1. Open **Windows PowerShell** by double-clicking on the **Windows PowerShell** icon from the desktop of your ARCHOST VM and run the below command to log in to Azure.
+1. Open **Windows PowerShell** by double-clicking on the **Windows PowerShell** icon from the desktop of your ARCHOST VM
 
-    ![](././media/windpwsh.png)
+    ![](././media/new/1.png)
     
+1. Run the below command to log in to Azure.
+
     ```
     az login
     ```
@@ -48,7 +50,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
 
 1. After adding the credentials, you will see that you have logged into Microsoft Azure.
 
-    ![](media/login-success.png)
+    ![](media/new/4.png)
 
 1. Now switch back to Windows PowerShell and you will be able to see that you have logged in to Azure.
 
@@ -87,7 +89,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az version
    ```
    
-   ![](media/arc40.png)
+   ![](media/new/2.png)
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
@@ -99,7 +101,7 @@ In this task, you will connect a running Azure Kubernetes Service (AKS) cluster 
    az provider register --namespace Microsoft.ExtendedLocation
    ```
    
-   ![](media/register-provider.png)
+   ![](media/new/3.png)
    
 ## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
@@ -121,9 +123,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
    > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details. `This can take up to 5 minutes to complete`. 
 
-1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
+1. Once the previous command is executed successfully, the provisioning state in output will show as **Succeeded**.
    
-   ![](media/provisionstate.png)
+   ![](media/new/5.png)
 
 1. Verify whether the Azure Arc-enabled Kubernetes cluster is onboarded and connected to the resource group in the Azure subscription by running the following command:
 
@@ -131,7 +133,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    az connectedk8s list -g azure-arc -o table
    ```  
   
-    ![](media/list-table.png)
+    ![](media/new/6.png)
 
      >**Note:** If you encounter the following error, run the commands below to complete the Azure CLI installation process, and then try executing the previous command again.
     
@@ -139,6 +141,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     az extension update --name connectedk8s
     ```
     ![](.././media/3.png)
+
    > **Note:** if you get a warning as below, kinldy run `choco install azure-cli -y` and continue udpating the az cli version and retry the above step by opening a new powershell terminal. This installation might take 5-7 mins.    
    >    ![](.././media/az-upgrade.png)
    
@@ -152,12 +155,14 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
    The output should be similar to as shown below:    
   
-   ![](media/deploy-pods.png)
+   ![](media/new/8.png)
 
-1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type **Kubernetes Azure Arc**.
+1. Navigate to **azure-arc** resource group. Click on **Arc-Data-Demo-DirectMode** of the resource type **Kubernetes - Azure Arc**.
 
-   ![](media/hybrid59.png)
+   ![](media/new/7.png)
      
+1. You can see the status as **Connected**.
+
    ![](media/hybrid60.png)
 
 ## Task 3: Create a custom location on the Azure Arc-enabled Kubernetes cluster
@@ -172,7 +177,7 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
      
     The output should be similar to as shown below:**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
    
-    ![](media/hybrid61.png)   
+    ![](media/new/9.png)
         
    > **Note:** The Custom Locations feature is dependent on the Cluster Connect feature. So, both features have to be enabled for custom locations to work. Also, az connectedk8s enable features need to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
     
@@ -186,15 +191,15 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
 1. After running the above command you will notice that the **Provisioning State** is **Succeeded**. If it is pending, it is because the extension may take a few minutes to complete the installation.
    
-    ![](media/extension-output.png)
+    ![](media/new/12.png)
 
-1. To verify the extension installation, switch back to the Azure Portal in the browser search for **Kubernetes - Azure Arc** and select your cluster.
+1. To verify the extension installation, navigate back to azure-arc resource group, in the search bar, search for **Kubernetes - Azure Arc (1)** and select **Arc-Data-Demo-DirectMode (2)**.
    
-    ![](media/hybrid62.png)
+    ![](media/new/10.png)
    
-1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
+1. From the left navigation, expand **Settings (1)**, select **Extension (2)** and check if the Install status is **Succeeded (3)** or not. If it is not, please refresh after some time and then check.
    
-    ![](media/hybrid63.png)
+    ![](media/new/11.png)
 
 1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster-ID in the later steps while creating the custom location.
 
@@ -236,11 +241,11 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
       
 1. After selecting the custom locations from the search bar, select your **azurearc-nyc-location**.
 
-    ![](./media/arc43.png)
+    ![](media/new/13.png)
      
 1. Explore the overview section. You can see the namespace and Kubernetes cluster details on the overview page.
   
-    ![](./media/hybrid64.png)
+    ![](media/new/14.png)
 
 1. Now search for the **Log Analytics workspace (1)** in the Azure portal and select **Log Analytics workspace (2)**.
      
@@ -252,13 +257,17 @@ In this task, you will enable the necessary Arc features on the Kubernetes clust
 
 1. From the **Overview** page, copy the Worspace id in a notepad file for later use while creating the Azure arc data controller.
 
-    ![](./media/loganal.png)
+    ![](media/new/15.png)
 
-1. Open CloudShell from the Azure portal.
+1. Open **CloudShell** from the Azure portal.
 
-   ![](./media/cloudsell.png)
+   ![](media/new/q1.png)
 
-1. Select Powershell. If you are opening CloudShell for the first time, it will prompt you to select a storage account. Select **No storage account required** and choose the **default subscription**.Click on **Apply**
+1. Click on **Powershell (1)**, then select **No storage account required (2)** and choose the **default subscription (3)**.Click on **Apply (4)**
+
+   ![](media/new/q2a.png)
+
+   ![](media/new/q3a.png)
 
 1. Now, in the powershell window, paste the following command
    
@@ -276,7 +285,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
 1. From the Azure Portal, search for **Azure arc data controllers (1)** from the search box and then select **Azure arc data controllers (2)**.  
 
-    ![](./media/arc46.png)
+    ![](media/new/q4.png)
 
 1. After selecting the Azure Arc data controller, click on the **+ Create** button to deploy ```Azure arc data controller```.
 
@@ -312,7 +321,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
    
    Under the Metrics and Logs Dashboard Credentials enter the below details.
 
-   * Data controller login: **arcuser (3)**
+   * Username: **arcuser (3)**
 
    * Password: **Password.1!! (4)**
 
@@ -334,7 +343,7 @@ In this task, you will deploy an Azure Arc Data Controller to the custom locatio
 
     > **Note:** The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
   
-    ![](./media/review-dc-direct.png)
+    ![](./media/new/q5.png)
    
 1. Once the deployment is completed, click on the **Go to resource group** button.
  
@@ -537,9 +546,9 @@ Now, let us connect to the data controller using Azure Data Studio.
     pip install regex
     ```
     
-5. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
+5. Right-click on the **arcdc-direct (1)** Azure Arc Controller and select **Manage (2)**.
   
-    ![](./media/ads-direct-manage.png)
+    ![](./media/new/q6.png)
 
 6. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller
 

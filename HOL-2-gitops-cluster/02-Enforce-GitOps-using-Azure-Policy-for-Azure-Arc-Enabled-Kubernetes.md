@@ -34,11 +34,11 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. On the **Compliance** blade, click on **Assign policy**.
 
-    ![](.././media/policy-4.png)
+    ![](.././media/new/as6.png)
 
-1. On the Basics section, click on the ellipses (…) to the right of **Policy definition (1)**.
+1. On the Basics section, click on the **ellipses (…)** to the right of **Policy definition**.
 
-    ![](.././media/hybrid51.png)
+    ![](.././media/new/as7.png)
 
 1. In the **Search (1)** window for available definitions, type ```Configure Kubernetes clusters with specified GitOps configuration using no secrets (1)``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
@@ -48,7 +48,9 @@ In this task, you will select an existing policy definition and create a policy 
     
     ![](.././media/arc39.png)
 
-1. Click on **Parameters** blade.
+1. From the top, click on **Parameters** blade.
+
+    ![](.././media/new/as8.png)
 
 1. Provide the following details under the **Parameters** tab.
 
@@ -81,25 +83,23 @@ In this task, you will select an existing policy definition and create a policy 
       --git-readonly
       ```
 
-    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab. **Make sure to replace  **`Azure`** with your GitHubUsername**
+    - Repository URL: The forked repo name of `https://github.com/<username>/arc-k8s-demo` **(7)** that you are using for performing the lab. **Make sure to replace  **`<username>`** with your GitHubUsername**.
 
     - Set the **Enable helm** option to **false (8)**.
 
     - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
      
-       ![](.././media/ny-1.png)
+       ![](.././media/new/as9a.png)
   
-1. Select the **Create a remediation task (1)** check box and then click **Review + create (2)**, skip the Non-compliance messages.
+1. Select the **Create a remediation task (1)** check box and then click **Review + create (2)**.
 
-    ![](.././media/ny-2.png)
+    ![](.././media/new/as10.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
-    ![](.././media/ny-3.png)
+    ![](.././media/new/ss1.png)
 
-1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc** Resource group -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
-
-1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
+1. You can check if your cluster is **Compliant** or **not** against **Configure Kubernetes clusters with specified GitOps configuration using no secrets** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within **20 Minutes**, sometimes it can take more than that as well. 
 
      ![](.././media/gg-7-1.png)
      
@@ -118,6 +118,6 @@ You don't have to wait for the compliance state to change. You can move ahead to
 ## Summary 
 In this exercise, you used Azure Policy to enforce that specific GitOps configurations are applied to each Azure Arc-enabled Kubernetes cluster, ensuring consistent governance and compliance across the clusters.
 
-### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+### You have successfully completed the exercise. Click on **Next >>** from the bottom right corner to proceed with the next exercise.
 
  ![](.././media/arcg6.png)
