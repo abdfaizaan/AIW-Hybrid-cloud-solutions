@@ -416,51 +416,53 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
        
         ![](./media/arcbasiclicense.png)
        
-     - High availability: Select **1 replica (4)**
+     - High availability: Select **2 replicas (4)**
        
+     - Readable secondary replicas: Enter **1 (5)**
+
      - Instance Compute
        
-       - Memory Request (in Gi): Enter ```4``` **(5)**
+       - Memory Request (in Gi): Enter ```4``` **(6)**
    
-       - CPU vCores Request: Enter ```2``` **(6)**
+       - CPU vCores Request: Enter ```2``` **(7)**
   
-       - Memory Limit (in Gi): Enter ```4``` **(7)**
+       - Memory Limit (in Gi): Enter ```4``` **(8)**
          
-       - CPU vCores Limit: Enter ```2``` **(8)**
+       - CPU vCores Limit: Enter ```2``` **(9)**
          
-          ![](./media/arcr.png)
+          ![](./media/new/ss1.png)
          
      - Instance Storage
 
        - Data storage class: leave default
 
-       - Data volume size (in Gi): ```2 (9)```
+       - Data volume size (in Gi): ```2``` **(10)**
       
        - Data-logs storage class: leave ```default```
 
-       - Data-logs volume size (in Gi): ```1 (10)```
+       - Data-logs volume size (in Gi): ```1``` **(11)**
 
        - Logs storage class: Leave ```default```
 
-       - Logs volume size (in Gi): Enter ```1 (11)```
+       - Logs volume size (in Gi): Enter ```1``` **(12)**
 
        - Backup Storage class: leave ```default```
 
-       - Backups volume size (in Gi): ```1 (12)```
+       - Backups volume size (in Gi): ```1``` **(13)**
 
       >**Note:** In the above section the (Gi) is referring to the storage in Gigabytes.  
       
-    After adding all the above details, click on the **Apply (13)** button.  
+    After adding all the above details, click on the **Apply (14)** button.  
         
-      ![](./media/arc51.png)
+      ![](./media/new/ss2.png)
    
 1. Under the Administrator account, enter the below details:
 
-     - **Managed Instance admin login:**  Enter **arcsqluser (1)**
+     - **Managed Instance admin login:**  Enter `arcsqluser` **(1)**
    
-     - **Password:** Enter **Password.1!! (2)**
+     - **Password:** Enter `Password.1!!` **(2)**
      
-     - **Confirm Password:** Enter **Password.1!! (3)**
+     - **Confirm Password:** Enter `Password.1!!` **(3)**
 
    After adding all the required details, click on the **Review + Create (4)** button to review all details.
 
@@ -532,20 +534,6 @@ Now, let us connect to the data controller using Azure Data Studio.
    
     ![](./media/ads-direct-list.png)
 
-    >**Note:** If you face an error while connecting to the Azure Arc Data Controller, then run the following commands in Windows Powershell. If the `pip` is not recognized ignore and continue to connect the data controller.
-
-    ```
-    az extension remove --name arcdata
-    ```
-
-    ```
-    az extension add --name arcdata
-    ```
-
-    ```
-    pip install regex
-    ```
-    
 5. Right-click on the **arcdc-direct (1)** Azure Arc Controller and select **Manage (2)**.
   
     ![](./media/new/q6.png)
