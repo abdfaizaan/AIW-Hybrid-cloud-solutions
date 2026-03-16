@@ -93,7 +93,7 @@ Once you're ready to dive in, your virtual machine and lab guide will be right a
  
 Your virtual machine is your workhorse throughout the workshop. The **Guide** is your roadmap to success.
 
-![](./media/GettingStarted-0.png "Lab Environment")
+![](./media/Gettingstarted.png "Lab Environment")
  
 ### Exploring Your Lab Resources
  
@@ -125,7 +125,13 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
   
    ![](./media/azure-portal-edgea.png)
     
-1. Navigate to Azure Portal using the URL provided here: `https://portal.azure.com/`. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next (2)**. 
+1. Navigate to Azure Portal using the URL provided link
+
+   ```
+   https://portal.azure.com/
+   ``` 
+ 
+1. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username**, and then click on **Next (2)**. 
       
     - Email/Username: **<inject key="AzureAdUserEmail"></inject> (1)**
   

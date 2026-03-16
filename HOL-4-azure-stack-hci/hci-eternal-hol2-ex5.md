@@ -26,27 +26,23 @@ In this task, you will perform updates on the localboxcluster Azure Local resour
 
    ![](media/Ex3-1.png)
 
-2. In the Azure Local page, select **Updates (1)** under **Operations** from left menu.
+2. In the Azure Local page, select **Updates (1)** under **Operations** from left menu, click on **Install now (2)**.
 
-3. From the Updates pane, click on **One-time update (2)**.
-
-   ![](media/Ex4-5.png)
+   ![](media/E5T1S4.png)
 
 4. In the Install updates pane from Azure Update manager, verify the available updates and click on **Next**.
 
-   ![](media/ex5-3.png)
+   ![](media/ex5-3-1.png)
   
-5. Select the available updates to install and click on **Next**.
-
-   ![](media/Ex5-0.png)
-
 6. From the Review + install pane, review the selected updates and click on **Install**.
 
-   ![](media/Ex5-1.png)
+   ![](media/Ex5-1-1.png)
 
 7. You will see a notification that **Installation started on 1 Azure Local systems**. Also, you will be able to see the In-progress status from the Updates pane.
 
-   ![](media/hci24-16.1a.png)
+   ![](media/hci24-16.1a-1.png)
+
+    >**Note:** Sometimes it takes time to reflect the Status in the update manager
 
 8. Updating the Azure Local Cluster will take around 2 Hours. Once it's updated successfully, you will be able to see the status as **Up to date** and the update readiness as **Healthy** as shown in the screenshot below.
 

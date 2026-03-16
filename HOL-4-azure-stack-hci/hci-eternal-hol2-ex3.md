@@ -73,9 +73,13 @@ In this task, you will configure an Entra ID group to manage authentication and 
 
     ![](media/Ex3-3.png)
 
-1. In the **New Group** tab, enter the **Group name** as **aks-auth** **(1)**, click on the **No Owner Selected** **(2)** under **Owners**, from the search **(3)** and select **(4)** for user **ODL_User <inject key="DeploymentID"></inject>**, and click on **Select** **(5)**.
+1. In the **New Group** tab, enter the **Group name** as **aks-auth** **(1)**, click on the **No Owner Selected** **(2)** under **Owners**, from the search **(3)** and select **(4)** for user **<inject key="AzureAdUserEmail"></inject>**, and click on **Select** **(5)**.
 
     ![](media/createnewgroup.png)
+
+1. Click on the **No members Selected** **(1)** under **Members**, from the search **(2)** and select **(3)** for user **<inject key="AzureAdUserEmail"></inject>**, and click on **Select** **(4)**.
+
+   ![](media/E4T2S4.png)
 
 1. In the **New Group** tab, click on **Create** button.
 
@@ -85,9 +89,17 @@ In this task, you will configure an Entra ID group to manage authentication and 
 
 In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBAC authentication and network integration.
 
-1. In the Azure portal, click on the search blade at the top and search for **Azure Arc** and select **Kubernetes Clusters** under infrastructure from left side menu.
+1. In the Azure portal, click on the search blade at the top and search for **Azure Arc (1)** and select **Azure Arc (2)**
+
+   ![](media/E4T3S1-1.png)
+
+1. In the Azure Arc page, select **Kubernetes Clusters** under infrastructure from left side menu.
+
+   ![](media/E4T3S1.png)
 
 1. In the **Kubernetes Clusters** tab, click on **+ Add** **(1)** and from the drop-down select **Create a Kubernetes cluster**.
+
+   ![](media/E4T3S3.png)
 
 1. In the **Create a Kubernetes cluster** tab, fill in the following details in the Basic section and click on **Next: Node Pool** **(7)**.
 
@@ -96,7 +108,7 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
    | Subscription | Default subscription **(1)** |
    | Resource group | From the drop-down Select **Azure-Local** **(2)**  |
    | Kubernetes cluster name | Enter the cluster name as **localaks** **(3)** |
-   | Custom location | From the drop-down Select **jumpstart(EastUS)** **(4)** |
+   | Custom location | From the drop-down Select **jumpstart** **(4)** |
    | Node size | From the drop down select **Standard_A2_v2** **(5)** |
    | Key pair name | Enter the Key pair name as **localaks** **(6)** |
 
@@ -118,11 +130,17 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
    ![](media/Ex3-7.png)
 
+1. In the **Integration tab**, click on **Review + create**.
+
 1. In the **Review + create** tab, click on **Review**.
 
    ![](media/Ex3-8.png)
 
-1. Click on the AKS cluster to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
+1. Once the deployment completed, in search bar type **Kuberante azure arc (1)** and select **Kuberantes Azure Arc (2)**.
+
+   ![](media/E4T3S12.png)
+
+1. Click on **localaks** to view details such as the Kubernetes version. "Status" may show connecting for some time while the cluster fully connects to Azure.
 
      ![](media/Ex4-3.png)
     

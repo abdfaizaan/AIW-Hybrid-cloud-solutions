@@ -28,6 +28,8 @@ In this task, you will create a logical network in the localboxcluster to enable
 
     ![](media/Ex3-1.png)
 
+    >**Note:** If **Action Required: Update this Azure Local instance​** pop-up appears, click on **Ok**.
+
 4. In the **localboxcluster** Azure Local, from the left menu select **Logical networks** **(1)** under Resources, and click on **+ Create logical network** **(2)**.
  
     ![](media/Ex3-2.png)
@@ -81,7 +83,7 @@ In this task, you will download a Windows 10 Enterprise multi-session VM image f
 
     ![](media/NewEx3-2.png)
 
-   > **Note**: VM images download may take up to 1 hour.
+   > **Note**: VM images download may take 1-2 hours to complete.
     
 1. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of the localboxcluster resource. Once the VM image download is completed, you will see the Status as **Available (2)**.
 

@@ -23,7 +23,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
     ![](./media/Ex2-9.png)
 
-1. On the Open Folder window, navigate to **C:\ (1)** path, select **LocalBox (2)** folder, then click on **Open Folder (3)**.
+1. On the Open Folder window, navigate to **C:\ (1)** path, select **LocalBox (2)** folder, then click on **Select Folder (3)**.
 
     ![](./media/Ex2-10.png)
 
@@ -33,13 +33,13 @@ In this task, you will review the pre-generated ARM template and parameter files
 
     ![](./media/lab02a1.png)
 
-1. Click on **No storage account required**, choose your subscription, and then click **Apply**.
+1. Click on **No storage account required (1)**, choose your subscription **(2)**, and then click **Apply (3)**.
 
-    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
+    >**Note:** Ensure that you select the subscription whose name begins with **Azure HOL - xxxxxx**
 
     ![](./media/lab02a2.png)
 
-1. Open PowerShell and run the commands to register the required Resource Provide.
+1. Once the PowerShell is ready, run the below commands to register the required Resource Providers.
 
    >**Note:** It will take 2-3 minutes to get registered.
 
@@ -66,7 +66,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Navigate to the **Azure portal**, in search bar type **Subscriptions (1)** and select **Subscriptions (2)** under the services. 
 
-    >**Note:** Ensure that you select the subscription whose name begins with **Sub 05 - xxxx**
+    >**Note:** Ensure that you select the subscription whose name begins with **Azure HOL - xxxxxx**
 
     ![](./media/Ex2-0.png)
 
@@ -85,7 +85,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 1. Similarly, on the Resource Providers page, search for **Hybrid**, select **Microsoft.HybridContainerService**, then click on **Register.**
 
-    >**Note:** You can verify all Resource Providers here to ensure they are registered successfully.
+    >**Note:** If it is already registered please ignore. You can verify all Resource Providers here to ensure they are registered successfully.
 
     ![](./media/Ex2-14.png)     
 
@@ -123,7 +123,7 @@ In this task, you will review the pre-generated ARM template and parameter files
 
 In this task, you will validate and deploy the Azure Local cluster using PowerShell with the pre-configured ARM template and parameter files.
 
-1. Open PowerShell ISE window and run the below command to validate your Azure Local deployment and cluster.
+1. Open Windows PowerShell ISE window and run the below command to validate your Azure Local deployment and cluster.
 
    ```
    $TemplateFile = Join-Path -Path $env:LocalBoxDir -ChildPath "azlocal.json"
@@ -134,6 +134,12 @@ In this task, you will validate and deploy the Azure Local cluster using PowerSh
 
 1. The above command will take approximately 45 minutes to get your deployment validated and show you the Azure Local cluster on the Azure Portal.
 
+    >**Note:** If the deployments fails run the below commands and then restart the VM and again run the code in **Step-1**
+
+    ```
+    Install-WindowsFeature -Name Hyper-V,Failover-Clustering,RSAT-Clustering-PowerShell -IncludeManagementTools
+    ```
+
 1. You can navigate to the Azure Portal and see a new Azure Local resource created in your resource group.
 
 1. Once the validation is completed, run the command below to start the creation of Azure Local. This command will take approximately 3 hrs to deploy your cluster. 
@@ -142,9 +148,19 @@ In this task, you will validate and deploy the Azure Local cluster using PowerSh
    New-AzResourceGroupDeployment -Name 'localcluster-deploy' -ResourceGroupName $env:resourceGroup -TemplateFile $TemplateFile -deploymentMode "Deploy" -TemplateParameterFile $TemplateParameterFile -OutVariable ClusterDeployment -ErrorAction Stop
    ```
 
-11. Once the deployment starts, you can navigate to the Azure Portal, select your Azure Local resource, and select the  **Deployments (1)** under Settings to see your **deployment status (3)**.
+1. Once the deployment starts, you can navigate to the **Azure Portal**, in search bar type **Resource groups (1)** and select **Resource groups (2)** under the services. 
+
+    ![](media/Ex3-0.png)
+
+1. From the Resource groups pane, click on **Azure-Local** resource group and verify the resources present in it.
+
+    ![](media/azurestackhci-rga.png "Select Azure Local Resource Group")
+
+1. In the  **Azure-Local** resource group in the search bar search for **localboxcluster** **(1)** and select **localboxcluster** **(2)** Azure Local.
+
+    ![](media/E2T2S7.png)
    
-12. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh (2)** to get the latest status on deployment.
+1. Select the  **Deployments (1)** under Settings to see your **deployment status (3)**. Azure Local may take 3 to 5 hours to get deployed. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the Deployments tab of the cluster resource. Click **Refresh (2)** to get the latest status on deployment.
 
      ![](./media/NewEx3-6.png)
 
