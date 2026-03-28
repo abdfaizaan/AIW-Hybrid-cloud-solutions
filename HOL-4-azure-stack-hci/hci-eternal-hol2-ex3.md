@@ -93,7 +93,7 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
    ![](media/E4T3S1-1.png)
 
-1. In the Azure Arc page, select **Kubernetes Clusters** under infrastructure from left side menu.
+1. In the Azure Arc page, select **Kubernetes Clusters** under Infrastructure from the left side menu.
 
    ![](media/E4T3S1.png)
 
@@ -126,7 +126,7 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
 1. In the **Access** tab, click on **Next: Networking**.
 
-1. In the **Networking** tab, select **Local network** as **localbox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + create** **(3)** .
+1. In the **Networking** tab, select **Logical network** as **localbox-aks-lnet-vlan110** **(1)**, enter **Control plane IP** as **10.10.0.5** **(2)**, and click on **Review + create** **(3)** .
 
    ![](media/Ex3-7.png)
 
@@ -136,7 +136,9 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
    ![](media/Ex3-8.png)
 
-1. Once the deployment completed, in search bar type **Kuberante azure arc (1)** and select **Kuberantes Azure Arc (2)**.
+   >**Note:** The deployment may take around 30-40 minutes to succeed. 
+
+1. Once the deployment is completed, in the search bar type **Kuberante azure arc (1)** and select **Kuberantes Azure Arc (2)**.
 
    ![](media/E4T3S12.png)
 
@@ -148,11 +150,9 @@ In this task, you will deploy an AKS cluster on Azure Local with Entra-based RBA
 
 In this task, you will connect to the newly created AKS cluster from the Localbox-Client VM using Azure CLI and kubectl.
 
-1. On the Localbox-Client VM, search **Windows PowerShell (1)** and select **Windows PowerShell (2)**, right-click, and select **Run as Administrator (3)**. Then execute the following command in the powershell
+1. On the Localbox-Client VM, search **Windows PowerShell (1)** and select **Windows PowerShell (2)**, right-click, and select **Run as Administrator (3)**. Then execute the following command in PowerShell
      
      ![](media/windows-powershell.jpg)
-   
-   >**Note:** PowerShell ISE will not work as it may need some inputs while executing the command. 
 
     ```
     az extension add -n connectedk8s
