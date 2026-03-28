@@ -1,6 +1,6 @@
 # Exercise 3: Azure Local VM Provisioning
 
-### Estimated Duration: 90 Minutes
+### Estimated Duration: 180 Minutes
 
 In this exercise, you will learn how to provision virtual machines (VMs) on Azure Local. The process involves setting up a logical network, uploading a VM image to Azure Local storage, and then creating a new virtual machine using this image within the Azure Local environment. This practical exercise provides a step-by-step walkthrough of deploying VMs on Azure Local infrastructure.
 
@@ -83,9 +83,9 @@ In this task, you will download a Windows 10 Enterprise multi-session VM image f
 
     ![](media/NewEx3-2.png)
 
-   > **Note**: VM images download may take 1-2 hours to complete.
+   > **Note**: VM images download may take 1.5-2 hours to complete.
     
-1. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of the localboxcluster resource. Once the VM image download is completed, you will see the Status as **Available (2)**.
+1. Wait for the download to complete. You can monitor the download Progress by selecting the **VM images (1)** tab from the lab side menu of the localboxcluster resource. Once the VM image download is completed, you will see the Status as **Available (2)**.
 
     ![](media/NewEx3-7.png)
 
@@ -110,7 +110,7 @@ In this task, you will provision a new VM in the localboxcluster using the logic
    - Virtual Processor count: **4 (7)**
    - Memory (MB): **8192 (8)**
    - Memory Type: **Static (9)**
-   - VM Extension: **Keep it checked (10)**
+   - Enable Guest Management: **Keep it checked (10)**
       
       ![](media/NewEx3-8.png)
       
@@ -145,6 +145,8 @@ In this task, you will provision a new VM in the localboxcluster using the logic
 6. Click on **Next**, then **Create** to start the VM deployment.
 
    ![](media/NewEx3-12.png)
+
+    >**Note:** The deployment may take around 10 minutes to succeed. 
 
 1. Once the deployment is complete, click on **Go to resource.** 
 
