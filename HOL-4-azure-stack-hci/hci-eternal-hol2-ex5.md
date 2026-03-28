@@ -2,9 +2,11 @@
 
 ### Estimated Duration: 30 Minutes
 
-In this exercise, you'll be checking for updates in Azure Local via the Azure Portal involves leveraging Azure Arc for centralized management and update assessment. Administrators can deploy updates seamlessly across clusters, scheduling and monitoring the process for minimal disruption and optimal infrastructure performance. This integration streamlines hybrid cloud operations, enhancing agility and security across on-premises and Azure environments.
+## Overview
 
-## Lab Objectives
+In this exercise, you'll be checking for updates in Azure Local via the Azure Portal, which involves leveraging Azure Arc for centralized management and update assessment. Administrators can deploy updates seamlessly across clusters, scheduling and monitoring the process for minimal disruption and optimal infrastructure performance. This integration streamlines hybrid cloud operations, enhancing agility and security across on-premises and Azure environments.
+
+## Objectives
 
 You will be able to complete the following task:
 
