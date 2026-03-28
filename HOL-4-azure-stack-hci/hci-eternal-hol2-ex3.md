@@ -2,9 +2,11 @@
 
 ### Estimated Duration: 60 Minutes
 
+## Overview
+
 In this exercise, you'll be focusing on managing Azure Kubernetes Service (AKS) on Azure Local, which involves creating a logical network specifically tailored for AKS on Azure Local. It also covers setting up an Azure Active Directory (AAD) tenant group for authentication purposes. The process involves deploying AKS on Azure Local via the Azure Portal and establishing the necessary connections to access the AKS deployment. This hands-on lab demonstrates the setup and configuration steps required for deploying and managing AKS in an Azure Local environment.
 
-## Lab Objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
