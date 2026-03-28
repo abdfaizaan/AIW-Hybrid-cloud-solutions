@@ -4,9 +4,11 @@
 
 ### Please note that this lab has already been performed in the lab environment, but please go through the steps to get familiar.
 
+## Overview
+
 In this exercise, you'll be preparing the environment for deploying Azure Local, which involves installing and configuring the necessary operating system (e.g., Windows Server), along with any required drivers and software. Additionally, configuring networking components such as switches and routers to meet Azure Local's networking requirements is essential for successful deployment.
 
-## Lab Objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
