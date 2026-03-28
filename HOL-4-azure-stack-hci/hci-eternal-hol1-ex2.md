@@ -2,9 +2,11 @@
 
 ### Estimated Duration: 180 Minutes
 
+## Overview
+
 In this exercise, you will be deploying an Azure Local solution using a generated ARM template. You can deploy it either through the Azure portal by uploading the template and specifying deployment parameters or using PowerShell for automated deployment, offering flexibility and control over the deployment process. Here, you will be deploying Azure Local using PowerShell commands.
 
-## Lab Objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
